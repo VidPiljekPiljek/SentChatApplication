@@ -1,0 +1,33 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+	  <Border Padding="20" Width="600" Height="600">
+		  <StackPanel Spacing="20">
+			  <Button Content="Login" Width="100"/>
+			  <Button Content="Sign Up" Width="100"/>
+			  <Button Content="Exit" Width="100"/>
+		  </StackPanel>
+	  </Border>
+  </Design.PreviewWith>
+
+	<Style Selector=":is(Button)">
+		<Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="CornerRadius" Value="10"/>
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
+		<Setter Property="FontWeight" Value="DemiBold"/>
+	</Style>
+
+	<Style Selector=":is(Button):pointerover /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource DefaultButtonBackgroundHover}"/>
+		<Setter Property="Foreground" Value="#EEEEEEEE"/>
+	</Style>
+
+	<Style Selector=":is(Button):pressed /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource DefaultButtonBackgroundPressed}"/>
+		<Setter Property="Foreground" Value="#DDDDDDDD"/>
+	</Style>
+</Styles>

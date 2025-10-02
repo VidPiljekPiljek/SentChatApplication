@@ -1,0 +1,24 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Width="600" Height="600">
+		<StackPanel Spacing="20">
+			<Button Content="Button"/>
+			<Label Content="Label"/>
+			<CheckBox Content="CheckBox"/>
+			<TextBox Text="Type here"/>
+			<ComboBox>
+				<ComboBoxItem>Item 1</ComboBoxItem>
+				<ComboBoxItem>Item 2</ComboBoxItem>
+				<ComboBoxItem>Item 3</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+
+	<Style Selector="Window">
+		<Setter Property="Background" Value="{DynamicResource ApplicationBackground}"/>
+	</Style>
+</Styles>

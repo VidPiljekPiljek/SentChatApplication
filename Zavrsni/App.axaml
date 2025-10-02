@@ -1,0 +1,77 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Zavrsni"
+             x:Class="Zavrsni.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+
+		<StyleInclude Source="Styles\AppDefaultStyles.axaml"></StyleInclude>
+		<StyleInclude Source="Styles\ButtonStyles.axaml"></StyleInclude>
+		<StyleInclude Source="Styles\LabelStyles.axaml"></StyleInclude>
+		<StyleInclude Source="Styles\TextBoxStyles.axaml"></StyleInclude>
+    </Application.Styles>
+
+	<Application.Resources>
+		<FontFamily x:Key="DefaultFontFamily">Assets/Fonts/Montserrat-VariableFont_wght.ttf</FontFamily>
+	</Application.Resources>
+	
+	<Application.Resources>
+		<LinearGradientBrush x:Key="ApplicationBackground" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#2F265B"/>
+			<GradientStop Offset="1" Color="#215077"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="MenuBackground" StartPoint="0%, 0%" EndPoint="0%, 100%">
+			<GradientStop Offset="0" Color="#08184C"/>
+			<GradientStop Offset="1" Color="#233173"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="MessagesTopBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#131F59"/>
+			<GradientStop Offset="1" Color="#2942BF"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="DefaultButtonBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#3D56B9"/>
+			<GradientStop Offset="1" Color="#6AB0F2"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="DefaultButtonBackgroundHover" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#243FAA"/>
+			<GradientStop Offset="1" Color="#4588C7"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="DefaultButtonBackgroundPressed" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#1C2E76"/>
+			<GradientStop Offset="1" Color="#25649E"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="DefaultTextBoxBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#DFF3FF"/>
+			<GradientStop Offset="1" Color="#A3B2BC"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<Color x:Key="DefaultTextBoxBackgroundHover">#DFF3FF</Color>
+	</Application.Resources>
+</Application>

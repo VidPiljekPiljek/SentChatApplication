@@ -1,0 +1,25 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+	  <Border Padding="20" Width="600" Height="600">
+		  <StackPanel Spacing="20">
+			  <TextBox Text="Type here"/>
+			  <TextBox Text="Type here" Width="100"/>
+		  </StackPanel>
+	  </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	
+	<Style Selector=":is(TextBox)">
+		<Setter Property="Background" Value="{DynamicResource DefaultTextBoxBackground}"/>
+		<Setter Property="CornerRadius" Value="7"/>
+		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+	</Style>
+
+	<Style Selector=":is(TextBox):pressed /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource DefaultTextBoxBackgroundHover}"/>
+		<Setter Property="BorderBrush" Value="#4AD4F3"/>
+	</Style>
+</Styles>

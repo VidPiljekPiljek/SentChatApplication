@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:skia="clr-namespace:SkiaSharp.Views.Avalonia"
+			 xmlns:vm="clr-namespace:Zavrsni.ViewModels"
+			 x:DataType="LoginViewModel"
+             mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+             x:Class="Zavrsni.Views.LoginView">
+	<!--<StackPanel>
+		<Label Margin="0, 40, 0, 0" FontSize="100" HorizontalAlignment="Center" Content="ChatApp"/>
+		<Label Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
+		<TextBox Width="150" HorizontalAlignment="Center"/>
+		<Label Width="150" Margin="0, 30, 0, 0" HorizontalAlignment="Center" Content="Password"/>
+		<TextBox Width="150" HorizontalAlignment="Center"/>
+		
+		<Button Width="145" Height="50" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Login"/>
+	</StackPanel>-->
+
+	<Grid ShowGridLines="False" RowDefinitions="auto, auto, auto, auto, 50, auto, auto, 50, auto">
+		<Label Grid.Row="0" Margin="0, 40, 0, 0" FontSize="96" HorizontalAlignment="Center" Content="SENT"/>
+		<!--<Image Source="{SvgImage Assets/Icons/accounticon.svg}"></Image>-->
+		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
+		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
+		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center"/>
+		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
+		<TextBox Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
+
+		<Button Grid.Row="8" Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login"/>
+	</Grid>
+</UserControl>

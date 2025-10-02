@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="1115" d:DesignHeight="720"
+             x:Class="Zavrsni.Views.SettingsView">
+	<Border>
+		<Grid RowDefinitions="auto, *">
+			<Border Grid.Row="0" VerticalAlignment="Top" Height="170" Background="{DynamicResource MessagesTopBackground}" Padding="20">
+				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+					<Label HorizontalAlignment="Center" FontSize="48" Content="Settings"/>
+					<Label HorizontalAlignment="Center" Content="Version 0.0.0"/>
+				</StackPanel>
+			</Border>
+		</Grid>
+	</Border>
+</UserControl>
