@@ -20,6 +20,7 @@ public partial class App : Application
     public override void OnFrameworkInitializationCompleted()
     {
         var collection = new ServiceCollection();
+        collection.AddSingleton<MainWindowViewModel>();
         collection.AddSingleton<MainViewModel>();
         collection.AddSingleton<LoginViewModel>();
 

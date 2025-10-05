@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:skia="clr-namespace:SkiaSharp.Views.Avalonia"
 			 xmlns:vm="clr-namespace:Zavrsni.ViewModels"
-			 x:DataType="LoginViewModel"
+			 x:DataType="vm:LoginViewModel"
              mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
              x:Class="Zavrsni.Views.LoginView">
 	<!--<StackPanel>
@@ -26,6 +26,6 @@
 		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
 		<TextBox Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
 
-		<Button Grid.Row="8" Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login"/>
+		<Button Grid.Row="8" Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
 	</Grid>
 </UserControl>

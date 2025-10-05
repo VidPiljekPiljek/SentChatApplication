@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:Zavrsni.Views"
-		x:DataType="vm:MainWindowModel"
+		x:DataType="vm:MainWindowViewModel"
         mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
 		Width="1280" Height="720"
         x:Class="Zavrsni.Views.MainWindow"
