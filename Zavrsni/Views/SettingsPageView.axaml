@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignWidth="1115" d:DesignHeight="720"
-             x:Class="Zavrsni.Views.SettingsView">
+             x:Class="Zavrsni.Views.SettingsPageView">
 	<Border>
 		<Grid RowDefinitions="auto, *">
 			<Border Grid.Row="0" VerticalAlignment="Top" Height="170" Background="{DynamicResource MessagesTopBackground}" Padding="20">

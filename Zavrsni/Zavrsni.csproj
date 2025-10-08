@@ -36,4 +36,22 @@
     <Folder Include="Assets\Icons\" />
     <Folder Include="Controls\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\AccountPageView.axaml.cs">
+      <DependentUpon>AccountPageView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\GroupsPageView.axaml.cs">
+      <DependentUpon>GroupsPageView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\HomePageView.axaml.cs">
+      <DependentUpon>HomePageView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MessagesPageView.axaml.cs">
+      <DependentUpon>MessagesPageView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsPageView.axaml.cs">
+      <DependentUpon>SettingsPageView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

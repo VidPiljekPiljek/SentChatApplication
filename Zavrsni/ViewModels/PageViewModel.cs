@@ -8,7 +8,7 @@ using Zavrsni.Data;
 
 namespace Zavrsni.ViewModels
 {
-    public partial class PageViewModel : ObservableObject
+    public partial class PageViewModel : ViewModelBase
     {
         [ObservableProperty]
         private ApplicationPageNames _pageName;

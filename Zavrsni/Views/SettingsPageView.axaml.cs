@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Zavrsni;
+namespace Zavrsni.Views;
 
-public partial class GroupsView : UserControl
+public partial class SettingsPageView : UserControl
 {
-    public GroupsView()
+    public SettingsPageView()
     {
         InitializeComponent();
     }

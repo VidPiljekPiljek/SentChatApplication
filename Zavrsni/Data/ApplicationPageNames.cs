@@ -11,6 +11,7 @@ namespace Zavrsni.Data
         Home = 1,
         Messages = 2,
         Groups = 3,
-        Settings = 4
+        Account = 4,
+        Settings = 5
     }
 }

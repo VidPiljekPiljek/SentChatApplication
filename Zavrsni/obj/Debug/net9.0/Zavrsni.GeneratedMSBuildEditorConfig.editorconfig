@@ -41,16 +41,16 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Styles/TextBoxStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/AccountView.axaml]
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/AccountPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/ChatInputBox.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/GroupsView.axaml]
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/GroupsPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/HomeView.axaml]
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/HomePageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/LoginView.axaml]
@@ -62,8 +62,8 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesView.axaml]
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/SettingsView.axaml]
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/SettingsPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

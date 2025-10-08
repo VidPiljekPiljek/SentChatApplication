@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Zavrsni.Views;
 
-public partial class HomeView : UserControl
+public partial class HomePageView : UserControl
 {
-    public HomeView()
+    public HomePageView()
     {
         InitializeComponent();
     }

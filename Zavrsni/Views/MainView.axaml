@@ -22,18 +22,18 @@
 			<Grid RowDefinitions="*, auto">
 				<StackPanel Grid.Row="0" Spacing="20">
 					<Button Content="Messages" Width="125" Command="{Binding NavigateToMessagesCommand}"/>
-					<Button Content="Groups" Width="125"/>
+					<Button Content="Groups" Width="125" Command="{Binding NavigateToGroupsCommand}"/>
 				</StackPanel>
 
 				<StackPanel Grid.Row="1" Spacing="20">
-					<Button Content="Account" Width="125"/>
-					<Button Content="Settings" Width="125"/>
+					<Button Content="Account" Width="125" Command="{Binding NavigateToAccountCommand}"/>
+					<Button Content="Settings" Width="125" Command="{Binding NavigateToSettingsCommand}"/>
 				</StackPanel>
 			</Grid>
 
 		</Border>
 
-		<ContentControl Grid.Column="1">
+		<ContentControl Content="{Binding CurrentPage}" Grid.Column="1">
 			
 		</ContentControl>
 	</Grid>

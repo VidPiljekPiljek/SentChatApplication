@@ -7,9 +7,9 @@ using Zavrsni.Data;
 
 namespace Zavrsni.ViewModels
 {
-    public partial class MessagesPageViewModel : PageViewModel
+    public partial class GroupsPageViewModel : PageViewModel
     {
-        public MessagesPageViewModel() : base(ApplicationPageNames.Messages)
+        public GroupsPageViewModel() : base(ApplicationPageNames.Groups)
         {
         }
     }

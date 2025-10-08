@@ -28,11 +28,17 @@ public partial class App : Application
         collection.AddTransient<LoginViewModel>();
         collection.AddTransient<HomePageViewModel>();
         collection.AddTransient<MessagesPageViewModel>();
+        collection.AddTransient<AccountPageViewModel>();
+        collection.AddTransient<SettingsPageViewModel>();
+        collection.AddTransient<GroupsPageViewModel>();
 
         collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
         {
             ApplicationPageNames.Home => x.GetRequiredService<HomePageViewModel>(),
             ApplicationPageNames.Messages => x.GetRequiredService<MessagesPageViewModel>(),
+            ApplicationPageNames.Groups => x.GetRequiredService<GroupsPageViewModel>(),
+            ApplicationPageNames.Account => x.GetRequiredService<AccountPageViewModel>(),
+            ApplicationPageNames.Settings => x.GetRequiredService<SettingsPageViewModel>(),
             _ => throw new ArgumentOutOfRangeException(nameof(name))
         });
 

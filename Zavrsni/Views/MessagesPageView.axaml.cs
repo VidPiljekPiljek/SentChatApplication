@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Zavrsni.Views;
 
-public partial class MessagesView : UserControl
+public partial class MessagesPageView : UserControl
 {
-    public MessagesView()
+    public MessagesPageView()
     {
         InitializeComponent();
     }
