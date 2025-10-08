@@ -1,0 +1,251 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj",
+        "projectName": "Zavrsni.Browser",
+        "projectPath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj",
+        "packagesPath": "C:\\Users\\pilje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\pilje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0-browser"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0-browser1.0": {
+            "targetAlias": "net9.0-browser",
+            "projectReferences": {
+              "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj": {
+                "projectPath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0-browser1.0": {
+          "targetAlias": "net9.0-browser",
+          "dependencies": {
+            "Avalonia.Browser": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "autoReferenced": true
+            },
+            "Svg.Skia": {
+              "target": "Package",
+              "version": "[3.2.1, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Avalonia": "11.3.0",
+            "Avalonia.Android": "11.3.0",
+            "Avalonia.Browser": "11.3.0",
+            "Avalonia.Desktop": "11.3.0",
+            "Avalonia.Diagnostics": "11.3.0",
+            "Avalonia.Fonts.Inter": "11.3.0",
+            "Avalonia.iOS": "11.3.0",
+            "Avalonia.Themes.Fluent": "11.3.0",
+            "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.9",
+            "Svg.Skia": "3.2.1",
+            "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[9.0.9, 9.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj",
+        "projectName": "Zavrsni",
+        "projectPath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj",
+        "packagesPath": "C:\\Users\\pilje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\pilje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "versionCentrallyManaged": true
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.4.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
+            "Svg.Skia": {
+              "target": "Package",
+              "version": "[3.2.1, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Avalonia": "11.3.0",
+            "Avalonia.Android": "11.3.0",
+            "Avalonia.Browser": "11.3.0",
+            "Avalonia.Desktop": "11.3.0",
+            "Avalonia.Diagnostics": "11.3.0",
+            "Avalonia.Fonts.Inter": "11.3.0",
+            "Avalonia.iOS": "11.3.0",
+            "Avalonia.Themes.Fluent": "11.3.0",
+            "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.Extensions.DependencyInjection": "9.0.9",
+            "Svg.Skia": "3.2.1",
+            "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

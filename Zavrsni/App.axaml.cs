@@ -2,11 +2,14 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Linq;
+using Zavrsni.Data;
+using Zavrsni.Factories;
 using Zavrsni.ViewModels;
 using Zavrsni.Views;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Zavrsni;
 
@@ -21,8 +24,28 @@ public partial class App : Application
     {
         var collection = new ServiceCollection();
         collection.AddSingleton<MainWindowViewModel>();
-        collection.AddSingleton<MainViewModel>();
-        collection.AddSingleton<LoginViewModel>();
+        collection.AddTransient<MainViewModel>();
+        collection.AddTransient<LoginViewModel>();
+        collection.AddTransient<HomePageViewModel>();
+        collection.AddTransient<MessagesPageViewModel>();
+
+        collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
+        {
+            ApplicationPageNames.Home => x.GetRequiredService<HomePageViewModel>(),
+            ApplicationPageNames.Messages => x.GetRequiredService<MessagesPageViewModel>(),
+            _ => throw new ArgumentOutOfRangeException(nameof(name))
+        });
+
+        collection.AddSingleton<PageFactory>();
+
+        collection.AddSingleton<Func<ApplicationViewNames, ViewModelBase>>(x => name => name switch
+        {
+            ApplicationViewNames.Login => x.GetRequiredService<LoginViewModel>(),
+            ApplicationViewNames.Main => x.GetRequiredService<MainViewModel>(),
+            _ => throw new ArgumentOutOfRangeException(nameof(name))
+        });
+
+        collection.AddSingleton<ViewFactory>();
 
         var serviceProvider = collection.BuildServiceProvider();
 
@@ -33,14 +56,14 @@ public partial class App : Application
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = serviceProvider.GetRequiredService<LoginViewModel>()
+                DataContext = serviceProvider.GetRequiredService<MainWindowViewModel>()
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = serviceProvider.GetRequiredService<MainViewModel>()
+                DataContext = serviceProvider.GetRequiredService<MainWindowViewModel>()
             };
         }
 

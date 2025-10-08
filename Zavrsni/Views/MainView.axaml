@@ -21,7 +21,7 @@
 			</Border.Styles>
 			<Grid RowDefinitions="*, auto">
 				<StackPanel Grid.Row="0" Spacing="20">
-					<Button Content="Messages" Width="125"/>
+					<Button Content="Messages" Width="125" Command="{Binding NavigateToMessagesCommand}"/>
 					<Button Content="Groups" Width="125"/>
 				</StackPanel>
 

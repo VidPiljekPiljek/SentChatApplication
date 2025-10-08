@@ -1,0 +1,15 @@
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\bin\Debug\net9.0\Zavrsni.deps.json
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\bin\Debug\net9.0\Zavrsni.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\bin\Debug\net9.0\Zavrsni.pdb
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.csproj.AssemblyReference.cache
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Avalonia\Resources.Inputs.cache
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Avalonia\resources
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.AssemblyInfoInputs.cache
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.AssemblyInfo.cs
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.csproj.CoreCompileInputs.cache
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.sourcelink.json
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\refint\Zavrsni.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.pdb
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\ref\Zavrsni.dll

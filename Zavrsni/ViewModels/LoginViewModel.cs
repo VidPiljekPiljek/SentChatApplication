@@ -26,7 +26,7 @@ namespace Zavrsni.ViewModels
         [RelayCommand]
         private void Login() 
         {
-            _mainWindowViewModel.CurrentView = new MainViewModel();
+            _mainWindowViewModel.NavigateToMain();
         }
     }
 }

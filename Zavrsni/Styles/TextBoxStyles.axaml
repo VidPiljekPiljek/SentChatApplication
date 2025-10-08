@@ -15,10 +15,20 @@
 		<Setter Property="Background" Value="{DynamicResource DefaultTextBoxBackground}"/>
 		<Setter Property="CornerRadius" Value="7"/>
 		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
+		<Setter Property="Foreground" Value="Black"></Setter>
 		<Setter Property="BorderBrush" Value="Transparent"/>
 	</Style>
 
-	<Style Selector=":is(TextBox):pressed /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector=":is(TextBox):pointerover /template/ Border#PART_BorderElement">
+		<Setter Property="Background" Value="{DynamicResource DefaultTextBoxBackgroundHover}"/>
+		<Setter Property="BorderBrush" Value="#4AD4F3"/>
+	</Style>
+
+	<Style Selector="TextBox:pointerover, TextBox:focus">
+		<Setter Property="Foreground" Value="Black"></Setter>
+	</Style>
+
+	<Style Selector=":is(TextBox):focus /template/ Border#PART_BorderElement">
 		<Setter Property="Background" Value="{DynamicResource DefaultTextBoxBackgroundHover}"/>
 		<Setter Property="BorderBrush" Value="#4AD4F3"/>
 	</Style>

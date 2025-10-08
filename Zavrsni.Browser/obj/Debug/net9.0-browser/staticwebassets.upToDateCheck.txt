@@ -1,0 +1,8 @@
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\wwwroot\index.html
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\wwwroot\app.css
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\wwwroot\favicon.ico
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\wwwroot\main.js
+wwwroot\app.css
+wwwroot\favicon.ico
+wwwroot\index.html
+wwwroot\main.js

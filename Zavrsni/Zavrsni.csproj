@@ -9,6 +9,13 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <AvaloniaXaml Remove="Commands\**" />
+    <Compile Remove="Commands\**" />
+    <EmbeddedResource Remove="Commands\**" />
+    <None Remove="Commands\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" />
@@ -28,6 +35,5 @@
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Icons\" />
     <Folder Include="Controls\" />
-    <Folder Include="Commands\" />
   </ItemGroup>
 </Project>

@@ -24,7 +24,7 @@
 		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
 		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center"/>
 		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
-		<TextBox Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
+		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
 
 		<Button Grid.Row="8" Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
 	</Grid>
