@@ -67,3 +67,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/SettingsPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/SignUpView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

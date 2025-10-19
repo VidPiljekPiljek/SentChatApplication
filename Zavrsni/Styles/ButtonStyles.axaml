@@ -19,6 +19,12 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
 		<Setter Property="FontWeight" Value="DemiBold"/>
+
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="Background" Duration="0:0:10" />
+			</Transitions>
+		</Setter>
 	</Style>
 
 	<Style Selector=":is(Button):pointerover /template/ ContentPresenter">
@@ -30,4 +36,6 @@
 		<Setter Property="Background" Value="{DynamicResource DefaultButtonBackgroundPressed}"/>
 		<Setter Property="Foreground" Value="#DDDDDDDD"/>
 	</Style>
+
+	
 </Styles>

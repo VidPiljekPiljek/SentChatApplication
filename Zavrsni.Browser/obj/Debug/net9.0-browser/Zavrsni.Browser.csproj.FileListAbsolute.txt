@@ -207,8 +207,6 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Xml.XPath.3bpkk2mjm4.wasm
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Xml.XPath.XDocument.k25bvuxkbu.wasm
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\WindowsBase.vy2l5u79y6.wasm
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.69ohqr0911.pdb
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.fuczv0r5sc.wasm
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Reflection.DispatchProxy.f1qnpwde5z.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.IO.Compression.nf0x03kqm2.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Avalonia.Markup.6wego6pqf5.wasm.gz
@@ -290,7 +288,6 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Globalization.Extensions.vj2hxw2cxd.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Net.HttpListener.pjiup6uulr.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\netstandard.kaml52uspo.wasm.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.69ohqr0911.pdb.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\blazor.boot.json.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Collections.Immutable.hn2kphqqyx.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Avalonia.Metal.a1trlafjv0.wasm.gz
@@ -390,7 +387,6 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Private.CoreLib.uqnhzdwypx.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Runtime.hexcao080t.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Avalonia.Controls.ColorPicker.8uydk4q5z5.wasm.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.fuczv0r5sc.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.IO.MemoryMappedFiles.hqsx1g6hyq.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\System.Security.Cryptography.Cng.pvstpifg15.wasm.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\MicroCom.Runtime.8lt3mh4b1t.wasm.gz
@@ -1066,8 +1062,6 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\7h4lbpzic6-tjcz0u77k5.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\nljn4wf3n2-tptq2av103.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\wlhqu9o3vw-lfu7j35m59.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\v7yrf5j3ti-fuczv0r5sc.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\f26qtgmciw-69ohqr0911.gz
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\staticwebassets.build.json
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\staticwebassets.build.json.cache
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\staticwebassets.development.json
@@ -1079,10 +1073,16 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\Zavrsni.Browser.pdb
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\Zavrsni.Browser.genruntimeconfig.cache
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\ref\Zavrsni.Browser.dll
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.s719svcej0.pdb
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.sg4zcuyx9g.wasm
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.sg4zcuyx9g.wasm.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.s719svcej0.pdb.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\07xsf6jjx9-sg4zcuyx9g.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\ypoavj5hz3-s719svcej0.gz
-C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\find4e7pyz-f58o0dctbz.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.w9tpzj92l5.pdb
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.vxub1au7t5.wasm
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.w9tpzj92l5.pdb.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.Browser.vxub1au7t5.wasm.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\v7yrf5j3ti-vxub1au7t5.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\f26qtgmciw-w9tpzj92l5.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.7s2mtay6uq.pdb
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.m9arv0u7g2.wasm
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.m9arv0u7g2.wasm.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\bin\Debug\net9.0-browser\wwwroot\_framework\Zavrsni.7s2mtay6uq.pdb.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\07xsf6jjx9-m9arv0u7g2.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\ypoavj5hz3-7s2mtay6uq.gz
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Browser\obj\Debug\net9.0-browser\compressed\find4e7pyz-uwshfi65cj.gz

@@ -19,7 +19,11 @@
 
 	<Grid ShowGridLines="False" RowDefinitions="auto, auto, auto, auto, 50, auto, auto, 50, auto">
 		<Label Grid.Row="0" Margin="0, 40, 0, 0" FontSize="96" HorizontalAlignment="Center" Content="SENT"/>
-		<!--<Image Source="{SvgImage Assets/Icons/accounticon.svg}"></Image>-->
+		<!--<Image>
+			<Image.Source>
+				<skia:SvgImage Source="/Assets/Icons/accounticon.svg"/>
+			</Image.Source>
+		</Image>-->
 		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
 		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
 		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center"/>

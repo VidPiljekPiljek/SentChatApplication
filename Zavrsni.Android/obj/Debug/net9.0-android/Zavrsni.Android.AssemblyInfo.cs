@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zavrsni.Android")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e9f9382e3632912cc18695be13aed5890a4efb04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+153e86df34ddb183c8fcf78a440f119ca8212285")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zavrsni.Android")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zavrsni.Android")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

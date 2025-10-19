@@ -61,6 +61,16 @@
               "version": "[11.3.0, )",
               "versionCentrallyManaged": true
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.9, )",
@@ -93,6 +103,8 @@
             "Avalonia.iOS": "11.3.0",
             "Avalonia.Themes.Fluent": "11.3.0",
             "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.EntityFrameworkCore": "9.0.9",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.9",
             "Microsoft.Extensions.DependencyInjection": "9.0.9",
             "Svg.Skia": "3.2.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
@@ -201,6 +213,16 @@
               "version": "[8.4.0, )",
               "versionCentrallyManaged": true
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.9, )",
+              "versionCentrallyManaged": true
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.9, )",
@@ -222,6 +244,8 @@
             "Avalonia.iOS": "11.3.0",
             "Avalonia.Themes.Fluent": "11.3.0",
             "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.EntityFrameworkCore": "9.0.9",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.9",
             "Microsoft.Extensions.DependencyInjection": "9.0.9",
             "Svg.Skia": "3.2.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"

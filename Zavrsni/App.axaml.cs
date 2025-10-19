@@ -3,10 +3,13 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
+using System.Runtime.InteropServices.JavaScript;
 using Zavrsni.Data;
+using Zavrsni.DbContexts;
 using Zavrsni.Factories;
 using Zavrsni.ViewModels;
 using Zavrsni.Views;
@@ -23,6 +26,9 @@ public partial class App : Application
     public override void OnFrameworkInitializationCompleted()
     {
         var collection = new ServiceCollection();
+
+        collection.AddSingleton<ISentChatAppDbContextFactory>(new SentChatAppDbContextFactory("Data source=autoskola.db"));
+
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddTransient<MainViewModel>();
         collection.AddTransient<LoginViewModel>();
@@ -54,6 +60,12 @@ public partial class App : Application
         collection.AddSingleton<ViewFactory>();
 
         var serviceProvider = collection.BuildServiceProvider();
+
+        ISentChatAppDbContextFactory sentChatAppDbContextFactory = serviceProvider.GetRequiredService<ISentChatAppDbContextFactory>();
+        using (SentChatAppDbContext dbContext = sentChatAppDbContextFactory.CreateDbContext())
+        {
+            dbContext.Database.Migrate();
+        }
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

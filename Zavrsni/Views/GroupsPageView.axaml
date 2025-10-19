@@ -3,14 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:views="clr-namespace:Zavrsni.Views"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1115" d:DesignHeight="720"
              x:Class="Zavrsni.Views.GroupsPageView">
 	<Border>
 		<Grid RowDefinitions="auto, *, 100">
 			<Border Grid.Row="0" VerticalAlignment="Top" Height="80" Background="{DynamicResource MessagesTopBackground}" Padding="20">
 				<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
-					<Label FontSize="16" Content="David"/>
-					<Label FontSize="16" Content="David Košanski"/>
+					<Label FontSize="16" Content="Group Icon"/>
+					<Label FontSize="16" Content="Group 1"/>
 				</StackPanel>
 			</Border>
 			<UserControl Grid.Row="1"/>
