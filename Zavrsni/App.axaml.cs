@@ -27,7 +27,7 @@ public partial class App : Application
     {
         var collection = new ServiceCollection();
 
-        collection.AddSingleton<ISentChatAppDbContextFactory>(new SentChatAppDbContextFactory("Data source=autoskola.db"));
+        collection.AddSingleton<ISentChatAppDbContextFactory>(new SentChatAppDbContextFactory("Data source=sentchatapp.db"));
 
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddTransient<MainViewModel>();

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,15 @@ namespace Zavrsni.Models
         public User()
         {
             
+        }
+
+        public User(int id, string username, string password, string profilePicture, DateTime accountCreated)
+        {
+            Id = id;
+            Username = username;
+            Password = password;
+            ProfilePicture = profilePicture;
+            AccountCreated = accountCreated;
         }
     }
 }

@@ -13,3 +13,5 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\refint\Zavrsni.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.pdb
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\ref\Zavrsni.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\bin\Debug\net9.0\Zavrsni.runtimeconfig.json
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni\obj\Debug\net9.0\Zavrsni.genruntimeconfig.cache

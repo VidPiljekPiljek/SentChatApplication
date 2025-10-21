@@ -68,17 +68,24 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Svg.Skia": {
@@ -97,9 +104,10 @@
             "Avalonia.iOS": "11.3.0",
             "Avalonia.Themes.Fluent": "11.3.0",
             "CommunityToolkit.Mvvm": "8.4.0",
-            "Microsoft.EntityFrameworkCore": "9.0.9",
-            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.9",
-            "Microsoft.Extensions.DependencyInjection": "9.0.9",
+            "Microsoft.EntityFrameworkCore": "9.0.10",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
+            "Microsoft.Extensions.DependencyInjection": "9.0.10",
             "Svg.Skia": "3.2.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
           },
@@ -119,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -198,17 +206,24 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
             "Svg.Skia": {
@@ -227,9 +242,10 @@
             "Avalonia.iOS": "11.3.0",
             "Avalonia.Themes.Fluent": "11.3.0",
             "CommunityToolkit.Mvvm": "8.4.0",
-            "Microsoft.EntityFrameworkCore": "9.0.9",
-            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.9",
-            "Microsoft.Extensions.DependencyInjection": "9.0.9",
+            "Microsoft.EntityFrameworkCore": "9.0.10",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
+            "Microsoft.Extensions.DependencyInjection": "9.0.10",
             "Svg.Skia": "3.2.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
           },
@@ -249,7 +265,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

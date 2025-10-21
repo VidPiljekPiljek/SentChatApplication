@@ -4,7 +4,7 @@
     "includedFrameworks": [
       {
         "name": "Microsoft.NETCore.App",
-        "version": "9.0.9"
+        "version": "9.0.10"
       }
     ],
     "wasmHostProperties": {
@@ -26,6 +26,7 @@
       "System.Globalization.Invariant": false,
       "System.Globalization.Hybrid": false,
       "System.Net.Http.EnableActivityPropagation": false,
+      "System.Reflection.NullabilityInfoContext.IsSupported": true,
       "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
       "System.Resources.UseSystemResourceKeys": true,
       "System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported": true,
