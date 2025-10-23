@@ -34,7 +34,6 @@
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Icons\" />
     <Folder Include="Controls\" />
-    <Folder Include="Commands\" />
   </ItemGroup>
 
   <ItemGroup>
