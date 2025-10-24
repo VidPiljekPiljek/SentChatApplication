@@ -17,6 +17,7 @@ public partial class MainViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(SettingsPageIsActive))]
     private PageViewModel _currentPage;
 
+    // May be a lot to keep track of, but is a great way to navigate cause of the abstraction
     public bool HomePageIsActive => CurrentPage.PageName == ApplicationPageNames.Home;
     public bool MessagesPageIsActive => CurrentPage.PageName == ApplicationPageNames.Messages;
     public bool GroupsPageIsActive => CurrentPage.PageName == ApplicationPageNames.Groups;
@@ -30,6 +31,7 @@ public partial class MainViewModel : ViewModelBase
         _currentPage = new HomePageViewModel();
     }
 
+    // Using this way of navigating to pages is more performant than using the NavigationService
     [RelayCommand]
     private void NavigateToMessages()
     {

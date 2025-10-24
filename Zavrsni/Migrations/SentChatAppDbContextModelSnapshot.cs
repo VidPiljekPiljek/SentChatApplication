@@ -96,6 +96,10 @@ namespace Zavrsni.Migrations
                     b.Property<DateTime>("AccountCreated")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -117,9 +121,19 @@ namespace Zavrsni.Migrations
                         {
                             Id = 1,
                             AccountCreated = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "piljekvid@gmail.com",
                             Password = "Vid123",
                             ProfilePicture = "vidimage.jpg",
                             Username = "Vid"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountCreated = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "foobar@gmail.com",
+                            Password = "Bar",
+                            ProfilePicture = "foobarimage.jpg",
+                            Username = "Foo"
                         });
                 });
 

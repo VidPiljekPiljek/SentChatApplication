@@ -19,9 +19,13 @@ namespace Zavrsni.DbContexts
         {
             base.OnModelCreating(modelBuilder);
 
-            // Temporary User for testing
+            // Temporary Users for testing
             modelBuilder.Entity<User>().HasData(
-                new User(1, "Vid", "Vid123", "vidimage.jpg", new DateTime(2025, 10, 20))
+                new User(1, "Vid", "Vid123", "piljekvid@gmail.com", "vidimage.jpg", new DateTime(2025, 10, 20))
+            );
+
+            modelBuilder.Entity<User>().HasData(
+                new User(2, "Foo", "Bar", "foobar@gmail.com", "foobarimage.jpg", new DateTime(2025, 10, 23))
             );
 
             modelBuilder.Entity<User>()

@@ -20,6 +20,7 @@ namespace Zavrsni.Factories
         //    return viewModel;
         //}
 
+        // Using this way of creating viewmodels because of DI
         public ViewModelBase GetViewModel(ApplicationViewNames viewName) => factory(viewName);
     }
 }
