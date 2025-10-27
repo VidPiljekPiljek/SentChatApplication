@@ -6,6 +6,7 @@ using Avalonia.Markup.Xaml;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.JavaScript;
 using Zavrsni.Data;
@@ -62,9 +63,16 @@ public partial class App : Application
         var serviceProvider = collection.BuildServiceProvider();
 
         ISentChatAppDbContextFactory sentChatAppDbContextFactory = serviceProvider.GetRequiredService<ISentChatAppDbContextFactory>();
-        using (SentChatAppDbContext dbContext = sentChatAppDbContextFactory.CreateDbContext())
+        try
         {
-            dbContext.Database.Migrate();
+            using (SentChatAppDbContext dbContext = sentChatAppDbContextFactory.CreateDbContext())
+            {
+                dbContext.Database.Migrate();
+            }
+        }
+        catch (Exception ex)
+        {
+            File.AppendAllText("app.log", $"[{DateTime.Now}] {ex.Message}\n");
         }
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)

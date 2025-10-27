@@ -11,7 +11,7 @@ using Zavrsni.DbContexts;
 namespace Zavrsni.Migrations
 {
     [DbContext(typeof(SentChatAppDbContext))]
-    [Migration("20251024144930_Initial")]
+    [Migration("20251027185518_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
