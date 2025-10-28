@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.ViewModels
 {
-    public partial class LoginViewModel : ViewModelBase
+    public partial class RegistrationViewModel : ViewModelBase
     {
         private MainWindowViewModel _mainWindowViewModel;
 
-        public LoginViewModel(MainWindowViewModel mainWindowViewModel)
+        public RegistrationViewModel(MainWindowViewModel mainWindowViewModel)
         {
             _mainWindowViewModel = mainWindowViewModel;
         }
@@ -21,18 +21,21 @@ namespace Zavrsni.ViewModels
         private string _username;
 
         [ObservableProperty]
+        private string _email;
+
+        [ObservableProperty]
         private string _password;
 
         [RelayCommand]
-        private void Login() 
+        private void Registrate()
         {
             _mainWindowViewModel.NavigateToMain();
         }
 
         [RelayCommand]
-        private void NavigateToRegistration()
+        private void NavigateToLogin()
         {
-            _mainWindowViewModel.NavigateToRegistration();
+            _mainWindowViewModel.NavigateToLogin();
         }
     }
 }

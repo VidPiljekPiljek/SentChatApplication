@@ -24,5 +24,7 @@ namespace Zavrsni.ViewModels
         }
 
         public void NavigateToMain() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Main);
+        public void NavigateToRegistration() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Registration);
+        public void NavigateToLogin() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Login);
     }
 }

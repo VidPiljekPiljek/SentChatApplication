@@ -30,6 +30,9 @@
 		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
 		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
 
-		<Button Grid.Row="8" Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
+		<StackPanel Grid.Row="8">
+			<Button Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
+			<HyperlinkButton Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="I don't have an account." Command="{Binding NavigateToRegistrationCommand}"></HyperlinkButton>
+		</StackPanel>
 	</Grid>
 </UserControl>

@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Zavrsni;
+namespace Zavrsni.Views;
 
-public partial class SignUpView : UserControl
+public partial class RegistrationView : UserControl
 {
-    public SignUpView()
+    public RegistrationView()
     {
         InitializeComponent();
     }

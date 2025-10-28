@@ -33,6 +33,7 @@ public partial class App : Application
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddTransient<MainViewModel>();
         collection.AddTransient<LoginViewModel>();
+        collection.AddTransient<RegistrationViewModel>();
         collection.AddTransient<HomePageViewModel>();
         collection.AddTransient<MessagesPageViewModel>();
         collection.AddTransient<AccountPageViewModel>();
@@ -55,6 +56,7 @@ public partial class App : Application
         {
             ApplicationViewNames.Login => x.GetRequiredService<LoginViewModel>(),
             ApplicationViewNames.Main => x.GetRequiredService<MainViewModel>(),
+            ApplicationViewNames.Registration => x.GetRequiredService<RegistrationViewModel>(),
             _ => throw new ArgumentOutOfRangeException(nameof(name))
         });
 

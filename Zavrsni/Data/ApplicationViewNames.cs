@@ -9,6 +9,7 @@ namespace Zavrsni.Data
     public enum ApplicationViewNames
     {
         Login = 1,
-        Main = 2
+        Main = 2,
+        Registration = 3
     }
 }
