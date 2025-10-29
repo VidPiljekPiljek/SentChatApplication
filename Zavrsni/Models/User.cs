@@ -37,6 +37,12 @@ namespace Zavrsni.Models
             AccountCreated = accountCreated;
         }
 
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
+
         public User(string username, string password, string email, string profilePicture, DateTime accountCreated)
         {
             Username = username;

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.Authenticators;
 using Zavrsni.Data;
 using Zavrsni.Factories;
+using Zavrsni.Services;
 
 namespace Zavrsni.ViewModels
 {
@@ -16,11 +18,10 @@ namespace Zavrsni.ViewModels
         [ObservableProperty]
         private ViewModelBase _currentView;
 
-        public MainWindowViewModel(ViewFactory viewFactory)
+        public MainWindowViewModel(ViewFactory viewFactory, UserService userService)
         {
             _viewFactory = viewFactory;
-
-            _currentView = new LoginViewModel(this);
+            _currentView = new LoginViewModel(this, userService);
         }
 
         public void NavigateToMain() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Main);

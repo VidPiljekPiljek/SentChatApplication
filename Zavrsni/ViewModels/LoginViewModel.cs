@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Zavrsni.Commands;
+using Zavrsni.Services;
 
 namespace Zavrsni.ViewModels
 {
@@ -12,10 +15,13 @@ namespace Zavrsni.ViewModels
     {
         private MainWindowViewModel _mainWindowViewModel;
 
-        public LoginViewModel(MainWindowViewModel mainWindowViewModel)
+        public LoginViewModel(MainWindowViewModel mainWindowViewModel, UserService userService)
         {
             _mainWindowViewModel = mainWindowViewModel;
+            LoginCommand = new LoginCommand(this, userService);
         }
+
+        public ICommand LoginCommand { get; }
 
         [ObservableProperty]
         private string _username;
@@ -23,16 +29,21 @@ namespace Zavrsni.ViewModels
         [ObservableProperty]
         private string _password;
 
-        [RelayCommand]
-        private void Login() 
-        {
-            _mainWindowViewModel.NavigateToMain();
-        }
+        //[RelayCommand]
+        //private void Login() 
+        //{
+        //    _mainWindowViewModel.NavigateToMain();
+        //}
 
         [RelayCommand]
         private void NavigateToRegistration()
         {
             _mainWindowViewModel.NavigateToRegistration();
+        }
+
+        public void NavigateToMain()
+        {
+            _mainWindowViewModel.NavigateToMain();
         }
     }
 }

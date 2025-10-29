@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.Commands
 {
-    public class AsyncCommandBase : CommandBase
+    public abstract class AsyncCommandBase : CommandBase
     {
         private bool _isExecuting;
         public bool IsExecuting
@@ -24,9 +24,20 @@ namespace Zavrsni.Commands
             return !IsExecuting && base.CanExecute(parameter);
         }
 
-        public override void Execute(object? parameter)
+        public override async void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            IsExecuting = true;
+
+            try
+            {
+                await ExecuteAsync(parameter);
+            }
+            finally
+            {
+                IsExecuting = false;
+            }
         }
+
+        public abstract Task ExecuteAsync(object? parameter);
     }
 }

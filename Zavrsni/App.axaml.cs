@@ -9,9 +9,12 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.JavaScript;
+using Zavrsni.Authenticators;
 using Zavrsni.Data;
 using Zavrsni.DbContexts;
 using Zavrsni.Factories;
+using Zavrsni.Repositories;
+using Zavrsni.Services;
 using Zavrsni.ViewModels;
 using Zavrsni.Views;
 
@@ -39,6 +42,10 @@ public partial class App : Application
         collection.AddTransient<AccountPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
         collection.AddTransient<GroupsPageViewModel>();
+
+        collection.AddSingleton<UserService>();
+        collection.AddSingleton<UserAuthenticator>();
+        collection.AddSingleton<UserRepository>();
 
         collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
         {
