@@ -32,7 +32,7 @@ namespace Zavrsni.Commands
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Password");
+
                 }
             }
             catch (Exception ex)

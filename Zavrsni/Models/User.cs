@@ -22,6 +22,8 @@ namespace Zavrsni.Models
         public ICollection<Message> ReceivedMessages { get; set; }
         public ICollection<Member> Memberships { get; set; }
 
+        // Using different constructors for different scenarios (e.g. registration, login, etc.)
+
         public User()
         {
             
@@ -41,6 +43,13 @@ namespace Zavrsni.Models
         {
             Username = username;
             Password = password;
+        }
+
+        public User(string username, string password, string email)
+        {
+            Username = username;
+            Password = password;
+            Email = email;
         }
 
         public User(string username, string password, string email, string profilePicture, DateTime accountCreated)

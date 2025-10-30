@@ -77,6 +77,11 @@
               "version": "[8.4.0, )",
               "versionCentrallyManaged": true
             },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )",
+              "versionCentrallyManaged": true
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.10, )",
@@ -115,6 +120,7 @@
             "Avalonia.iOS": "11.3.0",
             "Avalonia.Themes.Fluent": "11.3.0",
             "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.AspNetCore.Identity": "2.3.1",
             "Microsoft.EntityFrameworkCore": "9.0.10",
             "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
             "Microsoft.EntityFrameworkCore.Tools": "9.0.10",

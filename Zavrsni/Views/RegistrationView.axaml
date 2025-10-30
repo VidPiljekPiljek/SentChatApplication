@@ -15,14 +15,14 @@
 		</Image>-->
 		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
 		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
-		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center"/>
+		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center" Text="{Binding Username}"/>
 		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Email"/>
-		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center"/>
+		<TextBox Grid.Row="6" Width="150" HorizontalAlignment="Center" Text="{Binding Email}"/>
 	    <Label Grid.Row="8" Width="150" HorizontalAlignment="Center" Content="Password"/>
-		<TextBox PasswordChar="*" Grid.Row="9" Width="150" HorizontalAlignment="Center"/>
+		<TextBox PasswordChar="*" Grid.Row="9" Width="150" HorizontalAlignment="Center" Text="{Binding Password}"/>
 
 		<StackPanel Grid.Row="10">
-			<Button Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Register" Command="{Binding RegistrateCommand}"/>
+			<Button Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Register" Command="{Binding RegistrationCommand}"/>
 			<HyperlinkButton Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="I already have an account." Command="{Binding NavigateToLoginCommand}"/>
 		</StackPanel>
 	</Grid>
