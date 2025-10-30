@@ -22,9 +22,16 @@ namespace Zavrsni.Authenticators
 
         public async Task<bool> AuthenticateUser(User wantedUser)
         {
-            var user = await _userRepository.GetUser(wantedUser);
+            var dbUser = await _userRepository.GetUserByUsername(wantedUser.Username);
 
-            return user != null;
+            if (dbUser == null)
+            {
+                return false;
+            }
+
+            bool isPasswordVerified = VerifyPassword(wantedUser, dbUser);
+
+            return isPasswordVerified;
         }
 
         public User HashPassword(User user)
@@ -32,6 +39,11 @@ namespace Zavrsni.Authenticators
             user.Password = _passwordHasher.HashPassword(user, user.Password);
 
             return user;
+        }
+
+        public bool VerifyPassword(User wantedUser, User dbUser)
+        {
+            return _passwordHasher.VerifyHashedPassword(dbUser, dbUser.Password, wantedUser.Password) == PasswordVerificationResult.Success;
         }
     }
 }
