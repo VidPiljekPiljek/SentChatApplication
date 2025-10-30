@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,13 @@ namespace Zavrsni.Commands
         {
             _viewModel = viewModel;
             _userService = userService;
+
+            _viewModel.PropertyChanged += OnViewModelPropertyChanged;
+        }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return !string.IsNullOrEmpty(_viewModel.Username) && !string.IsNullOrEmpty(_viewModel.Password) && base.CanExecute(parameter);
         }
 
         public override async Task ExecuteAsync(object? parameter)
@@ -32,12 +40,20 @@ namespace Zavrsni.Commands
                 }
                 else
                 {
-
+                    _viewModel.ErrorMessage = "User does not exist or you entered something wrong.";
                 }
             }
             catch (Exception ex)
             {
-                
+                _viewModel.ErrorMessage = $"A fatal error has occured: {ex.Message}";
+            }
+        }
+
+        private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(_viewModel.Username) || e.PropertyName == nameof(_viewModel.Password))
+            {
+                OnCanExecuteChanged();
             }
         }
     }

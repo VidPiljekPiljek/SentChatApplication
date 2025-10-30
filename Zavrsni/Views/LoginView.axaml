@@ -31,7 +31,8 @@
 		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center" Text="{Binding Password}"/>
 
 		<StackPanel Grid.Row="8">
-			<Button Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
+			<Label Classes="error" Content="{Binding ErrorMessage}" HorizontalAlignment="Center"/>
+			<Button Width="145" Height="50" Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="Login" Command="{Binding LoginCommand}"/>
 			<HyperlinkButton Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="I don't have an account." Command="{Binding NavigateToRegistrationCommand}"></HyperlinkButton>
 		</StackPanel>
 	</Grid>

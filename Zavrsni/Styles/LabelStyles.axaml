@@ -5,7 +5,7 @@
 		  <StackPanel Spacing="20">
 				<Label Content="Label 1"/>
 				<Label Content="Label 2"/>
-				<Label Content="Label 3"/>
+				<Label Classes="error" Content="Label 3"/>
 		  </StackPanel>
 	  </Border>
   </Design.PreviewWith>
@@ -15,5 +15,10 @@
 	<Style Selector=":is(Label)">
 		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
 		<Setter Property="Foreground" Value="White"/> 
+	</Style>
+
+	<Style Selector="Label.error">
+		 <Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="Foreground" Value="{DynamicResource ErrorLabelForeground}"/> 
 	</Style>
 </Styles>

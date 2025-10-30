@@ -32,6 +32,9 @@ namespace Zavrsni.ViewModels
         [ObservableProperty]
         private string _password;
 
+        [ObservableProperty]
+        private string _errorMessage = "";
+
         //[RelayCommand]
         //private void Registrate()
         //{

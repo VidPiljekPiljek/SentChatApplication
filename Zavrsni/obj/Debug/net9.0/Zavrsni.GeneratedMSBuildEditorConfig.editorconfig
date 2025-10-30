@@ -43,6 +43,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Styles/ButtonStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Styles/HyperlinkButtonStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Styles/LabelStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

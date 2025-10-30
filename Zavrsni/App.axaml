@@ -14,6 +14,7 @@
 
 		<StyleInclude Source="Styles\AppDefaultStyles.axaml"></StyleInclude>
 		<StyleInclude Source="Styles\ButtonStyles.axaml"></StyleInclude>
+		<StyleInclude Source="Styles\HyperlinkButtonStyles.axaml"></StyleInclude>
 		<StyleInclude Source="Styles\LabelStyles.axaml"></StyleInclude>
 		<StyleInclude Source="Styles\TextBoxStyles.axaml"></StyleInclude>
     </Application.Styles>
@@ -73,5 +74,12 @@
 
 	<Application.Resources>
 		<Color x:Key="DefaultTextBoxBackgroundHover">#DFF3FF</Color>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="ErrorLabelForeground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#D41111"/>
+			<GradientStop Offset="1" Color="#9C1A1A"/>
+		</LinearGradientBrush>
 	</Application.Resources>
 </Application>

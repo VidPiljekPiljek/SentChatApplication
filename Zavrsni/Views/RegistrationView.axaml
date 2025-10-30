@@ -21,8 +21,9 @@
 	    <Label Grid.Row="8" Width="150" HorizontalAlignment="Center" Content="Password"/>
 		<TextBox PasswordChar="*" Grid.Row="9" Width="150" HorizontalAlignment="Center" Text="{Binding Password}"/>
 
-		<StackPanel Grid.Row="10">
-			<Button Width="145" Height="50" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Register" Command="{Binding RegistrationCommand}"/>
+		<StackPanel Grid.Row="11">
+			<Label Classes="error" Content="{Binding ErrorMessage}" HorizontalAlignment="Center"/>
+			<Button Width="145" Height="50" Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="Register" Command="{Binding RegistrationCommand}"/>
 			<HyperlinkButton Margin="0, 15, 0, 0" HorizontalAlignment="Center" Content="I already have an account." Command="{Binding NavigateToLoginCommand}"/>
 		</StackPanel>
 	</Grid>

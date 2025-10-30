@@ -18,7 +18,8 @@ namespace Zavrsni.Commands
 
         public abstract void Execute(object? parameter);
 
-        protected void OnCanExecuteChanged() {
+        protected void OnCanExecuteChanged() 
+        {
             CanExecuteChanged?.Invoke(this, new EventArgs());
         }
     }
