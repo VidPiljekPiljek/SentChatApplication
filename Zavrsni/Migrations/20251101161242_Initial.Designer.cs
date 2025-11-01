@@ -11,7 +11,7 @@ using Zavrsni.DbContexts;
 namespace Zavrsni.Migrations
 {
     [DbContext(typeof(SentChatAppDbContext))]
-    [Migration("20251027185518_Initial")]
+    [Migration("20251101161242_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,14 +20,17 @@ namespace Zavrsni.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.10");
 
-            modelBuilder.Entity("Zavrsni.Models.Group", b =>
+            modelBuilder.Entity("Zavrsni.Models.Conversation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("GroupCreated")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsGroupChat")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -35,16 +38,16 @@ namespace Zavrsni.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Conversations");
                 });
 
-            modelBuilder.Entity("Zavrsni.Models.Member", b =>
+            modelBuilder.Entity("Zavrsni.Models.ConversationMember", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("GroupId")
+                    b.Property<int>("ConversationId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("UserId")
@@ -52,9 +55,12 @@ namespace Zavrsni.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
+                    b.HasIndex("ConversationId");
 
-                    b.ToTable("Members");
+                    b.HasIndex("UserId", "ConversationId")
+                        .IsUnique();
+
+                    b.ToTable("ConversationMembers");
                 });
 
             modelBuilder.Entity("Zavrsni.Models.Message", b =>
@@ -63,17 +69,14 @@ namespace Zavrsni.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("GroupId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("MessageSent")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("ReceiverId")
+                    b.Property<int>("ConversationId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("SenderId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("SentAt")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -81,9 +84,7 @@ namespace Zavrsni.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
-
-                    b.HasIndex("ReceiverId");
+                    b.HasIndex("ConversationId");
 
                     b.HasIndex("SenderId");
 
@@ -96,7 +97,7 @@ namespace Zavrsni.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("AccountCreated")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -117,59 +118,36 @@ namespace Zavrsni.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("Username")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccountCreated = new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "piljekvid@gmail.com",
-                            Password = "Vid123",
-                            ProfilePicture = "vidimage.jpg",
-                            Username = "Vid"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AccountCreated = new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "foobar@gmail.com",
-                            Password = "Bar",
-                            ProfilePicture = "foobarimage.jpg",
-                            Username = "Foo"
-                        });
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Zavrsni.Models.Member", b =>
+            modelBuilder.Entity("Zavrsni.Models.ConversationMember", b =>
                 {
-                    b.HasOne("Zavrsni.Models.Group", "Group")
+                    b.HasOne("Zavrsni.Models.Conversation", "Conversation")
                         .WithMany("Members")
-                        .HasForeignKey("GroupId")
+                        .HasForeignKey("ConversationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Zavrsni.Models.User", "User")
                         .WithMany("Memberships")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Group");
+                    b.Navigation("Conversation");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("Zavrsni.Models.Message", b =>
                 {
-                    b.HasOne("Zavrsni.Models.Group", "Group")
+                    b.HasOne("Zavrsni.Models.Conversation", "Conversation")
                         .WithMany("Messages")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Zavrsni.Models.User", "Receiver")
-                        .WithMany("ReceivedMessages")
-                        .HasForeignKey("ReceiverId")
+                        .HasForeignKey("ConversationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -179,14 +157,12 @@ namespace Zavrsni.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Group");
-
-                    b.Navigation("Receiver");
+                    b.Navigation("Conversation");
 
                     b.Navigation("Sender");
                 });
 
-            modelBuilder.Entity("Zavrsni.Models.Group", b =>
+            modelBuilder.Entity("Zavrsni.Models.Conversation", b =>
                 {
                     b.Navigation("Members");
 
@@ -196,8 +172,6 @@ namespace Zavrsni.Migrations
             modelBuilder.Entity("Zavrsni.Models.User", b =>
                 {
                     b.Navigation("Memberships");
-
-                    b.Navigation("ReceivedMessages");
 
                     b.Navigation("SentMessages");
                 });

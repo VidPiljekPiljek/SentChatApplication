@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace Zavrsni.Migrations
 {
     /// <inheritdoc />
@@ -14,17 +12,18 @@ namespace Zavrsni.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Groups",
+                name: "Conversations",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
-                    GroupCreated = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    IsGroupChat = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Groups", x => x.Id);
+                    table.PrimaryKey("PK_Conversations", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -37,7 +36,7 @@ namespace Zavrsni.Migrations
                     Password = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     ProfilePicture = table.Column<string>(type: "TEXT", nullable: false),
-                    AccountCreated = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,26 +44,26 @@ namespace Zavrsni.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Members",
+                name: "ConversationMembers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
-                    GroupId = table.Column<int>(type: "INTEGER", nullable: false)
+                    ConversationId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Members", x => x.Id);
+                    table.PrimaryKey("PK_ConversationMembers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Members_Groups_GroupId",
-                        column: x => x.GroupId,
-                        principalTable: "Groups",
+                        name: "FK_ConversationMembers_Conversations_ConversationId",
+                        column: x => x.ConversationId,
+                        principalTable: "Conversations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Members_Users_Id",
-                        column: x => x.Id,
+                        name: "FK_ConversationMembers_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -78,23 +77,16 @@ namespace Zavrsni.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Text = table.Column<string>(type: "TEXT", nullable: false),
                     SenderId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ReceiverId = table.Column<int>(type: "INTEGER", nullable: false),
-                    GroupId = table.Column<int>(type: "INTEGER", nullable: false),
-                    MessageSent = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    ConversationId = table.Column<int>(type: "INTEGER", nullable: false),
+                    SentAt = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Messages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Messages_Groups_GroupId",
-                        column: x => x.GroupId,
-                        principalTable: "Groups",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Messages_Users_ReceiverId",
-                        column: x => x.ReceiverId,
-                        principalTable: "Users",
+                        name: "FK_Messages_Conversations_ConversationId",
+                        column: x => x.ConversationId,
+                        principalTable: "Conversations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -105,47 +97,45 @@ namespace Zavrsni.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "AccountCreated", "Email", "Password", "ProfilePicture", "Username" },
-                values: new object[,]
-                {
-                    { 1, new DateTime(2025, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "piljekvid@gmail.com", "Vid123", "vidimage.jpg", "Vid" },
-                    { 2, new DateTime(2025, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "foobar@gmail.com", "Bar", "foobarimage.jpg", "Foo" }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_ConversationMembers_ConversationId",
+                table: "ConversationMembers",
+                column: "ConversationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Members_GroupId",
-                table: "Members",
-                column: "GroupId");
+                name: "IX_ConversationMembers_UserId_ConversationId",
+                table: "ConversationMembers",
+                columns: new[] { "UserId", "ConversationId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Messages_GroupId",
+                name: "IX_Messages_ConversationId",
                 table: "Messages",
-                column: "GroupId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Messages_ReceiverId",
-                table: "Messages",
-                column: "ReceiverId");
+                column: "ConversationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_SenderId",
                 table: "Messages",
                 column: "SenderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Members");
+                name: "ConversationMembers");
 
             migrationBuilder.DropTable(
                 name: "Messages");
 
             migrationBuilder.DropTable(
-                name: "Groups");
+                name: "Conversations");
 
             migrationBuilder.DropTable(
                 name: "Users");

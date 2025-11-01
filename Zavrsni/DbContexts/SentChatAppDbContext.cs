@@ -19,29 +19,15 @@ namespace Zavrsni.DbContexts
         {
             base.OnModelCreating(modelBuilder);
 
-            // Temporary Users for testing
-            modelBuilder.Entity<User>().HasData(
-                new User(1, "Vid", "Vid123", "piljekvid@gmail.com", "vidimage.jpg", new DateTime(2025, 10, 20))
-            );
-
-            modelBuilder.Entity<User>().HasData(
-                new User(2, "Foo", "Bar", "foobar@gmail.com", "foobarimage.jpg", new DateTime(2025, 10, 23))
-            );
-
             modelBuilder.Entity<User>()
                 .HasMany(e => e.SentMessages)
                 .WithOne(e => e.Sender)
                 .HasForeignKey(e => e.SenderId)
                 .IsRequired();
             modelBuilder.Entity<User>()
-                .HasMany(e => e.ReceivedMessages)
-                .WithOne(e => e.Receiver)
-                .HasForeignKey(e => e.ReceiverId)
-                .IsRequired();
-            modelBuilder.Entity<User>()
                 .HasMany(e => e.Memberships)
                 .WithOne(e => e.User)
-                .HasForeignKey(e => e.Id)
+                .HasForeignKey(e => e.UserId)
                 .IsRequired();
             modelBuilder.Entity<User>(b =>
             {
@@ -50,29 +36,36 @@ namespace Zavrsni.DbContexts
                     .IsRequired()
                     .ValueGeneratedOnAdd();
             });
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
 
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Conversation>()
                 .HasMany(e => e.Messages)
-                .WithOne(e => e.Group)
-                .HasForeignKey(e => e.GroupId)
+                .WithOne(e => e.Conversation)
+                .HasForeignKey(e => e.ConversationId)
                 .IsRequired();
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Conversation>()
                 .HasMany(e => e.Members)
-                .WithOne(e => e.Group)
-                .HasForeignKey(e => e.GroupId)
+                .WithOne(e => e.Conversation)
+                .HasForeignKey(e => e.ConversationId)
                 .IsRequired();
-            modelBuilder.Entity<Group>(b =>
+            modelBuilder.Entity<Conversation>(b =>
             {
                 b.HasKey(k => k.Id);
                 b.Property(x => x.Id)
                     .IsRequired()
                     .ValueGeneratedOnAdd();
             });
+
+            modelBuilder.Entity<ConversationMember>()
+                .HasIndex(cm => new { cm.UserId, cm.ConversationId })
+                 .IsUnique();
         }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
-        public DbSet<Group> Groups { get; set; }
-        public DbSet<Member> Members { get; set; }
+        public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<ConversationMember> ConversationMembers { get; set; }
     }
 }

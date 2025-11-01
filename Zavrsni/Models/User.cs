@@ -17,26 +17,25 @@ namespace Zavrsni.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string ProfilePicture { get; set; }
-        public DateTime AccountCreated { get; set; }
+        public DateTime CreatedAt { get; set; }
         public ICollection<Message> SentMessages { get; set; }
-        public ICollection<Message> ReceivedMessages { get; set; }
-        public ICollection<Member> Memberships { get; set; }
+        public ICollection<ConversationMember> Memberships { get; set; }
 
         // Using different constructors for different scenarios (e.g. registration, login, etc.)
 
         public User()
         {
-            
+
         }
 
-        public User(int id, string username, string password, string email, string profilePicture, DateTime accountCreated)
+        public User(int id, string username, string password, string email, string profilePicture, DateTime createdAt)
         {
             Id = id;
             Username = username;
             Password = password;
             Email = email;
             ProfilePicture = profilePicture;
-            AccountCreated = accountCreated;
+            CreatedAt = createdAt;
         }
 
         public User(string username, string password)
@@ -52,13 +51,13 @@ namespace Zavrsni.Models
             Email = email;
         }
 
-        public User(string username, string password, string email, string profilePicture, DateTime accountCreated)
+        public User(string username, string password, string email, string profilePicture, DateTime createdAt)
         {
             Username = username;
             Password = password;
             Email = email;
             ProfilePicture = profilePicture;
-            AccountCreated = accountCreated;
+            CreatedAt = createdAt;
         }
     }
 }

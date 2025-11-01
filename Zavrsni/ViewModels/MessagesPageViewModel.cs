@@ -26,7 +26,7 @@ namespace Zavrsni.ViewModels
                 Id = 2,
                 Text = "Hello",
                 SenderId = 1,
-                ReceiverId = 2
+                ConversationId = 2
             });
 
             for (int i = 0; i < 15; i++)
@@ -36,7 +36,7 @@ namespace Zavrsni.ViewModels
                     Id = 3,
                     Text = "Yay!",
                     SenderId = 1,
-                    ReceiverId = 2
+                    ConversationId = 2
                 });
             }
         }

@@ -40,7 +40,7 @@ namespace Zavrsni.Commands
                 }
                 else
                 {
-                    _viewModel.ErrorMessage = "User does not exist or you entered something wrong.";
+                    _viewModel.ErrorMessage = "You entered something wrong.";
                 }
             }
             catch (Exception ex)

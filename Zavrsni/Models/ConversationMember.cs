@@ -5,23 +5,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zavrsni.Views;
 
 namespace Zavrsni.Models
 {
-    public class Group
+    public class ConversationMember
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime GroupCreated { get; set; }
-        public ICollection<Member> Members { get; set; }
-        public ICollection<Message> Messages { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+        public int ConversationId { get; set; }
+        public Conversation Conversation { get; set; }
 
-        public Group()
+        public ConversationMember()
         {
-            
+
         }
     }
 }
