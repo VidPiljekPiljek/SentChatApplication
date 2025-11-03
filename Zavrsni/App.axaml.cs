@@ -15,6 +15,7 @@ using Zavrsni.DbContexts;
 using Zavrsni.Factories;
 using Zavrsni.Repositories;
 using Zavrsni.Services;
+using Zavrsni.Stores;
 using Zavrsni.ViewModels;
 using Zavrsni.Views;
 
@@ -44,6 +45,7 @@ public partial class App : Application
         collection.AddTransient<GroupsPageViewModel>();
 
         collection.AddSingleton<UserService>();
+        collection.AddSingleton<UserStore>();
         collection.AddSingleton<UserAuthenticator>();
         collection.AddSingleton<UserRepository>();
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zavrsni.Desktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10f320f696e0977e5618c9c7aa9c5153edba4905")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a872e05ee5f95920b02463d25fed28ee4cac34e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zavrsni.Desktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zavrsni.Desktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
