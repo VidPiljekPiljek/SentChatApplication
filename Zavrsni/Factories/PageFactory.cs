@@ -21,6 +21,17 @@ namespace Zavrsni.Factories
         //}
 
         // Using this way of creating page viewmodels because of DI
-        public PageViewModel GetPageViewModel(ApplicationPageNames pageName) => factory(pageName);
+        public PageViewModel GetPageViewModel(ApplicationPageNames pageName) 
+        {
+            var viewModel = factory(pageName);
+            if (viewModel.IsLoaded == false)
+            {
+                if (viewModel.LoadViewModel())
+                {
+                    return viewModel;
+                }
+            }
+            return viewModel;
+        }
     }
 }

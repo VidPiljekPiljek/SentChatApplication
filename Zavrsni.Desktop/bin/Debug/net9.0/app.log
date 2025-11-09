@@ -49,3 +49,7 @@
 [30/10/2025 22:13:56] SQLite Error 1: 'table "Groups" already exists'.
 [30/10/2025 22:25:13] SQLite Error 1: 'table "Groups" already exists'.
 [31/10/2025 19:04:22] SQLite Error 1: 'table "Groups" already exists'.
+[06/11/2025 19:29:07] SQLite Error 5: 'database is locked'.
+[06/11/2025 20:52:40] SQLite Error 5: 'database is locked'.
+[06/11/2025 20:53:42] SQLite Error 5: 'database is locked'.
+[06/11/2025 20:54:57] SQLite Error 5: 'database is locked'.

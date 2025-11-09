@@ -49,6 +49,10 @@ public partial class App : Application
         collection.AddSingleton<UserAuthenticator>();
         collection.AddSingleton<UserRepository>();
 
+        collection.AddSingleton<ConversationService>();
+        collection.AddSingleton<ConversationStore>();
+        collection.AddSingleton<ConversationRepository>();
+
         collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
         {
             ApplicationPageNames.Home => x.GetRequiredService<HomePageViewModel>(),

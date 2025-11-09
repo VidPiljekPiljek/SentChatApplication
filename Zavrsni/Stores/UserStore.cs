@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Models;
+using Zavrsni.ViewModels;
 
 namespace Zavrsni.Stores
 {
     public class UserStore
     {
-        private User _currentUser;
+        private UserViewModel _currentUser;
 
-        public User? CurrentUser
+        public UserViewModel? CurrentUser
         {
             get 
             {

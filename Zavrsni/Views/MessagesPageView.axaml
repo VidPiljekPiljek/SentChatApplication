@@ -8,30 +8,49 @@
 			 x:DataType="vm:MessagesPageViewModel"
              x:Class="Zavrsni.Views.MessagesPageView">
 	<Border>
-		<Grid RowDefinitions="auto, *, 100">
-			<Border Grid.Row="0" VerticalAlignment="Top" Height="80" Background="{DynamicResource MessagesTopBackground}" Padding="20">
-				<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
-					<Label FontSize="16" Content="{Binding SelectedUser.ProfilePicture}"/>
-					<Label FontSize="16" Content="{Binding SelectedUser.Username}"/>
-				</StackPanel>
+		<Grid ColumnDefinitions="auto, *">
+			<Border Grid.Column="0" Padding="20">
+				<Border.Styles>
+					<Style Selector="Border">
+						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
+					</Style>
+				</Border.Styles>
+				<ScrollViewer HorizontalAlignment="Stretch">
+					<ItemsControl ItemsSource="{Binding UserConversations}">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Button Content="{Binding Name}" Width="125"/>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+				</ScrollViewer>
 			</Border>
+
+			<Grid Grid.Column="1" RowDefinitions="auto, *, 100">
+
+				<Border Grid.Row="0" VerticalAlignment="Top" Height="80" Background="{DynamicResource MessagesTopBackground}" Padding="20">
+					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
+						<Label FontSize="16"/>
+						<Label FontSize="16"/>
+					</StackPanel>
+				</Border>
 			
-			<ScrollViewer Grid.Row="1">
-				<ItemsControl ItemsSource="{Binding Messages}">
-					<ItemsControl.ItemTemplate>
-						<DataTemplate>
-							<Border
-									Margin="10" Padding="10" CornerRadius="10">
-								<TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
-							</Border>
-						</DataTemplate>
-					</ItemsControl.ItemTemplate>
-				</ItemsControl>
-			</ScrollViewer>
+				<ScrollViewer Grid.Row="1">
+					<ItemsControl ItemsSource="{Binding Messages}">
+						<ItemsControl.ItemTemplate>
+							<DataTemplate>
+								<Border Margin="10" Padding="10" CornerRadius="10">
+									<TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
+								</Border>
+							</DataTemplate>
+						</ItemsControl.ItemTemplate>
+					</ItemsControl>
+				</ScrollViewer>
 			
-			<ContentControl Grid.Row="2">
-				<views:ChatInputBox/>
-			</ContentControl>
+				<ContentControl Grid.Row="2">
+					<views:ChatInputBox/>
+				</ContentControl>
+			</Grid>
 		</Grid>
 		
 	</Border>

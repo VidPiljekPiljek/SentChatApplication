@@ -38,6 +38,13 @@
 	</Application.Resources>
 
 	<Application.Resources>
+		<LinearGradientBrush x:Key="ConversationListBarBackground" StartPoint="0%, 0%" EndPoint="0%, 100%">
+			<GradientStop Offset="0" Color="#131F59"/>
+			<GradientStop Offset="1" Color="#2942BF"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
 		<LinearGradientBrush x:Key="MessagesTopBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#131F59"/>
 			<GradientStop Offset="1" Color="#2942BF"/>

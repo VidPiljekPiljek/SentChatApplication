@@ -1,24 +1,34 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Data;
 using Zavrsni.Models;
+using Zavrsni.Services;
 
 namespace Zavrsni.ViewModels
 {
     public partial class MessagesPageViewModel : PageViewModel
     {
+        private readonly ConversationService _conversationService;
+
         [ObservableProperty]
         private User _selectedUser;
 
         [ObservableProperty]
         private List<Message> _messages = new List<Message>();
 
-        public MessagesPageViewModel() : base(ApplicationPageNames.Messages)
+        [ObservableProperty]
+        private ObservableCollection<Conversation> _userConversations = new ObservableCollection<Conversation>();
+
+        public MessagesPageViewModel(ConversationService conversationService) : base(ApplicationPageNames.Messages)
         {
+            _conversationService = conversationService;
+
+            IsLoaded = false;
             _selectedUser = new User { Id = 1, Username = "David Košanski", Password = "blabla", ProfilePicture = "David" };
 
             _messages.Add(new Message
@@ -39,6 +49,13 @@ namespace Zavrsni.ViewModels
                     ConversationId = 2
                 });
             }
+        }
+
+        public override bool LoadViewModel()
+        {
+            UserConversations = _conversationService.GetUserConversations();
+            IsLoaded = true;
+            return true;
         }
     }
 }

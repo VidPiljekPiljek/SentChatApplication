@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
@@ -36,7 +37,8 @@ namespace Zavrsni.Authenticators
 
             if (isPasswordVerified)
             {
-                _userStore.CurrentUser = dbUser;
+                // Using UserMapper for security purposes
+                _userStore.CurrentUser = UserMapper.ToUserViewModel(dbUser);
             }
 
             return isPasswordVerified;
