@@ -39,7 +39,7 @@ public partial class App : Application
         collection.AddTransient<LoginViewModel>();
         collection.AddTransient<RegistrationViewModel>();
         collection.AddTransient<HomePageViewModel>();
-        collection.AddTransient<MessagesPageViewModel>();
+        collection.AddSingleton<MessagesPageViewModel>();
         collection.AddTransient<AccountPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
         collection.AddTransient<GroupsPageViewModel>();
