@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 using Zavrsni.Data;
 using Zavrsni.Models;
 using Zavrsni.Services;
+using Zavrsni.ViewModels.MessagesPageViewModels;
 
 namespace Zavrsni.ViewModels
 {
     public partial class MessagesPageViewModel : PageViewModel
     {
         private readonly ConversationService _conversationService;
+
+        [ObservableProperty]
+        private MessagesViewModel _messagesViewModel;
+
+        [ObservableProperty]
+        private ConversationSidebarViewModel _conversationSidebarViewModel;
 
         [ObservableProperty]
         private User _selectedUser;

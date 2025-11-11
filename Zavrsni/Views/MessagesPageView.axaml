@@ -2,55 +2,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:messagespageviews="using:Zavrsni.Views.MessagesPageViews"
 			 xmlns:vm="clr-namespace:Zavrsni.ViewModels"
 			 xmlns:views="clr-namespace:Zavrsni.Views"
              mc:Ignorable="d" d:DesignWidth="1115" d:DesignHeight="720"
 			 x:DataType="vm:MessagesPageViewModel"
              x:Class="Zavrsni.Views.MessagesPageView">
 	<Border>
-		<Grid ColumnDefinitions="auto, *">
-			<Border Grid.Column="0" Padding="20">
-				<Border.Styles>
-					<Style Selector="Border">
-						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
-					</Style>
-				</Border.Styles>
-				<ScrollViewer HorizontalAlignment="Stretch">
-					<ItemsControl ItemsSource="{Binding UserConversations}">
-						<ItemsControl.ItemTemplate>
-							<DataTemplate>
-								<Button Content="{Binding Name}" Width="125"/>
-							</DataTemplate>
-						</ItemsControl.ItemTemplate>
-					</ItemsControl>
-				</ScrollViewer>
-			</Border>
-
-			<Grid Grid.Column="1" RowDefinitions="auto, *, 100">
-
-				<Border Grid.Row="0" VerticalAlignment="Top" Height="80" Background="{DynamicResource MessagesTopBackground}" Padding="20">
-					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
-						<Label FontSize="16"/>
-						<Label FontSize="16"/>
-					</StackPanel>
-				</Border>
-			
-				<ScrollViewer Grid.Row="1">
-					<ItemsControl ItemsSource="{Binding Messages}">
-						<ItemsControl.ItemTemplate>
-							<DataTemplate>
-								<Border Margin="10" Padding="10" CornerRadius="10">
-									<TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
-								</Border>
-							</DataTemplate>
-						</ItemsControl.ItemTemplate>
-					</ItemsControl>
-				</ScrollViewer>
-			
-				<ContentControl Grid.Row="2">
-					<views:ChatInputBox/>
-				</ContentControl>
-			</Grid>
+		<Grid ColumnDefinitions="auto, auto">
+			<messagespageviews:ConversationSidebarView Grid.Column="0"></messagespageviews:ConversationSidebarView>
+			<messagespageviews:MessagesView Grid.Column="1"></messagespageviews:MessagesView>
 		</Grid>
 		
 	</Border>

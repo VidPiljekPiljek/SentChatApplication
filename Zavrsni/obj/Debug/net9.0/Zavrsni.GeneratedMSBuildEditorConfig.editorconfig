@@ -76,6 +76,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesPageViews/ConversationSidebarView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesPageViews/MessagesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/RegistrationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
