@@ -17,6 +17,7 @@ using Zavrsni.Repositories;
 using Zavrsni.Services;
 using Zavrsni.Stores;
 using Zavrsni.ViewModels;
+using Zavrsni.ViewModels.MessagesPageViewModels;
 using Zavrsni.Views;
 
 namespace Zavrsni;
@@ -39,10 +40,13 @@ public partial class App : Application
         collection.AddTransient<LoginViewModel>();
         collection.AddTransient<RegistrationViewModel>();
         collection.AddTransient<HomePageViewModel>();
-        collection.AddSingleton<MessagesPageViewModel>();
+        collection.AddTransient<MessagesPageViewModel>();
         collection.AddTransient<AccountPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
         collection.AddTransient<GroupsPageViewModel>();
+
+        collection.AddTransient<ConversationSidebarViewModel>();
+        collection.AddTransient<MessagesViewModel>();
 
         collection.AddSingleton<UserService>();
         collection.AddSingleton<UserStore>();

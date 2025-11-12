@@ -9,9 +9,9 @@
 			 x:DataType="vm:MessagesPageViewModel"
              x:Class="Zavrsni.Views.MessagesPageView">
 	<Border>
-		<Grid ColumnDefinitions="auto, auto">
-			<messagespageviews:ConversationSidebarView Grid.Column="0"></messagespageviews:ConversationSidebarView>
-			<messagespageviews:MessagesView Grid.Column="1"></messagespageviews:MessagesView>
+		<Grid ColumnDefinitions="auto, *">
+			<messagespageviews:ConversationSidebarView Grid.Column="0" DataContext="{Binding ConversationSidebarViewModel}"></messagespageviews:ConversationSidebarView>
+			<messagespageviews:MessagesView Grid.Column="1" DataContext="{Binding MessagesViewModel}"></messagespageviews:MessagesView>
 		</Grid>
 		
 	</Border>
