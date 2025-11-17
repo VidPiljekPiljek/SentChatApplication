@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,11 +19,25 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         [ObservableProperty]
         private ObservableCollection<Conversation> _userConversations = new ObservableCollection<Conversation>();
 
+        [ObservableProperty]
+        private Conversation _selectedConversation;
+
         public ConversationSidebarViewModel(ConversationService conversationService) 
         {
             _conversationService = conversationService;
 
             UserConversations = _conversationService.GetUserConversations();
+
+            _selectedConversation = UserConversations.ElementAt(0);
+        }
+
+        [RelayCommand]
+        public void ChangeConversation(Conversation conversation)
+        {
+            if (conversation != null)
+            {
+                SelectedConversation = conversation;
+            }
         }
     }
 }

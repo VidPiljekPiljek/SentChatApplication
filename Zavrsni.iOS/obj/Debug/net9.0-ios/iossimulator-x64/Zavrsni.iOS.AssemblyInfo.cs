@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zavrsni.iOS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7779b34742f76e5ef9a835185e77104230ea018d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b14f914a4fdc2f058adde69a27c4d8509611cc2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zavrsni.iOS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zavrsni.iOS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

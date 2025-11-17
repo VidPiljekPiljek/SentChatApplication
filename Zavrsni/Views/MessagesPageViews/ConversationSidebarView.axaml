@@ -6,7 +6,9 @@
 			 xmlns:views="clr-namespace:Zavrsni.Views"
              mc:Ignorable="d" d:DesignWidth="165" d:DesignHeight="720"
              x:Class="Zavrsni.Views.MessagesPageViews.ConversationSidebarView"
-			 x:DataType="vm:ConversationSidebarViewModel">
+			 x:DataType="vm:ConversationSidebarViewModel"
+			 x:Name="SidebarViewRoot">
+
       <Border Padding="20">
 				<Border.Styles>
 					<Style Selector="Border">
@@ -17,7 +19,10 @@
 					<ItemsControl ItemsSource="{Binding UserConversations}">
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
-								<Button Content="{Binding Name}" Width="125"/>
+								<!-- TODO: Fix Binding -->
+								<Button Content="{Binding Name}"
+				Command="{Binding , ElementName=SidebarViewRoot}" 
+        CommandParameter="{Binding}" Width="125"/>
 							</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>
