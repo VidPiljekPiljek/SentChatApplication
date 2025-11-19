@@ -19,10 +19,9 @@
 					<ItemsControl ItemsSource="{Binding UserConversations}">
 						<ItemsControl.ItemTemplate>
 							<DataTemplate>
-								<!-- TODO: Fix Binding -->
 								<Button Content="{Binding Name}"
-				Command="{Binding , ElementName=SidebarViewRoot}" 
-        CommandParameter="{Binding}" Width="125"/>
+										Command="{Binding $parent[ItemsControl].((vm:ConversationSidebarViewModel)DataContext).ChangeConversationCommand}" 
+										CommandParameter="{Binding}" Width="125"/>
 							</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>

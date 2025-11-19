@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mX9Xb9mdXxM=",
+  "dgSpecHash": "/FqejTJE6ZM=",
   "success": true,
   "projectFilePath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Android\\Zavrsni.Android.csproj",
   "expectedPackageFiles": [
@@ -73,7 +73,7 @@
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.10\\microsoft.extensions.primitives.9.0.10.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.extensions.webencoders\\8.0.11\\microsoft.extensions.webencoders.8.0.11.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.http.headers\\2.3.0\\microsoft.net.http.headers.2.3.0.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.10\\microsoft.net.illink.tasks.9.0.10.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.11\\microsoft.net.illink.tasks.9.0.11.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
@@ -154,7 +154,10 @@
     "C:\\Users\\pilje\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk7\\1.9.10.2\\xamarin.kotlin.stdlib.jdk7.1.9.10.2.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.9.10.2\\xamarin.kotlin.stdlib.jdk8.1.9.10.2.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.7.3.2\\xamarin.kotlinx.coroutines.android.1.7.3.2.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.7.3.2\\xamarin.kotlinx.coroutines.core.jvm.1.7.3.2.nupkg.sha512"
+    "C:\\Users\\pilje\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.7.3.2\\xamarin.kotlinx.coroutines.core.jvm.1.7.3.2.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.android.runtime.35.android-arm64\\35.0.105\\microsoft.android.runtime.35.android-arm64.35.0.105.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.android.runtime.35.android-x64\\35.0.105\\microsoft.android.runtime.35.android-x64.35.0.105.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.android.ref.35\\35.0.105\\microsoft.android.ref.35.35.0.105.nupkg.sha512"
   ],
   "logs": []
 }

@@ -25,16 +25,18 @@ namespace Zavrsni.ViewModels
         {
             _messagesViewModel = new MessagesViewModel(messageService);
             _conversationSidebarViewModel = new ConversationSidebarViewModel(conversationService);
+
+            ConversationSidebarViewModel.PropertyChanged += OnConversationChanged;
         }
 
         private void OnConversationChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(ConversationSidebarViewModel.SelectedConversation))
             {
-                var selectedConversation = _conversationSidebarViewModel.SelectedConversation;
+                var selectedConversation = ConversationSidebarViewModel.SelectedConversation;
                 if (selectedConversation != null)
                 {
-                    _messagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
+                    MessagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
                 }
             }
         }
