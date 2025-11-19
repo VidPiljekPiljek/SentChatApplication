@@ -18,10 +18,10 @@ namespace Zavrsni.ViewModels
         [ObservableProperty]
         private ViewModelBase _currentView;
 
-        public MainWindowViewModel(ViewFactory viewFactory, UserService userService, ConversationService conversationService)
+        public MainWindowViewModel(ViewFactory viewFactory, UserService userService, ConversationService conversationService, MessageService messageService)
         {
             _viewFactory = viewFactory;
-            _currentView = new LoginViewModel(this, userService, conversationService);
+            _currentView = new LoginViewModel(this, userService, conversationService, messageService);
         }
 
         public void NavigateToMain() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Main);

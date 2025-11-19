@@ -19,16 +19,24 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         [ObservableProperty]
         private ObservableCollection<Conversation> _userConversations = new ObservableCollection<Conversation>();
 
-        [ObservableProperty]
+        // Writing field and property this way allows for the PropertyChanged event to fire easily, fixing the problem of the MessagesPageViewModel method not firing
         private Conversation _selectedConversation;
+        public Conversation SelectedConversation
+        {
+            get { return _selectedConversation; 
+            }
+            set
+            {
+                _selectedConversation = value;
+                OnPropertyChanged(nameof(SelectedConversation));
+            }
+        }
 
         public ConversationSidebarViewModel(ConversationService conversationService) 
         {
             _conversationService = conversationService;
 
             UserConversations = _conversationService.GetUserConversations();
-
-            _selectedConversation = UserConversations.ElementAt(0);
         }
 
         [RelayCommand]

@@ -21,7 +21,8 @@
 							<DataTemplate>
 								<Button Content="{Binding Name}"
 										Command="{Binding $parent[ItemsControl].((vm:ConversationSidebarViewModel)DataContext).ChangeConversationCommand}" 
-										CommandParameter="{Binding}" Width="125"/>
+										CommandParameter="{Binding}" Width="125"
+										Margin="0 0 0 15"/>
 							</DataTemplate>
 						</ItemsControl.ItemTemplate>
 					</ItemsControl>

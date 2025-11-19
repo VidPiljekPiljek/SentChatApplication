@@ -21,10 +21,10 @@ namespace Zavrsni.ViewModels
         [ObservableProperty]
         private ConversationSidebarViewModel _conversationSidebarViewModel;
 
-        public MessagesPageViewModel(ConversationService conversationService, MessageService messageService) : base(ApplicationPageNames.Messages)
+        public MessagesPageViewModel(ConversationService conversationService, MessageService messageService, ConversationSidebarViewModel conversationSidebarViewModel, MessagesViewModel messagesViewModel) : base(ApplicationPageNames.Messages)
         {
-            _messagesViewModel = new MessagesViewModel(messageService);
-            _conversationSidebarViewModel = new ConversationSidebarViewModel(conversationService);
+            _messagesViewModel = messagesViewModel;
+            _conversationSidebarViewModel = conversationSidebarViewModel;
 
             ConversationSidebarViewModel.PropertyChanged += OnConversationChanged;
         }

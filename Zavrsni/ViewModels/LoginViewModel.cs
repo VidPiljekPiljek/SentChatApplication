@@ -15,10 +15,10 @@ namespace Zavrsni.ViewModels
     {
         private MainWindowViewModel _mainWindowViewModel;
 
-        public LoginViewModel(MainWindowViewModel mainWindowViewModel, UserService userService, ConversationService conversationService)
+        public LoginViewModel(MainWindowViewModel mainWindowViewModel, UserService userService, ConversationService conversationService, MessageService messageService)
         {
             _mainWindowViewModel = mainWindowViewModel;
-            LoginCommand = new LoginCommand(this, userService, conversationService);
+            LoginCommand = new LoginCommand(this, userService, conversationService, messageService);
         }
 
         public ICommand LoginCommand { get; }

@@ -16,12 +16,14 @@ namespace Zavrsni.Commands
         private readonly LoginViewModel _viewModel;
         private readonly UserService _userService;
         private readonly ConversationService _conversationService;
+        private readonly MessageService _messageService;
 
-        public LoginCommand(LoginViewModel viewModel, UserService userService, ConversationService conversationService)
+        public LoginCommand(LoginViewModel viewModel, UserService userService, ConversationService conversationService, MessageService messageService)
         {
             _viewModel = viewModel;
             _userService = userService;
             _conversationService = conversationService;
+            _messageService = messageService;
 
             _viewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
@@ -38,7 +40,7 @@ namespace Zavrsni.Commands
                 User wantedUser = new User(_viewModel.Username, _viewModel.Password);
                 if (await _userService.Login(wantedUser))
                 {
-                    if (await _conversationService.LoadUserConversations())
+                    if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
                     {
                         _viewModel.NavigateToMain();
                     }
