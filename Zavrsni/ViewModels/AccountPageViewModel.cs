@@ -11,8 +11,6 @@ namespace Zavrsni.ViewModels
 {
     public partial class AccountPageViewModel : PageViewModel
     {
-        
-
         public AccountPageViewModel() : base(ApplicationPageNames.Account)
         {
             

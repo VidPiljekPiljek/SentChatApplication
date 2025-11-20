@@ -39,5 +39,11 @@ namespace Zavrsni.Stores
         {
             return new ObservableCollection<Message>(UserMessages.Where(m => m.ConversationId == conversationId));
         }
+
+        public bool AddMessage(Message message)
+        {
+            UserMessages.Add(message);
+            return true;
+        }
     }
 }

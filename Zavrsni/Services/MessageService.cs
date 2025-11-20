@@ -34,5 +34,17 @@ namespace Zavrsni.Services
         {
             return _messageStore.GetMessagesForConversation(conversationId);
         }
+
+        public async Task<bool> SendMessage(Message message)
+        {
+            if (await _messageRepository.AddMessage(message))
+            {
+                return _messageStore.AddMessage(message);
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

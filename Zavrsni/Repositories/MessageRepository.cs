@@ -34,5 +34,22 @@ namespace Zavrsni.Repositories
                 return messages;
             }
         }
+
+        public async Task<bool> AddMessage(Message message)
+        {
+            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                try
+                {
+                    await dbContext.Messages.AddAsync(message);
+                    await dbContext.SaveChangesAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
