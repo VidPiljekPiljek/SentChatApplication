@@ -17,6 +17,9 @@ namespace Zavrsni.Stores
             set { _userConversations = value; }
         }
 
+        // For easier Message creation in ChatInputBoxViewModel for now
+        public Conversation SelectedConversation { get; set; }
+
         public ConversationStore()
         {
             _userConversations = new ObservableCollection<Conversation>();
@@ -31,6 +34,17 @@ namespace Zavrsni.Stores
         public ObservableCollection<Conversation> GetUserConversations()
         {
             return _userConversations;
+        }
+
+        public bool SetSelectedConversation(Conversation conversation)
+        {
+            SelectedConversation = conversation;
+            return true;
+        }
+
+        public int GetSelectedConversationId()
+        {
+            return SelectedConversation.Id;
         }
     }
 }

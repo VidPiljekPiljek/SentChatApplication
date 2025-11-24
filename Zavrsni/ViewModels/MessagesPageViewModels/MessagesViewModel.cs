@@ -16,11 +16,16 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         private readonly MessageService _messageService;
 
         [ObservableProperty]
+        private ChatInputBoxViewModel _chatInputBoxViewModel;
+
+        [ObservableProperty]
         private List<Message> _messages = new List<Message>();
 
-        public MessagesViewModel(MessageService messageService)
+        public MessagesViewModel(MessageService messageService, ConversationService conversationService, UserService userService)
         {
             _messageService = messageService;
+
+            _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService);
         }
 
         public void LoadMessagesForConversation(int conversationId)

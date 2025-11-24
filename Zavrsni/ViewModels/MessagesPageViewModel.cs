@@ -15,6 +15,8 @@ namespace Zavrsni.ViewModels
 {
     public partial class MessagesPageViewModel : PageViewModel
     {
+        private readonly ConversationService _conversationService;
+
         [ObservableProperty]
         private MessagesViewModel _messagesViewModel;
 
@@ -23,6 +25,8 @@ namespace Zavrsni.ViewModels
 
         public MessagesPageViewModel(ConversationService conversationService, MessageService messageService, ConversationSidebarViewModel conversationSidebarViewModel, MessagesViewModel messagesViewModel) : base(ApplicationPageNames.Messages)
         {
+            _conversationService = conversationService;
+
             _messagesViewModel = messagesViewModel;
             _conversationSidebarViewModel = conversationSidebarViewModel;
 
@@ -37,6 +41,7 @@ namespace Zavrsni.ViewModels
                 if (selectedConversation != null)
                 {
                     MessagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
+                    _conversationService.SelectConversation(selectedConversation);
                 }
             }
         }

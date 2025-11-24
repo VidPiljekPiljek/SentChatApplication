@@ -34,5 +34,15 @@ namespace Zavrsni.Services
         {
             return _conversationStore.GetUserConversations();
         }
+
+        public bool SelectConversation(Conversation conversation)
+        {
+            return _conversationStore.SetSelectedConversation(conversation);
+        }
+
+        public int GetSelectedConversationId()
+        {
+            return _conversationStore.GetSelectedConversationId();
+        }
     }
 }

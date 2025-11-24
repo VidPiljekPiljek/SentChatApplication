@@ -28,5 +28,10 @@ namespace Zavrsni.Stores
         {
 
         }
+
+        public int GetCurrentUserId()
+        {
+            return CurrentUser.Id;
+        }
     }
 }

@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 using Zavrsni.Authenticators;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
+using Zavrsni.Stores;
 
 namespace Zavrsni.Services
 {
     public class UserService
     {
         private readonly UserAuthenticator _userAuthenticator;
+        private readonly UserStore _userStore;
         private readonly UserRepository _userRepository;
 
-        public UserService(UserAuthenticator userAuthenticator, UserRepository userRepository)
+        public UserService(UserAuthenticator userAuthenticator, UserStore userStore, UserRepository userRepository)
         {
             _userAuthenticator = userAuthenticator;
+            _userStore = userStore;
             _userRepository = userRepository;
         }
 
@@ -35,6 +38,11 @@ namespace Zavrsni.Services
             }
 
             return await _userRepository.AddUser(newUser);
+        }
+
+        public int GetCurrentUserId()
+        {
+            return _userStore.GetCurrentUserId();
         }
     }
 }

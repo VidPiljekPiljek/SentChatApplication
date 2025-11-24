@@ -24,5 +24,13 @@ namespace Zavrsni.Models
         {
 
         }
+
+        public Message(string text, int senderId, int conversationId, DateTime sentAt)
+        {
+            Text = text;
+            SenderId = senderId;
+            ConversationId = conversationId;
+            SentAt = sentAt;
+        }
     }
 }

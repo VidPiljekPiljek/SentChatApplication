@@ -63,6 +63,7 @@ public partial class App : Application
 
         collection.AddSingleton<ConversationSidebarViewModel>();
         collection.AddSingleton<MessagesViewModel>();
+        collection.AddTransient<ChatInputBoxViewModel>();
 
         collection.AddSingleton<Func<ApplicationPageNames, PageViewModel>>(x => name => name switch
         {

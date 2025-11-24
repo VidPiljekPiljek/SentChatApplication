@@ -30,7 +30,7 @@
 				</ScrollViewer>
 			
 				<ContentControl Grid.Row="2">
-					<views:ChatInputBox/>
+					<views:ChatInputBox DataContext="{Binding ChatInputBoxViewModel}"/>
 				</ContentControl>
 		</Grid>
   </Border>
