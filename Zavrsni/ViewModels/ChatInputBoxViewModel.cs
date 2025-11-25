@@ -9,6 +9,7 @@ using System.Windows.Input;
 using Zavrsni.Commands;
 using Zavrsni.Models;
 using Zavrsni.Services;
+using Zavrsni.ViewModels.MessagesPageViewModels;
 
 namespace Zavrsni.ViewModels
 {
@@ -33,12 +34,12 @@ namespace Zavrsni.ViewModels
 
         public ICommand SendMessageCommand;
 
-        public ChatInputBoxViewModel(ConversationService conversationService, UserService userService, MessageService messageService)
+        public ChatInputBoxViewModel(ConversationService conversationService, UserService userService, MessageService messageService, MessagesViewModel messagesViewModel)
         {
             _conversationService = conversationService;
             _userService = userService;
 
-            SendMessageCommand = new SendMessageCommand(this, messageService);
+            SendMessageCommand = new SendMessageCommand(this, messagesViewModel, messageService);
         }
 
         [RelayCommand(CanExecute = nameof(CanSendMessage))]
