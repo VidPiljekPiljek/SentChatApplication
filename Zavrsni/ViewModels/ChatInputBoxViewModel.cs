@@ -18,10 +18,18 @@ namespace Zavrsni.ViewModels
         private readonly UserService _userService;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(CanSendMessage))]
         private string _text;
+
+        partial void OnTextChanged(string value)
+        {
+            SendMessageParameterCommand.NotifyCanExecuteChanged();
+        }
 
         [ObservableProperty]
         private Message _message;
+
+        public bool CanSendMessage => !string.IsNullOrEmpty(Text);
 
         public ICommand SendMessageCommand;
 
@@ -33,7 +41,7 @@ namespace Zavrsni.ViewModels
             SendMessageCommand = new SendMessageCommand(this, messageService);
         }
 
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanSendMessage))]
         private void SendMessageParameter()
         {
             Message = new Message(Text, _userService.GetCurrentUserId(), _conversationService.GetSelectedConversationId(), DateTime.Now);
