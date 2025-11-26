@@ -32,7 +32,7 @@ namespace Zavrsni.Commands
 
                 _messagesViewModel.AddMessage(message);
 
-                if (await _messageService.SendMessage(message))
+                if (await _messageService.SendMessageAsync(message))
                 {
                     _chatInputBoxViewModel.Text = "Sent!";
                 }

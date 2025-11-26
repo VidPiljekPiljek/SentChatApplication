@@ -20,7 +20,7 @@ namespace Zavrsni.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<List<Message>> GetUserMessages(ObservableCollection<Conversation> userConversations)
+        public async Task<List<Message>> GetUserMessagesAsync(ObservableCollection<Conversation> userConversations)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -35,7 +35,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<bool> AddMessage(Message message)
+        public async Task<bool> CreateMessageAsync(Message message)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {

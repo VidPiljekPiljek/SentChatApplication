@@ -26,7 +26,7 @@ namespace Zavrsni.Services
         public async Task<bool> LoadUserMessages()
         {
             ObservableCollection<Conversation> userConversations = _conversationService.GetUserConversations();
-            List<Message> dbUserMessages = await _messageRepository.GetUserMessages(userConversations);
+            List<Message> dbUserMessages = await _messageRepository.GetUserMessagesAsync(userConversations);
             return await _messageStore.SetUserMessages(dbUserMessages);
         }
 
@@ -35,9 +35,9 @@ namespace Zavrsni.Services
             return _messageStore.GetMessagesForConversation(conversationId);
         }
 
-        public async Task<bool> SendMessage(Message message)
+        public async Task<bool> SendMessageAsync(Message message)
         {
-            if (await _messageRepository.AddMessage(message))
+            if (await _messageRepository.CreateMessageAsync(message))
             {
                 return _messageStore.AddMessage(message);
             }
