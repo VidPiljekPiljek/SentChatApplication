@@ -12,8 +12,7 @@
 
 				<Border Grid.Row="0" VerticalAlignment="Top" Height="80" Background="{DynamicResource MessagesTopBackground}" Padding="20">
 					<StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
-						<Label FontSize="16"/>
-						<Label FontSize="16"/>
+						<Label FontSize="16" Content="{Binding ConversationName}"/>
 					</StackPanel>
 				</Border>
 			

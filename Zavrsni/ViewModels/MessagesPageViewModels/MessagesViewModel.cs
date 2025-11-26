@@ -15,9 +15,13 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
     public partial class MessagesViewModel : ViewModelBase
     {
         private readonly MessageService _messageService;
+        private readonly ConversationService _conversationService;
 
         [ObservableProperty]
         private ChatInputBoxViewModel _chatInputBoxViewModel;
+
+        [ObservableProperty]
+        private string _conversationName;
 
         [ObservableProperty]
         private ObservableCollection<Message> _messages = new ObservableCollection<Message>();
@@ -25,6 +29,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         public MessagesViewModel(MessageService messageService, ConversationService conversationService, UserService userService)
         {
             _messageService = messageService;
+            _conversationService = conversationService;
 
             _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService, this);
         }
@@ -32,6 +37,11 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         public void LoadMessagesForConversation(int conversationId)
         {
             Messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
+        }
+
+        public void GetSelectedConversationTitle()
+        {
+            ConversationName = _conversationService.GetSelectedConversationTitle();
         }
 
         public void AddMessage(Message message)

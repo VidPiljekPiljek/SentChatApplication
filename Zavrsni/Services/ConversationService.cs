@@ -44,5 +44,10 @@ namespace Zavrsni.Services
         {
             return _conversationStore.GetSelectedConversationId();
         }
+
+        public string GetSelectedConversationTitle()
+        {
+            return _conversationStore.GetSelectedConversationTitle();
+        }
     }
 }

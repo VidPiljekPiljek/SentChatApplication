@@ -42,6 +42,7 @@ namespace Zavrsni.ViewModels
                 {
                     MessagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
                     _conversationService.SelectConversation(selectedConversation);
+                    MessagesViewModel.GetSelectedConversationTitle();
                 }
             }
         }

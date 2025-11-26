@@ -46,5 +46,10 @@ namespace Zavrsni.Stores
         {
             return SelectedConversation.Id;
         }
+
+        public string GetSelectedConversationTitle()
+        {
+            return SelectedConversation.Name;
+        }
     }
 }
