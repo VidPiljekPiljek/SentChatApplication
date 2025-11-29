@@ -75,6 +75,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessageDisplayView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Views/MessagesPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

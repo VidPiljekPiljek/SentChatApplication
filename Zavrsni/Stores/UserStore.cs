@@ -33,5 +33,10 @@ namespace Zavrsni.Stores
         {
             return CurrentUser.Id;
         }
+
+        public UserViewModel GetCurrentUser()
+        {
+            return CurrentUser;
+        }
     }
 }

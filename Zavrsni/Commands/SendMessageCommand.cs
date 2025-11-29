@@ -28,11 +28,19 @@ namespace Zavrsni.Commands
         {
             try
             {
-                Message message = (Message)parameter!;
+                Message displayMessage = (Message)parameter!;
 
-                _messagesViewModel.AddMessage(message);
+                Message dbMessage = new Message
+                {
+                    Text = displayMessage.Text,
+                    SenderId = displayMessage.SenderId,
+                    ConversationId = displayMessage.ConversationId,
+                    SentAt = displayMessage.SentAt
+                };
 
-                if (await _messageService.SendMessageAsync(message))
+                _messagesViewModel.AddMessage(displayMessage);
+
+                if (await _messageService.SendMessageAsync(dbMessage))
                 {
                     _chatInputBoxViewModel.Text = "Sent!";
                 }

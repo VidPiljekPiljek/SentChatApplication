@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Zavrsni.Browser",
   "resources": {
-    "hash": "sha256-r/rL1l17CeuSK6IlzbTnleblcT/e1iTAK8pRIKHP/kA=",
+    "hash": "sha256-HKYqOBjHcV9FQymC0N0T1dGF45xh+WFJtpCBozJpg8g=",
     "fingerprinting": {
       "Avalonia.Base.hi23v6rqyq.wasm": "Avalonia.Base.wasm",
       "Avalonia.Controls.gx5qith02h.wasm": "Avalonia.Controls.wasm",
@@ -326,25 +326,25 @@
       "netstandard.kaml52uspo.wasm": "netstandard.wasm",
       "System.Private.CoreLib.uqnhzdwypx.wasm": "System.Private.CoreLib.wasm",
       "dotnet.js": "dotnet.js",
-      "dotnet.native.l4ptthxatg.js": "dotnet.native.js",
-      "dotnet.native.d2w7colv7e.wasm": "dotnet.native.wasm",
-      "dotnet.runtime.drv0pr9n5o.js": "dotnet.runtime.js",
+      "dotnet.native.noby4tlk4d.js": "dotnet.native.js",
+      "dotnet.native.qe75a9vfqn.wasm": "dotnet.native.wasm",
+      "dotnet.runtime.9o45ky8ejm.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "Zavrsni.jw5de7b9u4.wasm": "Zavrsni.wasm",
-      "Zavrsni.e2z8jnawyu.pdb": "Zavrsni.pdb",
-      "Zavrsni.Browser.hsmatgbsf5.wasm": "Zavrsni.Browser.wasm",
-      "Zavrsni.Browser.7l9wu2hgob.pdb": "Zavrsni.Browser.pdb"
+      "Zavrsni.ug3lyrwzrp.wasm": "Zavrsni.wasm",
+      "Zavrsni.0dzyr4fiwk.pdb": "Zavrsni.pdb",
+      "Zavrsni.Browser.xzego29gz6.wasm": "Zavrsni.Browser.wasm",
+      "Zavrsni.Browser.qe9o5gyb7c.pdb": "Zavrsni.Browser.pdb"
     },
     "jsModuleNative": {
-      "dotnet.native.l4ptthxatg.js": "sha256-ddUN4+taa/Qv7Mr8mLpunJO+0Xw3ViOqBvedhe57/hA="
+      "dotnet.native.noby4tlk4d.js": "sha256-p9eEzXhQIsI0a5bBJhfzW15iRafgplTxT8XrO5FiH9o="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.drv0pr9n5o.js": "sha256-yfXUv1l/B489E8p12JxUvxly0JvHL9CCsoZUDlfGH9c="
+      "dotnet.runtime.9o45ky8ejm.js": "sha256-6QIZYgG+ftoT9N1H1EEJeXIhD/qbKqEcnmawDskiwdI="
     },
     "wasmNative": {
-      "dotnet.native.d2w7colv7e.wasm": "sha256-62UC3VfSQyaGpPUm7iSjBYuQ1xD31WdRYY20NQ1K+Vs="
+      "dotnet.native.qe75a9vfqn.wasm": "sha256-Po2dalLvTpf5jAS+jt0TzuBYybYiL1F6qAacZJ8UAdo="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -611,12 +611,12 @@
       "WindowsBase.vy2l5u79y6.wasm": "sha256-ufB9Mo5joMyUs3DzXWWBFFIZNEVrt6h9N5stYB6Oln4=",
       "mscorlib.xd6mv31d55.wasm": "sha256-1YSLR2eZt3ceALFV//vZUF2AloxVil3VlrW1zZYPSEI=",
       "netstandard.kaml52uspo.wasm": "sha256-HLEwBpLfzKw2/zGSVzHzFJxznCkt/WIjahrziiMrOpA=",
-      "Zavrsni.jw5de7b9u4.wasm": "sha256-3WahZ/kZvsmeYlHidEzqo4DquEtQPgenQv0tyFT/2ig=",
-      "Zavrsni.Browser.hsmatgbsf5.wasm": "sha256-4b7QLyEoZPhC4LhJpGBEmWMHejisxpJsp49KihJvgOk="
+      "Zavrsni.ug3lyrwzrp.wasm": "sha256-znIJ/8xklCYqKkPhwUJ6k9nWN6kM77RVnlSiAg3DaUE=",
+      "Zavrsni.Browser.xzego29gz6.wasm": "sha256-E2DBDTNJq5eJ1r6Iczth617W26Wj/M7GJlkvV9Nfr4w="
     },
     "pdb": {
-      "Zavrsni.e2z8jnawyu.pdb": "sha256-ek11ytEkW/zJE7BEvzl7As8a2Kxn/QiKEHaAZLsVNco=",
-      "Zavrsni.Browser.7l9wu2hgob.pdb": "sha256-iy4l3Jlt/3xhL5euqmsLH9a0GCMZyBlreadlVqdImYk="
+      "Zavrsni.0dzyr4fiwk.pdb": "sha256-fB1GFOoAliq7DzwuCgXbyqHFCcUIPHeOmH2Ft2Ls9WY=",
+      "Zavrsni.Browser.qe9o5gyb7c.pdb": "sha256-XnXw6mxLTvK2qeMEjR1T5EgCfEld50C5+E/CvfJYkgg="
     },
     "satelliteResources": {
       "cs": {
@@ -714,5 +714,38 @@
   },
   "cacheBootResources": true,
   "debugLevel": -1,
-  "globalizationMode": "sharded"
+  "globalizationMode": "sharded",
+  "runtimeConfig": {
+    "runtimeOptions": {
+      "configProperties": {
+        "MVVMTOOLKIT_ENABLE_INOTIFYPROPERTYCHANGING_SUPPORT": true,
+        "Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability": true,
+        "System.ComponentModel.DefaultValueAttribute.IsSupported": false,
+        "System.ComponentModel.Design.IDesignerHost.IsSupported": false,
+        "System.ComponentModel.TypeConverter.EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization": false,
+        "System.ComponentModel.TypeDescriptor.IsComObjectDescriptorSupported": false,
+        "System.Diagnostics.Metrics.Meter.IsSupported": false,
+        "System.Diagnostics.Tracing.EventSource.IsSupported": false,
+        "System.Globalization.Invariant": false,
+        "System.TimeZoneInfo.Invariant": false,
+        "System.Linq.Enumerable.IsSizeOptimized": true,
+        "System.Net.Http.EnableActivityPropagation": false,
+        "System.Net.Http.WasmEnableStreamingResponse": true,
+        "System.Net.SocketsHttpHandler.Http3Support": false,
+        "System.Reflection.NullabilityInfoContext.IsSupported": true,
+        "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
+        "System.Resources.UseSystemResourceKeys": true,
+        "System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported": true,
+        "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
+        "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,
+        "System.Runtime.InteropServices.EnableCppCLIHostActivation": false,
+        "System.Runtime.InteropServices.Marshalling.EnableGeneratedComInterfaceComImportInterop": false,
+        "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
+        "System.StartupHookProvider.IsSupported": false,
+        "System.Text.Encoding.EnableUnsafeUTF7Encoding": false,
+        "System.Text.Json.JsonSerializer.IsReflectionEnabledByDefault": false,
+        "System.Threading.Thread.EnableAutoreleasePool": false
+      }
+    }
+  }
 }

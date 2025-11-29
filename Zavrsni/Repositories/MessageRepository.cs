@@ -28,6 +28,7 @@ namespace Zavrsni.Repositories
 
                 var messages = await dbContext.Messages
                     .Where(m => conversationIds.Contains(m.ConversationId))
+                    .Include(m => m.Sender)
                     .OrderBy(m => m.SentAt)
                     .ToListAsync();
 

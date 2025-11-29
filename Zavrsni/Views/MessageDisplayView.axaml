@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Zavrsni.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="100"
+             x:Class="Zavrsni.Views.MessageDisplayView"
+             x:DataType="vm:MessageDisplayViewModel">
+    <Border Padding="10">
+        <Border.Styles>
+					<Style Selector="Border">
+						<Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
+                        <Setter Property="CornerRadius" Value="10"/>
+					</Style>
+				</Border.Styles>
+		<StackPanel Orientation="Horizontal" Spacing="7">
+           <Label Content="{Binding Message.Sender.Username}"/>
+           <Label Content="{Binding Message.Text}"/>
+        </StackPanel>
+    </Border>
+
+</UserControl>

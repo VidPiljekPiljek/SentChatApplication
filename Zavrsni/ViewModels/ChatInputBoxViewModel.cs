@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Zavrsni.Commands;
+using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Services;
 using Zavrsni.ViewModels.MessagesPageViewModels;
@@ -45,7 +46,7 @@ namespace Zavrsni.ViewModels
         [RelayCommand(CanExecute = nameof(CanSendMessage))]
         private void SendMessageParameter()
         {
-            Message = new Message(Text, _userService.GetCurrentUserId(), _conversationService.GetSelectedConversationId(), DateTime.Now);
+            Message = new Message(Text, _userService.GetCurrentUserId(), UserMapper.ToUser(_userService.GetCurrentUser()), _conversationService.GetSelectedConversationId(), DateTime.Now);
 
             SendMessageCommand.Execute(Message);
         }

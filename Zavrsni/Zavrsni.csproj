@@ -47,6 +47,9 @@
     <Compile Update="Views\HomePageView.axaml.cs">
       <DependentUpon>HomePageView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\MessageDisplayView.axaml.cs">
+      <DependentUpon>MessageDisplayView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MessagesPageView.axaml.cs">
       <DependentUpon>MessagesPageView.axaml</DependentUpon>
     </Compile>

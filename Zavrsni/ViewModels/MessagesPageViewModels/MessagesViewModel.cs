@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Services;
 
@@ -24,7 +25,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         private string _conversationName;
 
         [ObservableProperty]
-        private ObservableCollection<Message> _messages = new ObservableCollection<Message>();
+        private ObservableCollection<MessageDisplayViewModel> _messages = new ObservableCollection<MessageDisplayViewModel>();
 
         public MessagesViewModel(MessageService messageService, ConversationService conversationService, UserService userService)
         {
@@ -36,7 +37,8 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void LoadMessagesForConversation(int conversationId)
         {
-            Messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
+            ObservableCollection<Message> messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
+            Messages = new ObservableCollection<MessageDisplayViewModel>(MessageDisplayViewModelMapper.ToDisplayViewModels(messages));
         }
 
         public void GetSelectedConversationTitle()
@@ -46,7 +48,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            Messages.Add(message);
+            Messages.Add(MessageDisplayViewModelMapper.ToDisplayViewModel(message));
         }
     }
 }

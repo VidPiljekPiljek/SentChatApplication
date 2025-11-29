@@ -32,5 +32,14 @@ namespace Zavrsni.Models
             ConversationId = conversationId;
             SentAt = sentAt;
         }
+
+        public Message(string text, int senderId, User sender, int conversationId, DateTime sentAt)
+        {
+            Text = text;
+            SenderId = senderId;
+            Sender = sender;
+            ConversationId = conversationId;
+            SentAt = sentAt;
+        }
     }
 }

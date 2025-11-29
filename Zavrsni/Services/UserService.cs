@@ -7,6 +7,7 @@ using Zavrsni.Authenticators;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
+using Zavrsni.ViewModels;
 
 namespace Zavrsni.Services
 {
@@ -43,6 +44,11 @@ namespace Zavrsni.Services
         public int GetCurrentUserId()
         {
             return _userStore.GetCurrentUserId();
+        }
+
+        public UserViewModel GetCurrentUser()
+        {
+            return _userStore.GetCurrentUser();
         }
     }
 }

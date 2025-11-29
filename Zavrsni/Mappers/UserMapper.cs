@@ -23,5 +23,17 @@ namespace Zavrsni.Mappers
 
             return mappedUser;
         }
+
+        public static User ToUser(UserViewModel userViewModel)
+        {
+            User user = new User
+            {
+                Id = userViewModel.Id,
+                Username = userViewModel.Username,
+                Email = userViewModel.Email,
+                ProfilePicture = userViewModel.ProfilePicture
+            };
+            return user;
+        }
     }
 }
