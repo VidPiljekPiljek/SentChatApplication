@@ -46,5 +46,17 @@ namespace Zavrsni.Services
                 return false;
             }
         }
+
+        public async Task<bool> DeleteMessageAsync(int messageId)
+        {
+            if (await _messageRepository.DeleteMessageAsync(messageId))
+            {
+                return _messageStore.RemoveMessage(messageId);
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

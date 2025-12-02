@@ -52,5 +52,23 @@ namespace Zavrsni.Repositories
                 }
             }
         }
+
+        public async Task<bool> DeleteMessageAsync(int messageId)
+        {
+            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                try
+                {
+                    var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
+                    dbContext.Messages.Remove(dbMessage);
+                    await dbContext.SaveChangesAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

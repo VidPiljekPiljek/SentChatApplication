@@ -6,6 +6,7 @@
 			  <Button Content="Login" Width="100"/>
 			  <Button Content="Sign Up" Width="100"/>
 			  <Button Content="Exit" Width="100"/>
+			  <Button Classes="Delete" Content="Delete" Width="100"/>
 		  </StackPanel>
 	  </Border>
   </Design.PreviewWith>
@@ -37,5 +38,16 @@
 		<Setter Property="Foreground" Value="#DDDDDDDD"/>
 	</Style>
 
-	
+	<!-- Delete Button Styles -->
+	<Style Selector=":is(Button).delete">
+		<Setter Property="Background" Value="{DynamicResource DeleteButtonBackground}"/>
+	</Style>
+
+	<Style Selector=":is(Button).delete:pointerover /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource DeleteButtonBackgroundHover}"/>
+	</Style>
+
+	<Style Selector=":is(Button).delete:pressed /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource DeleteButtonBackgroundPressed}"/>
+	</Style>
 </Styles>

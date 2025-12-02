@@ -45,5 +45,11 @@ namespace Zavrsni.Stores
             UserMessages.Add(message);
             return true;
         }
+
+        public bool RemoveMessage(int messageId)
+        {
+            UserMessages.Remove(UserMessages.Where(m => m.Id == messageId).First());
+            return true;
+        }
     }
 }

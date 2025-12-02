@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Zavrsni.Browser",
   "resources": {
-    "hash": "sha256-HKYqOBjHcV9FQymC0N0T1dGF45xh+WFJtpCBozJpg8g=",
+    "hash": "sha256-gETXGMhsdX1q3Nc4jCZedSELeD/PYk6YsJr9+pre+yk=",
     "fingerprinting": {
       "Avalonia.Base.hi23v6rqyq.wasm": "Avalonia.Base.wasm",
       "Avalonia.Controls.gx5qith02h.wasm": "Avalonia.Controls.wasm",
@@ -332,10 +332,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "Zavrsni.ug3lyrwzrp.wasm": "Zavrsni.wasm",
-      "Zavrsni.0dzyr4fiwk.pdb": "Zavrsni.pdb",
-      "Zavrsni.Browser.xzego29gz6.wasm": "Zavrsni.Browser.wasm",
-      "Zavrsni.Browser.qe9o5gyb7c.pdb": "Zavrsni.Browser.pdb"
+      "Zavrsni.ne8aut72c6.wasm": "Zavrsni.wasm",
+      "Zavrsni.6bevo0maz7.pdb": "Zavrsni.pdb",
+      "Zavrsni.Browser.1nyx9z1zjk.wasm": "Zavrsni.Browser.wasm",
+      "Zavrsni.Browser.sjpopx2o5z.pdb": "Zavrsni.Browser.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.noby4tlk4d.js": "sha256-p9eEzXhQIsI0a5bBJhfzW15iRafgplTxT8XrO5FiH9o="
@@ -611,12 +611,12 @@
       "WindowsBase.vy2l5u79y6.wasm": "sha256-ufB9Mo5joMyUs3DzXWWBFFIZNEVrt6h9N5stYB6Oln4=",
       "mscorlib.xd6mv31d55.wasm": "sha256-1YSLR2eZt3ceALFV//vZUF2AloxVil3VlrW1zZYPSEI=",
       "netstandard.kaml52uspo.wasm": "sha256-HLEwBpLfzKw2/zGSVzHzFJxznCkt/WIjahrziiMrOpA=",
-      "Zavrsni.ug3lyrwzrp.wasm": "sha256-znIJ/8xklCYqKkPhwUJ6k9nWN6kM77RVnlSiAg3DaUE=",
-      "Zavrsni.Browser.xzego29gz6.wasm": "sha256-E2DBDTNJq5eJ1r6Iczth617W26Wj/M7GJlkvV9Nfr4w="
+      "Zavrsni.ne8aut72c6.wasm": "sha256-D6uWGE4n551nR1iUGjIR4Fe0H9j6Yk9T920tkylAhAI=",
+      "Zavrsni.Browser.1nyx9z1zjk.wasm": "sha256-Y+3XZPJMOSe0PKfgJ1TCRUbvgQ3XtgNqOvWDnS79hAk="
     },
     "pdb": {
-      "Zavrsni.0dzyr4fiwk.pdb": "sha256-fB1GFOoAliq7DzwuCgXbyqHFCcUIPHeOmH2Ft2Ls9WY=",
-      "Zavrsni.Browser.qe9o5gyb7c.pdb": "sha256-XnXw6mxLTvK2qeMEjR1T5EgCfEld50C5+E/CvfJYkgg="
+      "Zavrsni.6bevo0maz7.pdb": "sha256-MlLm5920XIAB+N6WQHP7UbXwhB7l1IqSwBDaZMyDrsE=",
+      "Zavrsni.Browser.sjpopx2o5z.pdb": "sha256-qGuZy1DF+7is/Blt06VNgvwlPc2Rt775oxZ3NdFVrr8="
     },
     "satelliteResources": {
       "cs": {

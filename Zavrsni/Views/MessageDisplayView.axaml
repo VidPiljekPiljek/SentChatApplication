@@ -13,10 +13,11 @@
                         <Setter Property="CornerRadius" Value="10"/>
 					</Style>
 				</Border.Styles>
-		<StackPanel Orientation="Horizontal" Spacing="7">
-           <Label Content="{Binding Message.Sender.Username}"/>
-           <Label Content="{Binding Message.Text}"/>
-        </StackPanel>
+        <Grid ColumnDefinitions="100, *, auto">
+			<Label Grid.Column="0" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+           <Label Grid.Column="1" Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button FontSize="11" Grid.Column="2" Classes="delete" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Grid>
     </Border>
 
 </UserControl>
