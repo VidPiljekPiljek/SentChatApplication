@@ -13,10 +13,12 @@
                         <Setter Property="CornerRadius" Value="10"/>
 					</Style>
 				</Border.Styles>
-        <Grid ColumnDefinitions="100, *, auto">
+        <Grid ColumnDefinitions="50, *, auto, auto, auto">
 			<Label Grid.Column="0" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
            <Label Grid.Column="1" Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button FontSize="11" Grid.Column="2" Classes="delete" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="2" Content="{Binding ErrorMessage}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="3" Content="{Binding Message.SentAt}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button Command="{Binding DeleteMessageCommand}" FontSize="11" Grid.Column="4" Classes="delete" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         </Grid>
     </Border>
 

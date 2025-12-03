@@ -38,7 +38,13 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         public void LoadMessagesForConversation(int conversationId)
         {
             ObservableCollection<Message> messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
-            Messages = new ObservableCollection<MessageDisplayViewModel>(MessageDisplayViewModelMapper.ToDisplayViewModels(messages));
+
+            foreach(var message in messages)
+            {
+                var vm = new MessageDisplayViewModel(_messageService, message);
+                vm.MessageDeleted += OnMessageDeleted;
+                Messages.Add(vm);
+            }
         }
 
         public void GetSelectedConversationTitle()
@@ -48,7 +54,13 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            Messages.Add(MessageDisplayViewModelMapper.ToDisplayViewModel(message));
+            Messages.Add(new MessageDisplayViewModel(_messageService, message));
+        }
+
+        public void OnMessageDeleted(object? sender, MessageDisplayViewModel deletedMessage)
+        {
+            Messages.Remove(deletedMessage);
+            deletedMessage.MessageDeleted -= OnMessageDeleted;
         }
     }
 }

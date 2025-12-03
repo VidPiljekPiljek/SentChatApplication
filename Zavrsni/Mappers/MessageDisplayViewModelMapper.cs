@@ -16,9 +16,9 @@ namespace Zavrsni.Mappers
             return new MessageDisplayViewModel(messageService, message);
         }
 
-        public static IEnumerable<MessageDisplayViewModel> ToDisplayViewModels(IEnumerable<Message> messages)
+        public static IEnumerable<MessageDisplayViewModel> ToDisplayViewModels(MessageService messageService, IEnumerable<Message> messages)
         {
-            return messages.Select(m => ToDisplayViewModel(m));
+            return messages.Select(message => ToDisplayViewModel(messageService, message));
         }
     }
 }
