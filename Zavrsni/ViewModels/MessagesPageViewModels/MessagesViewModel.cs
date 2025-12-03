@@ -41,9 +41,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
             foreach(var message in messages)
             {
-                var vm = new MessageDisplayViewModel(_messageService, message);
-                vm.MessageDeleted += OnMessageDeleted;
-                Messages.Add(vm);
+                AddMessage(message);
             }
         }
 
@@ -54,7 +52,9 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            Messages.Add(new MessageDisplayViewModel(_messageService, message));
+            var vm = new MessageDisplayViewModel(_messageService, message);
+            vm.MessageDeleted += OnMessageDeleted;
+            Messages.Add(vm);
         }
 
         public void OnMessageDeleted(object? sender, MessageDisplayViewModel deletedMessage)

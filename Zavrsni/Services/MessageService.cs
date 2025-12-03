@@ -37,9 +37,10 @@ namespace Zavrsni.Services
 
         public async Task<bool> SendMessageAsync(Message message)
         {
-            if (await _messageRepository.CreateMessageAsync(message))
+            var dbMessage = await _messageRepository.CreateMessageAsync(message);
+            if (dbMessage != null)
             {
-                return _messageStore.AddMessage(message);
+                return _messageStore.AddMessage(dbMessage);
             }
             else
             {

@@ -36,7 +36,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<bool> CreateMessageAsync(Message message)
+        public async Task<Message?> CreateMessageAsync(Message message)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -44,11 +44,11 @@ namespace Zavrsni.Repositories
                 {
                     await dbContext.Messages.AddAsync(message);
                     await dbContext.SaveChangesAsync();
-                    return true;
+                    return message;
                 }
                 catch
                 {
-                    return false;
+                    return null;
                 }
             }
         }

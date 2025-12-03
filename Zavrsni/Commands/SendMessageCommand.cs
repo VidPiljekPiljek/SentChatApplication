@@ -38,11 +38,11 @@ namespace Zavrsni.Commands
                     SentAt = displayMessage.SentAt
                 };
 
-                _messagesViewModel.AddMessage(displayMessage);
-
                 if (await _messageService.SendMessageAsync(dbMessage))
                 {
                     _chatInputBoxViewModel.Text = "Sent!";
+                    displayMessage.Id = dbMessage.Id;
+                    _messagesViewModel.AddMessage(displayMessage);
                 }
                 else
                 {
