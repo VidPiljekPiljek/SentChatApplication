@@ -62,6 +62,7 @@ namespace Zavrsni.Repositories
                     var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
                     dbContext.Messages.Remove(dbMessage);
                     await dbContext.SaveChangesAsync();
+
                     return true;
                 }
                 catch
