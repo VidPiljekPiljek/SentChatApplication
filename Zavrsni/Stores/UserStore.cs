@@ -38,5 +38,10 @@ namespace Zavrsni.Stores
         {
             return CurrentUser;
         }
+
+        public string GetCurrentUserUsername()
+        {
+            return CurrentUser.Username;
+        }
     }
 }

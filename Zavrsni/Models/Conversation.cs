@@ -24,5 +24,13 @@ namespace Zavrsni.Models
         {
 
         }
+
+        public Conversation(string name, bool isGroupChat, DateTime createdAt, ICollection<ConversationMember> members)
+        {
+            Name = name;
+            IsGroupChat = isGroupChat;
+            CreatedAt = createdAt;
+            Members = members;
+        }
     }
 }

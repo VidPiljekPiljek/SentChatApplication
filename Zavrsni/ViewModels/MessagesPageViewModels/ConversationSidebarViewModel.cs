@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Zavrsni.Commands;
 using Zavrsni.Models;
 using Zavrsni.Services;
 
@@ -32,11 +34,18 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
             }
         }
 
+        [ObservableProperty]
+        private string _conversationSearchName;
+
+        public ICommand StartConversationCommand { get; }
+
         public ConversationSidebarViewModel(ConversationService conversationService) 
         {
             _conversationService = conversationService;
 
             UserConversations = _conversationService.GetUserConversations();
+
+            StartConversationCommand = new StartConversationCommand();
         }
 
         [RelayCommand]

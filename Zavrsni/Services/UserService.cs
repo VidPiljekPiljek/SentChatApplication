@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Authenticators;
+using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
@@ -46,9 +47,20 @@ namespace Zavrsni.Services
             return _userStore.GetCurrentUserId();
         }
 
+        public async Task<UserViewModel> GetUserByUsername(string username)
+        {
+            UserViewModel dbUser = UserMapper.ToUserViewModel(await _userRepository.GetUserByUsername(username));
+            return dbUser;
+        }
+
         public UserViewModel GetCurrentUser()
         {
             return _userStore.GetCurrentUser();
+        }
+
+        public string GetCurrentUserUsername()
+        {
+            return _userStore.GetCurrentUserUsername();
         }
     }
 }

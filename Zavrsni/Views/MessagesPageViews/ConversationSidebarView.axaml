@@ -15,17 +15,22 @@
 						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
 					</Style>
 				</Border.Styles>
-				<ScrollViewer HorizontalAlignment="Stretch">
-					<ItemsControl ItemsSource="{Binding UserConversations}">
-						<ItemsControl.ItemTemplate>
-							<DataTemplate>
-								<Button Content="{Binding Name}"
-										Command="{Binding $parent[ItemsControl].((vm:ConversationSidebarViewModel)DataContext).ChangeConversationCommand}" 
-										CommandParameter="{Binding}" Width="125"
-										Margin="0 0 0 15"/>
-							</DataTemplate>
-						</ItemsControl.ItemTemplate>
-					</ItemsControl>
-				</ScrollViewer>
+				<Grid RowDefinitions="auto, auto, *">
+					<Label Grid.Column="0" HorizontalAlignment="Center"/>
+					<Button Grid.Column="1" FontSize="12" Content="Add Conversation" HorizontalAlignment="Center"/>
+					<ScrollViewer Grid.Column="2" HorizontalAlignment="Stretch">
+						<ItemsControl ItemsSource="{Binding UserConversations}">
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Button Content="{Binding Name}"
+											Command="{Binding $parent[ItemsControl].((vm:ConversationSidebarViewModel)DataContext).ChangeConversationCommand}" 
+											CommandParameter="{Binding}" Width="125"
+											Margin="0 0 0 15"/>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+						</ItemsControl>
+					</ScrollViewer>
+				</Grid>
+				
 			</Border>
 </UserControl>
