@@ -49,5 +49,18 @@ namespace Zavrsni.Services
         {
             return _conversationStore.GetSelectedConversationTitle();
         }
+
+        public async Task<bool> AddConversation(Conversation conversation)
+        {
+            var dbConversation = await _conversationRepository.CreateConversationAsync(conversation);
+            if (dbConversation != null)
+            {
+                return _conversationStore.AddConversation(dbConversation);
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

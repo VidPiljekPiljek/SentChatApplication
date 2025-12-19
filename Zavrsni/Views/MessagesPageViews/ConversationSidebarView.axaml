@@ -15,11 +15,12 @@
 						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
 					</Style>
 				</Border.Styles>
-				<Grid RowDefinitions="auto, auto, *">
-					<Label Grid.Column="0" HorizontalAlignment="Center"/>
-					<Button Grid.Column="1" FontSize="12" Content="Add Conversation" HorizontalAlignment="Center"/>
-					<ScrollViewer Grid.Column="2" HorizontalAlignment="Stretch">
-						<ItemsControl ItemsSource="{Binding UserConversations}">
+				<Grid RowDefinitions="auto, 15, auto, 15, auto, 15,  *">
+					<Label Grid.Row="0" FontSize="24" Content="Friends" HorizontalAlignment="Center"/>
+					<Button Grid.Row="2" Command="{Binding StartConversationCommand}" FontSize="12" Content="Add Conversation" HorizontalAlignment="Center"/>
+					<TextBox Grid.Row="4" Text="{Binding ConversationSearchName}" HorizontalAlignment="Stretch"/>
+					<ScrollViewer Grid.Row="6" HorizontalAlignment="Stretch">
+						<ItemsControl ItemsSource="{Binding UserConversations}" Background="Red">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>
 									<Button Content="{Binding Name}"

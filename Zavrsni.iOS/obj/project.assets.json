@@ -7825,11 +7825,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.iOS.Ref.net9.0_26.0",
-            "version": "[26.0.9769, 26.0.9769]"
+            "version": "[26.0.9777, 26.0.9777]"
           },
           {
             "name": "Microsoft.iOS.Runtime.iossimulator-x64.net9.0_26.0",
-            "version": "[26.0.9769, 26.0.9769]"
+            "version": "[26.0.9777, 26.0.9777]"
           }
         ],
         "frameworkReferences": {
@@ -7840,7 +7840,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -14,14 +14,12 @@ namespace Zavrsni.Commands
         private readonly ConversationSidebarViewModel _conversationSidebarViewModel;
         private readonly ConversationService _conversationService;
         private readonly UserService _userService;
-        private readonly ConversationMemberService _conversationMemberService;
 
-        public StartConversationCommand(ConversationSidebarViewModel conversationSidebarViewModel, ConversationService conversationService, UserService userService, ConversationMemberService conversationMemberService)
+        public StartConversationCommand(ConversationSidebarViewModel conversationSidebarViewModel, ConversationService conversationService, UserService userService)
         {
             _conversationSidebarViewModel = conversationSidebarViewModel;
             _conversationService = conversationService;
             _userService = userService;
-            _conversationMemberService = conversationMemberService;
         }
 
         public async override Task ExecuteAsync(object? parameter)
@@ -47,6 +45,15 @@ namespace Zavrsni.Commands
                     };
                     Conversation newConversation = new Conversation($"{dbUser.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
 
+                    var success = await _conversationService.AddConversation(newConversation);
+                    if (success)
+                    {
+
+                    }
+                    else
+                    {
+                        _conversationSidebarViewModel.ConversationSearchName = "Something went wrong.";
+                    }
                 }
             }
             catch (Exception ex)

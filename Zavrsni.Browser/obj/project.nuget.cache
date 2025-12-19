@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XfOXxoVI8dE=",
+  "dgSpecHash": "HsRxyhQ5PjM=",
   "success": true,
   "projectFilePath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj",
   "expectedPackageFiles": [
@@ -75,7 +75,7 @@
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.extensions.webencoders\\8.0.11\\microsoft.extensions.webencoders.8.0.11.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.http.headers\\2.3.0\\microsoft.net.http.headers.2.3.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.11\\microsoft.net.illink.tasks.9.0.11.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.0\\microsoft.net.sdk.webassembly.pack.10.0.0.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.1\\microsoft.net.sdk.webassembly.pack.10.0.1.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",

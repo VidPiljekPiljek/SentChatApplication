@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "K5pQyyfhAys=",
+  "dgSpecHash": "77+0uH7ySak=",
   "success": true,
   "projectFilePath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.iOS\\Zavrsni.iOS.csproj",
   "expectedPackageFiles": [
@@ -111,8 +111,8 @@
     "C:\\Users\\pilje\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\system.text.json\\9.0.10\\system.text.json.9.0.10.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.ios.runtime.iossimulator-x64.net9.0_26.0\\26.0.9769\\microsoft.ios.runtime.iossimulator-x64.net9.0_26.0.26.0.9769.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.ios.ref.net9.0_26.0\\26.0.9769\\microsoft.ios.ref.net9.0_26.0.26.0.9769.nupkg.sha512"
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.ios.runtime.iossimulator-x64.net9.0_26.0\\26.0.9777\\microsoft.ios.runtime.iossimulator-x64.net9.0_26.0.26.0.9777.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.ios.ref.net9.0_26.0\\26.0.9777\\microsoft.ios.ref.net9.0_26.0.26.0.9777.nupkg.sha512"
   ],
   "logs": []
 }

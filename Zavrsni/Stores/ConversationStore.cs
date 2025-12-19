@@ -51,5 +51,11 @@ namespace Zavrsni.Stores
         {
             return SelectedConversation.Name;
         }
+
+        public bool AddConversation(Conversation conversation)
+        {
+            UserConversations.Add(conversation);
+            return true;
+        }
     }
 }

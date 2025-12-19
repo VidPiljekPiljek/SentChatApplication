@@ -39,13 +39,13 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public ICommand StartConversationCommand { get; }
 
-        public ConversationSidebarViewModel(ConversationService conversationService) 
+        public ConversationSidebarViewModel(ConversationService conversationService, UserService userService) 
         {
             _conversationService = conversationService;
 
             UserConversations = _conversationService.GetUserConversations();
 
-            StartConversationCommand = new StartConversationCommand();
+            StartConversationCommand = new StartConversationCommand(this, conversationService, userService);
         }
 
         [RelayCommand]

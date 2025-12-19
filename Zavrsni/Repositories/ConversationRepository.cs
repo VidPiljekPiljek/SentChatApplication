@@ -26,5 +26,22 @@ namespace Zavrsni.Repositories
                 return await dbContext.Conversations.Where(c => c.Members.Any(m => m.UserId == userId)).ToListAsync();
             }
         }
+
+        public async Task<Conversation> CreateConversationAsync(Conversation conversation)
+        {
+            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                try
+                {
+                    await dbContext.Conversations.AddAsync(conversation);
+                    await dbContext.SaveChangesAsync();
+                    return conversation;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
     }
 }
