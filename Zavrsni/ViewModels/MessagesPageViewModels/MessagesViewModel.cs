@@ -17,6 +17,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
     {
         private readonly MessageService _messageService;
         private readonly ConversationService _conversationService;
+        private readonly UserService _userService;
 
         [ObservableProperty]
         private ChatInputBoxViewModel _chatInputBoxViewModel;
@@ -31,6 +32,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         {
             _messageService = messageService;
             _conversationService = conversationService;
+            _userService = userService;
 
             _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService, this);
         }
@@ -52,7 +54,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            var vm = new MessageDisplayViewModel(_messageService, message);
+            var vm = new MessageDisplayViewModel(_messageService, message, _userService);
             vm.MessageDeleted += OnMessageDeleted;
             Messages.Add(vm);
         }

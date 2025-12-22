@@ -12,11 +12,18 @@ namespace Zavrsni.Commands
     {
         private readonly MessageDisplayViewModel _messageDisplayViewModel;
         private readonly MessageService _messageService;
+        private readonly UserService _userService;
 
-        public DeleteMessageCommand(MessageDisplayViewModel messageDisplayViewModel, MessageService messageService)
+        public DeleteMessageCommand(MessageDisplayViewModel messageDisplayViewModel, MessageService messageService, UserService userService)
         {
             _messageDisplayViewModel = messageDisplayViewModel;
             _messageService = messageService;
+            _userService = userService;
+        }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return _messageDisplayViewModel.Message.SenderId == _userService.GetCurrentUserId() && base.CanExecute(parameter);
         }
 
         public override async Task ExecuteAsync(object? parameter)

@@ -25,12 +25,12 @@ namespace Zavrsni.ViewModels
 
         public ICommand DeleteMessageCommand { get; }
 
-        public MessageDisplayViewModel(MessageService messageService, Message message)
+        public MessageDisplayViewModel(MessageService messageService, Message message, UserService userService)
         {
             _messageService = messageService;
             Message = message;
             
-            DeleteMessageCommand = new DeleteMessageCommand(this, _messageService);
+            DeleteMessageCommand = new DeleteMessageCommand(this, _messageService, userService);
         }
     }
 }
