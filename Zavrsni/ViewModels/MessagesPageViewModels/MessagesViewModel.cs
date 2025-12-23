@@ -39,6 +39,8 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void LoadMessagesForConversation(int conversationId)
         {
+            Messages.Clear();
+
             ObservableCollection<Message> messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
 
             foreach(var message in messages)
