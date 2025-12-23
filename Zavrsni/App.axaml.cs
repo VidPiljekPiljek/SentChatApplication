@@ -43,7 +43,6 @@ public partial class App : Application
         collection.AddTransient<MessagesPageViewModel>();
         collection.AddTransient<AccountPageViewModel>();
         collection.AddTransient<SettingsPageViewModel>();
-        collection.AddTransient<GroupsPageViewModel>();
 
         collection.AddTransient<ConversationSidebarViewModel>();
         collection.AddTransient<MessagesViewModel>();
@@ -69,7 +68,6 @@ public partial class App : Application
         {
             ApplicationPageNames.Home => x.GetRequiredService<HomePageViewModel>(),
             ApplicationPageNames.Messages => x.GetRequiredService<MessagesPageViewModel>(),
-            ApplicationPageNames.Groups => x.GetRequiredService<GroupsPageViewModel>(),
             ApplicationPageNames.Account => x.GetRequiredService<AccountPageViewModel>(),
             ApplicationPageNames.Settings => x.GetRequiredService<SettingsPageViewModel>(),
             _ => throw new ArgumentOutOfRangeException(nameof(name))

@@ -5,6 +5,7 @@
 		  <StackPanel Spacing="20">
 			  <TextBox Text="Type here"/>
 			  <TextBox Text="Type here" Width="100"/>
+			  <TextBox Text="Type here" />
 		  </StackPanel>
 	  </Border>
   </Design.PreviewWith>

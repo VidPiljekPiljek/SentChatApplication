@@ -41,9 +41,6 @@
     <Compile Update="Views\AccountPageView.axaml.cs">
       <DependentUpon>AccountPageView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\GroupsPageView.axaml.cs">
-      <DependentUpon>GroupsPageView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\HomePageView.axaml.cs">
       <DependentUpon>HomePageView.axaml</DependentUpon>
     </Compile>

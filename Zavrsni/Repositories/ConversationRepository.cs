@@ -33,9 +33,21 @@ namespace Zavrsni.Repositories
             {
                 try
                 {
-                    await dbContext.Conversations.AddAsync(conversation);
-                    await dbContext.SaveChangesAsync();
-                    return conversation;
+                    var existingConversation = await dbContext.Conversations.Where(c => !c.IsGroupChat)
+                        .Include(c => c.Members)
+                        .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == conversation.Members.First().UserId) && c.Members.Any(m => m.UserId == conversation.Members.Last().UserId) && c.Members.Count == 2);
+
+                    if (existingConversation == null)
+                    {
+                        await dbContext.Conversations.AddAsync(conversation);
+                        await dbContext.SaveChangesAsync();
+                        return conversation;
+                    }
+                    else
+                    {
+                        return null;
+
+                    }
                 }
                 catch
                 {

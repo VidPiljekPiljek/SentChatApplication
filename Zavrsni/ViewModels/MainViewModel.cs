@@ -12,7 +12,6 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HomePageIsActive))]
     [NotifyPropertyChangedFor(nameof(MessagesPageIsActive))]
-    [NotifyPropertyChangedFor(nameof(GroupsPageIsActive))]
     [NotifyPropertyChangedFor(nameof(AccountPageIsActive))]
     [NotifyPropertyChangedFor(nameof(SettingsPageIsActive))]
     private PageViewModel _currentPage;
@@ -20,7 +19,6 @@ public partial class MainViewModel : ViewModelBase
     // May be a lot to keep track of, but is a great way to navigate cause of the abstraction
     public bool HomePageIsActive => CurrentPage.PageName == ApplicationPageNames.Home;
     public bool MessagesPageIsActive => CurrentPage.PageName == ApplicationPageNames.Messages;
-    public bool GroupsPageIsActive => CurrentPage.PageName == ApplicationPageNames.Groups;
     public bool AccountPageIsActive => CurrentPage.PageName == ApplicationPageNames.Account;
     public bool SettingsPageIsActive => CurrentPage.PageName == ApplicationPageNames.Settings;
 
@@ -38,14 +36,6 @@ public partial class MainViewModel : ViewModelBase
         if (MessagesPageIsActive) return;
 
         CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Messages);
-    }
-
-    [RelayCommand]
-    private void NavigateToGroups()
-    {
-        if (GroupsPageIsActive) return;
-
-        CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Groups);
     }
 
     [RelayCommand]
