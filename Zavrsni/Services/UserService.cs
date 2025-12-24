@@ -25,21 +25,21 @@ namespace Zavrsni.Services
             _userRepository = userRepository;
         }
 
-        public async Task<bool> Login(User wantedUser)
+        public async Task<bool> LoginAsync(User wantedUser)
         {
             return await _userAuthenticator.AuthenticateUser(wantedUser);
         }
 
-        public async Task<bool> Register(User newUser)
+        public async Task<bool> RegisterAsync(User newUser)
         {
             newUser = _userAuthenticator.HashPassword(newUser);
 
-            if (await _userRepository.GetUserByUsername(newUser.Username) != null)
+            if (await _userRepository.GetUserByUsernameAsync(newUser.Username) != null)
             {
                 return false;
             }
 
-            return await _userRepository.AddUser(newUser);
+            return await _userRepository.CreateUserAsync(newUser);
         }
 
         public int GetCurrentUserId()
@@ -47,9 +47,9 @@ namespace Zavrsni.Services
             return _userStore.GetCurrentUserId();
         }
 
-        public async Task<UserViewModel> GetUserByUsername(string username)
+        public async Task<UserViewModel> GetUserByUsernameAsync(string username)
         {
-            UserViewModel dbUser = UserMapper.ToUserViewModel(await _userRepository.GetUserByUsername(username));
+            UserViewModel dbUser = UserMapper.ToUserViewModel(await _userRepository.GetUserByUsernameAsync(username));
             return dbUser;
         }
 

@@ -26,7 +26,7 @@ namespace Zavrsni.Services
 
         public async Task<bool> LoadUserConversations()
         {
-            List<Conversation> dbUserConversations = await _conversationRepository.GetUserConversations(_userStore.CurrentUser.Id);
+            List<Conversation> dbUserConversations = await _conversationRepository.GetUserConversationsAsync(_userStore.CurrentUser.Id);
             return await _conversationStore.SetUserConversations(dbUserConversations);
         }
 
@@ -50,7 +50,7 @@ namespace Zavrsni.Services
             return _conversationStore.GetSelectedConversationTitle();
         }
 
-        public async Task<bool> AddConversation(Conversation conversation)
+        public async Task<bool> AddConversationAsync(Conversation conversation)
         {
             var dbConversation = await _conversationRepository.CreateConversationAsync(conversation);
             if (dbConversation != null)

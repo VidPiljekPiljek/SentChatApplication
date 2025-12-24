@@ -38,7 +38,7 @@ namespace Zavrsni.Commands
             try
             {
                 User wantedUser = new User(_viewModel.Username, _viewModel.Password);
-                if (await _userService.Login(wantedUser))
+                if (await _userService.LoginAsync(wantedUser))
                 {
                     if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
                     {

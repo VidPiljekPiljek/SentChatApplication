@@ -33,7 +33,7 @@ namespace Zavrsni.Commands
             try
             {
                 User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
-                if (await _userService.Register(newUser))
+                if (await _userService.RegisterAsync(newUser))
                 {
                     _viewModel.NavigateToMain();
                 }

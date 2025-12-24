@@ -19,7 +19,7 @@ namespace Zavrsni.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<List<Conversation>> GetUserConversations(int userId)
+        public async Task<List<Conversation>> GetUserConversationsAsync(int userId)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {

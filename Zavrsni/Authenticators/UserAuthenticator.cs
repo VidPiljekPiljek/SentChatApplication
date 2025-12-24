@@ -26,7 +26,7 @@ namespace Zavrsni.Authenticators
 
         public async Task<bool> AuthenticateUser(User wantedUser)
         {
-            var dbUser = await _userRepository.GetUserByUsername(wantedUser.Username);
+            var dbUser = await _userRepository.GetUserByUsernameAsync(wantedUser.Username);
 
             if (dbUser == null)
             {

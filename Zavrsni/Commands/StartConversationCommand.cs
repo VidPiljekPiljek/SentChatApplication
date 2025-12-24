@@ -26,7 +26,7 @@ namespace Zavrsni.Commands
         {
             try
             {
-                var dbUser = await _userService.GetUserByUsername(_conversationSidebarViewModel.ConversationSearchName);
+                var dbUser = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
                 if (dbUser is null)
                 {
                 }
@@ -45,7 +45,7 @@ namespace Zavrsni.Commands
                     };
                     Conversation newConversation = new Conversation($"{dbUser.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
 
-                    var success = await _conversationService.AddConversation(newConversation);
+                    var success = await _conversationService.AddConversationAsync(newConversation);
                     if (success)
                     {
 

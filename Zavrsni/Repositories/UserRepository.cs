@@ -20,7 +20,7 @@ namespace Zavrsni.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<User?> GetUser(User wantedUser)
+        public async Task<User?> GetUserAsync(User wantedUser)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -28,7 +28,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<User?> GetUserByUsername(string username)
+        public async Task<User?> GetUserByUsernameAsync(string username)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -36,7 +36,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<bool> AddUser(User newUser)
+        public async Task<bool> CreateUserAsync(User newUser)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
