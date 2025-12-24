@@ -8,26 +8,32 @@ namespace Zavrsni.ErrorHandling
 {
     public class OperationResult
     {
-        public bool Success { get; set; }
+        public bool IsSuccess { get; set; }
         public string Message { get; set; }
         public Exception Exception { get; set; }
 
         protected OperationResult()
         {
-            Success = true;
+            IsSuccess = true;
         }
 
         protected OperationResult(string message)
         {
-            Success = false;
+            IsSuccess = false;
             Message = message;
         }
 
         protected OperationResult(Exception exception)
         {
-            Success = false;
+            IsSuccess = false;
             Exception = exception;
         }
+
+        public static OperationResult Success() => new();
+
+        public static OperationResult Failure(string message) => new(message);
+
+        public static OperationResult Failure(Exception exception) => new(exception);
     }
 
     public class OperationResult<T> : OperationResult {
@@ -35,9 +41,10 @@ namespace Zavrsni.ErrorHandling
 
         public OperationResult(T? data) : base()
         {
-            Success = true;
+            IsSuccess = true;
             Data = data;
         }
 
+        public static OperationResult<T> Success(T? data) => new(data);
     }
 }
