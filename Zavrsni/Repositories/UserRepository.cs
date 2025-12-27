@@ -45,7 +45,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<bool> CreateUserAsync(User newUser)
+        public async Task<OperationResult<User>> CreateUserAsync(User newUser)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -53,11 +53,11 @@ namespace Zavrsni.Repositories
                 {
                     await dbContext.Users.AddAsync(newUser);
                     await dbContext.SaveChangesAsync();
-                    return true;
+                    return OperationResult<User>.Success(newUser);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return false;
+                    return OperationResult<User>.Failure($"Error creating user. More details: {ex.Message}");
                 }
             }
         }

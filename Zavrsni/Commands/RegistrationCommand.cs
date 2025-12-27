@@ -33,18 +33,21 @@ namespace Zavrsni.Commands
             try
             {
                 User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
-                if (await _userService.RegisterAsync(newUser))
+
+                var userOperationResult = await _userService.RegisterAsync(newUser);
+
+                if (userOperationResult.IsSuccess)
                 {
                     _viewModel.NavigateToMain();
                 }
                 else
                 {
-                    _viewModel.ErrorMessage = "User already exists.";
+                    _viewModel.ErrorMessage = userOperationResult.Message;
                 }
             }
             catch (Exception ex)
             {
-                _viewModel.ErrorMessage = $"A fatal error has occured: {ex.Message}";
+                _viewModel.ErrorMessage = $"{ex.Message}";
             }
         }
 

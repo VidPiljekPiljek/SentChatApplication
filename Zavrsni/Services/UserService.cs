@@ -31,16 +31,31 @@ namespace Zavrsni.Services
             return await _userAuthenticator.AuthenticateUser(wantedUser);
         }
 
-        public async Task<bool> RegisterAsync(User newUser)
+        public async Task<OperationResult> RegisterAsync(User newUser)
         {
             newUser = _userAuthenticator.HashPassword(newUser);
 
-            if (await _userRepository.GetUserByUsernameAsync(newUser.Username) != null)
-            {
-                return false;
-            }
+            var userOperationResult = await _userRepository.GetUserByUsernameAsync(newUser.Username);
 
-            return await _userRepository.CreateUserAsync(newUser);
+            if (userOperationResult.IsSuccess && userOperationResult.Data != null)
+            {
+                return OperationResult.Failure("User already exists.");
+            }
+            else
+            {
+                var userCreationOperationResult = await _userRepository.CreateUserAsync(newUser);
+
+                if (userCreationOperationResult.IsSuccess)
+                {
+                    UserViewModel currentUser = UserMapper.ToUserViewModel(userCreationOperationResult.Data);
+                    _userStore.CurrentUser = currentUser;
+                    return OperationResult.Success();
+                }
+                else
+                {
+                    return OperationResult.Failure(userCreationOperationResult.Message);
+                }
+            }
         }
 
         public int GetCurrentUserId()
