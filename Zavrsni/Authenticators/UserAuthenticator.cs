@@ -26,19 +26,19 @@ namespace Zavrsni.Authenticators
 
         public async Task<bool> AuthenticateUser(User wantedUser)
         {
-            var dbUser = await _userRepository.GetUserByUsernameAsync(wantedUser.Username);
+            var dbUserOperation = await _userRepository.GetUserByUsernameAsync(wantedUser.Username);
 
-            if (dbUser == null)
+            if (!dbUserOperation.IsSuccess)
             {
                 return false;
             }
 
-            bool isPasswordVerified = VerifyPassword(wantedUser, dbUser);
+            bool isPasswordVerified = VerifyPassword(wantedUser, dbUserOperation.Data);
 
             if (isPasswordVerified)
             {
                 // Using UserMapper for security purposes
-                _userStore.CurrentUser = UserMapper.ToUserViewModel(dbUser);
+                _userStore.CurrentUser = UserMapper.ToUserViewModel(dbUserOperation.Data);
             }
 
             return isPasswordVerified;

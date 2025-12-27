@@ -52,10 +52,9 @@ namespace Zavrsni.Stores
             return SelectedConversation.Name;
         }
 
-        public bool AddConversation(Conversation conversation)
+        public void AddConversation(Conversation conversation)
         {
             UserConversations.Add(conversation);
-            return true;
         }
     }
 }

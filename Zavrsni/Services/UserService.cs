@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Authenticators;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
@@ -47,10 +48,19 @@ namespace Zavrsni.Services
             return _userStore.GetCurrentUserId();
         }
 
-        public async Task<UserViewModel> GetUserByUsernameAsync(string username)
+        public async Task<OperationResult<UserViewModel>> GetUserByUsernameAsync(string username)
         {
-            UserViewModel dbUser = UserMapper.ToUserViewModel(await _userRepository.GetUserByUsernameAsync(username));
-            return dbUser;
+            var userOperationResult = await _userRepository.GetUserByUsernameAsync(username);
+
+            if (userOperationResult.IsSuccess && userOperationResult.Data != null)
+            {
+                UserViewModel dbUserViewModel = UserMapper.ToUserViewModel(userOperationResult.Data);
+                return OperationResult<UserViewModel>.Success(dbUserViewModel);
+            }
+            else
+            {
+                return OperationResult<UserViewModel>.Failure(userOperationResult.Message);
+            }
         }
 
         public UserViewModel GetCurrentUser()

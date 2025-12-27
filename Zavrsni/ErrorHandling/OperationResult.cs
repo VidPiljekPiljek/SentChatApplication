@@ -45,6 +45,16 @@ namespace Zavrsni.ErrorHandling
             Data = data;
         }
 
+        public OperationResult(string message) : base(message)
+        {
+        }
+
+        public OperationResult(Exception exception) : base(exception)
+        {
+        }
+
         public static OperationResult<T> Success(T? data) => new(data);
+
+        public static new OperationResult<T> Failure(string message) => new(message);
     }
 }

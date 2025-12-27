@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.DbContexts;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 
 namespace Zavrsni.Repositories
@@ -28,11 +29,19 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<User?> GetUserByUsernameAsync(string username)
+        public async Task<OperationResult<User>> GetUserByUsernameAsync(string username)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
+                var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
+                if (user != null)
+                {
+                    return OperationResult<User>.Success(user);
+                }
+                else
+                {
+                    return OperationResult<User>.Failure("User not found.");
+                }
             }
         }
 

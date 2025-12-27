@@ -9,16 +9,22 @@
 			 x:DataType="vm:ConversationSidebarViewModel"
 			 x:Name="SidebarViewRoot">
 
-      <Border Padding="20">
+      <Border Name="conversationListBar" Padding="20">
 				<Border.Styles>
-					<Style Selector="Border">
+					<Style Selector="Border#conversationListBar">
 						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
 					</Style>
 				</Border.Styles>
 				<Grid RowDefinitions="auto, 15, auto, 15, auto, 15,  *">
 					<Label Grid.Row="0" FontSize="24" Content="Friends" HorizontalAlignment="Center"/>
 					<Button Grid.Row="2" Command="{Binding StartConversationCommand}" FontSize="12" Content="Add Conversation" HorizontalAlignment="Center"/>
-					<TextBox Grid.Row="4" Text="{Binding ConversationSearchName}"/>
+					<Grid Grid.Row="4" RowDefinitions="auto, 15, auto" MaxWidth="{Binding $parent[Border].Bounds.Width}">
+						<TextBox Grid.Row="0" Text="{Binding ConversationSearchName}"/>
+						<Label Classes="error" Grid.Row="2" HorizontalAlignment="Center">
+							<TextBlock Text="{Binding ErrorMessage}" TextWrapping="Wrap"/>
+						</Label>
+					</Grid>
+					
 					<ScrollViewer Grid.Row="6" HorizontalAlignment="Stretch">
 						<ItemsControl ItemsSource="{Binding UserConversations}">
 							<ItemsControl.ItemTemplate>

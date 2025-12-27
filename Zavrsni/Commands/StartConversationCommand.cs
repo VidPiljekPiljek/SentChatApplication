@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 using Zavrsni.Services;
 using Zavrsni.ViewModels.MessagesPageViewModels;
@@ -26,9 +27,11 @@ namespace Zavrsni.Commands
         {
             try
             {
-                var dbUser = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
-                if (dbUser is null)
+                _conversationSidebarViewModel.ErrorMessage = "";
+                var userOperationResult = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
+                if (!userOperationResult.IsSuccess)
                 {
+                    _conversationSidebarViewModel.ErrorMessage = userOperationResult.Message;
                 }
                 else
                 {
@@ -36,29 +39,26 @@ namespace Zavrsni.Commands
                     {
                         new ConversationMember
                         {
-                            UserId = dbUser.Id
+                            UserId = userOperationResult.Data.Id
                         },
                         new ConversationMember
                         {
                             UserId = _userService.GetCurrentUserId()
                         }
                     };
-                    Conversation newConversation = new Conversation($"{dbUser.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
+                    Conversation newConversation = new Conversation($"{userOperationResult.Data.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
 
-                    var success = await _conversationService.AddConversationAsync(newConversation);
-                    if (success)
+                    var conversationOperationResult = await _conversationService.AddConversationAsync(newConversation);
+                    if (!conversationOperationResult.IsSuccess)
                     {
-
-                    }
-                    else
-                    {
-                        _conversationSidebarViewModel.ConversationSearchName = "Something went wrong.";
+                        _conversationSidebarViewModel.ErrorMessage = conversationOperationResult.Message;
                     }
                 }
+
             }
             catch (Exception ex)
             {
-
+                _conversationSidebarViewModel.ErrorMessage = $"{ex.Message}";
             }
         }
     }

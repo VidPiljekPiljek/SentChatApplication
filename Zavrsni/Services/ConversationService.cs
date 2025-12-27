@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
@@ -50,17 +51,16 @@ namespace Zavrsni.Services
             return _conversationStore.GetSelectedConversationTitle();
         }
 
-        public async Task<bool> AddConversationAsync(Conversation conversation)
+        public async Task<OperationResult<Conversation>> AddConversationAsync(Conversation conversation)
         {
-            var dbConversation = await _conversationRepository.CreateConversationAsync(conversation);
-            if (dbConversation != null)
+            var dbConversationResult = await _conversationRepository.CreateConversationAsync(conversation);
+
+            if (dbConversationResult.IsSuccess && dbConversationResult.Data != null)
             {
-                return _conversationStore.AddConversation(dbConversation);
+                _conversationStore.AddConversation(dbConversationResult.Data);
             }
-            else
-            {
-                return false;
-            }
+
+            return dbConversationResult;
         }
     }
 }

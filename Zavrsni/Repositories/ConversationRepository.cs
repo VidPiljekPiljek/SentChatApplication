@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.DbContexts;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 
 namespace Zavrsni.Repositories
@@ -27,7 +28,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<Conversation> CreateConversationAsync(Conversation conversation)
+        public async Task<OperationResult<Conversation>> CreateConversationAsync(Conversation conversation)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -41,17 +42,16 @@ namespace Zavrsni.Repositories
                     {
                         await dbContext.Conversations.AddAsync(conversation);
                         await dbContext.SaveChangesAsync();
-                        return conversation;
+                        return OperationResult<Conversation>.Success(conversation);
                     }
                     else
                     {
-                        return null;
-
+                        return OperationResult<Conversation>.Failure("Conversation already exists.");
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return null;
+                    return OperationResult<Conversation>.Failure($"Error creating conversation. More details: {ex.Message}");
                 }
             }
         }

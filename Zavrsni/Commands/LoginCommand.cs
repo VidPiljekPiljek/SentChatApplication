@@ -37,6 +37,7 @@ namespace Zavrsni.Commands
         {
             try
             {
+                _viewModel.ErrorMessage = "";
                 User wantedUser = new User(_viewModel.Username, _viewModel.Password);
                 if (await _userService.LoginAsync(wantedUser))
                 {

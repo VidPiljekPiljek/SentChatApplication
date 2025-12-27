@@ -18,6 +18,11 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
     {
         private readonly ConversationService _conversationService;
 
+        public event EventHandler<string>? ErrorOccured;
+
+        [ObservableProperty]
+        private string _errorMessage = "";
+
         [ObservableProperty]
         private ObservableCollection<Conversation> _userConversations = new ObservableCollection<Conversation>();
 

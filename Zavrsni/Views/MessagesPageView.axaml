@@ -12,6 +12,9 @@
 		<Grid ColumnDefinitions="auto, *">
 			<messagespageviews:ConversationSidebarView Grid.Column="0" DataContext="{Binding ConversationSidebarViewModel}"></messagespageviews:ConversationSidebarView>
 			<messagespageviews:MessagesView Grid.Column="1" DataContext="{Binding MessagesViewModel}"></messagespageviews:MessagesView>
+			<!--<Border Grid.Column="0" Grid.ColumnSpan="2">
+				<views:UIDialogView DataContext="{Binding DialogViewModel}" IsVisible="{Binding $parent[ItemsControl].((vm:MessagesPageViewModel)DataContext).IsDialogOpen}"/>
+			</Border>-->
 		</Grid>
 		
 	</Border>

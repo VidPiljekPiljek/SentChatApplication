@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Zavrsni.ViewModels"
              mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+			 xmlns:views="clr-namespace:Zavrsni.Views"
              x:Class="Zavrsni.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>

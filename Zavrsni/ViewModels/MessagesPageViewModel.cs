@@ -18,6 +18,12 @@ namespace Zavrsni.ViewModels
         private readonly ConversationService _conversationService;
 
         [ObservableProperty]
+        private bool _isDialogOpen = false;
+
+        [ObservableProperty]
+        private UIDialogViewModel _dialogViewModel;
+
+        [ObservableProperty]
         private MessagesViewModel _messagesViewModel;
 
         [ObservableProperty]
@@ -31,6 +37,7 @@ namespace Zavrsni.ViewModels
             _conversationSidebarViewModel = conversationSidebarViewModel;
 
             ConversationSidebarViewModel.PropertyChanged += OnConversationChanged;
+            conversationSidebarViewModel.ErrorOccured += ShowDialog;
         }
 
         private void OnConversationChanged(object sender, PropertyChangedEventArgs e)
@@ -45,6 +52,12 @@ namespace Zavrsni.ViewModels
                     MessagesViewModel.GetSelectedConversationTitle();
                 }
             }
+        }
+
+        private void ShowDialog(object sender, string message)
+        {
+            DialogViewModel.SetMessage(message);
+            _isDialogOpen = true;
         }
     }
 }
