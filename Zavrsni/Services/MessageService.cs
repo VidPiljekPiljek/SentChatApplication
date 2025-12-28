@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
@@ -35,28 +36,33 @@ namespace Zavrsni.Services
             return _messageStore.GetMessagesForConversation(conversationId);
         }
 
-        public async Task<bool> SendMessageAsync(Message message)
+        public async Task<OperationResult> SendMessageAsync(Message message)
         {
-            var dbMessage = await _messageRepository.CreateMessageAsync(message);
-            if (dbMessage != null)
+            var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
+
+            if (messageOperationResult.IsSuccess && messageOperationResult.Data != null)
             {
-                return _messageStore.AddMessage(dbMessage);
+                _messageStore.AddMessage(messageOperationResult.Data);
+                return OperationResult.Success();
             }
             else
             {
-                return false;
+                return messageOperationResult;
             }
         }
 
-        public async Task<bool> DeleteMessageAsync(int messageId)
+        public async Task<OperationResult> DeleteMessageAsync(int messageId)
         {
-            if (await _messageRepository.DeleteMessageAsync(messageId))
+            var messageOperationResult = await _messageRepository.DeleteMessageAsync(messageId);
+
+            if (messageOperationResult.IsSuccess)
             {
-                return _messageStore.RemoveMessage(messageId);
+                _messageStore.RemoveMessage(messageId);
+                return OperationResult.Success();
             }
             else
             {
-                return false;
+                return messageOperationResult;
             }
         }
     }

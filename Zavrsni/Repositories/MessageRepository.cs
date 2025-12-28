@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.DbContexts;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 
 namespace Zavrsni.Repositories
@@ -36,7 +37,7 @@ namespace Zavrsni.Repositories
             }
         }
 
-        public async Task<Message?> CreateMessageAsync(Message message)
+        public async Task<OperationResult<Message>> CreateMessageAsync(Message message)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -44,16 +45,16 @@ namespace Zavrsni.Repositories
                 {
                     await dbContext.Messages.AddAsync(message);
                     await dbContext.SaveChangesAsync();
-                    return message;
+                    return OperationResult<Message>.Success(message);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return null;
+                    return OperationResult<Message>.Failure($"Error creating message. More details: {ex.Message}");
                 }
             }
         }
 
-        public async Task<bool> DeleteMessageAsync(int messageId)
+        public async Task<OperationResult> DeleteMessageAsync(int messageId)
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
@@ -63,11 +64,11 @@ namespace Zavrsni.Repositories
                     dbContext.Messages.Remove(dbMessage);
                     await dbContext.SaveChangesAsync();
 
-                    return true;
+                    return OperationResult.Success();
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return false;
+                    return OperationResult.Failure($"Error deleting message. More details: {ex.Message}");
                 }
             }
         }

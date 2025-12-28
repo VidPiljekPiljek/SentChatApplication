@@ -30,18 +30,20 @@ namespace Zavrsni.Commands
         {
             try
             {
-                if (await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id))
+                var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
+
+                if (messageOperationResult.IsSuccess)
                 {
                     _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
                 }
                 else
                 {
-                    _messageDisplayViewModel.ErrorMessage = "Message was unable to be deleted.";
+                    _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
                 }
             }
             catch (Exception ex)
             {
-                _messageDisplayViewModel.ErrorMessage = $"A fatal error has occured: {ex.Message}";
+                _messageDisplayViewModel.ErrorMessage = $"{ex.Message}";
             }
         }
     }

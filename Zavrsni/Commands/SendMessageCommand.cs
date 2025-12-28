@@ -38,20 +38,21 @@ namespace Zavrsni.Commands
                     SentAt = displayMessage.SentAt
                 };
 
-                if (await _messageService.SendMessageAsync(dbMessage))
+                var messageOperationResult = await _messageService.SendMessageAsync(dbMessage);
+
+                if (messageOperationResult.IsSuccess)
                 {
-                    _chatInputBoxViewModel.Text = "Sent!";
                     displayMessage.Id = dbMessage.Id;
                     _messagesViewModel.AddMessage(displayMessage);
                 }
                 else
                 {
-                    _chatInputBoxViewModel.Text = "Error!";
+                    _chatInputBoxViewModel.Text = messageOperationResult.Message;
                 }
             }
             catch (Exception ex)
             {
-                _chatInputBoxViewModel.Text = $"A fatal error has occured: {ex.Message}";
+                _chatInputBoxViewModel.Text = $"{ex.Message}";
             }
         }
     }
