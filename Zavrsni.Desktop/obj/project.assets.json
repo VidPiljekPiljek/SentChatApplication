@@ -1617,6 +1617,23 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "Sentry/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Sentry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Sentry.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Sentry.props": {},
+          "buildTransitive/Sentry.targets": {}
+        }
+      },
       "ShimSkiaSharp/3.2.1": {
         "type": "package",
         "compile": {
@@ -2286,6 +2303,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.10",
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
           "Microsoft.Extensions.DependencyInjection": "9.0.10",
+          "Sentry": "6.0.0",
           "Svg.Skia": "3.2.1"
         },
         "compile": {
@@ -4902,6 +4920,65 @@
         "readme.md"
       ]
     },
+    "Sentry/6.0.0": {
+      "sha512": "KomDnmKInN30NIaf52UsRYCK/QS8cBe1jV+JslxBzys30wPH0Wv0U20YQ2oJ65P0+XLv0JqNHmgAjN1zDy/fzQ==",
+      "type": "package",
+      "path": "sentry/6.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/roslyn4.3/cs/Sentry.Compiler.Extensions.dll",
+        "build/Sentry.Native.targets",
+        "build/Sentry.props",
+        "build/Sentry.targets",
+        "buildTransitive/Sentry.Native.targets",
+        "buildTransitive/Sentry.props",
+        "buildTransitive/Sentry.targets",
+        "lib/net10.0-android36.0/Sentry.dll",
+        "lib/net10.0-android36.0/Sentry.xml",
+        "lib/net10.0-ios26.0/Sentry.dll",
+        "lib/net10.0-ios26.0/Sentry.xml",
+        "lib/net10.0-maccatalyst26.0/Sentry.dll",
+        "lib/net10.0-maccatalyst26.0/Sentry.xml",
+        "lib/net10.0/Sentry.dll",
+        "lib/net10.0/Sentry.xml",
+        "lib/net462/Sentry.dll",
+        "lib/net462/Sentry.xml",
+        "lib/net8.0/Sentry.dll",
+        "lib/net8.0/Sentry.xml",
+        "lib/net9.0-android35.0/Sentry.dll",
+        "lib/net9.0-android35.0/Sentry.xml",
+        "lib/net9.0-ios18.0/Sentry.dll",
+        "lib/net9.0-ios18.0/Sentry.xml",
+        "lib/net9.0-maccatalyst18.0/Sentry.dll",
+        "lib/net9.0-maccatalyst18.0/Sentry.xml",
+        "lib/net9.0/Sentry.dll",
+        "lib/net9.0/Sentry.xml",
+        "lib/netstandard2.0/Sentry.dll",
+        "lib/netstandard2.0/Sentry.xml",
+        "lib/netstandard2.1/Sentry.dll",
+        "lib/netstandard2.1/Sentry.xml",
+        "sentry-native/linux-arm64/libsentry-native.a",
+        "sentry-native/linux-musl-arm64/libsentry-native.a",
+        "sentry-native/linux-musl-x64/libsentry-native.a",
+        "sentry-native/linux-x64/libsentry-native.a",
+        "sentry-native/osx/libsentry-native.a",
+        "sentry-native/win-arm64/sentry-native.lib",
+        "sentry-native/win-x64/sentry-native.lib",
+        "sentry-nuget.png",
+        "sentry.6.0.0.nupkg.sha512",
+        "sentry.nuspec",
+        "tools/sentry-cli-Darwin-arm64",
+        "tools/sentry-cli-Darwin-x86_64",
+        "tools/sentry-cli-Linux-aarch64",
+        "tools/sentry-cli-Linux-i686",
+        "tools/sentry-cli-Linux-x86_64",
+        "tools/sentry-cli-Windows-i686.exe",
+        "tools/sentry-cli-Windows-x86_64.exe"
+      ]
+    },
     "ShimSkiaSharp/3.2.1": {
       "sha512": "WyMf+0aj5IJcHkG/t89WApGFg756oXB30ehu9kYu9hjdfS0snkXHoAiTJZqVlqyLOvzC6eA+nOQ2hI84g//5Pg==",
       "type": "package",
@@ -6092,6 +6169,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
           "Microsoft.Extensions.DependencyInjection": "9.0.10",
+          "Sentry": "6.0.0",
           "Svg.Skia": "3.2.1",
           "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
         },

@@ -104,6 +104,11 @@
               "version": "[9.0.10, )",
               "versionCentrallyManaged": true
             },
+            "Sentry": {
+              "target": "Package",
+              "version": "[6.0.0, )",
+              "versionCentrallyManaged": true
+            },
             "Svg.Skia": {
               "target": "Package",
               "version": "[3.2.1, )",
@@ -125,6 +130,7 @@
             "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
             "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
             "Microsoft.Extensions.DependencyInjection": "9.0.10",
+            "Sentry": "6.0.0",
             "Svg.Skia": "3.2.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
           },

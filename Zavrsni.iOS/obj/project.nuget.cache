@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "77+0uH7ySak=",
+  "dgSpecHash": "SD2pkoNxvug=",
   "success": true,
   "projectFilePath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.iOS\\Zavrsni.iOS.csproj",
   "expectedPackageFiles": [
@@ -77,6 +77,8 @@
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\sentry\\6.0.0\\sentry.6.0.0.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\sentry.bindings.cocoa\\6.0.0\\sentry.bindings.cocoa.6.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\shimskiasharp\\3.2.1\\shimskiasharp.3.2.1.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\skiasharp\\2.88.9\\skiasharp.2.88.9.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\skiasharp.nativeassets.ios\\2.88.9\\skiasharp.nativeassets.ios.2.88.9.nupkg.sha512",
