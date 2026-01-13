@@ -26,33 +26,26 @@ namespace Zavrsni.Commands
 
         public async override Task ExecuteAsync(object? parameter)
         {
-            try
+            Message displayMessage = (Message)parameter!;
+
+            Message dbMessage = new Message
             {
-                Message displayMessage = (Message)parameter!;
+                Text = displayMessage.Text,
+                SenderId = displayMessage.SenderId,
+                ConversationId = displayMessage.ConversationId,
+                SentAt = displayMessage.SentAt
+            };
 
-                Message dbMessage = new Message
-                {
-                    Text = displayMessage.Text,
-                    SenderId = displayMessage.SenderId,
-                    ConversationId = displayMessage.ConversationId,
-                    SentAt = displayMessage.SentAt
-                };
+            var messageOperationResult = await _messageService.SendMessageAsync(dbMessage);
 
-                var messageOperationResult = await _messageService.SendMessageAsync(dbMessage);
-
-                if (messageOperationResult.IsSuccess)
-                {
-                    displayMessage.Id = dbMessage.Id;
-                    _messagesViewModel.AddMessage(displayMessage);
-                }
-                else
-                {
-                    _chatInputBoxViewModel.Text = messageOperationResult.Message;
-                }
+            if (messageOperationResult.IsSuccess)
+            {
+                displayMessage.Id = dbMessage.Id;
+                _messagesViewModel.AddMessage(displayMessage);
             }
-            catch (Exception ex)
+            else
             {
-                _chatInputBoxViewModel.Text = $"{ex.Message}";
+                _chatInputBoxViewModel.Text = messageOperationResult.Message;
             }
         }
     }

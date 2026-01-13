@@ -28,22 +28,15 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
-            try
-            {
-                var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
+            var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
 
-                if (messageOperationResult.IsSuccess)
-                {
-                    _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
-                }
-                else
-                {
-                    _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
-                }
-            }
-            catch (Exception ex)
+            if (messageOperationResult.IsSuccess)
             {
-                _messageDisplayViewModel.ErrorMessage = $"{ex.Message}";
+                _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
+            }
+            else
+            {
+                _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
             }
         }
     }

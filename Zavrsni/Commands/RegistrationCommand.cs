@@ -30,24 +30,17 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
-            try
+            User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
+
+            var userOperationResult = await _userService.RegisterAsync(newUser);
+
+            if (userOperationResult.IsSuccess)
             {
-                User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
-
-                var userOperationResult = await _userService.RegisterAsync(newUser);
-
-                if (userOperationResult.IsSuccess)
-                {
-                    _viewModel.NavigateToMain();
-                }
-                else
-                {
-                    _viewModel.ErrorMessage = userOperationResult.Message;
-                }
+                _viewModel.NavigateToMain();
             }
-            catch (Exception ex)
+            else
             {
-                _viewModel.ErrorMessage = $"{ex.Message}";
+                _viewModel.ErrorMessage = userOperationResult.Message;
             }
         }
 

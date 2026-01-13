@@ -49,16 +49,9 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                try
-                {
-                    await dbContext.Users.AddAsync(newUser);
-                    await dbContext.SaveChangesAsync();
-                    return OperationResult<User>.Success(newUser);
-                }
-                catch (Exception ex)
-                {
-                    return OperationResult<User>.Failure($"Error creating user. More details: {ex.Message}");
-                }
+                await dbContext.Users.AddAsync(newUser);
+                await dbContext.SaveChangesAsync();
+                return OperationResult<User>.Success(newUser);
             }
         }
     }

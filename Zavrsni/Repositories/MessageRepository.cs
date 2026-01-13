@@ -41,16 +41,9 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                try
-                {
-                    await dbContext.Messages.AddAsync(message);
-                    await dbContext.SaveChangesAsync();
-                    return OperationResult<Message>.Success(message);
-                }
-                catch (Exception ex)
-                {
-                    return OperationResult<Message>.Failure($"Error creating message. More details: {ex.Message}");
-                }
+                await dbContext.Messages.AddAsync(message);
+                await dbContext.SaveChangesAsync();
+                return OperationResult<Message>.Success(message);
             }
         }
 
@@ -58,18 +51,11 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                try
-                {
-                    var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
-                    dbContext.Messages.Remove(dbMessage);
-                    await dbContext.SaveChangesAsync();
+                var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
+                dbContext.Messages.Remove(dbMessage);
+                await dbContext.SaveChangesAsync();
 
-                    return OperationResult.Success();
-                }
-                catch (Exception ex)
-                {
-                    return OperationResult.Failure($"Error deleting message. More details: {ex.Message}");
-                }
+                return OperationResult.Success();
             }
         }
     }

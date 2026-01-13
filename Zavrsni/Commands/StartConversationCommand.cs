@@ -25,40 +25,32 @@ namespace Zavrsni.Commands
 
         public async override Task ExecuteAsync(object? parameter)
         {
-            try
+            _conversationSidebarViewModel.ErrorMessage = "";
+            var userOperationResult = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
+            if (!userOperationResult.IsSuccess)
             {
-                _conversationSidebarViewModel.ErrorMessage = "";
-                var userOperationResult = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
-                if (!userOperationResult.IsSuccess)
-                {
-                    _conversationSidebarViewModel.ErrorMessage = userOperationResult.Message;
-                }
-                else
-                {
-                    List<ConversationMember> conversationMembers = new List<ConversationMember>()
-                    {
-                        new ConversationMember
-                        {
-                            UserId = userOperationResult.Data.Id
-                        },
-                        new ConversationMember
-                        {
-                            UserId = _userService.GetCurrentUserId()
-                        }
-                    };
-                    Conversation newConversation = new Conversation($"{userOperationResult.Data.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
-
-                    var conversationOperationResult = await _conversationService.AddConversationAsync(newConversation);
-                    if (!conversationOperationResult.IsSuccess)
-                    {
-                        _conversationSidebarViewModel.ErrorMessage = conversationOperationResult.Message;
-                    }
-                }
-
+                _conversationSidebarViewModel.ErrorMessage = userOperationResult.Message;
             }
-            catch (Exception ex)
+            else
             {
-                _conversationSidebarViewModel.ErrorMessage = $"{ex.Message}";
+                List<ConversationMember> conversationMembers = new List<ConversationMember>()
+                {
+                    new ConversationMember
+                    {
+                        UserId = userOperationResult.Data.Id
+                    },
+                    new ConversationMember
+                    {
+                        UserId = _userService.GetCurrentUserId()
+                    }
+                };
+                Conversation newConversation = new Conversation($"{userOperationResult.Data.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
+
+                var conversationOperationResult = await _conversationService.AddConversationAsync(newConversation);
+                if (!conversationOperationResult.IsSuccess)
+                {
+                    _conversationSidebarViewModel.ErrorMessage = conversationOperationResult.Message;
+                }
             }
         }
     }

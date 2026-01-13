@@ -32,26 +32,19 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                try
-                {
-                    var existingConversation = await dbContext.Conversations.Where(c => !c.IsGroupChat)
-                        .Include(c => c.Members)
-                        .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == conversation.Members.First().UserId) && c.Members.Any(m => m.UserId == conversation.Members.Last().UserId) && c.Members.Count == 2);
+                var existingConversation = await dbContext.Conversations.Where(c => !c.IsGroupChat)
+                    .Include(c => c.Members)
+                    .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == conversation.Members.First().UserId) && c.Members.Any(m => m.UserId == conversation.Members.Last().UserId) && c.Members.Count == 2);
 
-                    if (existingConversation == null)
-                    {
-                        await dbContext.Conversations.AddAsync(conversation);
-                        await dbContext.SaveChangesAsync();
-                        return OperationResult<Conversation>.Success(conversation);
-                    }
-                    else
-                    {
-                        return OperationResult<Conversation>.Failure("Conversation already exists.");
-                    }
-                }
-                catch (Exception ex)
+                if (existingConversation == null)
                 {
-                    return OperationResult<Conversation>.Failure($"Error creating conversation. More details: {ex.Message}");
+                    await dbContext.Conversations.AddAsync(conversation);
+                    await dbContext.SaveChangesAsync();
+                    return OperationResult<Conversation>.Success(conversation);
+                }
+                else
+                {
+                    return OperationResult<Conversation>.Failure("Conversation already exists.");
                 }
             }
         }

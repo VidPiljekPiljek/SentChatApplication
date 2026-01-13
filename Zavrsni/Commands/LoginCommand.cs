@@ -36,23 +36,23 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
-                _viewModel.ErrorMessage = "";
-                User wantedUser = new User(_viewModel.Username, _viewModel.Password);
-                if (await _userService.LoginAsync(wantedUser))
+            _viewModel.ErrorMessage = "";
+            User wantedUser = new User(_viewModel.Username, _viewModel.Password);
+            if (await _userService.LoginAsync(wantedUser))
+            {
+                if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
                 {
-                    if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
-                    {
-                        _viewModel.NavigateToMain();
-                    }
-                    else
-                    {
-                        _viewModel.ErrorMessage = "Error while fetching Conversations or Messages";
-                    }
+                    _viewModel.NavigateToMain();
                 }
                 else
                 {
-                    _viewModel.ErrorMessage = "You entered something wrong.";
+                    _viewModel.ErrorMessage = "Error while fetching Conversations or Messages";
                 }
+            }
+            else
+            {
+                _viewModel.ErrorMessage = "You entered something wrong.";
+            }
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
