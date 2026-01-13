@@ -3,8 +3,10 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Sentry;
 using System;
 using System.IO;
 using System.Linq;
@@ -99,6 +101,35 @@ public partial class App : Application
         {
             File.AppendAllText("app.log", $"[{DateTime.Now}] {ex.Message}\n");
         }
+
+        SentrySdk.Init(options =>
+        {
+            // A Sentry Data Source Name (DSN) is required.
+            // See https://docs.sentry.io/product/sentry-basics/dsn-explainer/
+            // You can set it in the SENTRY_DSN environment variable, or you can set it in code here.
+            options.Dsn = "https://4c4c4b40e933c8c1be3e10c4eb95844e@o4510641615405056.ingest.de.sentry.io/4510641626939472";
+
+            // When debug is enabled, the Sentry client will emit detailed debugging information to the console.
+            // This might be helpful, or might interfere with the normal operation of your application.
+            // We enable it here for demonstration purposes when first trying Sentry.
+            // You shouldn't do this in your applications unless you're troubleshooting issues with Sentry.
+            options.Debug = true;
+
+            // This option is recommended. It enables Sentry's "Release Health" feature.
+            options.AutoSessionTracking = true;
+        });
+
+        AppDomain.CurrentDomain.UnhandledException += (s, e) =>
+        {
+            var ex = (Exception)e.ExceptionObject;
+            SentrySdk.CaptureException(ex);
+        };
+
+        Dispatcher.UIThread.UnhandledException += (s, e) =>
+        {
+            SentrySdk.CaptureException(e.Exception);
+            e.Handled = true;  // Prevents the application from crashing
+        };
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

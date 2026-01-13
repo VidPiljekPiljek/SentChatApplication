@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,8 +36,6 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
-            try
-            {
                 _viewModel.ErrorMessage = "";
                 User wantedUser = new User(_viewModel.Username, _viewModel.Password);
                 if (await _userService.LoginAsync(wantedUser))
@@ -54,11 +53,6 @@ namespace Zavrsni.Commands
                 {
                     _viewModel.ErrorMessage = "You entered something wrong.";
                 }
-            }
-            catch (Exception ex)
-            {
-                _viewModel.ErrorMessage = $"A fatal error has occured: {ex.Message}";
-            }
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)

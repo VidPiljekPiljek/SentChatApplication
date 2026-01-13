@@ -7847,6 +7847,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.10",
       "Microsoft.Extensions.DependencyInjection >= 9.0.10",
       "Microsoft.NET.ILLink.Tasks >= 9.0.11",
+      "Sentry >= 6.0.0",
       "Svg.Skia >= 3.2.1",
       "Zavrsni >= 1.0.0"
     ]
@@ -7939,6 +7940,11 @@
             "target": "Package",
             "version": "[9.0.11, )",
             "autoReferenced": true
+          },
+          "Sentry": {
+            "target": "Package",
+            "version": "[6.0.0, )",
+            "versionCentrallyManaged": true
           },
           "Svg.Skia": {
             "target": "Package",
