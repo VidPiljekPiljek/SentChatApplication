@@ -31,6 +31,13 @@
 	</Application.Resources>
 
 	<Application.Resources>
+		<LinearGradientBrush x:Key="DialogBackground" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#553CCE"/>
+			<GradientStop Offset="1" Color="#00325B"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
 		<LinearGradientBrush x:Key="MenuBackground" StartPoint="0%, 0%" EndPoint="0%, 100%">
 			<GradientStop Offset="0" Color="#08184C"/>
 			<GradientStop Offset="1" Color="#233173"/>

@@ -14,5 +14,9 @@
 		<vm:MainWindowViewModel></vm:MainWindowViewModel>
 	</Design.DataContext>
 	
-	<ContentControl Content="{Binding CurrentView}"/>
+    <Grid>
+		<ContentControl Content="{Binding CurrentView}"/>
+        <views:UIDialogView IsVisible="{Binding IsDialogOpen}" Content="{Binding UiDialogViewModel}"/>
+    </Grid>
+	
 </Window>

@@ -1,26 +1,22 @@
--keepattributes AnnotationDefault,
-                RuntimeVisibleAnnotations,
-                RuntimeVisibleParameterAnnotations,
-                RuntimeVisibleTypeAnnotations
+##---------------Begin: proguard configuration for NDK  ----------
 
--keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
-    <fields>;
+# The Android SDK checks at runtime if this class is available via Class.forName
+-keep class io.sentry.ndk.SentryNdk { *; }
+
+# The JNI layer uses this class through reflection
+-keep class io.sentry.ndk.NdkOptions { *; }
+-keep class io.sentry.ndk.DebugImage { *; }
+
+# For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
+-keepclasseswithmembernames,includedescriptorclasses class io.sentry.ndk.** {
+    native <methods>;
 }
 
--keep class * implements androidx.lifecycle.GeneratedAdapter {
-    <init>(...);
-}
+# don't warn jetbrains annotations
+-dontwarn org.jetbrains.annotations.**
 
--keepclassmembers class ** {
-    @androidx.lifecycle.OnLifecycleEvent *;
-}
+# To ensure that stack traces is unambiguous
+# https://developer.android.com/studio/build/shrink-code#decode-stack-trace
+-keepattributes LineNumberTable,SourceFile
 
-# The deprecated `android.app.Fragment` creates `Fragment` instances using reflection.
-# See: b/338958225, b/341537875
--keepclasseswithmembers,allowobfuscation public class androidx.lifecycle.ReportFragment {
-    public <init>();
-}
-
-# this rule is need to work properly when app is compiled with api 28, see b/142778206
-# Also this rule prevents registerIn from being inlined.
--keepclassmembers class androidx.lifecycle.ReportFragment$LifecycleCallbacks { *; }
+##---------------End: proguard configuration for NDK  ----------

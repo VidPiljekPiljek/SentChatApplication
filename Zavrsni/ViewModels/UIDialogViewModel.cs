@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Zavrsni.ViewModels
 {
     public partial class UIDialogViewModel : ViewModelBase
     {
+        public event EventHandler? DialogClosed;
+
         [ObservableProperty]
         private string _message;
 
@@ -20,5 +23,8 @@ namespace Zavrsni.ViewModels
         {
             Message = message;
         }
+
+        [RelayCommand]
+        private void CloseDialog() => DialogClosed?.Invoke(this, EventArgs.Empty);
     }
 }

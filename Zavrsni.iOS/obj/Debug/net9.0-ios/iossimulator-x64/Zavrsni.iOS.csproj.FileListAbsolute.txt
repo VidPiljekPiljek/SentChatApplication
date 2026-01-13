@@ -390,3 +390,7 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Net.Http.Headers.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\System.Security.Cryptography.Pkcs.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\System.Security.Cryptography.Xml.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Sentry.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Sentry.Bindings.Cocoa.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Sentry.Bindings.Cocoa.resources.zip
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\obj\Debug\net9.0-ios\iossimulator-x64\Sentry.Attributes.cs

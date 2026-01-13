@@ -123,12 +123,18 @@ public partial class App : Application
         {
             var ex = (Exception)e.ExceptionObject;
             SentrySdk.CaptureException(ex);
+            serviceProvider.GetRequiredService<MainWindowViewModel>().UiDialogViewModel.SetMessage("Something went wrong.");
+            serviceProvider.GetRequiredService<MainWindowViewModel>().OpenDialog();
+
         };
 
         Dispatcher.UIThread.UnhandledException += (s, e) =>
         {
             SentrySdk.CaptureException(e.Exception);
             e.Handled = true;  // Prevents the application from crashing
+            serviceProvider.GetRequiredService<MainWindowViewModel>().UiDialogViewModel.SetMessage("Something went wrong.");
+            serviceProvider.GetRequiredService<MainWindowViewModel>().OpenDialog();
+
         };
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)

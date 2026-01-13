@@ -7,11 +7,11 @@
              x:DataType="vm:UIDialogViewModel"
              Width="350" Height="250"
              x:Class="Zavrsni.Views.UIDialogView">
-    <Border CornerRadius="15">
+    <Border CornerRadius="15" Background="{DynamicResource DialogBackground}" BorderBrush="Black" BorderThickness="2">
 		<Grid RowDefinitions="auto, *, auto">
-	        <Label Grid.Row="0" FontSize="25" Content="Error" Margin="10 10 0 0"/>
-            <Label Grid.Row="1" Content="An error has occured." Margin="20 20 0 0"/>
-            <Button Grid.Row="2" Content="OK" HorizontalAlignment="Right" Margin="0 0 10 10"/>
+	        <Label Grid.Row="0" FontSize="25" Content="Dialog" Margin="10 10 0 0"/>
+            <Label Grid.Row="1" Content="{Binding Message}" Margin="20 20 0 0"/>
+            <Button Grid.Row="2" Command="{Binding CloseDialogCommand}" Content="Close" HorizontalAlignment="Right" Margin="0 0 10 10"/>
         </Grid>
     </Border>
   

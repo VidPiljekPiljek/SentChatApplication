@@ -11,6 +11,8 @@
   <permission android:name="com.CompanyName.Zavrsni.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
   <uses-permission android:name="com.CompanyName.Zavrsni.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@drawable/icon" android:label="Zavrsni">
+    <meta-data android:name="io.sentry.auto-init" android:value="false" />
+    <meta-data android:name="io.sentry.sdk.name" android:value="sentry.java.android.dotnet" />
     <activity android:name="crc641b415a1c6327f89f.MainActivity" android:configChanges="orientation|screenSize|uiMode" android:exported="true" android:icon="@drawable/icon" android:label="Zavrsni.Android" android:theme="@style/MyTheme.NoActionBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -37,5 +39,8 @@
         <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
       </intent-filter>
     </receiver>
+    <!-- 'android:authorities' must be unique in the device, across all apps -->
+    <provider android:name="io.sentry.android.core.SentryInitProvider" android:authorities="com.CompanyName.Zavrsni.SentryInitProvider" android:exported="false" />
+    <provider android:name="io.sentry.android.core.SentryPerformanceProvider" android:authorities="com.CompanyName.Zavrsni.SentryPerformanceProvider" android:exported="false" android:initOrder="200" />
   </application>
 </manifest>

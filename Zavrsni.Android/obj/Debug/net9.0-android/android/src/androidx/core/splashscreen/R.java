@@ -8,12 +8,12 @@ package androidx.core.splashscreen;
 
 public final class R {
 	public static final class attr {
-		public static final int postSplashScreenTheme = 0x7f0300c6;
-		public static final int splashScreenIconSize = 0x7f0300e0;
-		public static final int windowSplashScreenAnimatedIcon = 0x7f030124;
-		public static final int windowSplashScreenAnimationDuration = 0x7f030125;
-		public static final int windowSplashScreenBackground = 0x7f030126;
-		public static final int windowSplashScreenIconBackgroundColor = 0x7f030127;
+		public static final int postSplashScreenTheme = 0x7f0300c7;
+		public static final int splashScreenIconSize = 0x7f0300e1;
+		public static final int windowSplashScreenAnimatedIcon = 0x7f030125;
+		public static final int windowSplashScreenAnimationDuration = 0x7f030126;
+		public static final int windowSplashScreenBackground = 0x7f030127;
+		public static final int windowSplashScreenIconBackgroundColor = 0x7f030128;
 	}
 	public static final class dimen {
 		public static final int splashscreen_icon_mask_size_no_background = 0x7f060071;
@@ -30,13 +30,13 @@ public final class R {
 		public static final int icon_background = 0x7f070065;
 	}
 	public static final class id {
-		public static final int splashscreen_icon_view = 0x7f08008b;
+		public static final int splashscreen_icon_view = 0x7f080097;
 	}
 	public static final class integer {
 		public static final int default_icon_animation_duration = 0x7f090004;
 	}
 	public static final class layout {
-		public static final int splash_screen_view = 0x7f0b0028;
+		public static final int splash_screen_view = 0x7f0b0029;
 	}
 	public static final class style {
 		public static final int Base_Theme_SplashScreen = 0x7f0d004a;

@@ -37,6 +37,366 @@ avalonia.android.platform.skiaplatform.TopLevelImpl_ViewImpl;crc64bd239b21961e24
 Avalonia.Android.Platform.Input.AvaloniaInputConnection, Avalonia.Android;crc643ec2256bd5ff4bdb.AvaloniaInputConnection
 Avalonia.Android.Platform.Input.AvaloniaInputConnection;crc643ec2256bd5ff4bdb.AvaloniaInputConnection
 avalonia.android.platform.input.AvaloniaInputConnection;crc643ec2256bd5ff4bdb.AvaloniaInputConnection
+Sentry.Android.AndroidDiagnosticLogger, Sentry;crc64d6ffa46988e9e3ab.AndroidDiagnosticLogger
+Sentry.Android.AndroidDiagnosticLogger;crc64d6ffa46988e9e3ab.AndroidDiagnosticLogger
+sentry.android.AndroidDiagnosticLogger;crc64d6ffa46988e9e3ab.AndroidDiagnosticLogger
+Sentry.Android.Callbacks.BeforeBreadcrumbCallback, Sentry;crc64d42650af502c5fe4.BeforeBreadcrumbCallback
+Sentry.Android.Callbacks.BeforeBreadcrumbCallback;crc64d42650af502c5fe4.BeforeBreadcrumbCallback
+sentry.android.callbacks.BeforeBreadcrumbCallback;crc64d42650af502c5fe4.BeforeBreadcrumbCallback
+Sentry.Android.Callbacks.BeforeSendCallback, Sentry;crc64d42650af502c5fe4.BeforeSendCallback
+Sentry.Android.Callbacks.BeforeSendCallback;crc64d42650af502c5fe4.BeforeSendCallback
+sentry.android.callbacks.BeforeSendCallback;crc64d42650af502c5fe4.BeforeSendCallback
+Sentry.Android.Callbacks.OptionsConfigurationCallback, Sentry;crc64d42650af502c5fe4.OptionsConfigurationCallback
+Sentry.Android.Callbacks.OptionsConfigurationCallback;crc64d42650af502c5fe4.OptionsConfigurationCallback
+sentry.android.callbacks.OptionsConfigurationCallback;crc64d42650af502c5fe4.OptionsConfigurationCallback
+Sentry.Android.Callbacks.TracesSamplerCallback, Sentry;crc64d42650af502c5fe4.TracesSamplerCallback
+Sentry.Android.Callbacks.TracesSamplerCallback;crc64d42650af502c5fe4.TracesSamplerCallback
+sentry.android.callbacks.TracesSamplerCallback;crc64d42650af502c5fe4.TracesSamplerCallback
+IO.Sentry.Util.Runtime.IRuntimeManager, Sentry.Bindings.Android;io.sentry.util.runtime.IRuntimeManager
+IO.Sentry.Util.Runtime.IRuntimeManager;io.sentry.util.runtime.IRuntimeManager
+io.sentry.util.runtime.IRuntimeManager;io.sentry.util.runtime.IRuntimeManager
+IO.Sentry.Util.Runtime.IRuntimeManager+IRuntimeManagerCallback, Sentry.Bindings.Android;io.sentry.util.runtime.IRuntimeManager$IRuntimeManagerCallback
+IO.Sentry.Util.Runtime.IRuntimeManager.IRuntimeManagerCallback;io.sentry.util.runtime.IRuntimeManager$IRuntimeManagerCallback
+io.sentry.util.runtime.IRuntimeManager$IRuntimeManagerCallback;io.sentry.util.runtime.IRuntimeManager$IRuntimeManagerCallback
+IO.Sentry.Util.Network.NetworkDetailCaptureUtils+INetworkHeaderExtractor, Sentry.Bindings.Android;io.sentry.util.network.NetworkDetailCaptureUtils$NetworkHeaderExtractor
+IO.Sentry.Util.Network.NetworkDetailCaptureUtils.INetworkHeaderExtractor;io.sentry.util.network.NetworkDetailCaptureUtils$NetworkHeaderExtractor
+io.sentry.util.network.NetworkDetailCaptureUtils$NetworkHeaderExtractor;io.sentry.util.network.NetworkDetailCaptureUtils$NetworkHeaderExtractor
+IO.Sentry.Profiling.IJavaContinuousProfilerProvider, Sentry.Bindings.Android;io.sentry.profiling.JavaContinuousProfilerProvider
+IO.Sentry.Profiling.IJavaContinuousProfilerProvider;io.sentry.profiling.JavaContinuousProfilerProvider
+io.sentry.profiling.JavaContinuousProfilerProvider;io.sentry.profiling.JavaContinuousProfilerProvider
+IO.Sentry.Profiling.IJavaProfileConverterProvider, Sentry.Bindings.Android;io.sentry.profiling.JavaProfileConverterProvider
+IO.Sentry.Profiling.IJavaProfileConverterProvider;io.sentry.profiling.JavaProfileConverterProvider
+io.sentry.profiling.JavaProfileConverterProvider;io.sentry.profiling.JavaProfileConverterProvider
+IO.Sentry.Ndk.INativeScope, Sentry.Bindings.Android;io.sentry.ndk.INativeScope
+IO.Sentry.Ndk.INativeScope;io.sentry.ndk.INativeScope
+io.sentry.ndk.INativeScope;io.sentry.ndk.INativeScope
+IO.Sentry.Logger.ILoggerApi, Sentry.Bindings.Android;io.sentry.logger.ILoggerApi
+IO.Sentry.Logger.ILoggerApi;io.sentry.logger.ILoggerApi
+io.sentry.logger.ILoggerApi;io.sentry.logger.ILoggerApi
+IO.Sentry.Logger.ILoggerBatchProcessor, Sentry.Bindings.Android;io.sentry.logger.ILoggerBatchProcessor
+IO.Sentry.Logger.ILoggerBatchProcessor;io.sentry.logger.ILoggerBatchProcessor
+io.sentry.logger.ILoggerBatchProcessor;io.sentry.logger.ILoggerBatchProcessor
+IO.Sentry.Logger.ILoggerBatchProcessorFactory, Sentry.Bindings.Android;io.sentry.logger.ILoggerBatchProcessorFactory
+IO.Sentry.Logger.ILoggerBatchProcessorFactory;io.sentry.logger.ILoggerBatchProcessorFactory
+io.sentry.logger.ILoggerBatchProcessorFactory;io.sentry.logger.ILoggerBatchProcessorFactory
+IO.Sentry.Internal.Viewhierarchy.IViewHierarchyExporter, Sentry.Bindings.Android;io.sentry.internal.viewhierarchy.ViewHierarchyExporter
+IO.Sentry.Internal.Viewhierarchy.IViewHierarchyExporter;io.sentry.internal.viewhierarchy.ViewHierarchyExporter
+io.sentry.internal.viewhierarchy.ViewHierarchyExporter;io.sentry.internal.viewhierarchy.ViewHierarchyExporter
+IO.Sentry.Internal.Debugmeta.IDebugMetaLoader, Sentry.Bindings.Android;io.sentry.internal.debugmeta.IDebugMetaLoader
+IO.Sentry.Internal.Debugmeta.IDebugMetaLoader;io.sentry.internal.debugmeta.IDebugMetaLoader
+io.sentry.internal.debugmeta.IDebugMetaLoader;io.sentry.internal.debugmeta.IDebugMetaLoader
+IO.Sentry.Featureflags.IFeatureFlagBuffer, Sentry.Bindings.Android;io.sentry.featureflags.IFeatureFlagBuffer
+IO.Sentry.Featureflags.IFeatureFlagBuffer;io.sentry.featureflags.IFeatureFlagBuffer
+io.sentry.featureflags.IFeatureFlagBuffer;io.sentry.featureflags.IFeatureFlagBuffer
+IO.Sentry.Cache.Tape.ObjectQueue+IConverter, Sentry.Bindings.Android;io.sentry.cache.tape.ObjectQueue$Converter
+IO.Sentry.Cache.Tape.ObjectQueue.IConverter;io.sentry.cache.tape.ObjectQueue$Converter
+io.sentry.cache.tape.ObjectQueue$Converter;io.sentry.cache.tape.ObjectQueue$Converter
+IO.Sentry.Backpressure.IBackpressureMonitor, Sentry.Bindings.Android;io.sentry.backpressure.IBackpressureMonitor
+IO.Sentry.Backpressure.IBackpressureMonitor;io.sentry.backpressure.IBackpressureMonitor
+io.sentry.backpressure.IBackpressureMonitor;io.sentry.backpressure.IBackpressureMonitor
+IO.Sentry.Android.Replay.IRecorder, Sentry.Bindings.Android;io.sentry.android.replay.Recorder
+IO.Sentry.Android.Replay.IRecorder;io.sentry.android.replay.Recorder
+io.sentry.android.replay.Recorder;io.sentry.android.replay.Recorder
+IO.Sentry.Android.Replay.IScreenshotRecorderCallback, Sentry.Bindings.Android;io.sentry.android.replay.ScreenshotRecorderCallback
+IO.Sentry.Android.Replay.IScreenshotRecorderCallback;io.sentry.android.replay.ScreenshotRecorderCallback
+io.sentry.android.replay.ScreenshotRecorderCallback;io.sentry.android.replay.ScreenshotRecorderCallback
+IO.Sentry.Android.Replay.IWindowCallback, Sentry.Bindings.Android;io.sentry.android.replay.WindowCallback
+IO.Sentry.Android.Replay.IWindowCallback;io.sentry.android.replay.WindowCallback
+io.sentry.android.replay.WindowCallback;io.sentry.android.replay.WindowCallback
+IO.Sentry.Android.Replay.Gestures.ITouchRecorderCallback, Sentry.Bindings.Android;io.sentry.android.replay.gestures.TouchRecorderCallback
+IO.Sentry.Android.Replay.Gestures.ITouchRecorderCallback;io.sentry.android.replay.gestures.TouchRecorderCallback
+io.sentry.android.replay.gestures.TouchRecorderCallback;io.sentry.android.replay.gestures.TouchRecorderCallback
+IO.Sentry.Android.Core.Util.AndroidLazyEvaluator+IAndroidEvaluator, Sentry.Bindings.Android;io.sentry.android.core.util.AndroidLazyEvaluator$AndroidEvaluator
+IO.Sentry.Android.Core.Util.AndroidLazyEvaluator.IAndroidEvaluator;io.sentry.android.core.util.AndroidLazyEvaluator$AndroidEvaluator
+io.sentry.android.core.util.AndroidLazyEvaluator$AndroidEvaluator;io.sentry.android.core.util.AndroidLazyEvaluator$AndroidEvaluator
+Sentry.JavaSdk.FullyDisplayedReporter+IFullyDisplayedReporterListener, Sentry.Bindings.Android;io.sentry.FullyDisplayedReporter$FullyDisplayedReporterListener
+Sentry.JavaSdk.FullyDisplayedReporter.IFullyDisplayedReporterListener;io.sentry.FullyDisplayedReporter$FullyDisplayedReporterListener
+io.sentry.FullyDisplayedReporter$FullyDisplayedReporterListener;io.sentry.FullyDisplayedReporter$FullyDisplayedReporterListener
+Sentry.JavaSdk.FullyDisplayedReporter+IFullyDisplayedReporterListenerImplementor, Sentry.Bindings.Android;mono.io.sentry.FullyDisplayedReporter_FullyDisplayedReporterListenerImplementor
+Sentry.JavaSdk.FullyDisplayedReporter.IFullyDisplayedReporterListenerImplementor;mono.io.sentry.FullyDisplayedReporter_FullyDisplayedReporterListenerImplementor
+mono.io.sentry.FullyDisplayedReporter_FullyDisplayedReporterListenerImplementor;mono.io.sentry.FullyDisplayedReporter_FullyDisplayedReporterListenerImplementor
+Sentry.JavaSdk.ICompositePerformanceCollector, Sentry.Bindings.Android;io.sentry.CompositePerformanceCollector
+Sentry.JavaSdk.ICompositePerformanceCollector;io.sentry.CompositePerformanceCollector
+io.sentry.CompositePerformanceCollector;io.sentry.CompositePerformanceCollector
+Sentry.JavaSdk.IConnectionStatusProvider, Sentry.Bindings.Android;io.sentry.IConnectionStatusProvider
+Sentry.JavaSdk.IConnectionStatusProvider;io.sentry.IConnectionStatusProvider
+io.sentry.IConnectionStatusProvider;io.sentry.IConnectionStatusProvider
+Sentry.JavaSdk.IConnectionStatusProvider+IConnectionStatusObserver, Sentry.Bindings.Android;io.sentry.IConnectionStatusProvider$IConnectionStatusObserver
+Sentry.JavaSdk.IConnectionStatusProvider.IConnectionStatusObserver;io.sentry.IConnectionStatusProvider$IConnectionStatusObserver
+io.sentry.IConnectionStatusProvider$IConnectionStatusObserver;io.sentry.IConnectionStatusProvider$IConnectionStatusObserver
+Sentry.JavaSdk.IContinuousProfiler, Sentry.Bindings.Android;io.sentry.IContinuousProfiler
+Sentry.JavaSdk.IContinuousProfiler;io.sentry.IContinuousProfiler
+io.sentry.IContinuousProfiler;io.sentry.IContinuousProfiler
+Sentry.JavaSdk.IEnvelopeReader, Sentry.Bindings.Android;io.sentry.IEnvelopeReader
+Sentry.JavaSdk.IEnvelopeReader;io.sentry.IEnvelopeReader
+io.sentry.IEnvelopeReader;io.sentry.IEnvelopeReader
+Sentry.JavaSdk.IEnvelopeSender, Sentry.Bindings.Android;io.sentry.IEnvelopeSender
+Sentry.JavaSdk.IEnvelopeSender;io.sentry.IEnvelopeSender
+io.sentry.IEnvelopeSender;io.sentry.IEnvelopeSender
+Sentry.JavaSdk.IEventProcessor, Sentry.Bindings.Android;io.sentry.EventProcessor
+Sentry.JavaSdk.IEventProcessor;io.sentry.EventProcessor
+io.sentry.EventProcessor;io.sentry.EventProcessor
+Sentry.JavaSdk.IHub, Sentry.Bindings.Android;io.sentry.IHub
+Sentry.JavaSdk.IHub;io.sentry.IHub
+io.sentry.IHub;io.sentry.IHub
+Sentry.JavaSdk.IIntegration, Sentry.Bindings.Android;io.sentry.Integration
+Sentry.JavaSdk.IIntegration;io.sentry.Integration
+io.sentry.Integration;io.sentry.Integration
+Sentry.JavaSdk.IJsonDeserializer, Sentry.Bindings.Android;io.sentry.JsonDeserializer
+Sentry.JavaSdk.IJsonDeserializer;io.sentry.JsonDeserializer
+io.sentry.JsonDeserializer;io.sentry.JsonDeserializer
+Sentry.JavaSdk.IJsonSerializable, Sentry.Bindings.Android;io.sentry.JsonSerializable
+Sentry.JavaSdk.IJsonSerializable;io.sentry.JsonSerializable
+io.sentry.JsonSerializable;io.sentry.JsonSerializable
+Sentry.JavaSdk.IJsonUnknown, Sentry.Bindings.Android;io.sentry.JsonUnknown
+Sentry.JavaSdk.IJsonUnknown;io.sentry.JsonUnknown
+io.sentry.JsonUnknown;io.sentry.JsonUnknown
+Sentry.JavaSdk.ILogger, Sentry.Bindings.Android;io.sentry.ILogger
+Sentry.JavaSdk.ILogger;io.sentry.ILogger
+io.sentry.ILogger;io.sentry.ILogger
+Sentry.JavaSdk.IMeasurementUnit, Sentry.Bindings.Android;io.sentry.MeasurementUnit
+Sentry.JavaSdk.IMeasurementUnit;io.sentry.MeasurementUnit
+io.sentry.MeasurementUnit;io.sentry.MeasurementUnit
+Sentry.JavaSdk.IObjectReader, Sentry.Bindings.Android;io.sentry.ObjectReader
+Sentry.JavaSdk.IObjectReader;io.sentry.ObjectReader
+io.sentry.ObjectReader;io.sentry.ObjectReader
+Sentry.JavaSdk.IObjectWriter, Sentry.Bindings.Android;io.sentry.ObjectWriter
+Sentry.JavaSdk.IObjectWriter;io.sentry.ObjectWriter
+io.sentry.ObjectWriter;io.sentry.ObjectWriter
+Sentry.JavaSdk.IOptionsObserver, Sentry.Bindings.Android;io.sentry.IOptionsObserver
+Sentry.JavaSdk.IOptionsObserver;io.sentry.IOptionsObserver
+io.sentry.IOptionsObserver;io.sentry.IOptionsObserver
+Sentry.JavaSdk.IPerformanceCollector, Sentry.Bindings.Android;io.sentry.IPerformanceCollector
+Sentry.JavaSdk.IPerformanceCollector;io.sentry.IPerformanceCollector
+io.sentry.IPerformanceCollector;io.sentry.IPerformanceCollector
+Sentry.JavaSdk.IPerformanceContinuousCollector, Sentry.Bindings.Android;io.sentry.IPerformanceContinuousCollector
+Sentry.JavaSdk.IPerformanceContinuousCollector;io.sentry.IPerformanceContinuousCollector
+io.sentry.IPerformanceContinuousCollector;io.sentry.IPerformanceContinuousCollector
+Sentry.JavaSdk.IPerformanceSnapshotCollector, Sentry.Bindings.Android;io.sentry.IPerformanceSnapshotCollector
+Sentry.JavaSdk.IPerformanceSnapshotCollector;io.sentry.IPerformanceSnapshotCollector
+io.sentry.IPerformanceSnapshotCollector;io.sentry.IPerformanceSnapshotCollector
+Sentry.JavaSdk.IProfileConverter, Sentry.Bindings.Android;io.sentry.IProfileConverter
+Sentry.JavaSdk.IProfileConverter;io.sentry.IProfileConverter
+io.sentry.IProfileConverter;io.sentry.IProfileConverter
+Sentry.JavaSdk.IReplayApi, Sentry.Bindings.Android;io.sentry.IReplayApi
+Sentry.JavaSdk.IReplayApi;io.sentry.IReplayApi
+io.sentry.IReplayApi;io.sentry.IReplayApi
+Sentry.JavaSdk.IReplayBreadcrumbConverter, Sentry.Bindings.Android;io.sentry.ReplayBreadcrumbConverter
+Sentry.JavaSdk.IReplayBreadcrumbConverter;io.sentry.ReplayBreadcrumbConverter
+io.sentry.ReplayBreadcrumbConverter;io.sentry.ReplayBreadcrumbConverter
+Sentry.JavaSdk.IReplayController, Sentry.Bindings.Android;io.sentry.ReplayController
+Sentry.JavaSdk.IReplayController;io.sentry.ReplayController
+io.sentry.ReplayController;io.sentry.ReplayController
+Sentry.JavaSdk.IScopes, Sentry.Bindings.Android;io.sentry.IScopes
+Sentry.JavaSdk.IScopes;io.sentry.IScopes
+io.sentry.IScopes;io.sentry.IScopes
+Sentry.JavaSdk.IScopesStorage, Sentry.Bindings.Android;io.sentry.IScopesStorage
+Sentry.JavaSdk.IScopesStorage;io.sentry.IScopesStorage
+io.sentry.IScopesStorage;io.sentry.IScopesStorage
+Sentry.JavaSdk.ISentryDateProvider, Sentry.Bindings.Android;io.sentry.SentryDateProvider
+Sentry.JavaSdk.ISentryDateProvider;io.sentry.SentryDateProvider
+io.sentry.SentryDateProvider;io.sentry.SentryDateProvider
+Sentry.JavaSdk.ISentryExecutorService, Sentry.Bindings.Android;io.sentry.ISentryExecutorService
+Sentry.JavaSdk.ISentryExecutorService;io.sentry.ISentryExecutorService
+io.sentry.ISentryExecutorService;io.sentry.ISentryExecutorService
+Sentry.JavaSdk.ISentryLifecycleToken, Sentry.Bindings.Android;io.sentry.ISentryLifecycleToken
+Sentry.JavaSdk.ISentryLifecycleToken;io.sentry.ISentryLifecycleToken
+io.sentry.ISentryLifecycleToken;io.sentry.ISentryLifecycleToken
+Sentry.JavaSdk.ISerializer, Sentry.Bindings.Android;io.sentry.ISerializer
+Sentry.JavaSdk.ISerializer;io.sentry.ISerializer
+io.sentry.ISerializer;io.sentry.ISerializer
+Sentry.JavaSdk.ISocketTagger, Sentry.Bindings.Android;io.sentry.ISocketTagger
+Sentry.JavaSdk.ISocketTagger;io.sentry.ISocketTagger
+io.sentry.ISocketTagger;io.sentry.ISocketTagger
+Sentry.JavaSdk.ISpan, Sentry.Bindings.Android;io.sentry.ISpan
+Sentry.JavaSdk.ISpan;io.sentry.ISpan
+io.sentry.ISpan;io.sentry.ISpan
+Sentry.JavaSdk.ISpanDataConvention, Sentry.Bindings.Android;io.sentry.SpanDataConvention
+Sentry.JavaSdk.ISpanDataConvention;io.sentry.SpanDataConvention
+io.sentry.SpanDataConvention;io.sentry.SpanDataConvention
+Sentry.JavaSdk.ISpanFactory, Sentry.Bindings.Android;io.sentry.ISpanFactory
+Sentry.JavaSdk.ISpanFactory;io.sentry.ISpanFactory
+io.sentry.ISpanFactory;io.sentry.ISpanFactory
+Sentry.JavaSdk.ISpanFinishedCallback, Sentry.Bindings.Android;io.sentry.SpanFinishedCallback
+Sentry.JavaSdk.ISpanFinishedCallback;io.sentry.SpanFinishedCallback
+io.sentry.SpanFinishedCallback;io.sentry.SpanFinishedCallback
+Sentry.JavaSdk.ITransaction, Sentry.Bindings.Android;io.sentry.ITransaction
+Sentry.JavaSdk.ITransaction;io.sentry.ITransaction
+io.sentry.ITransaction;io.sentry.ITransaction
+Sentry.JavaSdk.ITransactionFinishedCallback, Sentry.Bindings.Android;io.sentry.TransactionFinishedCallback
+Sentry.JavaSdk.ITransactionFinishedCallback;io.sentry.TransactionFinishedCallback
+io.sentry.TransactionFinishedCallback;io.sentry.TransactionFinishedCallback
+Sentry.JavaSdk.ITransportFactory, Sentry.Bindings.Android;io.sentry.ITransportFactory
+Sentry.JavaSdk.ITransportFactory;io.sentry.ITransportFactory
+io.sentry.ITransportFactory;io.sentry.ITransportFactory
+Sentry.JavaSdk.IVersionDetector, Sentry.Bindings.Android;io.sentry.IVersionDetector
+Sentry.JavaSdk.IVersionDetector;io.sentry.IVersionDetector
+io.sentry.IVersionDetector;io.sentry.IVersionDetector
+Sentry.JavaSdk.Scope+IWithPropagationContext, Sentry.Bindings.Android;io.sentry.Scope$IWithPropagationContext
+Sentry.JavaSdk.Scope.IWithPropagationContext;io.sentry.Scope$IWithPropagationContext
+io.sentry.Scope$IWithPropagationContext;io.sentry.Scope$IWithPropagationContext
+Sentry.JavaSdk.Scope+IWithTransaction, Sentry.Bindings.Android;io.sentry.Scope$IWithTransaction
+Sentry.JavaSdk.Scope.IWithTransaction;io.sentry.Scope$IWithTransaction
+io.sentry.Scope$IWithTransaction;io.sentry.Scope$IWithTransaction
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration+ISendFireAndForget, Sentry.Bindings.Android;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForget
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration.ISendFireAndForget;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForget
+io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForget;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForget
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration+ISendFireAndForgetDirPath, Sentry.Bindings.Android;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetDirPath
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration.ISendFireAndForgetDirPath;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetDirPath
+io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetDirPath;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetDirPath
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration+ISendFireAndForgetFactory, Sentry.Bindings.Android;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetFactory
+Sentry.JavaSdk.SendCachedEnvelopeFireAndForgetIntegration.ISendFireAndForgetFactory;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetFactory
+io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetFactory;io.sentry.SendCachedEnvelopeFireAndForgetIntegration$SendFireAndForgetFactory
+Sentry.JavaSdk.Sentry+IOptionsConfiguration, Sentry.Bindings.Android;io.sentry.Sentry$OptionsConfiguration
+Sentry.JavaSdk.Sentry.IOptionsConfiguration;io.sentry.Sentry$OptionsConfiguration
+io.sentry.Sentry$OptionsConfiguration;io.sentry.Sentry$OptionsConfiguration
+Sentry.JavaSdk.SentryFeedbackOptions+IDialogHandler, Sentry.Bindings.Android;io.sentry.SentryFeedbackOptions$IDialogHandler
+Sentry.JavaSdk.SentryFeedbackOptions.IDialogHandler;io.sentry.SentryFeedbackOptions$IDialogHandler
+io.sentry.SentryFeedbackOptions$IDialogHandler;io.sentry.SentryFeedbackOptions$IDialogHandler
+Sentry.JavaSdk.SentryFeedbackOptions+IOptionsConfigurator, Sentry.Bindings.Android;io.sentry.SentryFeedbackOptions$OptionsConfigurator
+Sentry.JavaSdk.SentryFeedbackOptions.IOptionsConfigurator;io.sentry.SentryFeedbackOptions$OptionsConfigurator
+io.sentry.SentryFeedbackOptions$OptionsConfigurator;io.sentry.SentryFeedbackOptions$OptionsConfigurator
+Sentry.JavaSdk.SentryFeedbackOptions+ISentryFeedbackCallback, Sentry.Bindings.Android;io.sentry.SentryFeedbackOptions$SentryFeedbackCallback
+Sentry.JavaSdk.SentryFeedbackOptions.ISentryFeedbackCallback;io.sentry.SentryFeedbackOptions$SentryFeedbackCallback
+io.sentry.SentryFeedbackOptions$SentryFeedbackCallback;io.sentry.SentryFeedbackOptions$SentryFeedbackCallback
+Sentry.JavaSdk.SentryOptions+IBeforeBreadcrumbCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeBreadcrumbCallback
+Sentry.JavaSdk.SentryOptions.IBeforeBreadcrumbCallback;io.sentry.SentryOptions$BeforeBreadcrumbCallback
+io.sentry.SentryOptions$BeforeBreadcrumbCallback;io.sentry.SentryOptions$BeforeBreadcrumbCallback
+Sentry.JavaSdk.SentryOptions+IBeforeEmitMetricCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeEmitMetricCallback
+Sentry.JavaSdk.SentryOptions.IBeforeEmitMetricCallback;io.sentry.SentryOptions$BeforeEmitMetricCallback
+io.sentry.SentryOptions$BeforeEmitMetricCallback;io.sentry.SentryOptions$BeforeEmitMetricCallback
+Sentry.JavaSdk.SentryOptions+IBeforeEnvelopeCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeEnvelopeCallback
+Sentry.JavaSdk.SentryOptions.IBeforeEnvelopeCallback;io.sentry.SentryOptions$BeforeEnvelopeCallback
+io.sentry.SentryOptions$BeforeEnvelopeCallback;io.sentry.SentryOptions$BeforeEnvelopeCallback
+Sentry.JavaSdk.SentryOptions+IBeforeSendCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeSendCallback
+Sentry.JavaSdk.SentryOptions.IBeforeSendCallback;io.sentry.SentryOptions$BeforeSendCallback
+io.sentry.SentryOptions$BeforeSendCallback;io.sentry.SentryOptions$BeforeSendCallback
+Sentry.JavaSdk.SentryOptions+IBeforeSendReplayCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeSendReplayCallback
+Sentry.JavaSdk.SentryOptions.IBeforeSendReplayCallback;io.sentry.SentryOptions$BeforeSendReplayCallback
+io.sentry.SentryOptions$BeforeSendReplayCallback;io.sentry.SentryOptions$BeforeSendReplayCallback
+Sentry.JavaSdk.SentryOptions+IBeforeSendTransactionCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$BeforeSendTransactionCallback
+Sentry.JavaSdk.SentryOptions.IBeforeSendTransactionCallback;io.sentry.SentryOptions$BeforeSendTransactionCallback
+io.sentry.SentryOptions$BeforeSendTransactionCallback;io.sentry.SentryOptions$BeforeSendTransactionCallback
+Sentry.JavaSdk.SentryOptions+Logs+IBeforeSendLogCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$Logs$BeforeSendLogCallback
+Sentry.JavaSdk.SentryOptions.Logs.IBeforeSendLogCallback;io.sentry.SentryOptions$Logs$BeforeSendLogCallback
+io.sentry.SentryOptions$Logs$BeforeSendLogCallback;io.sentry.SentryOptions$Logs$BeforeSendLogCallback
+Sentry.JavaSdk.SentryOptions+IOnDiscardCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$OnDiscardCallback
+Sentry.JavaSdk.SentryOptions.IOnDiscardCallback;io.sentry.SentryOptions$OnDiscardCallback
+io.sentry.SentryOptions$OnDiscardCallback;io.sentry.SentryOptions$OnDiscardCallback
+Sentry.JavaSdk.SentryOptions+IOnOversizedEventCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$OnOversizedEventCallback
+Sentry.JavaSdk.SentryOptions.IOnOversizedEventCallback;io.sentry.SentryOptions$OnOversizedEventCallback
+io.sentry.SentryOptions$OnOversizedEventCallback;io.sentry.SentryOptions$OnOversizedEventCallback
+Sentry.JavaSdk.SentryOptions+IProfilesSamplerCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$ProfilesSamplerCallback
+Sentry.JavaSdk.SentryOptions.IProfilesSamplerCallback;io.sentry.SentryOptions$ProfilesSamplerCallback
+io.sentry.SentryOptions$ProfilesSamplerCallback;io.sentry.SentryOptions$ProfilesSamplerCallback
+Sentry.JavaSdk.SentryOptions+ITracesSamplerCallback, Sentry.Bindings.Android;io.sentry.SentryOptions$TracesSamplerCallback
+Sentry.JavaSdk.SentryOptions.ITracesSamplerCallback;io.sentry.SentryOptions$TracesSamplerCallback
+io.sentry.SentryOptions$TracesSamplerCallback;io.sentry.SentryOptions$TracesSamplerCallback
+Sentry.JavaSdk.Util.CollectionUtils+IMapper, Sentry.Bindings.Android;io.sentry.util.CollectionUtils$Mapper
+Sentry.JavaSdk.Util.CollectionUtils.IMapper;io.sentry.util.CollectionUtils$Mapper
+io.sentry.util.CollectionUtils$Mapper;io.sentry.util.CollectionUtils$Mapper
+Sentry.JavaSdk.Util.CollectionUtils+IPredicate, Sentry.Bindings.Android;io.sentry.util.CollectionUtils$Predicate
+Sentry.JavaSdk.Util.CollectionUtils.IPredicate;io.sentry.util.CollectionUtils$Predicate
+io.sentry.util.CollectionUtils$Predicate;io.sentry.util.CollectionUtils$Predicate
+Sentry.JavaSdk.Util.HintUtils+ISentryConsumer, Sentry.Bindings.Android;io.sentry.util.HintUtils$SentryConsumer
+Sentry.JavaSdk.Util.HintUtils.ISentryConsumer;io.sentry.util.HintUtils$SentryConsumer
+io.sentry.util.HintUtils$SentryConsumer;io.sentry.util.HintUtils$SentryConsumer
+Sentry.JavaSdk.Util.HintUtils+ISentryHintFallback, Sentry.Bindings.Android;io.sentry.util.HintUtils$SentryHintFallback
+Sentry.JavaSdk.Util.HintUtils.ISentryHintFallback;io.sentry.util.HintUtils$SentryHintFallback
+io.sentry.util.HintUtils$SentryHintFallback;io.sentry.util.HintUtils$SentryHintFallback
+Sentry.JavaSdk.Util.HintUtils+ISentryNullableConsumer, Sentry.Bindings.Android;io.sentry.util.HintUtils$SentryNullableConsumer
+Sentry.JavaSdk.Util.HintUtils.ISentryNullableConsumer;io.sentry.util.HintUtils$SentryNullableConsumer
+io.sentry.util.HintUtils$SentryNullableConsumer;io.sentry.util.HintUtils$SentryNullableConsumer
+Sentry.JavaSdk.Util.LazyEvaluator+IEvaluator, Sentry.Bindings.Android;io.sentry.util.LazyEvaluator$Evaluator
+Sentry.JavaSdk.Util.LazyEvaluator.IEvaluator;io.sentry.util.LazyEvaluator$Evaluator
+io.sentry.util.LazyEvaluator$Evaluator;io.sentry.util.LazyEvaluator$Evaluator
+Sentry.JavaSdk.Util.Thread.IThreadChecker, Sentry.Bindings.Android;io.sentry.util.thread.IThreadChecker
+Sentry.JavaSdk.Util.Thread.IThreadChecker;io.sentry.util.thread.IThreadChecker
+io.sentry.util.thread.IThreadChecker;io.sentry.util.thread.IThreadChecker
+Sentry.JavaSdk.Transport.ICurrentDateProvider, Sentry.Bindings.Android;io.sentry.transport.ICurrentDateProvider
+Sentry.JavaSdk.Transport.ICurrentDateProvider;io.sentry.transport.ICurrentDateProvider
+io.sentry.transport.ICurrentDateProvider;io.sentry.transport.ICurrentDateProvider
+Sentry.JavaSdk.Transport.ITransport, Sentry.Bindings.Android;io.sentry.transport.ITransport
+Sentry.JavaSdk.Transport.ITransport;io.sentry.transport.ITransport
+io.sentry.transport.ITransport;io.sentry.transport.ITransport
+Sentry.JavaSdk.Transport.ITransportGate, Sentry.Bindings.Android;io.sentry.transport.ITransportGate
+Sentry.JavaSdk.Transport.ITransportGate;io.sentry.transport.ITransportGate
+io.sentry.transport.ITransportGate;io.sentry.transport.ITransportGate
+Sentry.JavaSdk.Transport.RateLimiter+IRateLimitObserver, Sentry.Bindings.Android;io.sentry.transport.RateLimiter$IRateLimitObserver
+Sentry.JavaSdk.Transport.RateLimiter.IRateLimitObserver;io.sentry.transport.RateLimiter$IRateLimitObserver
+io.sentry.transport.RateLimiter$IRateLimitObserver;io.sentry.transport.RateLimiter$IRateLimitObserver
+Sentry.JavaSdk.Internal.Modules.IModulesLoader, Sentry.Bindings.Android;io.sentry.internal.modules.IModulesLoader
+Sentry.JavaSdk.Internal.Modules.IModulesLoader;io.sentry.internal.modules.IModulesLoader
+io.sentry.internal.modules.IModulesLoader;io.sentry.internal.modules.IModulesLoader
+Sentry.JavaSdk.Internal.Gestures.IGestureTargetLocator, Sentry.Bindings.Android;io.sentry.internal.gestures.GestureTargetLocator
+Sentry.JavaSdk.Internal.Gestures.IGestureTargetLocator;io.sentry.internal.gestures.GestureTargetLocator
+io.sentry.internal.gestures.GestureTargetLocator;io.sentry.internal.gestures.GestureTargetLocator
+Sentry.JavaSdk.Hints.IAbnormalExit, Sentry.Bindings.Android;io.sentry.hints.AbnormalExit
+Sentry.JavaSdk.Hints.IAbnormalExit;io.sentry.hints.AbnormalExit
+io.sentry.hints.AbnormalExit;io.sentry.hints.AbnormalExit
+Sentry.JavaSdk.Hints.IApplyScopeData, Sentry.Bindings.Android;io.sentry.hints.ApplyScopeData
+Sentry.JavaSdk.Hints.IApplyScopeData;io.sentry.hints.ApplyScopeData
+io.sentry.hints.ApplyScopeData;io.sentry.hints.ApplyScopeData
+Sentry.JavaSdk.Hints.IBackfillable, Sentry.Bindings.Android;io.sentry.hints.Backfillable
+Sentry.JavaSdk.Hints.IBackfillable;io.sentry.hints.Backfillable
+io.sentry.hints.Backfillable;io.sentry.hints.Backfillable
+Sentry.JavaSdk.Hints.ICached, Sentry.Bindings.Android;io.sentry.hints.Cached
+Sentry.JavaSdk.Hints.ICached;io.sentry.hints.Cached
+io.sentry.hints.Cached;io.sentry.hints.Cached
+Sentry.JavaSdk.Hints.IDiskFlushNotification, Sentry.Bindings.Android;io.sentry.hints.DiskFlushNotification
+Sentry.JavaSdk.Hints.IDiskFlushNotification;io.sentry.hints.DiskFlushNotification
+io.sentry.hints.DiskFlushNotification;io.sentry.hints.DiskFlushNotification
+Sentry.JavaSdk.Hints.IEnqueable, Sentry.Bindings.Android;io.sentry.hints.Enqueable
+Sentry.JavaSdk.Hints.IEnqueable;io.sentry.hints.Enqueable
+io.sentry.hints.Enqueable;io.sentry.hints.Enqueable
+Sentry.JavaSdk.Hints.IFlushable, Sentry.Bindings.Android;io.sentry.hints.Flushable
+Sentry.JavaSdk.Hints.IFlushable;io.sentry.hints.Flushable
+io.sentry.hints.Flushable;io.sentry.hints.Flushable
+Sentry.JavaSdk.Hints.IResettable, Sentry.Bindings.Android;io.sentry.hints.Resettable
+Sentry.JavaSdk.Hints.IResettable;io.sentry.hints.Resettable
+io.sentry.hints.Resettable;io.sentry.hints.Resettable
+Sentry.JavaSdk.Hints.IRetryable, Sentry.Bindings.Android;io.sentry.hints.Retryable
+Sentry.JavaSdk.Hints.IRetryable;io.sentry.hints.Retryable
+io.sentry.hints.Retryable;io.sentry.hints.Retryable
+Sentry.JavaSdk.Hints.ISessionEnd, Sentry.Bindings.Android;io.sentry.hints.SessionEnd
+Sentry.JavaSdk.Hints.ISessionEnd;io.sentry.hints.SessionEnd
+io.sentry.hints.SessionEnd;io.sentry.hints.SessionEnd
+Sentry.JavaSdk.Hints.ISessionStart, Sentry.Bindings.Android;io.sentry.hints.SessionStart
+Sentry.JavaSdk.Hints.ISessionStart;io.sentry.hints.SessionStart
+io.sentry.hints.SessionStart;io.sentry.hints.SessionStart
+Sentry.JavaSdk.Hints.ISubmissionResult, Sentry.Bindings.Android;io.sentry.hints.SubmissionResult
+Sentry.JavaSdk.Hints.ISubmissionResult;io.sentry.hints.SubmissionResult
+io.sentry.hints.SubmissionResult;io.sentry.hints.SubmissionResult
+Sentry.JavaSdk.Hints.ITransactionEnd, Sentry.Bindings.Android;io.sentry.hints.TransactionEnd
+Sentry.JavaSdk.Hints.ITransactionEnd;io.sentry.hints.TransactionEnd
+io.sentry.hints.TransactionEnd;io.sentry.hints.TransactionEnd
+Sentry.JavaSdk.Config.IPropertiesProvider, Sentry.Bindings.Android;io.sentry.config.PropertiesProvider
+Sentry.JavaSdk.Config.IPropertiesProvider;io.sentry.config.PropertiesProvider
+io.sentry.config.PropertiesProvider;io.sentry.config.PropertiesProvider
+Sentry.JavaSdk.ClientReports.IClientReportRecorder, Sentry.Bindings.Android;io.sentry.clientreport.IClientReportRecorder
+Sentry.JavaSdk.ClientReports.IClientReportRecorder;io.sentry.clientreport.IClientReportRecorder
+io.sentry.clientreport.IClientReportRecorder;io.sentry.clientreport.IClientReportRecorder
+Sentry.JavaSdk.ClientReports.IClientReportStorage, Sentry.Bindings.Android;io.sentry.clientreport.IClientReportStorage
+Sentry.JavaSdk.ClientReports.IClientReportStorage;io.sentry.clientreport.IClientReportStorage
+io.sentry.clientreport.IClientReportStorage;io.sentry.clientreport.IClientReportStorage
+Sentry.JavaSdk.Cache.IEnvelopeCache, Sentry.Bindings.Android;io.sentry.cache.IEnvelopeCache
+Sentry.JavaSdk.Cache.IEnvelopeCache;io.sentry.cache.IEnvelopeCache
+io.sentry.cache.IEnvelopeCache;io.sentry.cache.IEnvelopeCache
+Sentry.JavaSdk.Android.Core.AppState+IAppStateListener, Sentry.Bindings.Android;io.sentry.android.core.AppState$AppStateListener
+Sentry.JavaSdk.Android.Core.AppState.IAppStateListener;io.sentry.android.core.AppState$AppStateListener
+io.sentry.android.core.AppState$AppStateListener;io.sentry.android.core.AppState$AppStateListener
+Sentry.JavaSdk.Android.Core.AppState+IAppStateListenerImplementor, Sentry.Bindings.Android;mono.io.sentry.android.core.AppState_AppStateListenerImplementor
+Sentry.JavaSdk.Android.Core.AppState.IAppStateListenerImplementor;mono.io.sentry.android.core.AppState_AppStateListenerImplementor
+mono.io.sentry.android.core.AppState_AppStateListenerImplementor;mono.io.sentry.android.core.AppState_AppStateListenerImplementor
+Sentry.JavaSdk.Android.Core.IDebugImagesLoader, Sentry.Bindings.Android;io.sentry.android.core.IDebugImagesLoader
+Sentry.JavaSdk.Android.Core.IDebugImagesLoader;io.sentry.android.core.IDebugImagesLoader
+io.sentry.android.core.IDebugImagesLoader;io.sentry.android.core.IDebugImagesLoader
+Sentry.JavaSdk.Android.Core.SentryAndroidOptions+IBeforeCaptureCallback, Sentry.Bindings.Android;io.sentry.android.core.SentryAndroidOptions$BeforeCaptureCallback
+Sentry.JavaSdk.Android.Core.SentryAndroidOptions.IBeforeCaptureCallback;io.sentry.android.core.SentryAndroidOptions$BeforeCaptureCallback
+io.sentry.android.core.SentryAndroidOptions$BeforeCaptureCallback;io.sentry.android.core.SentryAndroidOptions$BeforeCaptureCallback
+Sentry.JavaSdk.Android.Core.SentryUserFeedbackDialog+IOptionsConfiguration, Sentry.Bindings.Android;io.sentry.android.core.SentryUserFeedbackDialog$OptionsConfiguration
+Sentry.JavaSdk.Android.Core.SentryUserFeedbackDialog.IOptionsConfiguration;io.sentry.android.core.SentryUserFeedbackDialog$OptionsConfiguration
+io.sentry.android.core.SentryUserFeedbackDialog$OptionsConfiguration;io.sentry.android.core.SentryUserFeedbackDialog$OptionsConfiguration
 AndroidX.Activity.BackEventCompat+ISwipeEdge, Xamarin.AndroidX.Activity;androidx.activity.BackEventCompat$SwipeEdge
 AndroidX.Activity.BackEventCompat.ISwipeEdge;androidx.activity.BackEventCompat$SwipeEdge
 androidx.activity.BackEventCompat$SwipeEdge;androidx.activity.BackEventCompat$SwipeEdge
@@ -604,6 +964,9 @@ androidx.core.app.ActivityCompat$PermissionCompatDelegate;androidx.core.app.Acti
 AndroidX.Core.App.ActivityCompat+IRequestPermissionsRequestCodeValidator, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
 AndroidX.Core.App.ActivityCompat.IRequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
 androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
+AndroidX.Core.App.ActivityOptionsCompat+IBackgroundActivityStartMode, Xamarin.AndroidX.Core;androidx.core.app.ActivityOptionsCompat$BackgroundActivityStartMode
+AndroidX.Core.App.ActivityOptionsCompat.IBackgroundActivityStartMode;androidx.core.app.ActivityOptionsCompat$BackgroundActivityStartMode
+androidx.core.app.ActivityOptionsCompat$BackgroundActivityStartMode;androidx.core.app.ActivityOptionsCompat$BackgroundActivityStartMode
 AndroidX.Core.App.CoreComponentFactory+ICompatWrapped, Xamarin.AndroidX.Core;androidx.core.app.CoreComponentFactory$CompatWrapped
 AndroidX.Core.App.CoreComponentFactory.ICompatWrapped;androidx.core.app.CoreComponentFactory$CompatWrapped
 androidx.core.app.CoreComponentFactory$CompatWrapped;androidx.core.app.CoreComponentFactory$CompatWrapped
@@ -625,6 +988,9 @@ androidx.core.app.OnNewIntentProvider;androidx.core.app.OnNewIntentProvider
 AndroidX.Core.App.IOnPictureInPictureModeChangedProvider, Xamarin.AndroidX.Core;androidx.core.app.OnPictureInPictureModeChangedProvider
 AndroidX.Core.App.IOnPictureInPictureModeChangedProvider;androidx.core.app.OnPictureInPictureModeChangedProvider
 androidx.core.app.OnPictureInPictureModeChangedProvider;androidx.core.app.OnPictureInPictureModeChangedProvider
+AndroidX.Core.App.IOnUserLeaveHintProvider, Xamarin.AndroidX.Core;androidx.core.app.OnUserLeaveHintProvider
+AndroidX.Core.App.IOnUserLeaveHintProvider;androidx.core.app.OnUserLeaveHintProvider
+androidx.core.app.OnUserLeaveHintProvider;androidx.core.app.OnUserLeaveHintProvider
 AndroidX.Core.App.NotificationCompat+Action+IExtender, Xamarin.AndroidX.Core;androidx.core.app.NotificationCompat$Action$Extender
 AndroidX.Core.App.NotificationCompat.Action.IExtender;androidx.core.app.NotificationCompat$Action$Extender
 androidx.core.app.NotificationCompat$Action$Extender;androidx.core.app.NotificationCompat$Action$Extender
@@ -739,6 +1105,9 @@ androidx.core.view.HapticFeedbackConstantsCompat$HapticFeedbackFlags;androidx.co
 AndroidX.Core.View.HapticFeedbackConstantsCompat+IHapticFeedbackType, Xamarin.AndroidX.Core;androidx.core.view.HapticFeedbackConstantsCompat$HapticFeedbackType
 AndroidX.Core.View.HapticFeedbackConstantsCompat.IHapticFeedbackType;androidx.core.view.HapticFeedbackConstantsCompat$HapticFeedbackType
 androidx.core.view.HapticFeedbackConstantsCompat$HapticFeedbackType;androidx.core.view.HapticFeedbackConstantsCompat$HapticFeedbackType
+AndroidX.Core.View.IDifferentialMotionFlingTarget, Xamarin.AndroidX.Core;androidx.core.view.DifferentialMotionFlingTarget
+AndroidX.Core.View.IDifferentialMotionFlingTarget;androidx.core.view.DifferentialMotionFlingTarget
+androidx.core.view.DifferentialMotionFlingTarget;androidx.core.view.DifferentialMotionFlingTarget
 AndroidX.Core.View.ILayoutInflaterFactory, Xamarin.AndroidX.Core;androidx.core.view.LayoutInflaterFactory
 AndroidX.Core.View.ILayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
 androidx.core.view.LayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
@@ -961,27 +1330,36 @@ androidx.fragment.app.strictmode.FragmentStrictMode$OnViolationListener;androidx
 AndroidX.Fragment.App.StrictMode.FragmentStrictMode+IOnViolationListenerImplementor, Xamarin.AndroidX.Fragment;mono.androidx.fragment.app.strictmode.FragmentStrictMode_OnViolationListenerImplementor
 AndroidX.Fragment.App.StrictMode.FragmentStrictMode.IOnViolationListenerImplementor;mono.androidx.fragment.app.strictmode.FragmentStrictMode_OnViolationListenerImplementor
 mono.androidx.fragment.app.strictmode.FragmentStrictMode_OnViolationListenerImplementor;mono.androidx.fragment.app.strictmode.FragmentStrictMode_OnViolationListenerImplementor
-AndroidX.Lifecycle.IDefaultLifecycleObserver, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.DefaultLifecycleObserver
+AndroidX.Lifecycle.IDefaultLifecycleObserver, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.DefaultLifecycleObserver
 AndroidX.Lifecycle.IDefaultLifecycleObserver;androidx.lifecycle.DefaultLifecycleObserver
 androidx.lifecycle.DefaultLifecycleObserver;androidx.lifecycle.DefaultLifecycleObserver
-AndroidX.Lifecycle.IGeneratedAdapter, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.GeneratedAdapter
+AndroidX.Lifecycle.IGeneratedAdapter, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.GeneratedAdapter
 AndroidX.Lifecycle.IGeneratedAdapter;androidx.lifecycle.GeneratedAdapter
 androidx.lifecycle.GeneratedAdapter;androidx.lifecycle.GeneratedAdapter
-AndroidX.Lifecycle.IGenericLifecycleObserver, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.GenericLifecycleObserver
+AndroidX.Lifecycle.IGenericLifecycleObserver, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.GenericLifecycleObserver
 AndroidX.Lifecycle.IGenericLifecycleObserver;androidx.lifecycle.GenericLifecycleObserver
 androidx.lifecycle.GenericLifecycleObserver;androidx.lifecycle.GenericLifecycleObserver
-AndroidX.Lifecycle.ILifecycleEventObserver, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.LifecycleEventObserver
+AndroidX.Lifecycle.ILifecycleEventObserver, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.LifecycleEventObserver
 AndroidX.Lifecycle.ILifecycleEventObserver;androidx.lifecycle.LifecycleEventObserver
 androidx.lifecycle.LifecycleEventObserver;androidx.lifecycle.LifecycleEventObserver
-AndroidX.Lifecycle.ILifecycleObserver, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.LifecycleObserver
+AndroidX.Lifecycle.ILifecycleObserver, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.LifecycleObserver
 AndroidX.Lifecycle.ILifecycleObserver;androidx.lifecycle.LifecycleObserver
 androidx.lifecycle.LifecycleObserver;androidx.lifecycle.LifecycleObserver
-AndroidX.Lifecycle.ILifecycleOwner, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.LifecycleOwner
+AndroidX.Lifecycle.ILifecycleOwner, Xamarin.AndroidX.Lifecycle.Common.Jvm;androidx.lifecycle.LifecycleOwner
 AndroidX.Lifecycle.ILifecycleOwner;androidx.lifecycle.LifecycleOwner
 androidx.lifecycle.LifecycleOwner;androidx.lifecycle.LifecycleOwner
 AndroidX.Lifecycle.IObserver, Xamarin.AndroidX.Lifecycle.LiveData.Core;androidx.lifecycle.Observer
 AndroidX.Lifecycle.IObserver;androidx.lifecycle.Observer
 androidx.lifecycle.Observer;androidx.lifecycle.Observer
+AndroidX.Lifecycle.ILifecycleRegistryOwner, Xamarin.AndroidX.Lifecycle.Runtime.Android;androidx.lifecycle.LifecycleRegistryOwner
+AndroidX.Lifecycle.ILifecycleRegistryOwner;androidx.lifecycle.LifecycleRegistryOwner
+androidx.lifecycle.LifecycleRegistryOwner;androidx.lifecycle.LifecycleRegistryOwner
+AndroidX.Lifecycle.ReportFragment+IActivityInitializationListener, Xamarin.AndroidX.Lifecycle.Runtime.Android;androidx.lifecycle.ReportFragment$ActivityInitializationListener
+AndroidX.Lifecycle.ReportFragment.IActivityInitializationListener;androidx.lifecycle.ReportFragment$ActivityInitializationListener
+androidx.lifecycle.ReportFragment$ActivityInitializationListener;androidx.lifecycle.ReportFragment$ActivityInitializationListener
+AndroidX.Lifecycle.ReportFragment+IActivityInitializationListenerImplementor, Xamarin.AndroidX.Lifecycle.Runtime.Android;mono.androidx.lifecycle.ReportFragment_ActivityInitializationListenerImplementor
+AndroidX.Lifecycle.ReportFragment.IActivityInitializationListenerImplementor;mono.androidx.lifecycle.ReportFragment_ActivityInitializationListenerImplementor
+mono.androidx.lifecycle.ReportFragment_ActivityInitializationListenerImplementor;mono.androidx.lifecycle.ReportFragment_ActivityInitializationListenerImplementor
 AndroidX.Lifecycle.IHasDefaultViewModelProviderFactory, Xamarin.AndroidX.Lifecycle.ViewModel;androidx.lifecycle.HasDefaultViewModelProviderFactory
 AndroidX.Lifecycle.IHasDefaultViewModelProviderFactory;androidx.lifecycle.HasDefaultViewModelProviderFactory
 androidx.lifecycle.HasDefaultViewModelProviderFactory;androidx.lifecycle.HasDefaultViewModelProviderFactory
@@ -1774,12 +2152,18 @@ kotlinx.coroutines.DisposableHandle;kotlinx.coroutines.DisposableHandle
 Xamarin.KotlinX.Coroutines.IExperimentalCoroutinesApi, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.ExperimentalCoroutinesApi
 Xamarin.KotlinX.Coroutines.IExperimentalCoroutinesApi;kotlinx.coroutines.ExperimentalCoroutinesApi
 kotlinx.coroutines.ExperimentalCoroutinesApi;kotlinx.coroutines.ExperimentalCoroutinesApi
+Xamarin.KotlinX.Coroutines.IExperimentalForInheritanceCoroutinesApi, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
+Xamarin.KotlinX.Coroutines.IExperimentalForInheritanceCoroutinesApi;kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
+kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi;kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 Xamarin.KotlinX.Coroutines.IFlowPreview, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.FlowPreview
 Xamarin.KotlinX.Coroutines.IFlowPreview;kotlinx.coroutines.FlowPreview
 kotlinx.coroutines.FlowPreview;kotlinx.coroutines.FlowPreview
 Xamarin.KotlinX.Coroutines.IInternalCoroutinesApi, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.InternalCoroutinesApi
 Xamarin.KotlinX.Coroutines.IInternalCoroutinesApi;kotlinx.coroutines.InternalCoroutinesApi
 kotlinx.coroutines.InternalCoroutinesApi;kotlinx.coroutines.InternalCoroutinesApi
+Xamarin.KotlinX.Coroutines.IInternalForInheritanceCoroutinesApi, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.InternalForInheritanceCoroutinesApi
+Xamarin.KotlinX.Coroutines.IInternalForInheritanceCoroutinesApi;kotlinx.coroutines.InternalForInheritanceCoroutinesApi
+kotlinx.coroutines.InternalForInheritanceCoroutinesApi;kotlinx.coroutines.InternalForInheritanceCoroutinesApi
 Xamarin.KotlinX.Coroutines.IJob, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.Job
 Xamarin.KotlinX.Coroutines.IJob;kotlinx.coroutines.Job
 kotlinx.coroutines.Job;kotlinx.coroutines.Job

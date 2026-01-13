@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Zavrsni.Browser",
   "resources": {
-    "hash": "sha256-jr76f136fZhhjWO8EbPzMv8x61vMpb0jEyvQOwGb9Lw=",
+    "hash": "sha256-1IrJvdzPFLCxFwqmOZvrC17AVmqTalkQRmCFWvv9IcA=",
     "fingerprinting": {
       "Avalonia.Base.hi23v6rqyq.wasm": "Avalonia.Base.wasm",
       "Avalonia.Controls.gx5qith02h.wasm": "Avalonia.Controls.wasm",
@@ -75,6 +75,7 @@
       "Microsoft.Extensions.WebEncoders.5g1hzlp5lk.wasm": "Microsoft.Extensions.WebEncoders.wasm",
       "Microsoft.Net.Http.Headers.vhfw8f9f40.wasm": "Microsoft.Net.Http.Headers.wasm",
       "Mono.TextTemplating.kzb422hul9.wasm": "Mono.TextTemplating.wasm",
+      "Sentry.ormsgfciry.wasm": "Sentry.wasm",
       "ShimSkiaSharp.s4giryt74u.wasm": "ShimSkiaSharp.wasm",
       "SkiaSharp.8dph0bad52.wasm": "SkiaSharp.wasm",
       "SQLitePCLRaw.batteries_v2.3v5whd3evz.wasm": "SQLitePCLRaw.batteries_v2.wasm",
@@ -332,10 +333,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "Zavrsni.2ghvlsra7n.wasm": "Zavrsni.wasm",
-      "Zavrsni.xwjvjdh03u.pdb": "Zavrsni.pdb",
-      "Zavrsni.Browser.87edc8qhwa.wasm": "Zavrsni.Browser.wasm",
-      "Zavrsni.Browser.7cisx064mc.pdb": "Zavrsni.Browser.pdb"
+      "Zavrsni.81iz9qssnf.wasm": "Zavrsni.wasm",
+      "Zavrsni.3eadw7p2dy.pdb": "Zavrsni.pdb",
+      "Zavrsni.Browser.0uc62tupdh.wasm": "Zavrsni.Browser.wasm",
+      "Zavrsni.Browser.gxfxxfymub.pdb": "Zavrsni.Browser.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.noby4tlk4d.js": "sha256-p9eEzXhQIsI0a5bBJhfzW15iRafgplTxT8XrO5FiH9o="
@@ -428,6 +429,7 @@
       "Microsoft.Extensions.WebEncoders.5g1hzlp5lk.wasm": "sha256-a5cONIoRz1DZ7wOayrQN13v0jyRJtn2tHDBBFwPmMdo=",
       "Microsoft.Net.Http.Headers.vhfw8f9f40.wasm": "sha256-jfXK+cfJd/PteHB+5Bay/NDY9b9VLvVw6G/Bm262Lpo=",
       "Mono.TextTemplating.kzb422hul9.wasm": "sha256-UNDfdehUq+nBEhST6P/jpyMNO7rLZiAm4bgDkhGlQ6A=",
+      "Sentry.ormsgfciry.wasm": "sha256-RE4GoDWDREBTIxVMvti+k042ITsJXOPh6ZqYNBLSPRI=",
       "ShimSkiaSharp.s4giryt74u.wasm": "sha256-LHVvqHcgGdks8GZBY02XC32aA8zhgLofqzneUbRW/Ic=",
       "SkiaSharp.8dph0bad52.wasm": "sha256-VHlhtYNzQReypwMfzGmEyAZ+xQ0MQdsy6ZTvok5vDU0=",
       "SQLitePCLRaw.batteries_v2.3v5whd3evz.wasm": "sha256-r5pUQvWwdp1MxZ7qFfD4+L+mh0WmE7DrApFw8tLgXLA=",
@@ -611,12 +613,12 @@
       "WindowsBase.vy2l5u79y6.wasm": "sha256-ufB9Mo5joMyUs3DzXWWBFFIZNEVrt6h9N5stYB6Oln4=",
       "mscorlib.xd6mv31d55.wasm": "sha256-1YSLR2eZt3ceALFV//vZUF2AloxVil3VlrW1zZYPSEI=",
       "netstandard.kaml52uspo.wasm": "sha256-HLEwBpLfzKw2/zGSVzHzFJxznCkt/WIjahrziiMrOpA=",
-      "Zavrsni.2ghvlsra7n.wasm": "sha256-Er8yMcwQ58oHcEBVGIV9TcTP0SzXZbQ4dbuS7gDlVno=",
-      "Zavrsni.Browser.87edc8qhwa.wasm": "sha256-JBWEbhZ4X3ZTY6kCaL2UG6wmedU2+AfB8wC4GAtaC6Y="
+      "Zavrsni.81iz9qssnf.wasm": "sha256-9KgjEQGBHTacUKRCKFcG7XHMgeZRLkq3b8wXRkR2q/Q=",
+      "Zavrsni.Browser.0uc62tupdh.wasm": "sha256-eHx19AEccLsYAHKZuey0+WPil2ahRxhmxzi9Are3Y/E="
     },
     "pdb": {
-      "Zavrsni.xwjvjdh03u.pdb": "sha256-kc0SVrLhpst5pk6YVCy/aR0z8iDwmfiaPQ4UAf6ow+o=",
-      "Zavrsni.Browser.7cisx064mc.pdb": "sha256-12xr+2VetihkURu013Iu/dG7V/kuhF4/Plx5amBoQ4U="
+      "Zavrsni.3eadw7p2dy.pdb": "sha256-Jd5dyDi/S7WPy2tJaM+81jr1tMaMDCDqzTrz5JmJ+Nk=",
+      "Zavrsni.Browser.gxfxxfymub.pdb": "sha256-5Mu4gNuewVo1//FDE6EQrjDdJMcHFlsVO8Gz9s4sMsw="
     },
     "satelliteResources": {
       "cs": {
