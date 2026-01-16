@@ -45,7 +45,8 @@ namespace Zavrsni.Commands
 
             _viewModel.ErrorMessage = "";
             User wantedUser = new User(_viewModel.Username, _viewModel.Password);
-            if (await _userService.LoginAsync(wantedUser))
+            var dbUserOperation = await _userService.LoginAsync(wantedUser);
+            if (dbUserOperation.IsSuccess)
             {
                 SentrySdk.AddBreadcrumb(
                     message: $"User successfully logged in.",
@@ -70,9 +71,8 @@ namespace Zavrsni.Commands
                     level: BreadcrumbLevel.Info
                 );
 
-                _viewModel.ErrorMessage = "You entered something wrong.";
+                _viewModel.ErrorMessage = $"{dbUserOperation.Message}";
             }
-
             
             throw new Exception("Breadcrumb test");
         }

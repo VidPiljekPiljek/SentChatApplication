@@ -27,7 +27,7 @@ namespace Zavrsni.Services
             _userRepository = userRepository;
         }
 
-        public async Task<bool> LoginAsync(User wantedUser)
+        public async Task<OperationResult> LoginAsync(User wantedUser)
         {
             return await _userAuthenticator.AuthenticateUser(wantedUser);
         }

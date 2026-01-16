@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Zavrsni.ErrorHandling;
 using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
@@ -25,18 +26,18 @@ namespace Zavrsni.Authenticators
             _userStore = userStore;
         }
 
-        public async Task<bool> AuthenticateUser(User wantedUser)
+        public async Task<OperationResult> AuthenticateUser(User wantedUser)
         {
             var dbUserOperation = await _userRepository.GetUserByUsernameAsync(wantedUser.Username);
 
             if (!dbUserOperation.IsSuccess)
             {
-                return false;
+                return OperationResult.Failure(dbUserOperation.Message);
             }
 
-            bool isPasswordVerified = VerifyPassword(wantedUser, dbUserOperation.Data);
+            var isPasswordVerified = VerifyPassword(wantedUser, dbUserOperation.Data);
 
-            if (isPasswordVerified)
+            if (isPasswordVerified.IsSuccess)
             {
                 // Using UserMapper for security purposes
                 _userStore.CurrentUser = UserMapper.ToUserViewModel(dbUserOperation.Data);
@@ -52,9 +53,14 @@ namespace Zavrsni.Authenticators
             return user;
         }
 
-        public bool VerifyPassword(User wantedUser, User dbUser)
+        public OperationResult VerifyPassword(User wantedUser, User dbUser)
         {
-            return _passwordHasher.VerifyHashedPassword(dbUser, dbUser.Password, wantedUser.Password) == PasswordVerificationResult.Success;
+            if (_passwordHasher.VerifyHashedPassword(dbUser, dbUser.Password, wantedUser.Password) == PasswordVerificationResult.Success)
+            {
+                return OperationResult.Success();
+            }
+
+            return OperationResult.Failure("Wrong password entered.");
         }
     }
 }

@@ -25,6 +25,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Fetching current user conversations.",
+                    category: "Conversation fetching",
+                    level: BreadcrumbLevel.Info
+                );
+
                 return await dbContext.Conversations.Where(c => c.Members.Any(m => m.UserId == userId)).ToListAsync();
             }
         }
