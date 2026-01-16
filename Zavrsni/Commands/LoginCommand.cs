@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Common;
@@ -36,10 +37,22 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
+            SentrySdk.AddBreadcrumb(
+                message: "User started login.",
+                category: "Login",
+                level: BreadcrumbLevel.Info
+                );
+
             _viewModel.ErrorMessage = "";
             User wantedUser = new User(_viewModel.Username, _viewModel.Password);
             if (await _userService.LoginAsync(wantedUser))
             {
+                SentrySdk.AddBreadcrumb(
+                    message: $"User successfully logged in.",
+                    category: "User login success",
+                    level: BreadcrumbLevel.Info
+                );
+
                 if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
                 {
                     _viewModel.NavigateToMain();
@@ -51,8 +64,17 @@ namespace Zavrsni.Commands
             }
             else
             {
+                SentrySdk.AddBreadcrumb(
+                    message: $"User login failed.",
+                    category: "User login failure",
+                    level: BreadcrumbLevel.Info
+                );
+
                 _viewModel.ErrorMessage = "You entered something wrong.";
             }
+
+            
+            throw new Exception("Breadcrumb test");
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)

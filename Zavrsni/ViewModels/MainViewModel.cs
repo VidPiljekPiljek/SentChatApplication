@@ -1,6 +1,7 @@
 ﻿using Avalonia.Dialogs.Internal;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Sentry;
 using Zavrsni.Data;
 using Zavrsni.Factories;
 
@@ -36,6 +37,12 @@ public partial class MainViewModel : ViewModelBase
     {
         if (MessagesPageIsActive) return;
 
+        SentrySdk.AddBreadcrumb(
+            message: $"Navigating to messages page.",
+            category: "Page navigation",
+            level: BreadcrumbLevel.Info
+        );
+
         CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Messages);
     }
 
@@ -44,6 +51,12 @@ public partial class MainViewModel : ViewModelBase
     {
         if (AccountPageIsActive) return;
 
+        SentrySdk.AddBreadcrumb(
+            message: $"Navigating to account page.",
+            category: "Page navigation",
+            level: BreadcrumbLevel.Info
+        );
+
         CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Account);
     }
 
@@ -51,6 +64,12 @@ public partial class MainViewModel : ViewModelBase
     private void NavigateToSettings()
     {
         if (SettingsPageIsActive) return;
+
+        SentrySdk.AddBreadcrumb(
+            message: $"Navigating to settings page.",
+            category: "Page navigation",
+            level: BreadcrumbLevel.Info
+        );
 
         CurrentPage = _pageFactory.GetPageViewModel(ApplicationPageNames.Settings);
     }

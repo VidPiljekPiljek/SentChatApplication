@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,12 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
+            SentrySdk.AddBreadcrumb(
+                message: "User is deleting a message.",
+                category: "Message deletion",
+                level: BreadcrumbLevel.Info
+            );
+
             var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
 
             if (messageOperationResult.IsSuccess)

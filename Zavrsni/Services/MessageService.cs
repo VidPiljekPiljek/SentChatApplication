@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -42,11 +43,23 @@ namespace Zavrsni.Services
 
             if (messageOperationResult.IsSuccess && messageOperationResult.Data != null)
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Message sent successfully.",
+                    category: "Message sending success",
+                    level: BreadcrumbLevel.Info
+                );
+
                 _messageStore.AddMessage(messageOperationResult.Data);
                 return OperationResult.Success();
             }
             else
             {
+                SentrySdk.AddBreadcrumb(
+                    message: $"Message sending failed due to: {messageOperationResult.Message}",
+                    category: "Message sending failure",
+                    level: BreadcrumbLevel.Info
+                );
+
                 return messageOperationResult;
             }
         }
@@ -57,11 +70,23 @@ namespace Zavrsni.Services
 
             if (messageOperationResult.IsSuccess)
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Message deleted successfully.",
+                    category: "Message deletion success",
+                    level: BreadcrumbLevel.Info
+                );
+
                 _messageStore.RemoveMessage(messageId);
                 return OperationResult.Success();
             }
             else
             {
+                SentrySdk.AddBreadcrumb(
+                    message: $"Message deletion failed due to: {messageOperationResult.Message}",
+                    category: "Message deletion failure",
+                    level: BreadcrumbLevel.Info
+                );
+
                 return messageOperationResult;
             }
         }

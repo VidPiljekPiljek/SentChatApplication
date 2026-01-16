@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -30,6 +31,12 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
+            SentrySdk.AddBreadcrumb(
+                message: "User started registration.",
+                category: "Registration",
+                level: BreadcrumbLevel.Info
+            );
+
             User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
 
             var userOperationResult = await _userService.RegisterAsync(newUser);
@@ -42,6 +49,8 @@ namespace Zavrsni.Commands
             {
                 _viewModel.ErrorMessage = userOperationResult.Message;
             }
+
+            throw new Exception("Breadcrumb test");
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +40,36 @@ namespace Zavrsni.ViewModels
             //};
         }
 
-        public void NavigateToMain() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Main);
-        public void NavigateToRegistration() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Registration);
-        public void NavigateToLogin() => CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Login);
+        public void NavigateToMain() 
+        {
+            SentrySdk.AddBreadcrumb(
+                message: $"Navigating to main view.",
+                category: "Navigation",
+                level: BreadcrumbLevel.Info
+            );
+
+            CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Main); 
+        }
+        public void NavigateToRegistration()
+        {
+            SentrySdk.AddBreadcrumb(
+                message: $"Navigating to registration view.",
+                category: "Navigation",
+                level: BreadcrumbLevel.Info
+            );
+
+            CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Registration);
+        }
+        public void NavigateToLogin() 
+        {
+            SentrySdk.AddBreadcrumb(
+                message: $"Navigating to login view.",
+                category: "Navigation",
+                level: BreadcrumbLevel.Info
+            );
+
+            CurrentView = _viewFactory.GetViewModel(ApplicationViewNames.Login); 
+        }
 
         public void OpenDialog() => IsDialogOpen = true;
 

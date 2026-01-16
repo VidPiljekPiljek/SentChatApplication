@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,6 +33,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Creating new conversation in database.",
+                    category: "Database conversation creation",
+                    level: BreadcrumbLevel.Info
+                );
+
                 var existingConversation = await dbContext.Conversations.Where(c => !c.IsGroupChat)
                     .Include(c => c.Members)
                     .FirstOrDefaultAsync(c => c.Members.Any(m => m.UserId == conversation.Members.First().UserId) && c.Members.Any(m => m.UserId == conversation.Members.Last().UserId) && c.Members.Count == 2);

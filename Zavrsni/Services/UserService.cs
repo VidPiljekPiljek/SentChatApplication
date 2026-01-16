@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,12 @@ namespace Zavrsni.Services
 
             if (userOperationResult.IsSuccess && userOperationResult.Data != null)
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "User registration failed due to a user of the same name already existing.",
+                    category: "User registration failure",
+                    level: BreadcrumbLevel.Info
+                );
+
                 return OperationResult.Failure("User already exists.");
             }
             else
@@ -49,10 +56,23 @@ namespace Zavrsni.Services
                 {
                     UserViewModel currentUser = UserMapper.ToUserViewModel(userCreationOperationResult.Data);
                     _userStore.CurrentUser = currentUser;
+
+                    SentrySdk.AddBreadcrumb(
+                        message: $"User registration succeeded.",
+                        category: "User registration successful",
+                        level: BreadcrumbLevel.Info
+                    );
+
                     return OperationResult.Success();
                 }
                 else
                 {
+                    SentrySdk.AddBreadcrumb(
+                        message: $"User registration failed due to: {userCreationOperationResult.Message}",
+                        category: "User registration failure",
+                        level: BreadcrumbLevel.Info
+                    );
+
                     return OperationResult.Failure(userCreationOperationResult.Message);
                 }
             }

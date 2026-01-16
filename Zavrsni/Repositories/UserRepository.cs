@@ -1,5 +1,6 @@
 ﻿using Avalonia.Data.Converters;
 using Microsoft.EntityFrameworkCore;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Checking if user already exists.",
+                    category: "Duplicate checking",
+                    level: BreadcrumbLevel.Info
+                );
+
                 var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
                 if (user != null)
                 {
@@ -49,6 +56,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Creating new user in database.",
+                    category: "Database user creation",
+                    level: BreadcrumbLevel.Info
+                );
+
                 await dbContext.Users.AddAsync(newUser);
                 await dbContext.SaveChangesAsync();
                 return OperationResult<User>.Success(newUser);

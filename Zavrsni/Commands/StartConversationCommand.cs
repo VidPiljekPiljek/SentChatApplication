@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,12 @@ namespace Zavrsni.Commands
 
         public async override Task ExecuteAsync(object? parameter)
         {
+            SentrySdk.AddBreadcrumb(
+                message: "User is creating a new conversation.",
+                category: "Conversation initialization",
+                level: BreadcrumbLevel.Info
+                );
+
             _conversationSidebarViewModel.ErrorMessage = "";
             var userOperationResult = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
             if (!userOperationResult.IsSuccess)

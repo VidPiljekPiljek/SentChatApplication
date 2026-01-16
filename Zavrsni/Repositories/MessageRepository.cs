@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,6 +42,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Creating new message in database.",
+                    category: "Message creation",  
+                    level: BreadcrumbLevel.Info
+                );
+
                 await dbContext.Messages.AddAsync(message);
                 await dbContext.SaveChangesAsync();
                 return OperationResult<Message>.Success(message);
@@ -51,6 +58,12 @@ namespace Zavrsni.Repositories
         {
             using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                SentrySdk.AddBreadcrumb(
+                    message: "Deleting message from database.",
+                    category: "Database message deletion",
+                    level: BreadcrumbLevel.Info
+                );
+
                 var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
                 dbContext.Messages.Remove(dbMessage);
                 await dbContext.SaveChangesAsync();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,12 @@ namespace Zavrsni.Commands
 
         public async override Task ExecuteAsync(object? parameter)
         {
+            SentrySdk.AddBreadcrumb(
+                message: "User is sending message.",
+                category: "Message sending",
+                level: BreadcrumbLevel.Info
+            );
+
             Message displayMessage = (Message)parameter!;
 
             Message dbMessage = new Message
