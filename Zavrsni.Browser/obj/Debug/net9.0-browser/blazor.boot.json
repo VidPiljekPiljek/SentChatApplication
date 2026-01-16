@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Zavrsni.Browser",
   "resources": {
-    "hash": "sha256-m690lBAu2EZRJnM72y/+P8I0eB6VCZH1r2lset1orDI=",
+    "hash": "sha256-MW7+W4LJnM9OCSa+WgaMdF1xPm3FqYzYb0f4lJzleY4=",
     "fingerprinting": {
       "Avalonia.Base.hi23v6rqyq.wasm": "Avalonia.Base.wasm",
       "Avalonia.Controls.gx5qith02h.wasm": "Avalonia.Controls.wasm",
@@ -327,25 +327,25 @@
       "netstandard.kaml52uspo.wasm": "netstandard.wasm",
       "System.Private.CoreLib.uqnhzdwypx.wasm": "System.Private.CoreLib.wasm",
       "dotnet.js": "dotnet.js",
-      "dotnet.native.noby4tlk4d.js": "dotnet.native.js",
-      "dotnet.native.qe75a9vfqn.wasm": "dotnet.native.wasm",
-      "dotnet.runtime.9o45ky8ejm.js": "dotnet.runtime.js",
+      "dotnet.native.xidrk0eo52.js": "dotnet.native.js",
+      "dotnet.native.y68cfu4kuf.wasm": "dotnet.native.wasm",
+      "dotnet.runtime.hv7sykez1z.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "Zavrsni.gnk2nhpfws.wasm": "Zavrsni.wasm",
-      "Zavrsni.295796qk1e.pdb": "Zavrsni.pdb",
-      "Zavrsni.Browser.fo293ppm8c.wasm": "Zavrsni.Browser.wasm",
-      "Zavrsni.Browser.sk88vtsj3y.pdb": "Zavrsni.Browser.pdb"
+      "Zavrsni.xdy5fpdizg.wasm": "Zavrsni.wasm",
+      "Zavrsni.vdoixtsva5.pdb": "Zavrsni.pdb",
+      "Zavrsni.Browser.2oc17v3ksz.wasm": "Zavrsni.Browser.wasm",
+      "Zavrsni.Browser.fuxoq8uypm.pdb": "Zavrsni.Browser.pdb"
     },
     "jsModuleNative": {
-      "dotnet.native.noby4tlk4d.js": "sha256-p9eEzXhQIsI0a5bBJhfzW15iRafgplTxT8XrO5FiH9o="
+      "dotnet.native.xidrk0eo52.js": "sha256-OfGprhDb4vgzxzOBj9RRMcRnAdSZR0hH5g5LHA0MzIE="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.9o45ky8ejm.js": "sha256-6QIZYgG+ftoT9N1H1EEJeXIhD/qbKqEcnmawDskiwdI="
+      "dotnet.runtime.hv7sykez1z.js": "sha256-3egSZfVHFUpXw3QwgiaxDQns5wWmrugiXEFPbJyCk2g="
     },
     "wasmNative": {
-      "dotnet.native.qe75a9vfqn.wasm": "sha256-Po2dalLvTpf5jAS+jt0TzuBYybYiL1F6qAacZJ8UAdo="
+      "dotnet.native.y68cfu4kuf.wasm": "sha256-epub+cT7AAhrDiekrY5B4YmQztQS22XhiPGS89zUOsY="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -613,12 +613,12 @@
       "WindowsBase.vy2l5u79y6.wasm": "sha256-ufB9Mo5joMyUs3DzXWWBFFIZNEVrt6h9N5stYB6Oln4=",
       "mscorlib.xd6mv31d55.wasm": "sha256-1YSLR2eZt3ceALFV//vZUF2AloxVil3VlrW1zZYPSEI=",
       "netstandard.kaml52uspo.wasm": "sha256-HLEwBpLfzKw2/zGSVzHzFJxznCkt/WIjahrziiMrOpA=",
-      "Zavrsni.gnk2nhpfws.wasm": "sha256-9H8NhK7jZJDGly9C1EdgqOXeruL//2EQBb2Z4UJ5MFc=",
-      "Zavrsni.Browser.fo293ppm8c.wasm": "sha256-MZOIni2Wq6WlXjnuKWYfjTAWYCeX/HjxadMGSMVCLOQ="
+      "Zavrsni.xdy5fpdizg.wasm": "sha256-q/+pNuBU3JGwJBFQGMcLexupGeSXWb8ARqo8tlZF3b8=",
+      "Zavrsni.Browser.2oc17v3ksz.wasm": "sha256-YmlgGnM/1OVOa3qG1SRJLV7AHIlPO7tRMT4i6L70xE0="
     },
     "pdb": {
-      "Zavrsni.295796qk1e.pdb": "sha256-VjcpJ3LTPsVkwy6sWeL3OzAffS7x7R40eJli2c1kwzw=",
-      "Zavrsni.Browser.sk88vtsj3y.pdb": "sha256-lI+7bOrGYjaNXHmfINlkA6FktxpbjaB/bHNMl5EZ+W0="
+      "Zavrsni.vdoixtsva5.pdb": "sha256-8yB9zo1yHSR3muLYn8nbwG1L0fXJYQRrv/UUTI6PoIo=",
+      "Zavrsni.Browser.fuxoq8uypm.pdb": "sha256-qWTF6hgBUATvtIOkxBi7KySAJ/qpNbT5ocPePk4cxgc="
     },
     "satelliteResources": {
       "cs": {

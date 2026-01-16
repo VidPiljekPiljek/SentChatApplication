@@ -13,6 +13,8 @@
 				<Border.Styles>
 					<Style Selector="Border#conversationListBar">
 						<Setter Property="Background" Value="{DynamicResource ConversationListBarBackground}"/>
+						<Setter Property="BorderThickness" Value="0, 0, 1, 0"/>
+					<Setter Property="BorderBrush" Value="{DynamicResource StandardLayoutBorderBrush}"/>
 					</Style>
 				</Border.Styles>
 				<Grid RowDefinitions="auto, 15, auto, 15, auto, 15,  *">

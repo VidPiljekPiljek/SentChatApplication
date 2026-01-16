@@ -66,6 +66,27 @@
 	</Application.Resources>
 
 	<Application.Resources>
+		<LinearGradientBrush x:Key="StandardSelectedOrHoverBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#FE00ED"/>
+			<GradientStop Offset="1" Color="#00C3EF"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="StandardPressedBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#9C0068"/>
+			<GradientStop Offset="1" Color="#0038C7"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="StandardLayoutBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#363636"/>
+			<GradientStop Offset="1" Color="#363636"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
 		<LinearGradientBrush x:Key="DefaultButtonBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#3D56B9"/>
 			<GradientStop Offset="1" Color="#6AB0F2"/>

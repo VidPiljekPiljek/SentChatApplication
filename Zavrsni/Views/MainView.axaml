@@ -18,6 +18,8 @@
 			<Border.Styles>
 				<Style Selector="Border">
 					<Setter Property="Background" Value="{DynamicResource MenuBackground}"/>
+					<Setter Property="BorderThickness" Value="0, 0, 1, 0"/>
+					<Setter Property="BorderBrush" Value="{DynamicResource StandardLayoutBorderBrush}"/>
 				</Style>
 			</Border.Styles>
 			<Grid RowDefinitions="*, auto">

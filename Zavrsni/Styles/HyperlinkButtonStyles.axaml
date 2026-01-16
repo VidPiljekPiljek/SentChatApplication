@@ -18,6 +18,7 @@
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
 		<Setter Property="FontWeight" Value="DemiBold"/>
+	    <Setter Property="BorderBrush" Value="Transparent"/>
 
 		<Setter Property="Transitions">
 			<Transitions>
@@ -29,11 +30,13 @@
 	<Style Selector=":is(HyperlinkButton):pointerover /template/ ContentPresenter">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Foreground" Value="#EEEEEEEE"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
 	</Style>
 
 	<Style Selector=":is(HyperlinkButton):pressed /template/ ContentPresenter">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Foreground" Value="#DDDDDDDD"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
 	</Style>
 
 </Styles>
