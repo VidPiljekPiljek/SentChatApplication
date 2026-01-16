@@ -25,8 +25,8 @@
 	
 	<Application.Resources>
 		<LinearGradientBrush x:Key="ApplicationBackground" StartPoint="0%, 0%" EndPoint="100%, 100%">
-			<GradientStop Offset="0" Color="#2F265B"/>
-			<GradientStop Offset="1" Color="#215077"/>
+			<GradientStop Offset="0" Color="#010101"/>
+			<GradientStop Offset="1" Color="#0F0017"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
@@ -39,22 +39,29 @@
 
 	<Application.Resources>
 		<LinearGradientBrush x:Key="MenuBackground" StartPoint="0%, 0%" EndPoint="0%, 100%">
-			<GradientStop Offset="0" Color="#08184C"/>
-			<GradientStop Offset="1" Color="#233173"/>
+			<GradientStop Offset="0" Color="#06000A"/>
+			<GradientStop Offset="1" Color="#06000A"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
 	<Application.Resources>
 		<LinearGradientBrush x:Key="ConversationListBarBackground" StartPoint="0%, 0%" EndPoint="0%, 100%">
-			<GradientStop Offset="0" Color="#131F59"/>
-			<GradientStop Offset="1" Color="#2942BF"/>
+			<GradientStop Offset="0" Color="#06000A"/>
+			<GradientStop Offset="1" Color="#06000A"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
 	<Application.Resources>
 		<LinearGradientBrush x:Key="MessagesTopBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
-			<GradientStop Offset="0" Color="#131F59"/>
-			<GradientStop Offset="1" Color="#2942BF"/>
+			<GradientStop Offset="0" Color="#06000A"/>
+			<GradientStop Offset="1" Color="#06000A"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="StandardBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#363636"/>
+			<GradientStop Offset="1" Color="#9C9C9C"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 

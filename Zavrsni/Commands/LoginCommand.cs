@@ -73,8 +73,6 @@ namespace Zavrsni.Commands
 
                 _viewModel.ErrorMessage = $"{dbUserOperation.Message}";
             }
-            
-            throw new Exception("Breadcrumb test");
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
