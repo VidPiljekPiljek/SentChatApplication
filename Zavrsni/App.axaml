@@ -108,21 +108,21 @@
 	</Application.Resources>
 
 	<Application.Resources>
-		<LinearGradientBrush x:Key="DeleteButtonBackground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+		<LinearGradientBrush x:Key="DeleteButtonBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#FF0505"/>
 			<GradientStop Offset="1" Color="#820101"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
 	<Application.Resources>
-		<LinearGradientBrush x:Key="DeleteButtonBackgroundHover" StartPoint="0%, 0%" EndPoint="100%, 0%">
+		<LinearGradientBrush x:Key="DeleteButtonHoverBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#D10404"/>
 			<GradientStop Offset="1" Color="#690101"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
 	<Application.Resources>
-		<LinearGradientBrush x:Key="DeleteButtonBackgroundPressed" StartPoint="0%, 0%" EndPoint="100%, 0%">
+		<LinearGradientBrush x:Key="DeleteButtonPressedBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#A30000"/>
 			<GradientStop Offset="1" Color="#520101"/>
 		</LinearGradientBrush>
