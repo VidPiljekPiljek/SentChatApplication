@@ -46,6 +46,9 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Controls/IconButton.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/pilje/source/repos/SentChatApplication/Zavrsni/Styles/AppDefaultStyles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

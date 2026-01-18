@@ -29,13 +29,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Sentry" />
+    <PackageReference Include="Svg.Controls.Skia.Avalonia" />
     <PackageReference Include="Svg.Skia" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
     <Folder Include="Assets\Icons\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
 
   <ItemGroup>

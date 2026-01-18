@@ -221,3 +221,11 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\Sentry.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\obj\Debug\net9.0\Sentry.Attributes.cs
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\Svg.Controls.Skia.Avalonia.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-loongarch64\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-musl-arm\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-musl-arm64\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-musl-loongarch64\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-musl-riscv64\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-riscv64\native\libHarfBuzzSharp.so
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\runtimes\linux-x86\native\libHarfBuzzSharp.so

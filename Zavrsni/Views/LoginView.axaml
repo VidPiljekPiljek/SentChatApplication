@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:skia="clr-namespace:SkiaSharp.Views.Avalonia"
+			 xmlns:svg="clr-namespace:Svg.Controls.Skia.Avalonia;assembly=Svg.Controls.Skia.Avalonia"
 			 xmlns:vm="clr-namespace:Zavrsni.ViewModels"
 			 x:DataType="vm:LoginViewModel"
              mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
@@ -20,10 +20,10 @@
 	<Grid ShowGridLines="False" RowDefinitions="auto, auto, auto, auto, 50, auto, auto, 50, auto">
 		<Label Grid.Row="0" Margin="0, 40, 0, 0" FontSize="96" HorizontalAlignment="Center" Content="SENT"/>
 		<!--<Image>
-			<Image.Source>
-				<skia:SvgImage Source="/Assets/Icons/accounticon.svg"/>
-			</Image.Source>
-		</Image>-->
+  <Image.Source>
+    <SvgImage Source="/Assets/Icons/accounticon.svg" />
+  </Image.Source>
+</Image>-->
 		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
 		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
 		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center" Text="{Binding Username}"/>

@@ -58,12 +58,12 @@
           "dependencies": {
             "Avalonia.Desktop": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "Avalonia.Diagnostics": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.EntityFrameworkCore": {
@@ -95,27 +95,28 @@
             },
             "Svg.Skia": {
               "target": "Package",
-              "version": "[3.2.1, )",
+              "version": "[3.4.1, )",
               "versionCentrallyManaged": true
             }
           },
           "centralPackageVersions": {
-            "Avalonia": "11.3.0",
-            "Avalonia.Android": "11.3.0",
-            "Avalonia.Browser": "11.3.0",
-            "Avalonia.Desktop": "11.3.0",
-            "Avalonia.Diagnostics": "11.3.0",
-            "Avalonia.Fonts.Inter": "11.3.0",
-            "Avalonia.iOS": "11.3.0",
-            "Avalonia.Themes.Fluent": "11.3.0",
+            "Avalonia": "11.3.11",
+            "Avalonia.Android": "11.3.11",
+            "Avalonia.Browser": "11.3.11",
+            "Avalonia.Desktop": "11.3.11",
+            "Avalonia.Diagnostics": "11.3.11",
+            "Avalonia.Fonts.Inter": "11.3.11",
+            "Avalonia.iOS": "11.3.11",
+            "Avalonia.Themes.Fluent": "11.3.11",
             "CommunityToolkit.Mvvm": "8.4.0",
-            "Microsoft.AspNetCore.Identity": "2.3.1",
+            "Microsoft.AspNetCore.Identity": "2.3.9",
             "Microsoft.EntityFrameworkCore": "9.0.10",
             "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
             "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
             "Microsoft.Extensions.DependencyInjection": "9.0.10",
             "Sentry": "6.0.0",
-            "Svg.Skia": "3.2.1",
+            "Svg.Controls.Skia.Avalonia": "11.3.9.2",
+            "Svg.Skia": "3.4.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
           },
           "imports": [
@@ -188,22 +189,22 @@
           "dependencies": {
             "Avalonia": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "Avalonia.Diagnostics": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "Avalonia.Fonts.Inter": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "Avalonia.Themes.Fluent": {
               "target": "Package",
-              "version": "[11.3.0, )",
+              "version": "[11.3.11, )",
               "versionCentrallyManaged": true
             },
             "CommunityToolkit.Mvvm": {
@@ -213,7 +214,7 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.3.1, )",
+              "version": "[2.3.9, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.EntityFrameworkCore": {
@@ -243,29 +244,35 @@
               "version": "[6.0.0, )",
               "versionCentrallyManaged": true
             },
+            "Svg.Controls.Skia.Avalonia": {
+              "target": "Package",
+              "version": "[11.3.9.2, )",
+              "versionCentrallyManaged": true
+            },
             "Svg.Skia": {
               "target": "Package",
-              "version": "[3.2.1, )",
+              "version": "[3.4.1, )",
               "versionCentrallyManaged": true
             }
           },
           "centralPackageVersions": {
-            "Avalonia": "11.3.0",
-            "Avalonia.Android": "11.3.0",
-            "Avalonia.Browser": "11.3.0",
-            "Avalonia.Desktop": "11.3.0",
-            "Avalonia.Diagnostics": "11.3.0",
-            "Avalonia.Fonts.Inter": "11.3.0",
-            "Avalonia.iOS": "11.3.0",
-            "Avalonia.Themes.Fluent": "11.3.0",
+            "Avalonia": "11.3.11",
+            "Avalonia.Android": "11.3.11",
+            "Avalonia.Browser": "11.3.11",
+            "Avalonia.Desktop": "11.3.11",
+            "Avalonia.Diagnostics": "11.3.11",
+            "Avalonia.Fonts.Inter": "11.3.11",
+            "Avalonia.iOS": "11.3.11",
+            "Avalonia.Themes.Fluent": "11.3.11",
             "CommunityToolkit.Mvvm": "8.4.0",
-            "Microsoft.AspNetCore.Identity": "2.3.1",
+            "Microsoft.AspNetCore.Identity": "2.3.9",
             "Microsoft.EntityFrameworkCore": "9.0.10",
             "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
             "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
             "Microsoft.Extensions.DependencyInjection": "9.0.10",
             "Sentry": "6.0.0",
-            "Svg.Skia": "3.2.1",
+            "Svg.Controls.Skia.Avalonia": "11.3.9.2",
+            "Svg.Skia": "3.4.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"
           },
           "imports": [
