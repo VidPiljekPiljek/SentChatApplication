@@ -17,15 +17,15 @@
 		<Button Width="145" Height="50" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Login"/>
 	</StackPanel>-->
 
-	<Grid ShowGridLines="False" RowDefinitions="auto, auto, auto, auto, 50, auto, auto, 50, auto">
-		<Label Grid.Row="0" Margin="0, 40, 0, 0" FontSize="96" HorizontalAlignment="Center" Content="SENT"/>
-		<!--<Image>
+	<Grid ShowGridLines="False" RowDefinitions="auto, 50, auto, auto, 50, auto, auto, 50, auto">
+		<Label Grid.Row="0" Margin="0, 40, 0, 20" FontSize="96" HorizontalAlignment="Center" Content="SENT"/>
+		<Image Grid.Row="1">
   <Image.Source>
     <SvgImage Source="/Assets/Icons/accounticon.svg" />
   </Image.Source>
-</Image>-->
+</Image>
 		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
-		<Label Grid.Row="2" Width="150" Margin="0, 100, 0, 0" HorizontalAlignment="Center" Content="Username"/>
+		<Label Grid.Row="2" Width="150" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Username"/>
 		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center" Text="{Binding Username}"/>
 		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
 		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center" Text="{Binding Password}"/>

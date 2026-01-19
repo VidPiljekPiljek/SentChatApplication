@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Zavrsni.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="65"
+             Height="65"
              x:Class="Zavrsni.Views.MessageDisplayView"
              x:DataType="vm:MessageDisplayViewModel">
     <Border Padding="10">
@@ -15,12 +16,18 @@
                         <Setter Property="BorderBrush" Value="{DynamicResource StandardLayoutBorderBrush}"/>
 					</Style>
 				</Border.Styles>
-        <Grid ColumnDefinitions="50, *, auto, auto, auto">
+        <Grid ColumnDefinitions="50, *, auto, auto, 10, auto">
 			<Label Grid.Column="0" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
            <Label Grid.Column="1" Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Grid.Column="2" Content="{Binding ErrorMessage}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Label Grid.Column="3" Content="{Binding Message.SentAt}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-            <Button Command="{Binding DeleteMessageCommand}" FontSize="11" Grid.Column="4" Classes="delete" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button Command="{Binding DeleteMessageCommand}" FontSize="11" Grid.Column="5" Classes="delete" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image Width="20" Height="20">
+				    <Image.Source>
+                        <SvgImage Source="/Assets/Icons/trash.svg" />
+                    </Image.Source>
+                </Image>
+            </Button>
         </Grid>
     </Border>
 

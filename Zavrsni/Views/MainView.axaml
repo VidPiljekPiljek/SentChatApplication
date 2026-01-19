@@ -24,12 +24,30 @@
 			</Border.Styles>
 			<Grid RowDefinitions="*, auto">
 				<StackPanel Grid.Row="0" Spacing="20">
-					<Button Content="Messages" Width="125" Command="{Binding NavigateToMessagesCommand}"/>
+					<Button Command="{Binding NavigateToMessagesCommand}">
+						<Image Width="20" Height="20">
+							<Image.Source>
+								<SvgImage Source="/Assets/Icons/messages.svg" />
+							</Image.Source>
+						</Image>
+					</Button>
 				</StackPanel>
 
 				<StackPanel Grid.Row="1" Spacing="20">
-					<Button Content="Account" Width="125" Command="{Binding NavigateToAccountCommand}"/>
-					<Button Content="Settings" Width="125" Command="{Binding NavigateToSettingsCommand}"/>
+					<Button Command="{Binding NavigateToAccountCommand}">
+						<Image Width="20" Height="20">
+							<Image.Source>
+								<SvgImage Source="/Assets/Icons/account.svg" />
+							</Image.Source>
+						</Image>
+					</Button>
+					<Button Command="{Binding NavigateToSettingsCommand}">
+						<Image Width="20" Height="20">
+							<Image.Source>
+								<SvgImage Source="/Assets/Icons/settings.svg" />
+							</Image.Source>
+						</Image>
+					</Button>
 				</StackPanel>
 			</Grid>
 

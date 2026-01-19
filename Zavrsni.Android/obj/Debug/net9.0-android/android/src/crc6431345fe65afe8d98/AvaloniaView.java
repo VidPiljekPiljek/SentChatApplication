@@ -10,12 +10,15 @@ public class AvaloniaView
 	public static final String __md_methods;
 	static {
 		__md_methods = 
-			"n_onFocusChanged:(ZILandroid/graphics/Rect;)V:GetOnFocusChanged_ZILandroid_graphics_Rect_Handler\n" +
-			"n_dispatchHoverEvent:(Landroid/view/MotionEvent;)Z:GetDispatchHoverEvent_Landroid_view_MotionEvent_Handler\n" +
-			"n_dispatchKeyEvent:(Landroid/view/KeyEvent;)Z:GetDispatchKeyEvent_Landroid_view_KeyEvent_Handler\n" +
 			"n_onVisibilityAggregated:(Z)V:GetOnVisibilityAggregated_ZHandler\n" +
 			"n_onVisibilityChanged:(Landroid/view/View;I)V:GetOnVisibilityChanged_Landroid_view_View_IHandler\n" +
 			"n_onConfigurationChanged:(Landroid/content/res/Configuration;)V:GetOnConfigurationChanged_Landroid_content_res_Configuration_Handler\n" +
+			"n_onCreateInputConnection:(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;:GetOnCreateInputConnection_Landroid_view_inputmethod_EditorInfo_Handler\n" +
+			"n_onFocusChanged:(ZILandroid/graphics/Rect;)V:GetOnFocusChanged_ZILandroid_graphics_Rect_Handler\n" +
+			"n_dispatchHoverEvent:(Landroid/view/MotionEvent;)Z:GetDispatchHoverEvent_Landroid_view_MotionEvent_Handler\n" +
+			"n_dispatchGenericPointerEvent:(Landroid/view/MotionEvent;)Z:GetDispatchGenericPointerEvent_Landroid_view_MotionEvent_Handler\n" +
+			"n_dispatchTouchEvent:(Landroid/view/MotionEvent;)Z:GetDispatchTouchEvent_Landroid_view_MotionEvent_Handler\n" +
+			"n_dispatchKeyEvent:(Landroid/view/KeyEvent;)Z:GetDispatchKeyEvent_Landroid_view_KeyEvent_Handler\n" +
 			"";
 		mono.android.Runtime.register ("Avalonia.Android.AvaloniaView, Avalonia.Android", AvaloniaView.class, __md_methods);
 	}
@@ -52,27 +55,6 @@ public class AvaloniaView
 		}
 	}
 
-	public void onFocusChanged (boolean p0, int p1, android.graphics.Rect p2)
-	{
-		n_onFocusChanged (p0, p1, p2);
-	}
-
-	private native void n_onFocusChanged (boolean p0, int p1, android.graphics.Rect p2);
-
-	public boolean dispatchHoverEvent (android.view.MotionEvent p0)
-	{
-		return n_dispatchHoverEvent (p0);
-	}
-
-	private native boolean n_dispatchHoverEvent (android.view.MotionEvent p0);
-
-	public boolean dispatchKeyEvent (android.view.KeyEvent p0)
-	{
-		return n_dispatchKeyEvent (p0);
-	}
-
-	private native boolean n_dispatchKeyEvent (android.view.KeyEvent p0);
-
 	public void onVisibilityAggregated (boolean p0)
 	{
 		n_onVisibilityAggregated (p0);
@@ -93,6 +75,48 @@ public class AvaloniaView
 	}
 
 	private native void n_onConfigurationChanged (android.content.res.Configuration p0);
+
+	public android.view.inputmethod.InputConnection onCreateInputConnection (android.view.inputmethod.EditorInfo p0)
+	{
+		return n_onCreateInputConnection (p0);
+	}
+
+	private native android.view.inputmethod.InputConnection n_onCreateInputConnection (android.view.inputmethod.EditorInfo p0);
+
+	public void onFocusChanged (boolean p0, int p1, android.graphics.Rect p2)
+	{
+		n_onFocusChanged (p0, p1, p2);
+	}
+
+	private native void n_onFocusChanged (boolean p0, int p1, android.graphics.Rect p2);
+
+	public boolean dispatchHoverEvent (android.view.MotionEvent p0)
+	{
+		return n_dispatchHoverEvent (p0);
+	}
+
+	private native boolean n_dispatchHoverEvent (android.view.MotionEvent p0);
+
+	public boolean dispatchGenericPointerEvent (android.view.MotionEvent p0)
+	{
+		return n_dispatchGenericPointerEvent (p0);
+	}
+
+	private native boolean n_dispatchGenericPointerEvent (android.view.MotionEvent p0);
+
+	public boolean dispatchTouchEvent (android.view.MotionEvent p0)
+	{
+		return n_dispatchTouchEvent (p0);
+	}
+
+	private native boolean n_dispatchTouchEvent (android.view.MotionEvent p0);
+
+	public boolean dispatchKeyEvent (android.view.KeyEvent p0)
+	{
+		return n_dispatchKeyEvent (p0);
+	}
+
+	private native boolean n_dispatchKeyEvent (android.view.KeyEvent p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

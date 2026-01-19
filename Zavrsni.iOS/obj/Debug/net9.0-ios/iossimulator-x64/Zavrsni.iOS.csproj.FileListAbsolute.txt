@@ -394,3 +394,4 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Sentry.Bindings.Cocoa.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Sentry.Bindings.Cocoa.resources.zip
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\obj\Debug\net9.0-ios\iossimulator-x64\Sentry.Attributes.cs
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.iOS\bin\Debug\net9.0-ios\iossimulator-x64\Svg.Controls.Skia.Avalonia.dll
