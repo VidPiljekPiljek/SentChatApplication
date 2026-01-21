@@ -20,7 +20,7 @@
     </Application.Styles>
 
 	<Application.Resources>
-		<FontFamily x:Key="DefaultFontFamily">Assets/Fonts/Montserrat-VariableFont_wght.ttf</FontFamily>
+		<FontFamily x:Key="DefaultFontFamily">avares://Zavrsni/Assets/Fonts#Montserrat</FontFamily>
 	</Application.Resources>
 	
 	<Application.Resources>
@@ -32,8 +32,8 @@
 
 	<Application.Resources>
 		<LinearGradientBrush x:Key="DialogBackground" StartPoint="0%, 0%" EndPoint="100%, 100%">
-			<GradientStop Offset="0" Color="#553CCE"/>
-			<GradientStop Offset="1" Color="#00325B"/>
+			<GradientStop Offset="0" Color="#230031"/>
+			<GradientStop Offset="1" Color="#00343D"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 
@@ -143,6 +143,20 @@
 		<LinearGradientBrush x:Key="ErrorLabelForeground" StartPoint="0%, 0%" EndPoint="100%, 0%">
 			<GradientStop Offset="0" Color="#D41111"/>
 			<GradientStop Offset="1" Color="#9C1A1A"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="WarningLabelForeground" StartPoint="0%, 0%" EndPoint="100%, 0%">
+			<GradientStop Offset="0" Color="#F6FF00"/>
+			<GradientStop Offset="1" Color="#837400"/>
+		</LinearGradientBrush>
+	</Application.Resources>
+
+	<Application.Resources>
+		<LinearGradientBrush x:Key="WarningBorderBrush" StartPoint="0%, 0%" EndPoint="100%, 100%">
+			<GradientStop Offset="0" Color="#F6FF00"/>
+			<GradientStop Offset="1" Color="#837400"/>
 		</LinearGradientBrush>
 	</Application.Resources>
 </Application>

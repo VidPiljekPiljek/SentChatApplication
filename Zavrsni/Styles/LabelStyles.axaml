@@ -6,6 +6,8 @@
 				<Label Content="Label 1"/>
 				<Label Content="Label 2"/>
 				<Label Classes="error" Content="Label 3"/>
+				<Label Classes="warning" Content="Label 4"/>
+				<Label Classes="sender" Content="Label 5"/>
 		  </StackPanel>
 	  </Border>
   </Design.PreviewWith>
@@ -20,5 +22,15 @@
 	<Style Selector="Label.error">
 		 <Setter Property="FontWeight" Value="Bold"/>
 		<Setter Property="Foreground" Value="{DynamicResource ErrorLabelForeground}"/> 
+	</Style>
+
+	<Style Selector="Label.warning">
+		 <Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="Foreground" Value="{DynamicResource WarningLabelForeground}"/> 
+	</Style>
+
+	<Style Selector="Label.sender">
+		 <Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="Foreground" Value="{DynamicResource StandardSelectedOrHoverBorderBrush}"/> 
 	</Style>
 </Styles>

@@ -54,5 +54,8 @@
     <Compile Update="Views\SettingsPageView.axaml.cs">
       <DependentUpon>SettingsPageView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ErrorDialogView.axaml.cs">
+      <DependentUpon>ErrorDialogView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

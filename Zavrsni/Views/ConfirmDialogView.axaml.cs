@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Zavrsni.Views;
 
-public partial class UIDialogView : UserControl
+public partial class ConfirmDialogView : UserControl
 {
-    public UIDialogView()
+    public ConfirmDialogView()
     {
         InitializeComponent();
     }

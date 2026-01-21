@@ -17,7 +17,7 @@
 	
     <Grid>
 		<ContentControl Content="{Binding CurrentView}"/>
-        <views:UIDialogView IsVisible="{Binding IsDialogOpen}" Content="{Binding UiDialogViewModel}"/>
+        <ContentControl IsVisible="{Binding IsDialogOpen}" Content="{Binding DialogViewModel}"/>
     </Grid>
 	
 </Window>

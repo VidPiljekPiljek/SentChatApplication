@@ -17,27 +17,36 @@ namespace Zavrsni.ViewModels
         private readonly ViewFactory _viewFactory;
 
         [ObservableProperty]
-        private UIDialogViewModel _uiDialogViewModel = new UIDialogViewModel();
-
-        [ObservableProperty]
         private bool _isDialogOpen;
 
         [ObservableProperty]
         private ViewModelBase _currentView;
 
+        [ObservableProperty]
+        private DialogViewModelBase _dialogViewModel;
+
         public MainWindowViewModel(ViewFactory viewFactory, UserService userService, ConversationService conversationService, MessageService messageService)
         {
             _viewFactory = viewFactory;
             _currentView = new LoginViewModel(this, userService, conversationService, messageService);
+        }
 
-            _uiDialogViewModel.DialogClosed += OnDialogClosed;
-            //_uiDialogViewModel.PropertyChanged += (s, e) =>
-            //{
-            //    if (e.PropertyName == nameof(UIDialogViewModel.Message))
-            //    {
-            //        OpenDialog(); 
-            //    }
-            //};
+        public void CreateErrorDialog(string message)
+        {
+            // Using this instead of a factory because it's a simple dialog
+            DialogViewModel = new ErrorDialogViewModel();
+            DialogViewModel.SetMessage(message);
+            DialogViewModel.DialogClosed += OnDialogClosed;
+            OpenDialog();
+        }
+
+        public void CreateConfirmDialog(string message)
+        {
+            // Using this instead of a factory because it's a simple dialog
+            DialogViewModel = new ConfirmDialogViewModel();
+            DialogViewModel.SetMessage(message);
+            DialogViewModel.DialogClosed += OnDialogClosed;
+            OpenDialog();
         }
 
         public void NavigateToMain() 

@@ -8,21 +8,18 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.ViewModels
 {
-    public partial class UIDialogViewModel : ViewModelBase
+    public partial class DialogViewModelBase : ViewModelBase
     {
         public event EventHandler? DialogClosed;
 
         [ObservableProperty]
         private string _message;
 
-        public UIDialogViewModel()
-        {
-        }
+        //public DialogViewModelBase(string message) => (Message) = (message);
 
-        public void SetMessage(string message)
-        {
-            Message = message;
-        }
+        public DialogViewModelBase() { }
+
+        public void SetMessage(string message) => Message = message;
 
         [RelayCommand]
         private void CloseDialog() => DialogClosed?.Invoke(this, EventArgs.Empty);

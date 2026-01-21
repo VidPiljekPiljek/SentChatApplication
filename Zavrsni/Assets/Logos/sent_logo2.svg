@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.16 103.21">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: TwCenMT-Italic, 'Tw Cen MT';
+        font-size: 96px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-1" transform="translate(0 77.85)"><tspan x="0" y="0">SENT</tspan></text>
+      <path d="m160,18.85h-23.85L151.32.57c2.89,6.09,5.79,12.19,8.68,18.28Z"/>
+      <path d="m159.54,77.85h23.85s-15.17,18.28-15.17,18.28c-2.89-6.09-5.79-12.19-8.68-18.28Z"/>
+    </g>
+  </g>
+</svg>
