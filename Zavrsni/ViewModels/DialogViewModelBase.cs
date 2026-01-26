@@ -17,7 +17,10 @@ namespace Zavrsni.ViewModels
 
         //public DialogViewModelBase(string message) => (Message) = (message);
 
-        public DialogViewModelBase() { }
+        public DialogViewModelBase(string message) 
+        {
+            Message = message;
+        }
 
         public void SetMessage(string message) => Message = message;
 

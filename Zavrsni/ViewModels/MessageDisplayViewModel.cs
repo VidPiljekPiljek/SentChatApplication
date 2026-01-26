@@ -1,4 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Zavrsni.Commands;
+using Zavrsni.Messages;
 using Zavrsni.Models;
 using Zavrsni.Services;
 

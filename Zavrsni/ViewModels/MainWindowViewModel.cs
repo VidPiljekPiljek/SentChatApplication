@@ -1,13 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
 using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Authenticators;
 using Zavrsni.Data;
 using Zavrsni.Factories;
+using Zavrsni.Messages;
 using Zavrsni.Services;
 
 namespace Zavrsni.ViewModels
@@ -34,16 +37,7 @@ namespace Zavrsni.ViewModels
         public void CreateErrorDialog(string message)
         {
             // Using this instead of a factory because it's a simple dialog
-            DialogViewModel = new ErrorDialogViewModel();
-            DialogViewModel.SetMessage(message);
-            DialogViewModel.DialogClosed += OnDialogClosed;
-            OpenDialog();
-        }
-
-        public void CreateConfirmDialog(string message)
-        {
-            // Using this instead of a factory because it's a simple dialog
-            DialogViewModel = new ConfirmDialogViewModel();
+            DialogViewModel = new ErrorDialogViewModel(message);
             DialogViewModel.SetMessage(message);
             DialogViewModel.DialogClosed += OnDialogClosed;
             OpenDialog();

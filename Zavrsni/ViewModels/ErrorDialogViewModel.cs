@@ -12,7 +12,7 @@ namespace Zavrsni.ViewModels
 {
     public partial class ErrorDialogViewModel : DialogViewModelBase
     {
-        public ErrorDialogViewModel() : base()
+        public ErrorDialogViewModel(string message) : base( message)
         {
         }
     }
