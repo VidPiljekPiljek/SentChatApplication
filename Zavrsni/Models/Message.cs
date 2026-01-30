@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Supabase.Postgrest.Attributes;
+using Supabase.Postgrest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,16 +11,18 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.Models
 {
-    public class Message
+    [Supabase.Postgrest.Attributes.Table("messages")]
+    public class Message : BaseModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Supabase.Postgrest.Attributes.PrimaryKey("Id")]
         public int Id { get; set; }
+        [Supabase.Postgrest.Attributes.Column("Text")]
         public string Text { get; set; }
+        [Supabase.Postgrest.Attributes.Column("SenderId")]
         public int SenderId { get; set; }
-        public User Sender { get; set; }
+        [Supabase.Postgrest.Attributes.Column("ConversationId")]
         public int ConversationId { get; set; }
-        public Conversation Conversation { get; set; }
+        [Supabase.Postgrest.Attributes.Column("SentAt")]
         public DateTime SentAt { get; set; }
 
         public Message()

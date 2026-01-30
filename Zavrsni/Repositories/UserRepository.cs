@@ -1,6 +1,7 @@
 ﻿using Avalonia.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 using Sentry;
+using Supabase.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Zavrsni.Repositories
 {
     public class UserRepository
     {
+        private readonly ISupabaseClient _supabaseClient;
         private readonly ISentChatAppDbContextFactory _dbContextFactory;
 
         public UserRepository(ISentChatAppDbContextFactory dbContextFactory)

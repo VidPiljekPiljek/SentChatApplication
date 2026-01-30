@@ -31,7 +31,7 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
-    public override void OnFrameworkInitializationCompleted()
+    public async override void OnFrameworkInitializationCompleted()
     {
         var collection = new ServiceCollection();
 
@@ -87,7 +87,24 @@ public partial class App : Application
 
         collection.AddSingleton<ViewFactory>();
 
+        var url = "https://qcnytsojnhpmpqtsdscn.supabase.co";
+        var key = "sb_publishable_H9GqW0ETCMnkZFLksqsnUQ_SlJacNO2";
+
+        var options = new Supabase.SupabaseOptions
+        {
+            AutoConnectRealtime = false
+        };
+
+        collection.AddSingleton(provider =>
+        {
+            return new Supabase.Client(url, key, options);
+        });
+
         var serviceProvider = collection.BuildServiceProvider();
+
+        var supabase = serviceProvider.GetRequiredService<Supabase.Client>();
+
+        await supabase.InitializeAsync();
 
         ISentChatAppDbContextFactory sentChatAppDbContextFactory = serviceProvider.GetRequiredService<ISentChatAppDbContextFactory>();
         try
@@ -102,6 +119,7 @@ public partial class App : Application
             File.AppendAllText("app.log", $"[{DateTime.Now}] {ex.Message}\n");
         }
 
+        // Initializing Sentry
         SentrySdk.Init(options =>
         {
             // A Sentry Data Source Name (DSN) is required.
@@ -119,6 +137,7 @@ public partial class App : Application
             options.AutoSessionTracking = true;
         });
 
+        // Used for tracking unhandled exceptions
         AppDomain.CurrentDomain.UnhandledException += (s, e) =>
         {
             var ex = (Exception)e.ExceptionObject;
@@ -134,6 +153,10 @@ public partial class App : Application
             serviceProvider.GetRequiredService<MainWindowViewModel>().CreateErrorDialog("An unhandled exception has occurred, please try again.");
             serviceProvider.GetRequiredService<MainWindowViewModel>().OpenDialog();
         };
+
+        // Connection to Supabase
+        //var url = Environment.GetEnvironmentVariable("https://qcnytsojnhpmpqtsdscn.supabase.co");
+        //var key = Environment.GetEnvironmentVariable("sb_publishable_H9GqW0ETCMnkZFLksqsnUQ_SlJacNO2");
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

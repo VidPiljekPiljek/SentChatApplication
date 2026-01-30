@@ -29,6 +29,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
     <PackageReference Include="Sentry" />
+    <PackageReference Include="Supabase" />
     <PackageReference Include="Svg.Controls.Skia.Avalonia" />
     <PackageReference Include="Svg.Skia" />
   </ItemGroup>

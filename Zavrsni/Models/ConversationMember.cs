@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.Models
 {
+    [Supabase.Postgrest.Attributes.Table("ConversationMembers")]
     public class ConversationMember
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Supabase.Postgrest.Attributes.PrimaryKey("Id")]
         public int Id { get; set; }
+        [Supabase.Postgrest.Attributes.Column("UserId")]
         public int UserId { get; set; }
-        public User User { get; set; }
+        [Supabase.Postgrest.Attributes.Column("ConversationId")]
         public int ConversationId { get; set; }
-        public Conversation Conversation { get; set; }
 
         public ConversationMember()
         {

@@ -109,6 +109,11 @@
               "version": "[6.0.0, )",
               "versionCentrallyManaged": true
             },
+            "Supabase": {
+              "target": "Package",
+              "version": "[1.1.1, )",
+              "versionCentrallyManaged": true
+            },
             "Svg.Controls.Skia.Avalonia": {
               "target": "Package",
               "version": "[11.3.9.2, )",
@@ -136,6 +141,7 @@
             "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
             "Microsoft.Extensions.DependencyInjection": "9.0.10",
             "Sentry": "6.0.0",
+            "Supabase": "1.1.1",
             "Svg.Controls.Skia.Avalonia": "11.3.9.2",
             "Svg.Skia": "3.4.1",
             "Xamarin.AndroidX.Core.SplashScreen": "1.0.1.15"

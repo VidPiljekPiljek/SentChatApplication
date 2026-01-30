@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Supabase.Postgrest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,15 +10,20 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.Models
 {
-    public class User
+    [Table("users")]
+    public class User : BaseModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey("Id")]
         public int Id { get; set; }
+        [Column("Username")]
         public string Username { get; set; }
+        [Column("Password")]
         public string Password { get; set; }
+        [Column("Email")]
         public string Email { get; set; }
+        [Column("ProfilePicture")]
         public string ProfilePicture { get; set; }
+        [Column("CreatedAt")]
         public DateTime CreatedAt { get; set; }
         public ICollection<Message> SentMessages { get; set; }
         public ICollection<ConversationMember> Memberships { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Supabase.Postgrest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,28 +10,29 @@ using Zavrsni.Views;
 
 namespace Zavrsni.Models
 {
-    public class Conversation
+    [Supabase.Postgrest.Attributes.Table("messages")]
+    public class Conversation : BaseModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Supabase.Postgrest.Attributes.PrimaryKey("Id")]
         public int Id { get; set; }
+        [Supabase.Postgrest.Attributes.Column("Name")]
         public string Name { get; set; }
+        [Supabase.Postgrest.Attributes.Column("IsGroupChat")]
         public bool IsGroupChat { get; set; }
+        [Supabase.Postgrest.Attributes.Column("CreatedAt")]
         public DateTime CreatedAt { get; set; }
-        public ICollection<ConversationMember> Members { get; set; }
-        public ICollection<Message> Messages { get; set; }
 
         public Conversation()
         {
 
         }
 
-        public Conversation(string name, bool isGroupChat, DateTime createdAt, ICollection<ConversationMember> members)
-        {
-            Name = name;
-            IsGroupChat = isGroupChat;
-            CreatedAt = createdAt;
-            Members = members;
-        }
+        //public Conversation(string name, bool isGroupChat, DateTime createdAt, ICollection<ConversationMember> members)
+        //{
+        //    Name = name;
+        //    IsGroupChat = isGroupChat;
+        //    CreatedAt = createdAt;
+        //    Members = members;
+        //}
     }
 }
