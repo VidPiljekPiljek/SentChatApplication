@@ -1,6 +1,7 @@
 ﻿using Avalonia.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 using Sentry;
+using Supabase.Gotrue;
 using Supabase.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,58 +17,60 @@ namespace Zavrsni.Repositories
 {
     public class UserRepository
     {
-        private readonly ISupabaseClient _supabaseClient;
-        private readonly ISentChatAppDbContextFactory _dbContextFactory;
+        private readonly Supabase.Client _supabaseClient;
 
-        public UserRepository(ISentChatAppDbContextFactory dbContextFactory)
+        public UserRepository(Supabase.Client supabaseClient)
         {
-            _dbContextFactory = dbContextFactory;
+            _supabaseClient = supabaseClient;
         }
 
-        public async Task<User?> GetUserAsync(User wantedUser)
+        public async Task<OperationResult<UserProfile>> GetUserAsync(string email, string password)
         {
-            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            SentrySdk.AddBreadcrumb(
+                message: "Checking if user already exists.",
+                category: "Duplicate checking",
+                level: BreadcrumbLevel.Info
+            );
+
+            var session = await _supabaseClient.Auth.SignIn(email, password);
+
+            if (session?.User is null)
             {
-                return await dbContext.Users.FirstOrDefaultAsync(u => u.Username == wantedUser.Username && u.Password == wantedUser.Password);
+                return OperationResult<UserProfile>.Failure("User not found. Please try again.");
             }
+
+            var userId = session.User.Id!;
+
+            var response = await _supabaseClient
+                .From<UserProfile>()
+                .Where(p => p.Id == userId)
+                .Single();
+
+            return OperationResult<UserProfile>.Success(response);
         }
 
-        public async Task<OperationResult<User>> GetUserByUsernameAsync(string username)
+        public async Task<OperationResult> CreateUserAsync(string email, string password, string username)
         {
-            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            SentrySdk.AddBreadcrumb(
+                message: "Creating new user in database.",
+                category: "Database user creation",
+                level: BreadcrumbLevel.Info
+            );
+
+            var userOperation = await _supabaseClient.Auth.SignUp(email, password);
+
+            if (userOperation?.User is null)
             {
-                SentrySdk.AddBreadcrumb(
-                    message: "Checking if user already exists.",
-                    category: "Duplicate checking",
-                    level: BreadcrumbLevel.Info
-                );
-
-                var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Username == username);
-                if (user != null)
-                {
-                    return OperationResult<User>.Success(user);
-                }
-                else
-                {
-                    return OperationResult<User>.Failure("User not found.");
-                }
+                return OperationResult<UserProfile>.Failure("User creation failed.");
             }
-        }
 
-        public async Task<OperationResult<User>> CreateUserAsync(User newUser)
-        {
-            using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
+            _supabaseClient.From<UserProfile>().Insert(new UserProfile
             {
-                SentrySdk.AddBreadcrumb(
-                    message: "Creating new user in database.",
-                    category: "Database user creation",
-                    level: BreadcrumbLevel.Info
-                );
+                Id = userOperation.User.Id,
+                Username = username
+            });
 
-                await dbContext.Users.AddAsync(newUser);
-                await dbContext.SaveChangesAsync();
-                return OperationResult<User>.Success(newUser);
-            }
+            return OperationResult.Success();
         }
     }
 }

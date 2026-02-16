@@ -37,13 +37,11 @@ namespace Zavrsni.Commands
                 level: BreadcrumbLevel.Info
             );
 
-            User newUser = new User(_viewModel.Username, _viewModel.Password, _viewModel.Email, "picture.jpg", DateTime.Now);
-
-            var userOperationResult = await _userService.RegisterAsync(newUser);
+            var userOperationResult = await _userService.RegisterAsync(_viewModel.Email, _viewModel.Password, _viewModel.Username);
 
             if (userOperationResult.IsSuccess)
             {
-                _viewModel.NavigateToMain();
+                _viewModel.ErrorMessage = "User successfully registered. You can now login!";
             }
             else
             {

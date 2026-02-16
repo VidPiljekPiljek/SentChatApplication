@@ -10,29 +10,21 @@ using Zavrsni.Views;
 
 namespace Zavrsni.Models
 {
-    [Supabase.Postgrest.Attributes.Table("messages")]
+    [Supabase.Postgrest.Attributes.Table("conversations")]
     public class Conversation : BaseModel
     {
-        [Supabase.Postgrest.Attributes.PrimaryKey("Id")]
+        [Supabase.Postgrest.Attributes.PrimaryKey("id")]
         public int Id { get; set; }
-        [Supabase.Postgrest.Attributes.Column("Name")]
+        [Supabase.Postgrest.Attributes.Column("name")]
         public string Name { get; set; }
-        [Supabase.Postgrest.Attributes.Column("IsGroupChat")]
+        [Supabase.Postgrest.Attributes.Column("isgroupchat")]
         public bool IsGroupChat { get; set; }
-        [Supabase.Postgrest.Attributes.Column("CreatedAt")]
+        [Supabase.Postgrest.Attributes.Column("createdat")]
         public DateTime CreatedAt { get; set; }
 
         public Conversation()
         {
 
         }
-
-        //public Conversation(string name, bool isGroupChat, DateTime createdAt, ICollection<ConversationMember> members)
-        //{
-        //    Name = name;
-        //    IsGroupChat = isGroupChat;
-        //    CreatedAt = createdAt;
-        //    Members = members;
-        //}
     }
 }

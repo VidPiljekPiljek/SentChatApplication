@@ -10,17 +10,17 @@ namespace Zavrsni.Stores
 {
     public class UserStore
     {
-        private UserViewModel _currentUser;
+        private UserProfile _currentUserProfile;
 
-        public UserViewModel? CurrentUser
+        public UserProfile? CurrentUserProfile
         {
             get 
             {
-                return _currentUser;
+                return _currentUserProfile;
             }
             set
             {
-                _currentUser = value;
+                _currentUserProfile = value;
             }
         }
 
@@ -29,19 +29,24 @@ namespace Zavrsni.Stores
 
         }
 
-        public int GetCurrentUserId()
+        public string GetCurrentUserId()
         {
-            return CurrentUser.Id;
+            return CurrentUserProfile.Id;
         }
 
-        public UserViewModel GetCurrentUser()
+        public UserProfile GetCurrentUser()
         {
-            return CurrentUser;
+            return CurrentUserProfile;
         }
 
         public string GetCurrentUserUsername()
         {
-            return CurrentUser.Username;
+            return CurrentUserProfile.Username;
+        }
+
+        public void SetCurrentUserProfile(UserProfile userProfile)
+        {
+            CurrentUserProfile = userProfile;
         }
     }
 }

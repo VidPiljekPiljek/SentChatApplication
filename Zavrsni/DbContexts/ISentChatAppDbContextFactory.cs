@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Zavrsni.DbContexts
 {
-    public interface ISentChatAppDbContextFactory
-    {
-        SentChatAppDbContext CreateDbContext();
-    }
+    //public interface ISentChatAppDbContextFactory
+    //{
+    //    SentChatAppDbContext CreateDbContext();
+    //}
 }

@@ -32,7 +32,7 @@ namespace Zavrsni.Commands
 
         public override bool CanExecute(object? parameter)
         {
-            return !string.IsNullOrEmpty(_viewModel.Username) && !string.IsNullOrEmpty(_viewModel.Password) && base.CanExecute(parameter);
+            return !string.IsNullOrEmpty(_viewModel.Email) && !string.IsNullOrEmpty(_viewModel.Password) && base.CanExecute(parameter);
         }
 
         public override async Task ExecuteAsync(object? parameter)
@@ -44,8 +44,8 @@ namespace Zavrsni.Commands
                 );
 
             _viewModel.ErrorMessage = "";
-            User wantedUser = new User(_viewModel.Username, _viewModel.Password);
-            var dbUserOperation = await _userService.LoginAsync(wantedUser);
+
+            var dbUserOperation = await _userService.LoginAsync(_viewModel.Email, _viewModel.Password);
             if (dbUserOperation.IsSuccess)
             {
                 SentrySdk.AddBreadcrumb(
@@ -77,7 +77,7 @@ namespace Zavrsni.Commands
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(_viewModel.Username) || e.PropertyName == nameof(_viewModel.Password))
+            if (e.PropertyName == nameof(_viewModel.Email) || e.PropertyName == nameof(_viewModel.Password))
             {
                 OnCanExecuteChanged();
             }

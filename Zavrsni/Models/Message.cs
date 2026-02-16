@@ -14,47 +14,20 @@ namespace Zavrsni.Models
     [Supabase.Postgrest.Attributes.Table("messages")]
     public class Message : BaseModel
     {
-        [Supabase.Postgrest.Attributes.PrimaryKey("Id")]
+        [Supabase.Postgrest.Attributes.PrimaryKey("id")]
         public int Id { get; set; }
-        [Supabase.Postgrest.Attributes.Column("Text")]
+        [Supabase.Postgrest.Attributes.Column("text")]
         public string Text { get; set; }
-        [Supabase.Postgrest.Attributes.Column("SenderId")]
+        [Supabase.Postgrest.Attributes.Column("senderid")]
         public int SenderId { get; set; }
-        [Supabase.Postgrest.Attributes.Column("ConversationId")]
+        [Supabase.Postgrest.Attributes.Column("conversationid")]
         public int ConversationId { get; set; }
-        [Supabase.Postgrest.Attributes.Column("SentAt")]
+        [Supabase.Postgrest.Attributes.Column("sentat")]
         public DateTime SentAt { get; set; }
 
         public Message()
         {
 
-        }
-
-        public Message(string text, int senderId, int conversationId, DateTime sentAt)
-        {
-            Text = text;
-            SenderId = senderId;
-            ConversationId = conversationId;
-            SentAt = sentAt;
-        }
-
-        public Message(string text, int senderId, User sender, int conversationId, DateTime sentAt)
-        {
-            Text = text;
-            SenderId = senderId;
-            Sender = sender;
-            ConversationId = conversationId;
-            SentAt = sentAt;
-        }
-
-        public Message(int id, string text, int senderId, User sender, int conversationId, DateTime sentAt)
-        {
-            Id = id;
-            Text = text;
-            SenderId = senderId;
-            Sender = sender;
-            ConversationId = conversationId;
-            SentAt = sentAt;
         }
     }
 }

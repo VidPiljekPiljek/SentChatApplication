@@ -18,7 +18,7 @@ namespace Zavrsni.Authenticators
     {
         private readonly UserRepository _userRepository;
         private readonly UserStore _userStore;
-        private readonly PasswordHasher<User> _passwordHasher = new();
+        private readonly PasswordHasher<UserProfile> _passwordHasher = new();
 
         public UserAuthenticator(UserRepository userRepository, UserStore userStore)
         {
@@ -26,41 +26,18 @@ namespace Zavrsni.Authenticators
             _userStore = userStore;
         }
 
-        public async Task<OperationResult> AuthenticateUser(User wantedUser)
+        public async Task<OperationResult> AuthenticateUser(string email, string password)
         {
-            var dbUserOperation = await _userRepository.GetUserByUsernameAsync(wantedUser.Username);
+            var dbUserOperation = await _userRepository.GetUserAsync(email, password);
 
             if (!dbUserOperation.IsSuccess)
             {
                 return OperationResult.Failure(dbUserOperation.Message);
             }
 
-            var isPasswordVerified = VerifyPassword(wantedUser, dbUserOperation.Data);
+            _userStore.SetCurrentUserProfile(dbUserOperation.Data);
 
-            if (isPasswordVerified.IsSuccess)
-            {
-                // Using UserMapper for security purposes
-                _userStore.CurrentUser = UserMapper.ToUserViewModel(dbUserOperation.Data);
-            }
-
-            return isPasswordVerified;
-        }
-
-        public User HashPassword(User user)
-        {
-            user.Password = _passwordHasher.HashPassword(user, user.Password);
-
-            return user;
-        }
-
-        public OperationResult VerifyPassword(User wantedUser, User dbUser)
-        {
-            if (_passwordHasher.VerifyHashedPassword(dbUser, dbUser.Password, wantedUser.Password) == PasswordVerificationResult.Success)
-            {
-                return OperationResult.Success();
-            }
-
-            return OperationResult.Failure("Wrong password entered.");
+            return OperationResult.Success();
         }
     }
 }

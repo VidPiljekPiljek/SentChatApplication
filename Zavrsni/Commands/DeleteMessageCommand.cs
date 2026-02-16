@@ -24,7 +24,9 @@ namespace Zavrsni.Commands
 
         public override bool CanExecute(object? parameter)
         {
-            return _messageDisplayViewModel.Message.SenderId == _userService.GetCurrentUserId() && base.CanExecute(parameter);
+            //return _messageDisplayViewModel.Message.SenderId == _userService.GetCurrentUserId() && base.CanExecute(parameter);
+
+            return true;
         }
 
         public override async Task ExecuteAsync(object? parameter)

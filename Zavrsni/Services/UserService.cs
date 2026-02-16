@@ -27,80 +27,52 @@ namespace Zavrsni.Services
             _userRepository = userRepository;
         }
 
-        public async Task<OperationResult> LoginAsync(User wantedUser)
+        public async Task<OperationResult> LoginAsync(string email, string password)
         {
-            return await _userAuthenticator.AuthenticateUser(wantedUser);
+            return await _userAuthenticator.AuthenticateUser(email, password);
         }
 
-        public async Task<OperationResult> RegisterAsync(User newUser)
+        public async Task<OperationResult> RegisterAsync(string email, string password, string username)
         {
-            newUser = _userAuthenticator.HashPassword(newUser);
+            var userCreationOperationResult = await _userRepository.CreateUserAsync(email, password, username);
 
-            var userOperationResult = await _userRepository.GetUserByUsernameAsync(newUser.Username);
-
-            if (userOperationResult.IsSuccess && userOperationResult.Data != null)
+            if (userCreationOperationResult.IsSuccess)
             {
                 SentrySdk.AddBreadcrumb(
-                    message: "User registration failed due to a user of the same name already existing.",
+                    message: $"User registration succeeded.",
+                    category: "User registration successful",
+                    level: BreadcrumbLevel.Info
+                );
+
+                return OperationResult.Success();
+            }
+            else
+            {
+                SentrySdk.AddBreadcrumb(
+                    message: $"User registration failed due to: {userCreationOperationResult.Message}",
                     category: "User registration failure",
                     level: BreadcrumbLevel.Info
                 );
 
-                return OperationResult.Failure("User already exists.");
+                return OperationResult.Failure(userCreationOperationResult.Message);
             }
-            else
-            {
-                var userCreationOperationResult = await _userRepository.CreateUserAsync(newUser);
-
-                if (userCreationOperationResult.IsSuccess)
-                {
-                    UserViewModel currentUser = UserMapper.ToUserViewModel(userCreationOperationResult.Data);
-                    _userStore.CurrentUser = currentUser;
-
-                    SentrySdk.AddBreadcrumb(
-                        message: $"User registration succeeded.",
-                        category: "User registration successful",
-                        level: BreadcrumbLevel.Info
-                    );
-
-                    return OperationResult.Success();
-                }
-                else
-                {
-                    SentrySdk.AddBreadcrumb(
-                        message: $"User registration failed due to: {userCreationOperationResult.Message}",
-                        category: "User registration failure",
-                        level: BreadcrumbLevel.Info
-                    );
-
-                    return OperationResult.Failure(userCreationOperationResult.Message);
-                }
-            }
-        }
-
-        public int GetCurrentUserId()
-        {
-            return _userStore.GetCurrentUserId();
         }
 
         public async Task<OperationResult<UserViewModel>> GetUserByUsernameAsync(string username)
         {
-            var userOperationResult = await _userRepository.GetUserByUsernameAsync(username);
+            //var userOperationResult = await _userRepository.GetUserAsync(username);
 
-            if (userOperationResult.IsSuccess && userOperationResult.Data != null)
-            {
-                UserViewModel dbUserViewModel = UserMapper.ToUserViewModel(userOperationResult.Data);
-                return OperationResult<UserViewModel>.Success(dbUserViewModel);
-            }
-            else
-            {
-                return OperationResult<UserViewModel>.Failure(userOperationResult.Message);
-            }
-        }
+            //if (userOperationResult.IsSuccess && userOperationResult.Data != null)
+            //{
+            //    UserViewModel dbUserViewModel = UserMapper.ToUserViewModel(userOperationResult.Data);
+            //    return OperationResult<UserViewModel>.Success(dbUserViewModel);
+            //}
+            //else
+            //{
+            //    return OperationResult<UserViewModel>.Failure(userOperationResult.Message);
+            //}
 
-        public UserViewModel GetCurrentUser()
-        {
-            return _userStore.GetCurrentUser();
+            return OperationResult<UserViewModel>.Success(new UserViewModel());
         }
 
         public string GetCurrentUserUsername()

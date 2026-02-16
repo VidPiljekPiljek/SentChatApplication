@@ -24,7 +24,7 @@ namespace Zavrsni.ViewModels
         public ICommand LoginCommand { get; }
 
         [ObservableProperty]
-        private string _username;
+        private string _email;
 
         [ObservableProperty]
         private string _password;
