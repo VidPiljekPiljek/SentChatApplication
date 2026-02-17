@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Supabase.Postgrest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,14 +10,14 @@ using System.Threading.Tasks;
 namespace Zavrsni.Models
 {
     [Supabase.Postgrest.Attributes.Table("conversationmembers")]
-    public class ConversationMember
+    public class ConversationMember : BaseModel
     {
         [Supabase.Postgrest.Attributes.PrimaryKey("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Supabase.Postgrest.Attributes.Column("userid")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [Supabase.Postgrest.Attributes.Column("conversationid")]
-        public int ConversationId { get; set; }
+        public string ConversationId { get; set; }
 
         public ConversationMember()
         {

@@ -14,7 +14,7 @@ namespace Zavrsni.Models
     public class Conversation : BaseModel
     {
         [Supabase.Postgrest.Attributes.PrimaryKey("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Supabase.Postgrest.Attributes.Column("name")]
         public string Name { get; set; }
         [Supabase.Postgrest.Attributes.Column("isgroupchat")]

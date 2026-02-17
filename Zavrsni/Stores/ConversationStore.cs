@@ -42,7 +42,7 @@ namespace Zavrsni.Stores
             return true;
         }
 
-        public int GetSelectedConversationId()
+        public string GetSelectedConversationId()
         {
             return SelectedConversation.Id;
         }

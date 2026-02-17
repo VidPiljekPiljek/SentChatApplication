@@ -43,7 +43,7 @@ namespace Zavrsni.ViewModels
                 var selectedConversation = ConversationSidebarViewModel.SelectedConversation;
                 if (selectedConversation != null)
                 {
-                    MessagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
+                    //MessagesViewModel.LoadMessagesForConversation(selectedConversation.Id);
                     _conversationService.SelectConversation(selectedConversation);
                     MessagesViewModel.GetSelectedConversationTitle();
                 }

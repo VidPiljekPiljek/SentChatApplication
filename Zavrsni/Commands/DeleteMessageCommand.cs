@@ -31,22 +31,22 @@ namespace Zavrsni.Commands
 
         public override async Task ExecuteAsync(object? parameter)
         {
-            SentrySdk.AddBreadcrumb(
-                message: "User is deleting a message.",
-                category: "Message deletion",
-                level: BreadcrumbLevel.Info
-            );
+            //SentrySdk.AddBreadcrumb(
+            //    message: "User is deleting a message.",
+            //    category: "Message deletion",
+            //    level: BreadcrumbLevel.Info
+            //);
 
-            var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
+            //var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.Id);
 
-            if (messageOperationResult.IsSuccess)
-            {
-                _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
-            }
-            else
-            {
-                _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
-            }
+            //if (messageOperationResult.IsSuccess)
+            //{
+            //    _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
+            //}
+            //else
+            //{
+            //    _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
+            //}
         }
     }
 }

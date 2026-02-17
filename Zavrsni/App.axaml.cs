@@ -35,8 +35,6 @@ public partial class App : Application
     {
         var collection = new ServiceCollection();
 
-        collection.AddSingleton<ISentChatAppDbContextFactory>(new SentChatAppDbContextFactory("Data source=sentchatapp.db"));
-
         collection.AddSingleton<MainWindowViewModel>();
         collection.AddTransient<MainViewModel>();
         collection.AddTransient<LoginViewModel>();
@@ -88,7 +86,7 @@ public partial class App : Application
         collection.AddSingleton<ViewFactory>();
 
         var url = "https://qcnytsojnhpmpqtsdscn.supabase.co";
-        var key = "sb_publishable_H9GqW0ETCMnkZFLksqsnUQ_SlJacNO2";
+        var key = "sb_secret_Z8jey8NYm6hOggZZrhhWcA_ys8E3B2E";
 
         var options = new Supabase.SupabaseOptions
         {
@@ -105,19 +103,6 @@ public partial class App : Application
         var supabase = serviceProvider.GetRequiredService<Supabase.Client>();
 
         await supabase.InitializeAsync();
-
-        ISentChatAppDbContextFactory sentChatAppDbContextFactory = serviceProvider.GetRequiredService<ISentChatAppDbContextFactory>();
-        try
-        {
-            using (SentChatAppDbContext dbContext = sentChatAppDbContextFactory.CreateDbContext())
-            {
-                dbContext.Database.Migrate();
-            }
-        }
-        catch (Exception ex)
-        {
-            File.AppendAllText("app.log", $"[{DateTime.Now}] {ex.Message}\n");
-        }
 
         // Initializing Sentry
         SentrySdk.Init(options =>

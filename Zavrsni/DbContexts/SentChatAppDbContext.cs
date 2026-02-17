@@ -9,8 +9,8 @@ using Zavrsni.Models;
 namespace Zavrsni.DbContexts
 {
     // Currently using local DB with SQLite Entity Framework, planning to move to an actual server with MySQL or MSSQL DB
-    //public class SentChatAppDbContext : DbContext
-    //{
+    public class SentChatAppDbContext : DbContext
+    {
     //    public SentChatAppDbContext(DbContextOptions options) : base(options)
     //    {
     //    }
@@ -67,5 +67,5 @@ namespace Zavrsni.DbContexts
     //    public DbSet<Message> Messages { get; set; }
     //    public DbSet<Conversation> Conversations { get; set; }
     //    public DbSet<ConversationMember> ConversationMembers { get; set; }
-    //}
+    }
 }

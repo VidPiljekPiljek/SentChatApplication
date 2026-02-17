@@ -54,7 +54,7 @@ namespace Zavrsni.Commands
                     level: BreadcrumbLevel.Info
                 );
 
-                if (await _conversationService.LoadUserConversations() && await _messageService.LoadUserMessages())
+                if (await _conversationService.LoadUserConversations())
                 {
                     _viewModel.NavigateToMain();
                 }

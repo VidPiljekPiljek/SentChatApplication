@@ -46,7 +46,7 @@ namespace Zavrsni.ViewModels
         [RelayCommand(CanExecute = nameof(CanSendMessage))]
         private void SendMessageParameter()
         {
-            Message = new Message(Text, _userService.GetCurrentUserId(), UserMapper.ToUser(_userService.GetCurrentUser()), _conversationService.GetSelectedConversationId(), DateTime.Now);
+            Message = new Message();
 
             SendMessageCommand.Execute(Message);
         }

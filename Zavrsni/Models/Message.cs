@@ -15,13 +15,13 @@ namespace Zavrsni.Models
     public class Message : BaseModel
     {
         [Supabase.Postgrest.Attributes.PrimaryKey("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Supabase.Postgrest.Attributes.Column("text")]
         public string Text { get; set; }
         [Supabase.Postgrest.Attributes.Column("senderid")]
-        public int SenderId { get; set; }
+        public string SenderId { get; set; }
         [Supabase.Postgrest.Attributes.Column("conversationid")]
-        public int ConversationId { get; set; }
+        public string ConversationId { get; set; }
         [Supabase.Postgrest.Attributes.Column("sentat")]
         public DateTime SentAt { get; set; }
 

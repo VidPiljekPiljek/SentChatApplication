@@ -34,7 +34,9 @@ namespace Zavrsni.Services
 
         public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
         {
-            return _messageStore.GetMessagesForConversation(conversationId);
+            //return _messageStore.GetMessagesForConversation(conversationId);
+
+            return new ObservableCollection<Message>();
         }
 
         public async Task<OperationResult> SendMessageAsync(Message message)
@@ -76,7 +78,7 @@ namespace Zavrsni.Services
                     level: BreadcrumbLevel.Info
                 );
 
-                _messageStore.RemoveMessage(messageId);
+                //_messageStore.RemoveMessage(messageId);
                 return OperationResult.Success();
             }
             else

@@ -35,10 +35,10 @@ namespace Zavrsni.Stores
             return _userMessages;
         }
 
-        public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
-        {
-            return new ObservableCollection<Message>(UserMessages.Where(m => m.ConversationId == conversationId));
-        }
+        //public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
+        //{
+        //    return new ObservableCollection<Message>(UserMessages.Where(m => m.ConversationId == conversationId));
+        //}
 
         public bool AddMessage(Message message)
         {
@@ -46,10 +46,10 @@ namespace Zavrsni.Stores
             return true;
         }
 
-        public bool RemoveMessage(int messageId)
-        {
-            UserMessages.Remove(UserMessages.Where(m => m.Id == messageId).First());
-            return true;
-        }
+        //public bool RemoveMessage(int messageId)
+        //{
+        //    UserMessages.Remove(UserMessages.Where(m => m.Id == messageId).First());
+        //    return true;
+        //}
     }
 }
