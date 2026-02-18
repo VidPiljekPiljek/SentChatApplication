@@ -25,6 +25,9 @@ namespace Zavrsni.Models
         [Supabase.Postgrest.Attributes.Column("sentat")]
         public DateTime SentAt { get; set; }
 
+        [Reference(typeof(UserProfile))]
+        public UserProfile? Sender { get; set; }
+
         public Message()
         {
 

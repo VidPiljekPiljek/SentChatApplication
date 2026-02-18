@@ -17,7 +17,7 @@
 					</Style>
 				</Border.Styles>
         <Grid ColumnDefinitions="50, *, auto, auto, 10, auto">
-			<!--<Label Grid.Column="0" Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>-->
+			<Label Grid.Column="0" Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
            <Label Grid.Column="1" Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Grid.Column="2" Content="{Binding ErrorMessage}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Label Grid.Column="3" Content="{Binding Message.SentAt}" HorizontalAlignment="Right" VerticalAlignment="Center"/>

@@ -37,11 +37,11 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
             _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService, this);
         }
 
-        public void LoadMessagesForConversation(int conversationId)
+        public async void LoadMessagesForConversation(string conversationId)
         {
             Messages.Clear();
 
-            ObservableCollection<Message> messages = new ObservableCollection<Message>(_messageService.GetMessagesForConversation(conversationId));
+            ObservableCollection<Message> messages = new ObservableCollection<Message>(await _messageService.LoadConversationMessagesAsync(conversationId));
 
             foreach(var message in messages)
             {

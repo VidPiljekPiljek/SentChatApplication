@@ -11,45 +11,39 @@ namespace Zavrsni.Stores
 {
     public class MessageStore
     {
-        public ObservableCollection<Message> _userMessages;
+        public readonly Dictionary<string, List<Message>> _messageCache = new();
 
-        public ObservableCollection<Message> UserMessages
-        {
-            get { return _userMessages; }
-            set { _userMessages = value; }
-        }
+        public event EventHandler<string>? MessagesLoadedForConversation;
+        public event EventHandler<Message>? MessageAdded;
 
         public MessageStore() 
         {
-            _userMessages = new ObservableCollection<Message>();
         }
 
-        public async Task<bool> SetUserMessages(List<Message> dbMessages)
+        public bool HasMessagesLoaded(string conversationId)
         {
-            _userMessages = new ObservableCollection<Message>(dbMessages);
-            return true;
+            return _messageCache.ContainsKey(conversationId);
         }
 
-        public ObservableCollection<Message> GetUserMessages()
+        public void SetUserMessages(string conversationId, List<Message> messages)
         {
-            return _userMessages;
+            _messageCache[conversationId] = messages;
+            MessagesLoadedForConversation?.Invoke(this, conversationId);
         }
 
-        //public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
-        //{
-        //    return new ObservableCollection<Message>(UserMessages.Where(m => m.ConversationId == conversationId));
-        //}
-
-        public bool AddMessage(Message message)
+        public List<Message> GetMessagesForConversation(string conversationId)
         {
-            UserMessages.Add(message);
-            return true;
+            if (_messageCache.TryGetValue(conversationId, out var messages))
+            {
+                return messages;
+            }
+
+            return null;
         }
 
-        //public bool RemoveMessage(int messageId)
-        //{
-        //    UserMessages.Remove(UserMessages.Where(m => m.Id == messageId).First());
-        //    return true;
-        //}
+        public void AddMessage(string conversationId, Message message)
+        {
+            _messageCache[conversationId].Add(message);
+        }
     }
 }

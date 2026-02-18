@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Sentry;
+using Sentry.Protocol;
+using Supabase.Postgrest;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,44 +24,33 @@ namespace Zavrsni.Repositories
             _supabaseClient = supabaseClient;
         }
 
-        public async Task<List<Message>> GetUserMessagesAsync(ObservableCollection<Conversation> userConversations)
+        public async Task<List<Message>> GetMessagesForConversationAsync(string conversationId)
         {
-            //using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
-            //{
-            //    SentrySdk.AddBreadcrumb(
-            //        message: "Fetching current user messages.",
-            //        category: "Message fetching",
-            //        level: BreadcrumbLevel.Info
-            //    );
+            SentrySdk.AddBreadcrumb(
+                message: "Fetching current user messages.",
+                category: "Message fetching",
+                level: BreadcrumbLevel.Info
+            );
+            
+            var messageResponse = await _supabaseClient 
+                .From<Message>()
+                .Select("*, sender:profiles(*)")
+                .Filter("conversationid", Constants.Operator.Equals, conversationId)
+                .Order("sent_at", Constants.Ordering.Ascending)
+                .Get();
 
-            //    var conversationIds = userConversations.Select(c => c.Id).ToList();
-
-            //    var messages = await dbContext.Messages
-            //        .Where(m => conversationIds.Contains(m.ConversationId))
-            //        .Include(m => m.Sender)
-            //        .OrderBy(m => m.SentAt)
-            //        .ToListAsync();
-
-            //    return messages;
-            //}
-
-            return new List<Message>();
+            return messageResponse?.Models?.ToList() ?? new List<Message>();
         }
 
         public async Task<OperationResult<Message>> CreateMessageAsync(Message message)
         {
-            //using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
-            //{
-            //    SentrySdk.AddBreadcrumb(
-            //        message: "Creating new message in database.",
-            //        category: "Message creation",  
-            //        level: BreadcrumbLevel.Info
-            //    );
+            SentrySdk.AddBreadcrumb(
+                message: "Creating new message in database.",
+                category: "Message creation",
+                level: BreadcrumbLevel.Info
+            );
 
-            //    await dbContext.Messages.AddAsync(message);
-            //    await dbContext.SaveChangesAsync();
-            //    return OperationResult<Message>.Success(message);
-            //}
+            _supabaseClient.From<Message>().Insert(message);
 
             return OperationResult<Message>.Success(message);
         }

@@ -25,11 +25,21 @@ namespace Zavrsni.Services
             _messageStore = messageStore;
         }
 
-        public async Task<bool> LoadUserMessages()
+        public async Task<List<Message>> LoadConversationMessagesAsync(string conversationId)
         {
-            ObservableCollection<Conversation> userConversations = _conversationService.GetUserConversations();
-            List<Message> dbUserMessages = await _messageRepository.GetUserMessagesAsync(userConversations);
-            return await _messageStore.SetUserMessages(dbUserMessages);
+            if (_messageStore.HasMessagesLoaded(conversationId))
+            {
+                return _messageStore.GetMessagesForConversation(conversationId).ToList();
+            }
+            else
+            {
+                var messages = await _messageRepository.GetMessagesForConversationAsync(conversationId);
+
+                _messageStore.SetUserMessages(conversationId, messages);
+
+                return messages;
+            }
+            
         }
 
         public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
@@ -41,29 +51,31 @@ namespace Zavrsni.Services
 
         public async Task<OperationResult> SendMessageAsync(Message message)
         {
-            var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
+            //var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
 
-            if (messageOperationResult.IsSuccess && messageOperationResult.Data != null)
-            {
-                SentrySdk.AddBreadcrumb(
-                    message: "Message sent successfully.",
-                    category: "Message sending success",
-                    level: BreadcrumbLevel.Info
-                );
+            //if (messageOperationResult.IsSuccess && messageOperationResult.Data != null)
+            //{
+            //    SentrySdk.AddBreadcrumb(
+            //        message: "Message sent successfully.",
+            //        category: "Message sending success",
+            //        level: BreadcrumbLevel.Info
+            //    );
 
-                _messageStore.AddMessage(messageOperationResult.Data);
-                return OperationResult.Success();
-            }
-            else
-            {
-                SentrySdk.AddBreadcrumb(
-                    message: $"Message sending failed due to: {messageOperationResult.Message}",
-                    category: "Message sending failure",
-                    level: BreadcrumbLevel.Info
-                );
+            //    _messageStore.AddMessage(messageOperationResult.Data);
+            //    return OperationResult.Success();
+            //}
+            //else
+            //{
+            //    SentrySdk.AddBreadcrumb(
+            //        message: $"Message sending failed due to: {messageOperationResult.Message}",
+            //        category: "Message sending failure",
+            //        level: BreadcrumbLevel.Info
+            //    );
 
-                return messageOperationResult;
-            }
+            //    return messageOperationResult;
+            //}
+
+            return OperationResult.Success();
         }
 
         public async Task<OperationResult> DeleteMessageAsync(int messageId)
