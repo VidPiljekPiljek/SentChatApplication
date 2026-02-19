@@ -17,8 +17,11 @@
 					</Style>
 				</Border.Styles>
         <Grid ColumnDefinitions="50, *, auto, auto, 10, auto">
-			<Label Grid.Column="0" Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-           <Label Grid.Column="1" Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
+				<Label Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+           <Label Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </StackPanel>
+			
             <Label Grid.Column="2" Content="{Binding ErrorMessage}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Label Grid.Column="3" Content="{Binding Message.SentAt}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Button Command="{Binding DeleteMessageCommand}" FontSize="11" Grid.Column="5" Classes="delete" HorizontalAlignment="Right" VerticalAlignment="Center">

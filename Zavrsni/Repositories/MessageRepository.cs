@@ -50,27 +50,20 @@ namespace Zavrsni.Repositories
                 level: BreadcrumbLevel.Info
             );
 
-            _supabaseClient.From<Message>().Insert(message);
+            var messageResponse = await _supabaseClient.From<Message>().Insert(message);
 
-            return OperationResult<Message>.Success(message);
+            return OperationResult<Message>.Success(messageResponse.Models.First());
         }
 
-        public async Task<OperationResult> DeleteMessageAsync(int messageId)
+        public async Task<OperationResult> DeleteMessageAsync(string messageId)
         {
-            //using (SentChatAppDbContext dbContext = _dbContextFactory.CreateDbContext())
-            //{
-            //    SentrySdk.AddBreadcrumb(
-            //        message: "Deleting message from database.",
-            //        category: "Database message deletion",
-            //        level: BreadcrumbLevel.Info
-            //    );
+            SentrySdk.AddBreadcrumb(
+                message: "Deleting message from database.",
+                category: "Database message deletion",
+                level: BreadcrumbLevel.Info
+            );
 
-            //    var dbMessage = await dbContext.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
-            //    dbContext.Messages.Remove(dbMessage);
-            //    await dbContext.SaveChangesAsync();
-
-            //    return OperationResult.Success();
-            //}
+            await _supabaseClient.From<Message>().Filter("id", Constants.Operator.Equals, messageId).Delete();
 
             return OperationResult.Success();
         }

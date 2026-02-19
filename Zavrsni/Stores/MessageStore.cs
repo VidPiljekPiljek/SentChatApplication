@@ -45,5 +45,17 @@ namespace Zavrsni.Stores
         {
             _messageCache[conversationId].Add(message);
         }
+
+        public void RemoveMessage(string conversationId, string messageId)
+        {
+            if (_messageCache.TryGetValue(conversationId, out var messages))
+            {
+                var messageToRemove = messages.FirstOrDefault(m => m.Id == messageId);
+                if (messageToRemove != null)
+                {
+                    messages.Remove(messageToRemove);
+                }
+            }
+        }
     }
 }

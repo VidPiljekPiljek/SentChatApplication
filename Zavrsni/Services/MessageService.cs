@@ -42,43 +42,34 @@ namespace Zavrsni.Services
             
         }
 
-        public ObservableCollection<Message> GetMessagesForConversation(int conversationId)
+        public async Task<OperationResult<Message>> SendMessageAsync(Message message)
         {
-            //return _messageStore.GetMessagesForConversation(conversationId);
+            var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
 
-            return new ObservableCollection<Message>();
+            if (messageOperationResult.IsSuccess)
+            {
+                SentrySdk.AddBreadcrumb(
+                    message: "Message sent successfully.",
+                    category: "Message sending success",
+                    level: BreadcrumbLevel.Info
+                );
+
+                _messageStore.AddMessage(messageOperationResult.Data.ConversationId, messageOperationResult.Data);
+                return OperationResult<Message>.Success(messageOperationResult.Data);
+            }
+            else
+            {
+                SentrySdk.AddBreadcrumb(
+                    message: $"Message sending failed due to: {messageOperationResult.Message}",
+                    category: "Message sending failure",
+                    level: BreadcrumbLevel.Info
+                );
+
+                return messageOperationResult;
+            }
         }
 
-        public async Task<OperationResult> SendMessageAsync(Message message)
-        {
-            //var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
-
-            //if (messageOperationResult.IsSuccess && messageOperationResult.Data != null)
-            //{
-            //    SentrySdk.AddBreadcrumb(
-            //        message: "Message sent successfully.",
-            //        category: "Message sending success",
-            //        level: BreadcrumbLevel.Info
-            //    );
-
-            //    _messageStore.AddMessage(messageOperationResult.Data);
-            //    return OperationResult.Success();
-            //}
-            //else
-            //{
-            //    SentrySdk.AddBreadcrumb(
-            //        message: $"Message sending failed due to: {messageOperationResult.Message}",
-            //        category: "Message sending failure",
-            //        level: BreadcrumbLevel.Info
-            //    );
-
-            //    return messageOperationResult;
-            //}
-
-            return OperationResult.Success();
-        }
-
-        public async Task<OperationResult> DeleteMessageAsync(int messageId)
+        public async Task<OperationResult> DeleteMessageAsync(string conversationId, string messageId)
         {
             var messageOperationResult = await _messageRepository.DeleteMessageAsync(messageId);
 
@@ -90,7 +81,7 @@ namespace Zavrsni.Services
                     level: BreadcrumbLevel.Info
                 );
 
-                //_messageStore.RemoveMessage(messageId);
+                _messageStore.RemoveMessage(conversationId, messageId);
                 return OperationResult.Success();
             }
             else

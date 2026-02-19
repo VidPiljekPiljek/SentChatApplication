@@ -34,7 +34,7 @@ namespace Zavrsni.Stores
             return CurrentUserProfile.Id;
         }
 
-        public UserProfile GetCurrentUser()
+        public UserProfile GetCurrentUserProfile()
         {
             return CurrentUserProfile;
         }

@@ -13,7 +13,7 @@ using Zavrsni.Views.MessagesPageViews;
 namespace Zavrsni.Commands
 {
     public class SendMessageCommand : AsyncCommandBase
-    {
+    { 
         private readonly ChatInputBoxViewModel _chatInputBoxViewModel;
         private readonly MessagesViewModel _messagesViewModel;
         private readonly MessageService _messageService;
@@ -47,8 +47,8 @@ namespace Zavrsni.Commands
 
             if (messageOperationResult.IsSuccess)
             {
-                displayMessage.Id = dbMessage.Id;
-                _messagesViewModel.AddMessage(displayMessage);
+                _messagesViewModel.AddMessage(messageOperationResult.Data);
+                _chatInputBoxViewModel.Text = "";
             }
             else
             {

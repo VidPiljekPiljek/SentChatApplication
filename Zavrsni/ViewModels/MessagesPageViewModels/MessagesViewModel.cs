@@ -56,6 +56,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
+            message.Sender = _userService.GetCurrentUserProfile();
             var vm = new MessageDisplayViewModel(_messageService, message, _userService);
             vm.MessageDeleted += OnMessageDeleted;
             Messages.Add(vm);

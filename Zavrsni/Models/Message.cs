@@ -22,7 +22,7 @@ namespace Zavrsni.Models
         public string SenderId { get; set; }
         [Supabase.Postgrest.Attributes.Column("conversationid")]
         public string ConversationId { get; set; }
-        [Supabase.Postgrest.Attributes.Column("sentat")]
+        [Supabase.Postgrest.Attributes.Column("sent_at")]
         public DateTime SentAt { get; set; }
 
         [Reference(typeof(UserProfile))]

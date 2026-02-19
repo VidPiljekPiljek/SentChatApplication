@@ -79,5 +79,15 @@ namespace Zavrsni.Services
         {
             return _userStore.GetCurrentUserUsername();
         }
+
+        public string GetCurrentUserId()
+        {
+            return _userStore.GetCurrentUserId();
+        }
+
+        public UserProfile GetCurrentUserProfile()
+        {
+            return _userStore.GetCurrentUserProfile();
+        }
     }
 }
