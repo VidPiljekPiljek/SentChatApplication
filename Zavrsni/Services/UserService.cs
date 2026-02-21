@@ -58,21 +58,9 @@ namespace Zavrsni.Services
             }
         }
 
-        public async Task<OperationResult<UserViewModel>> GetUserByUsernameAsync(string username)
+        public async Task<OperationResult<UserProfile?>> GetUserByUsernameAsync(string username)
         {
-            //var userOperationResult = await _userRepository.GetUserAsync(username);
-
-            //if (userOperationResult.IsSuccess && userOperationResult.Data != null)
-            //{
-            //    UserViewModel dbUserViewModel = UserMapper.ToUserViewModel(userOperationResult.Data);
-            //    return OperationResult<UserViewModel>.Success(dbUserViewModel);
-            //}
-            //else
-            //{
-            //    return OperationResult<UserViewModel>.Failure(userOperationResult.Message);
-            //}
-
-            return OperationResult<UserViewModel>.Success(new UserViewModel());
+            return await _userRepository.GetUserByUsernameAsync(username);
         }
 
         public string GetCurrentUserUsername()

@@ -9,6 +9,7 @@ using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
 using Zavrsni.Stores;
+using Zavrsni.ViewModels.MessagesPageViewModels;
 
 namespace Zavrsni.Services
 {
@@ -16,12 +17,16 @@ namespace Zavrsni.Services
     {
         private readonly ConversationRepository _conversationRepository;
         private readonly ConversationStore _conversationStore;
+        private readonly ConversationMemberRepository _conversationMemberRepository;
+        private readonly UserRepository _userRepository;
         private readonly UserStore _userStore;
 
-        public ConversationService(ConversationRepository conversationRepository, ConversationStore conversationStore, UserStore userStore)
+        public ConversationService(ConversationRepository conversationRepository, ConversationStore conversationStore, ConversationMemberRepository conversationMemberRepository, UserRepository userRepository, UserStore userStore)
         {
             _conversationRepository = conversationRepository;
             _conversationStore = conversationStore;
+            _conversationMemberRepository = conversationMemberRepository;
+            _userRepository = userRepository;
             _userStore = userStore;
         }
 
@@ -51,16 +56,58 @@ namespace Zavrsni.Services
             return _conversationStore.GetSelectedConversationTitle();
         }
 
-        public async Task<OperationResult<Conversation>> AddConversationAsync(Conversation conversation)
+        public async Task<OperationResult> AddConversationAsync(string conversationSearchName)
         {
-            var dbConversationResult = await _conversationRepository.CreateConversationAsync(conversation);
-
-            if (dbConversationResult.IsSuccess && dbConversationResult.Data != null)
+            var userOperationResult = await _userRepository.GetUserByUsernameAsync(conversationSearchName);
+            if (userOperationResult.IsSuccess && userOperationResult.Data != null)
             {
-                _conversationStore.AddConversation(dbConversationResult.Data);
-            }
+                var conversation = new Conversation
+                {
+                    Name = $"{_userStore.GetCurrentUserUsername()}, {userOperationResult.Data.Username}",
+                    IsGroupChat = false,
+                    CreatedAt = DateTime.Now
+                };
 
-            return dbConversationResult;
+                var dbConversationResult = await _conversationRepository.CreateConversationAsync(conversation);
+
+                if (dbConversationResult.IsSuccess && dbConversationResult.Data != null)
+                {
+                    _conversationStore.AddConversation(dbConversationResult.Data);
+
+                    List<ConversationMember> conversationMembers = new List<ConversationMember>()
+                    {
+                        new ConversationMember
+                        {
+                            UserId = userOperationResult.Data.Id,
+                            ConversationId = dbConversationResult.Data.Id
+                        },
+                        new ConversationMember
+                        {
+                            UserId = _userStore.GetCurrentUserId(),
+                            ConversationId = dbConversationResult.Data.Id
+                        }
+                    };
+
+                    var conversationMemberOperationResult = await _conversationMemberRepository.CreateConversationMembersAsync(conversationMembers);
+
+                    if (conversationMemberOperationResult.IsSuccess)
+                    {
+                        return OperationResult.Success();
+                    }
+                    else
+                    {
+                        return OperationResult.Failure(conversationMemberOperationResult.Message);
+                    }
+                }
+                else
+                {
+                    return OperationResult.Failure(dbConversationResult.Message);
+                }
+            }
+            else
+            {
+                return OperationResult.Failure(userOperationResult.Message);
+            }
         }
     }
 }

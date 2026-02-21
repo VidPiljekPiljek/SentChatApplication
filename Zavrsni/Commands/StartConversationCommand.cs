@@ -26,39 +26,20 @@ namespace Zavrsni.Commands
 
         public async override Task ExecuteAsync(object? parameter)
         {
-            //SentrySdk.AddBreadcrumb(
-            //    message: "User is creating a new conversation.",
-            //    category: "Conversation initialization",
-            //    level: BreadcrumbLevel.Info
-            //    );
+            SentrySdk.AddBreadcrumb(
+                message: "User is creating a new conversation.",
+                category: "Conversation initialization",
+                level: BreadcrumbLevel.Info
+                );
 
-            //_conversationSidebarViewModel.ErrorMessage = "";
-            //var userOperationResult = await _userService.GetUserByUsernameAsync(_conversationSidebarViewModel.ConversationSearchName);
-            //if (!userOperationResult.IsSuccess)
-            //{
-            //    _conversationSidebarViewModel.ErrorMessage = userOperationResult.Message;
-            //}
-            //else
-            //{
-            //    List<ConversationMember> conversationMembers = new List<ConversationMember>()
-            //    {
-            //        new ConversationMember
-            //        {
-            //            UserId = userOperationResult.Data.Id
-            //        },
-            //        new ConversationMember
-            //        {
-            //            UserId = _userService.GetCurrentUserId()
-            //        }
-            //    };
-            //    Conversation newConversation = new Conversation($"{userOperationResult.Data.Username}, {_userService.GetCurrentUserUsername()}", false, DateTime.Now, conversationMembers);
+            _conversationSidebarViewModel.ErrorMessage = "";
 
-            //    var conversationOperationResult = await _conversationService.AddConversationAsync(newConversation);
-            //    if (!conversationOperationResult.IsSuccess)
-            //    {
-            //        _conversationSidebarViewModel.ErrorMessage = conversationOperationResult.Message;
-            //    }
-            //}
+            var conversationOperationResult = await _conversationService.AddConversationAsync(_conversationSidebarViewModel.ConversationSearchName);
+
+            if (!conversationOperationResult.IsSuccess)
+            {
+                _conversationSidebarViewModel.ErrorMessage = conversationOperationResult.Message;
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Avalonia.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 using Sentry;
-using Supabase.Gotrue;
+using Supabase.Postgrest;
 using Supabase.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -49,6 +49,23 @@ namespace Zavrsni.Repositories
             return OperationResult<UserProfile>.Success(response);
         }
 
+        public async Task<OperationResult<UserProfile?>> GetUserByUsernameAsync(string username)
+        {
+            try
+            {
+                var response = await _supabaseClient
+                    .From<UserProfile>()
+                    .Filter("username", Constants.Operator.Equals, username)
+                    .Single();
+
+                return OperationResult<UserProfile?>.Success(response);
+            }
+            catch (Exception ex)
+            {
+                return OperationResult<UserProfile?>.Failure(ex.Message);
+            }
+        }
+
         public async Task<OperationResult> CreateUserAsync(string email, string password, string username)
         {
             SentrySdk.AddBreadcrumb(
@@ -57,16 +74,16 @@ namespace Zavrsni.Repositories
                 level: BreadcrumbLevel.Info
             );
 
-            var userOperation = await _supabaseClient.Auth.SignUp(email, password);
+            var userResponse = await _supabaseClient.Auth.SignUp(email, password);
 
-            if (userOperation?.User is null)
+            if (userResponse?.User is null)
             {
                 return OperationResult<UserProfile>.Failure("User creation failed.");
             }
 
-            _supabaseClient.From<UserProfile>().Insert(new UserProfile
+            await _supabaseClient.From<UserProfile>().Insert(new UserProfile
             {
-                Id = userOperation.User.Id,
+                Id = userResponse.User.Id,
                 Username = username
             });
 

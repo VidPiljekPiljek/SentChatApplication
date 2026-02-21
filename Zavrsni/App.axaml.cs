@@ -56,6 +56,9 @@ public partial class App : Application
         collection.AddSingleton<ConversationStore>();
         collection.AddSingleton<ConversationRepository>();
 
+        collection.AddSingleton<ConversationMemberService>();
+        collection.AddSingleton<ConversationMemberRepository>();
+
         collection.AddSingleton<MessageService>();
         collection.AddSingleton<MessageStore>();
         collection.AddSingleton<MessageRepository>();
