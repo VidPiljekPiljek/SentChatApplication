@@ -47,7 +47,6 @@ namespace Zavrsni.Commands
 
             if (messageOperationResult.IsSuccess)
             {
-                _messagesViewModel.AddMessage(messageOperationResult.Data);
                 _chatInputBoxViewModel.Text = "";
             }
             else

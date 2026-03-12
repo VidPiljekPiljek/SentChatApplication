@@ -18,11 +18,15 @@ namespace Zavrsni.Services
         private readonly MessageRepository _messageRepository;
         private readonly MessageStore _messageStore;
 
+        public event Action<Message> MessageReceived;
+
         public MessageService(ConversationService conversationService, MessageRepository messageRepository, MessageStore messageStore)
         {
             _conversationService = conversationService;
             _messageRepository = messageRepository;
             _messageStore = messageStore;
+
+            _messageStore.MessageAdded += OnMessageAdded;
         }
 
         public async Task<List<Message>> LoadConversationMessagesAsync(string conversationId)
@@ -42,7 +46,7 @@ namespace Zavrsni.Services
             
         }
 
-        public async Task<OperationResult<Message>> SendMessageAsync(Message message)
+        public async Task<OperationResult> SendMessageAsync(Message message)
         {
             var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
 
@@ -55,7 +59,7 @@ namespace Zavrsni.Services
                 );
 
                 _messageStore.AddMessage(messageOperationResult.Data.ConversationId, messageOperationResult.Data);
-                return OperationResult<Message>.Success(messageOperationResult.Data);
+                return OperationResult.Success();
             }
             else
             {
@@ -94,6 +98,11 @@ namespace Zavrsni.Services
 
                 return messageOperationResult;
             }
+        }
+
+        public void OnMessageAdded(Message message)
+        {
+            MessageReceived?.Invoke(message);
         }
     }
 }

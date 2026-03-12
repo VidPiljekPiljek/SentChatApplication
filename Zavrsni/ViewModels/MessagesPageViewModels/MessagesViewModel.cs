@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Services;
+using Zavrsni.Stores;
 
 namespace Zavrsni.ViewModels.MessagesPageViewModels
 {
@@ -16,6 +17,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
     public partial class MessagesViewModel : ViewModelBase
     {
         private readonly MessageService _messageService;
+        private readonly MessageStore _messageStore;
         private readonly ConversationService _conversationService;
         private readonly UserService _userService;
 
@@ -35,6 +37,8 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
             _userService = userService;
 
             _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService, this);
+
+            _messageService.MessageReceived += (message) => AddMessage(message);
         }
 
         public async void LoadMessagesForConversation(string conversationId)
@@ -56,7 +60,6 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            message.Sender = _userService.GetCurrentUserProfile();
             var vm = new MessageDisplayViewModel(_messageService, message, _userService);
             vm.MessageDeleted += OnMessageDeleted;
             Messages.Add(vm);

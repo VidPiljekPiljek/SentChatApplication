@@ -3,21 +3,30 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Models;
+using Zavrsni.Services;
 
 namespace Zavrsni.Stores
 {
     public class MessageStore
     {
+        private readonly SupabaseRealtimeService _supabaseRealtimeService;
         public readonly Dictionary<string, List<Message>> _messageCache = new();
 
         public event EventHandler<string>? MessagesLoadedForConversation;
-        public event EventHandler<Message>? MessageAdded;
+        public event Action<Message>? MessageAdded;
 
-        public MessageStore() 
+        public MessageStore(SupabaseRealtimeService supabaseRealtimeService) 
         {
+            _supabaseRealtimeService = supabaseRealtimeService;
+
+            _supabaseRealtimeService.MessageReceived += (sender, message) =>
+            {
+                AddMessage(message.ConversationId, message);
+            };
         }
 
         public bool HasMessagesLoaded(string conversationId)
@@ -44,6 +53,7 @@ namespace Zavrsni.Stores
         public void AddMessage(string conversationId, Message message)
         {
             _messageCache[conversationId].Add(message);
+            MessageAdded?.Invoke(message);
         }
 
         public void RemoveMessage(string conversationId, string messageId)

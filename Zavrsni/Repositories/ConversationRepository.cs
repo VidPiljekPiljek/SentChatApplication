@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sentry;
 using Supabase.Postgrest;
+using Supabase.Postgrest.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -66,8 +67,9 @@ namespace Zavrsni.Repositories
 
                 return OperationResult<Conversation>.Success(response?.Models?.FirstOrDefault());
             }
-            catch (Exception ex)
+            catch (PostgrestException ex)
             {
+                var code = ex.Response.StatusCode;
                 return OperationResult<Conversation>.Failure("Failed to create conversation.");
             }
         }

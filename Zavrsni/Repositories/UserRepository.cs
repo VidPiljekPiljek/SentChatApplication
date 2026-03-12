@@ -39,6 +39,11 @@ namespace Zavrsni.Repositories
                 return OperationResult<UserProfile>.Failure("User not found. Please try again.");
             }
 
+            Console.WriteLine($"Auth token: {session.AccessToken}");
+            Console.WriteLine($"User ID: {session.User.Id}");
+
+            _supabaseClient.Realtime.SetAuth(session.AccessToken);
+
             var userId = session.User.Id!;
 
             var response = await _supabaseClient

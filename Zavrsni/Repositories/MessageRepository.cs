@@ -67,5 +67,18 @@ namespace Zavrsni.Repositories
 
             return OperationResult.Success();
         }
+
+        /* Using this method to get the message with the sender reference just like the other get method but this will be used
+           mainly for Realtime while listening to Inserts */
+        public async Task<OperationResult<Message>> GetMessageWithSenderAsync(string messageId)
+        {
+            var messageResponse = await _supabaseClient
+                .From<Message>()
+                .Select("*, sender:profiles(*)")
+                .Filter("id", Constants.Operator.Equals, messageId)
+                .Get();
+
+            return OperationResult<Message>.Success(messageResponse.Model);
+        }
     }
 }

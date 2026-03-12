@@ -89,17 +89,20 @@ public partial class App : Application
         collection.AddSingleton<ViewFactory>();
 
         var url = "https://qcnytsojnhpmpqtsdscn.supabase.co";
-        var key = "sb_secret_Z8jey8NYm6hOggZZrhhWcA_ys8E3B2E";
+        var key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjbnl0c29qbmhwbXBxdHNkc2NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NDAyMjMsImV4cCI6MjA4NTAxNjIyM30.yDfAziSMA5SBLjI4KAnmqDEGw84araR7s0Nv_bHAzR4";
 
         var options = new Supabase.SupabaseOptions
         {
-            AutoConnectRealtime = false
+            AutoConnectRealtime = false,
+            AutoRefreshToken = true
         };
 
         collection.AddSingleton(provider =>
         {
             return new Supabase.Client(url, key, options);
         });
+
+        collection.AddSingleton<SupabaseRealtimeService>();
 
         var serviceProvider = collection.BuildServiceProvider();
 
