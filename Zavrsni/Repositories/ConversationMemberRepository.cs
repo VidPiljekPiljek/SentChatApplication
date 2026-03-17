@@ -19,34 +19,30 @@ namespace Zavrsni.Repositories
 
         public async Task<OperationResult<List<ConversationMember>>> CreateConversationMembersAsync(List<ConversationMember> conversationMembers)
         {
-            try
-            {
-                var response = await _supabaseClient
-                    .From<ConversationMember>()
-                    .Insert(conversationMembers);
+            var response = await _supabaseClient
+                .From<ConversationMember>()
+                .Insert(conversationMembers);
 
-                return OperationResult<List<ConversationMember>>.Success(response?.Models?.ToList());
-            }
-            catch (Exception ex)
+            if (response.Models.Any() is false)
             {
                 return OperationResult<List<ConversationMember>>.Failure("Failed to create conversation members.");
             }
+
+            return OperationResult<List<ConversationMember>>.Success(response?.Models?.ToList());
         }
 
         public async Task<OperationResult<ConversationMember>> CreateConversationMemberAsync(ConversationMember conversationMember)
         {
-            try
-            {
-                var response = await _supabaseClient
-                    .From<ConversationMember>()
-                    .Insert(conversationMember);
+            var response = await _supabaseClient
+                .From<ConversationMember>()
+                .Insert(conversationMember);
 
-                return OperationResult<ConversationMember>.Success(response?.Models?.FirstOrDefault());
-            }
-            catch (Exception ex)
+            if (response.Models.First() is null)
             {
                 return OperationResult<ConversationMember>.Failure("Failed to create conversation member.");
             }
+
+            return OperationResult<ConversationMember>.Success(response?.Models?.FirstOrDefault());
         }
     }
 }

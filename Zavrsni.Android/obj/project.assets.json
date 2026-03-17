@@ -1572,7 +1572,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.13": {
+      "Microsoft.NET.ILLink.Tasks/9.0.14": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -5034,7 +5034,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.13": {
+      "Microsoft.NET.ILLink.Tasks/9.0.14": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -8428,7 +8428,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.13": {
+      "Microsoft.NET.ILLink.Tasks/9.0.14": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -12829,10 +12829,10 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/9.0.13": {
-      "sha512": "f7t15I9ZXV7fNk3FIzPAlkJNG1A1tkSeDpRh+TFWEToGGqA+uj6uqU15I8YOkkYICNY2tqOVm2CMe6ScPFPwEg==",
+    "Microsoft.NET.ILLink.Tasks/9.0.14": {
+      "sha512": "+MeWjj5sGq6Oj/l0E9RPMgXDyCIPxczzCbGuvuVTZFEGiy2S/atsfoAoKUnkEin/GeGpN+HenCzRmiQKSc99eQ==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/9.0.13",
+      "path": "microsoft.net.illink.tasks/9.0.14",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -12846,7 +12846,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.9.0.13.nupkg.sha512",
+        "microsoft.net.illink.tasks.9.0.14.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -15495,7 +15495,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.10",
       "Microsoft.Extensions.DependencyInjection >= 9.0.10",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.13",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.14",
       "Sentry >= 6.0.0",
       "Svg.Skia >= 3.4.1",
       "Xamarin.AndroidX.Core.SplashScreen >= 1.0.1.15",
@@ -15552,7 +15552,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net9.0-android35.0": {
@@ -15588,7 +15588,7 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.13, )",
+            "version": "[9.0.14, )",
             "autoReferenced": true
           },
           "Sentry": {
@@ -15661,7 +15661,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

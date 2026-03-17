@@ -49,6 +49,11 @@ namespace Zavrsni.Services
             var newMessageResponse = change.Model<Message>();
             var fullMessageResponse = await _messageRepository.GetMessageWithSenderAsync(newMessageResponse.Id!);
 
+            if (!fullMessageResponse.IsSuccess)
+            {
+                return;
+            }
+
             if (fullMessageResponse.Data.SenderId == _userStore.GetCurrentUserId())
             {
                 return;

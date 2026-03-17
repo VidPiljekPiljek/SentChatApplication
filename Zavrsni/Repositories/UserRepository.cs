@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Zavrsni.DbContexts;
 using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
+using Supabase.Gotrue.Exceptions;
 
 namespace Zavrsni.Repositories
 {
@@ -32,43 +33,57 @@ namespace Zavrsni.Repositories
                 level: BreadcrumbLevel.Info
             );
 
-            var session = await _supabaseClient.Auth.SignIn(email, password);
+            try
+            {
+                var session = await _supabaseClient.Auth.SignIn(email, password);
 
-            if (session?.User is null)
+                if (session?.User is null)
+                {
+                    return OperationResult<UserProfile>.Failure("User not found. Please try again.");
+                }
+
+                Console.WriteLine($"Auth token: {session.AccessToken}");
+                Console.WriteLine($"User ID: {session.User.Id}");
+
+                _supabaseClient.Realtime.SetAuth(session.AccessToken);
+
+                var userId = session.User.Id!;
+
+                var response = await _supabaseClient
+                    .From<UserProfile>()
+                    .Where(p => p.Id == userId)
+                    .Single();
+
+                if (response is null)
+                {
+                    return OperationResult<UserProfile>.Failure("User profile not found.");
+                }
+
+                return OperationResult<UserProfile>.Success(response);
+            }
+            catch (GotrueException ex) when (ex.StatusCode < 500)
+            {
+                return ex.StatusCode switch
+                {
+                    400 => OperationResult<UserProfile>.Failure("You entered something wrong, please try again."),
+                    _ => OperationResult<UserProfile>.Failure("User login failed. Please try again.")
+                };
+            }
+        }
+
+        public async Task<OperationResult<UserProfile>> GetUserByUsernameAsync(string username)
+        {
+            var response = await _supabaseClient
+                .From<UserProfile>()
+                .Filter("username", Constants.Operator.Equals, username)
+                .Single();
+
+            if (response is null)
             {
                 return OperationResult<UserProfile>.Failure("User not found. Please try again.");
             }
 
-            Console.WriteLine($"Auth token: {session.AccessToken}");
-            Console.WriteLine($"User ID: {session.User.Id}");
-
-            _supabaseClient.Realtime.SetAuth(session.AccessToken);
-
-            var userId = session.User.Id!;
-
-            var response = await _supabaseClient
-                .From<UserProfile>()
-                .Where(p => p.Id == userId)
-                .Single();
-
             return OperationResult<UserProfile>.Success(response);
-        }
-
-        public async Task<OperationResult<UserProfile?>> GetUserByUsernameAsync(string username)
-        {
-            try
-            {
-                var response = await _supabaseClient
-                    .From<UserProfile>()
-                    .Filter("username", Constants.Operator.Equals, username)
-                    .Single();
-
-                return OperationResult<UserProfile?>.Success(response);
-            }
-            catch (Exception ex)
-            {
-                return OperationResult<UserProfile?>.Failure(ex.Message);
-            }
         }
 
         public async Task<OperationResult> CreateUserAsync(string email, string password, string username)
@@ -79,20 +94,29 @@ namespace Zavrsni.Repositories
                 level: BreadcrumbLevel.Info
             );
 
-            var userResponse = await _supabaseClient.Auth.SignUp(email, password);
-
-            if (userResponse?.User is null)
+            try
             {
-                return OperationResult<UserProfile>.Failure("User creation failed.");
+                var userResponse = await _supabaseClient.Auth.SignUp(email, password);
+
+                if (userResponse?.User is null)
+                {
+                    return OperationResult<UserProfile>.Failure("User creation failed.");
+                }
+
+                await _supabaseClient.From<UserProfile>().Insert(new UserProfile
+                {
+                    Id = userResponse.User.Id,
+                    Username = username
+                });
+
+                return OperationResult.Success();
             }
-
-            await _supabaseClient.From<UserProfile>().Insert(new UserProfile
-            {
-                Id = userResponse.User.Id,
-                Username = username
-            });
-
-            return OperationResult.Success();
+            catch (GotrueException ex) when (ex.StatusCode < 500) {
+                return ex.StatusCode switch {
+                    409 => OperationResult.Failure("User already exists. Please login or create a different account."),
+                    _ => OperationResult.Failure("User creation failed. Please try again.")
+                };
+            }
         }
     }
 }

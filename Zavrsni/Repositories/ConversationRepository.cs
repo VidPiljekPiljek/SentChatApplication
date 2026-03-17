@@ -59,19 +59,17 @@ namespace Zavrsni.Repositories
                 level: BreadcrumbLevel.Info
             );
 
-            try
-            {
-                var response = await _supabaseClient
-                    .From<Conversation>()
-                    .Insert(conversation);
+            var response = await _supabaseClient
+                .From<Conversation>()
+                .Insert(conversation);
 
-                return OperationResult<Conversation>.Success(response?.Models?.FirstOrDefault());
-            }
-            catch (PostgrestException ex)
+            if (response.Models.First() is null)
             {
-                var code = ex.Response.StatusCode;
                 return OperationResult<Conversation>.Failure("Failed to create conversation.");
+
             }
+
+            return OperationResult<Conversation>.Success(response?.Models?.FirstOrDefault());
         }
     }
 }

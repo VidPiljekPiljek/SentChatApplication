@@ -17,16 +17,18 @@ namespace Zavrsni.Services
         private readonly ConversationService _conversationService;
         private readonly MessageRepository _messageRepository;
         private readonly MessageStore _messageStore;
+        private readonly UserStore _userStore;
 
         public event Action<Message> MessageReceived;
 
-        public MessageService(ConversationService conversationService, MessageRepository messageRepository, MessageStore messageStore)
+        public MessageService(ConversationService conversationService, MessageRepository messageRepository, MessageStore messageStore, UserStore userStore)
         {
             _conversationService = conversationService;
             _messageRepository = messageRepository;
             _messageStore = messageStore;
 
             _messageStore.MessageAdded += OnMessageAdded;
+            _userStore = userStore;
         }
 
         public async Task<List<Message>> LoadConversationMessagesAsync(string conversationId)
@@ -57,6 +59,12 @@ namespace Zavrsni.Services
                     category: "Message sending success",
                     level: BreadcrumbLevel.Info
                 );
+
+                messageOperationResult.Data.Sender = new UserProfile()
+                {
+                    Id = messageOperationResult.Data.SenderId,
+                    Username = _userStore.GetCurrentUserUsername()
+                };
 
                 _messageStore.AddMessage(messageOperationResult.Data.ConversationId, messageOperationResult.Data);
                 return OperationResult.Success();

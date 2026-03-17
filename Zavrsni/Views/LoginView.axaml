@@ -29,10 +29,10 @@
 		  </Image.Source>
 		</Image>
 		<!--<svg:Svg Path="/Assets/Icons/accounticon.svg"/>-->
-		<Label Grid.Row="2" Width="150" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Email"/>
-		<TextBox Grid.Row="3" Width="150" HorizontalAlignment="Center" Text="{Binding Email}"/>
-		<Label Grid.Row="5" Width="150" HorizontalAlignment="Center" Content="Password"/>
-		<TextBox PasswordChar="*" Grid.Row="6" Width="150" HorizontalAlignment="Center" Text="{Binding Password}"/>
+		<Label Grid.Row="2" Width="200" Margin="0, 50, 0, 0" HorizontalAlignment="Center" Content="Email"/>
+		<TextBox Grid.Row="3" Width="200" HorizontalAlignment="Center" Text="{Binding Email}" MaxLength="30"/>
+		<Label Grid.Row="5" Width="200" HorizontalAlignment="Center" Content="Password"/>
+		<TextBox PasswordChar="*" Grid.Row="6" Width="200" HorizontalAlignment="Center" Text="{Binding Password}" MaxLength="15"/>
 
 		<StackPanel Grid.Row="8">
 			<Label Classes="error" Content="{Binding ErrorMessage}" HorizontalAlignment="Center"/>

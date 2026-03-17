@@ -52,6 +52,9 @@ namespace Zavrsni.Repositories
 
             var messageResponse = await _supabaseClient.From<Message>().Insert(message);
 
+            if (messageResponse.Models.First() is null) 
+                return OperationResult<Message>.Failure("Message creation failed.");
+
             return OperationResult<Message>.Success(messageResponse.Models.First());
         }
 
@@ -77,6 +80,11 @@ namespace Zavrsni.Repositories
                 .Select("*, sender:profiles(*)")
                 .Filter("id", Constants.Operator.Equals, messageId)
                 .Get();
+
+            if (messageResponse.Models.First() is null)
+            {
+                return OperationResult<Message>.Failure("Message not found.");
+            }
 
             return OperationResult<Message>.Success(messageResponse.Model);
         }
