@@ -20,6 +20,7 @@ namespace Zavrsni.Services
         private readonly UserStore _userStore;
 
         public event Action<Message> MessageReceived;
+        public event Action<Message> MessageDeleted;
 
         public MessageService(ConversationService conversationService, MessageRepository messageRepository, MessageStore messageStore, UserStore userStore)
         {
@@ -28,6 +29,7 @@ namespace Zavrsni.Services
             _messageStore = messageStore;
 
             _messageStore.MessageAdded += OnMessageAdded;
+            _messageStore.MessageRemoved += OnMessageRemoved;
             _userStore = userStore;
         }
 
@@ -93,7 +95,7 @@ namespace Zavrsni.Services
                     level: BreadcrumbLevel.Info
                 );
 
-                _messageStore.RemoveMessage(conversationId, messageId);
+                //_messageStore.RemoveMessage(conversationId, messageId);
                 return OperationResult.Success();
             }
             else
@@ -111,6 +113,11 @@ namespace Zavrsni.Services
         public void OnMessageAdded(Message message)
         {
             MessageReceived?.Invoke(message);
+        }
+
+        public void OnMessageRemoved(Message message)
+        {
+            MessageDeleted?.Invoke(message);
         }
     }
 }

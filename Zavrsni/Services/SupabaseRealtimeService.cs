@@ -20,6 +20,7 @@ namespace Zavrsni.Services
         private readonly List<RealtimeChannel> _activeChannels = new();
 
         public event EventHandler<Message>? MessageReceived;
+        public event EventHandler<Message>? MessageDeleted;
 
         public SupabaseRealtimeService(Supabase.Client supabaseClient, MessageRepository messageRepository, UserStore userStore)
         {
@@ -39,6 +40,10 @@ namespace Zavrsni.Services
             messagesChannel.AddPostgresChangeHandler(PostgresChangesOptions.ListenType.Inserts, async (sender, change) =>
             {
                 await HandleMessageInsert(change);
+            });
+            messagesChannel.AddPostgresChangeHandler(PostgresChangesOptions.ListenType.Deletes, async (sender, change) =>
+            {
+                await HandleMessageDelete(change);
             });
 
             _activeChannels.Add(messagesChannel);
@@ -62,9 +67,26 @@ namespace Zavrsni.Services
             OnMessageReceived(fullMessageResponse.Data);
         }
 
+        public async Task HandleMessageDelete(PostgresChangesResponse change)
+        {
+            var deletedMessageResponse = change.OldModel<Message>();
+
+            if (deletedMessageResponse.SenderId == _userStore.GetCurrentUserId())
+            {
+                return;
+            }
+
+            OnMessageDeleted(deletedMessageResponse);
+        }
+
         private void OnMessageReceived(Message fullMessage)
         {
             MessageReceived?.Invoke(this, fullMessage);
+        }
+
+        private void OnMessageDeleted(Message fullMessage)
+        {
+            MessageDeleted?.Invoke(this, fullMessage);
         }
     }
 }

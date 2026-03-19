@@ -18,6 +18,7 @@ namespace Zavrsni.Stores
 
         public event EventHandler<string>? MessagesLoadedForConversation;
         public event Action<Message>? MessageAdded;
+        public event Action<Message>? MessageRemoved;
 
         public MessageStore(SupabaseRealtimeService supabaseRealtimeService) 
         {
@@ -26,6 +27,11 @@ namespace Zavrsni.Stores
             _supabaseRealtimeService.MessageReceived += (sender, message) =>
             {
                 AddMessage(message.ConversationId, message);
+            };
+
+            _supabaseRealtimeService.MessageDeleted += (sender, message) =>
+            {
+                RemoveMessageById(message.Id);
             };
         }
 
@@ -61,9 +67,27 @@ namespace Zavrsni.Stores
             if (_messageCache.TryGetValue(conversationId, out var messages))
             {
                 var messageToRemove = messages.FirstOrDefault(m => m.Id == messageId);
+                MessageRemoved?.Invoke(messageToRemove);
+
                 if (messageToRemove != null)
                 {
                     messages.Remove(messageToRemove);
+                }
+            }
+        }
+
+        public void RemoveMessageById(string messageId)
+        {
+            foreach (var kvp in _messageCache)
+            {
+                var messages = kvp.Value;
+                var messageToRemove = messages.FirstOrDefault(m => m.Id == messageId);
+
+                if (messageToRemove != null)
+                {
+                    messages.Remove(messageToRemove);
+                    MessageRemoved?.Invoke(messageToRemove);
+                    return;
                 }
             }
         }

@@ -37,11 +37,7 @@ namespace Zavrsni.Commands
 
             var messageOperationResult = await _messageService.DeleteMessageAsync(_messageDisplayViewModel.Message.ConversationId, _messageDisplayViewModel.Message.Id);
 
-            if (messageOperationResult.IsSuccess)
-            {
-                _messageDisplayViewModel.MessageDeleted.Invoke(_messageDisplayViewModel, _messageDisplayViewModel);
-            }
-            else
+            if (!messageOperationResult.IsSuccess)
             {
                 _messageDisplayViewModel.ErrorMessage = messageOperationResult.Message;
             }

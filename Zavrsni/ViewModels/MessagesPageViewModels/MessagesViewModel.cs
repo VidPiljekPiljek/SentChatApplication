@@ -39,6 +39,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
             _chatInputBoxViewModel = new ChatInputBoxViewModel(conversationService, userService, messageService, this);
 
             _messageService.MessageReceived += (message) => AddMessage(message);
+            _messageService.MessageDeleted += (message) => RemoveMessage(message.Id);
         }
 
         public async void LoadMessagesForConversation(string conversationId)
@@ -60,15 +61,29 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
 
         public void AddMessage(Message message)
         {
-            var vm = new MessageDisplayViewModel(_messageService, message, _userService);
-            vm.MessageDeleted += OnMessageDeleted;
-            Messages.Add(vm);
+            if (message.ConversationId == _conversationService.GetSelectedConversationId())
+            {
+                var vm = new MessageDisplayViewModel(_messageService, message, _userService);
+                //vm.MessageDeleted += OnMessageDeleted;
+                Messages.Add(vm);
+            }
         }
 
-        public void OnMessageDeleted(object? sender, MessageDisplayViewModel deletedMessage)
+        public void RemoveMessage(string messageId)
         {
-            Messages.Remove(deletedMessage);
-            deletedMessage.MessageDeleted -= OnMessageDeleted;
+            var messageToRemove = Messages.FirstOrDefault(m => m.Message.Id == messageId);
+
+            if (messageToRemove != null)
+            {
+                Messages.Remove(messageToRemove);
+                //messageToRemove.MessageDeleted -= OnMessageDeleted;
+            }
         }
+
+        //public void OnMessageDeleted(object? sender, MessageDisplayViewModel deletedMessage)
+        //{
+        //    Messages.Remove(deletedMessage);
+        //    deletedMessage.MessageDeleted -= OnMessageDeleted;
+        //}
     }
 }

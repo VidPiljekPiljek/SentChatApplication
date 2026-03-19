@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zavrsni.Browser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0170dd846304e38184b37167fb86c419bf0ab41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09f17723e49a0500d3ed653adb7d14fc3b3a6a3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zavrsni.Browser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zavrsni.Browser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
