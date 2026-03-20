@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Zavrsni.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="65"
+             x:Class="Zavrsni.Views.MessagePopUpView"
+             x:DataType="vm:MessagePopUpViewModel">
+  <Border Padding="10">
+        <Border.Styles>
+					<Style Selector="Border">
+						<Setter Property="Background" Value="{DynamicResource DialogBackground}"/>
+                        <Setter Property="CornerRadius" Value="10"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="BorderBrush" Value="{DynamicResource StandardLayoutBorderBrush}"/>
+					</Style>
+				</Border.Styles>
+        <Grid ColumnDefinitions="50, *, auto, auto, 10, auto">
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+				<Label Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" />
+                <Label Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+			
+            <Label Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Button Command="{Binding ClosePopUpCommand}" FontSize="11" Grid.Column="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Image Width="20" Height="20">
+				    <Image.Source>
+                        <SvgImage Source="/Assets/Icons/check.svg" />
+                    </Image.Source>
+                </Image>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

@@ -18,6 +18,7 @@
     <Grid>
 		<ContentControl Content="{Binding CurrentView}"/>
         <ContentControl IsVisible="{Binding IsDialogOpen}" Content="{Binding DialogViewModel}"/>
+        <ContentControl Width="500" VerticalAlignment="Top" VerticalContentAlignment="Top" IsVisible="{Binding IsPopUpOpen}" Content="{Binding MessagePopUpViewModel}"/>
     </Grid>
 	
 </Window>
