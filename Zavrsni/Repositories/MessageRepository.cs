@@ -42,6 +42,41 @@ namespace Zavrsni.Repositories
             return messageResponse?.Models?.ToList() ?? new List<Message>();
         }
 
+        public async Task<Dictionary<string, List<Message>>> GetMessagesForConversationsAsync(List<string> conversationIds)
+        {
+            SentrySdk.AddBreadcrumb(
+                message: "Fetching current user messages.",
+                category: "Message fetching",
+                level: BreadcrumbLevel.Info
+            );
+
+            var messageResponse = await _supabaseClient
+                .From<Message>()
+                .Select("*, sender:profiles(*)")
+                .Filter("conversationid", Constants.Operator.In, conversationIds)
+                .Order("sent_at", Constants.Ordering.Ascending)
+                .Get();
+
+            var allMessages = messageResponse?.Models?.ToList() ?? new List<Message>();
+
+            var messagesByConversation = allMessages
+                .GroupBy(m => m.ConversationId)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.ToList()
+                );
+
+            foreach (var conversationId in conversationIds)
+            {
+                if (!messagesByConversation.ContainsKey(conversationId))
+                {
+                    messagesByConversation.Add(conversationId, new List<Message>());
+                }
+            }
+
+            return messagesByConversation;
+        }
+
         public async Task<OperationResult<Message>> CreateMessageAsync(Message message)
         {
             SentrySdk.AddBreadcrumb(

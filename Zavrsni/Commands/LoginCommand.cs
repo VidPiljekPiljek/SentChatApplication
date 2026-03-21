@@ -56,6 +56,7 @@ namespace Zavrsni.Commands
 
                 if (await _conversationService.LoadUserConversations())
                 {
+                    await _messageService.LoadAllMessagesForUserAsync(_conversationService.GetConversationIds());
                     _viewModel.NavigateToMain();
                 }
                 else

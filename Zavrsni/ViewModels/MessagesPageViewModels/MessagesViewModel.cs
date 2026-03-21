@@ -46,7 +46,7 @@ namespace Zavrsni.ViewModels.MessagesPageViewModels
         {
             Messages.Clear();
 
-            ObservableCollection<Message> messages = new ObservableCollection<Message>(await _messageService.LoadConversationMessagesAsync(conversationId));
+            ObservableCollection<Message> messages = new ObservableCollection<Message>(_messageService.GetConversationMessages(conversationId));
 
             foreach(var message in messages)
             {

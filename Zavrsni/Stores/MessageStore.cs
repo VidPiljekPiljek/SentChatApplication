@@ -40,10 +40,21 @@ namespace Zavrsni.Stores
             return _messageCache.ContainsKey(conversationId);
         }
 
-        public void SetUserMessages(string conversationId, List<Message> messages)
+        public void SetMessagesForConversation(string conversationId, List<Message> messages)
         {
             _messageCache[conversationId] = messages;
             MessagesLoadedForConversation?.Invoke(this, conversationId);
+        }
+
+        public void SetMessagesForConversations(Dictionary<string, List<Message>> messagesByConversation)
+        {
+            _messageCache.Clear();
+
+            foreach (var kvp in messagesByConversation)
+            {
+                _messageCache[kvp.Key] = kvp.Value;
+                MessagesLoadedForConversation?.Invoke(this, kvp.Key);
+            }
         }
 
         public List<Message> GetMessagesForConversation(string conversationId)

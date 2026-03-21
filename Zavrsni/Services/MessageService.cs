@@ -1,4 +1,5 @@
-﻿using Sentry;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -43,11 +44,27 @@ namespace Zavrsni.Services
             {
                 var messages = await _messageRepository.GetMessagesForConversationAsync(conversationId);
 
-                _messageStore.SetUserMessages(conversationId, messages);
+                _messageStore.SetMessagesForConversation(conversationId, messages);
 
                 return messages;
             }
-            
+        }
+
+        public async Task LoadAllMessagesForUserAsync(List<string> conversationIds)
+        {
+            if (conversationIds == null || !conversationIds.Any())
+            {
+                return;
+            }
+
+            var messagesByConversation = await _messageRepository.GetMessagesForConversationsAsync(conversationIds);
+
+            _messageStore.SetMessagesForConversations(messagesByConversation);
+        }
+
+        public List<Message> GetConversationMessages(string conversationId)
+        {
+            return _messageStore.GetMessagesForConversation(conversationId).ToList();
         }
 
         public async Task<OperationResult> SendMessageAsync(Message message)

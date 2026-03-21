@@ -47,6 +47,11 @@ namespace Zavrsni.Stores
             return SelectedConversation.Id;
         }
 
+        public List<string> GetConversationIds()
+        {
+            return UserConversations.Select(c => c.Id).ToList();
+        }
+
         public string GetSelectedConversationTitle()
         {
             return SelectedConversation.Name;
