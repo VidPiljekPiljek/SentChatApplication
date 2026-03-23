@@ -19,10 +19,13 @@
 		<Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"/>
 		<Setter Property="FontWeight" Value="DemiBold"/>
 	    <Setter Property="BorderBrush" Value="Transparent"/>
+	</Style>
 
+	<Style Selector=":is(HyperlinkButton) /template/ ContentPresenter">
 		<Setter Property="Transitions">
 			<Transitions>
-				<BrushTransition Property="Background" Duration="0:0:10" />
+				<BrushTransition Property="Foreground" Duration="0:0:0.2"/>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" Easing="CubicEaseOut"/>
 			</Transitions>
 		</Setter>
 	</Style>

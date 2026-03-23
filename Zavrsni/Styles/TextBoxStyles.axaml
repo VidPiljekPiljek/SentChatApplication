@@ -20,6 +20,15 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource StandardBorderBrush}"/>
 	</Style>
 
+	<Style Selector=":is(TextBox) /template/ Border#PART_BorderElement">
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" Easing="CubicEaseOut"/>
+			</Transitions>
+		</Setter>
+	</Style>
+
 	<Style Selector=":is(TextBox):pointerover /template/ Border#PART_BorderElement">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource StandardSelectedOrHoverBorderBrush}"/>

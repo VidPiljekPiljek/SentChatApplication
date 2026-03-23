@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
 	  <Border Padding="20" Width="600" Height="600">
-		  <StackPanel Spacing="20">
+		  <StackPanel Spacing="20" ClipToBounds="False">
 			  <Button Content="Login" Width="100"/>
 			  <Button Content="Sign Up" Width="100"/>
 			  <Button Content="Exit" Width="100"/>
@@ -23,6 +23,15 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource StandardBorderBrush}"/>
 		<Setter Property="BorderThickness" Value="1"/>
 
+	</Style>
+
+	<Style Selector=":is(Button) /template/ ContentPresenter">
+		<Setter Property="Transitions">
+			<Transitions>
+				<BrushTransition Property="BorderBrush" Duration="0:0:0.2"/>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" Easing="CubicEaseOut"/>
+			</Transitions>
+		</Setter>
 	</Style>
 
 	<Style Selector=":is(Button):pointerover /template/ ContentPresenter">

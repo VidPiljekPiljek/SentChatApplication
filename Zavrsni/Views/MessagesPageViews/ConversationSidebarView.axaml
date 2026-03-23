@@ -27,7 +27,7 @@
 						</Label>
 					</Grid>
 					
-					<ScrollViewer Grid.Row="6" HorizontalAlignment="Stretch">
+					<ScrollViewer Grid.Row="6" HorizontalAlignment="Stretch" >
 						<ItemsControl ItemsSource="{Binding UserConversations}">
 							<ItemsControl.ItemTemplate>
 								<DataTemplate>

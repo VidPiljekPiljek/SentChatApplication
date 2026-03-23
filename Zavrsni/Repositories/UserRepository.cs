@@ -1,8 +1,9 @@
 ﻿using Avalonia.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 using Sentry;
-using Supabase.Postgrest;
+using Supabase.Gotrue.Exceptions;
 using Supabase.Interfaces;
+using Supabase.Postgrest;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 using Zavrsni.DbContexts;
 using Zavrsni.ErrorHandling;
 using Zavrsni.Models;
-using Supabase.Gotrue.Exceptions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Zavrsni.Repositories
 {
@@ -118,5 +119,21 @@ namespace Zavrsni.Repositories
                 };
             }
         }
+
+        public async Task<OperationResult> UploadProfilePictureAsync(string userId, byte[] profilePictureBytes)
+        {
+            await _supabaseClient.Storage
+                .From("profile_pictures")
+                .Upload(profilePictureBytes, $"{userId}.png");
+
+            var url = _supabaseClient.Storage.From("profile_pictures").GetPublicUrl($"{userId}.png");
+
+            await _supabaseClient.From<UserProfile>()
+                .Where(p => p.Id == userId)
+                .Set(p => p.ProfilePictureUrl, url)
+                .Update();
+
+            return OperationResult.Success();
+        } 
     }
 }

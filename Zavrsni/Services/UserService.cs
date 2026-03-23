@@ -1,4 +1,5 @@
-﻿using Sentry;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Sentry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +57,13 @@ namespace Zavrsni.Services
 
                 return OperationResult.Failure(userCreationOperationResult.Message);
             }
+        }
+
+        public async Task<OperationResult> UploadProfilePicture(byte[] profilePictureBytes)
+        {
+            var userId = GetCurrentUserId();
+
+            return await _userRepository.UploadProfilePictureAsync(userId, profilePictureBytes);
         }
 
         public async Task<OperationResult<UserProfile?>> GetUserByUsernameAsync(string username)

@@ -18,7 +18,7 @@ namespace Zavrsni.Models
         [Supabase.Postgrest.Attributes.Column("username")]
         public string Username { get; set; }
         [Supabase.Postgrest.Attributes.Column("profile_picture_url")]
-        public string ProfilePicture { get; set; }
+        public string ProfilePictureUrl { get; set; }
         [Supabase.Postgrest.Attributes.Column("created_at")]
         public DateTime CreatedAt { get; set; }
 
