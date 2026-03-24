@@ -106,6 +106,7 @@
             }
           },
           "centralPackageVersions": {
+            "AsyncImageLoader.Avalonia": "3.7.0",
             "Avalonia": "11.3.11",
             "Avalonia.Android": "11.3.11",
             "Avalonia.Browser": "11.3.11",
@@ -219,6 +220,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AsyncImageLoader.Avalonia": {
+              "target": "Package",
+              "version": "[3.7.0, )",
+              "versionCentrallyManaged": true
+            },
             "Avalonia": {
               "target": "Package",
               "version": "[11.3.11, )",
@@ -293,6 +299,7 @@
             }
           },
           "centralPackageVersions": {
+            "AsyncImageLoader.Avalonia": "3.7.0",
             "Avalonia": "11.3.11",
             "Avalonia.Android": "11.3.11",
             "Avalonia.Browser": "11.3.11",

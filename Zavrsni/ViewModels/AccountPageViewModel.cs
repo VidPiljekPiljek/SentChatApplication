@@ -19,11 +19,15 @@ namespace Zavrsni.ViewModels
         private readonly UserService _userService;
 
         [ObservableProperty]
+        private UserProfile _userProfile;
+
+        [ObservableProperty]
         private string _errorMessage;
 
         public AccountPageViewModel(UserService userService) : base(ApplicationPageNames.Account)
         {
             _userService = userService;
+            _userProfile = _userService.GetCurrentUserProfile();
         }
 
         public async Task SelectProfilePictureAsync(TopLevel topLevel)

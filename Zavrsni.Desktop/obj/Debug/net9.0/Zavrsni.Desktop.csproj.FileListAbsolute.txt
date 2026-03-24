@@ -246,3 +246,4 @@ C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\System.Reactive.dll
 C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\Websocket.Client.dll
+C:\Users\pilje\source\repos\SentChatApplication\Zavrsni.Desktop\bin\Debug\net9.0\AsyncImageLoader.Avalonia.dll

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1115" d:DesignHeight="720"
 			 xmlns:vm="clr-namespace:Zavrsni.ViewModels"
+			 xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
              x:Class="Zavrsni.Views.AccountPageView"
 			 x:DataType="vm:AccountPageViewModel">
   <Border>
@@ -24,9 +25,28 @@
 				</Border>
 				
 				<Border Grid.Column="1">
-					<StackPanel Grid.Column="1" Orientation="Vertical">
-						<Label HorizontalAlignment="Center" Content="Username:"/>
-					</StackPanel>
+					<StackPanel Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Spacing="15">
+        
+                        <Border Width="300"
+                                Height="300"
+                                CornerRadius="150"
+                                ClipToBounds="True"
+                                HorizontalAlignment="Center">
+                            <asyncImageLoader:AdvancedImage
+                                Source="{Binding UserProfile.ProfilePictureUrl}"
+                                Width="300"
+                                Height="300"
+                                Stretch="UniformToFill"/>
+                        </Border>
+
+                        <TextBlock HorizontalAlignment="Center"
+                                   FontSize="24"
+								   FontFamily="{DynamicResource DefaultFontFamily}"
+                                   Text="{Binding UserProfile.Username}"/>
+                    </StackPanel>
 				</Border>
 				
 			</Grid>

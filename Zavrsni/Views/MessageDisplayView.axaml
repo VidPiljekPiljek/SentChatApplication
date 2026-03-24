@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Zavrsni.ViewModels"
+             xmlns:asyncImageLoader="clr-namespace:AsyncImageLoader;assembly=AsyncImageLoader.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="65"
              Height="65"
              x:Class="Zavrsni.Views.MessageDisplayView"
@@ -17,10 +18,24 @@
 					</Style>
 				</Border.Styles>
         <Grid ColumnDefinitions="50, *, auto, auto, 10, auto">
-            <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
-				<Label Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-           <Label Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10">
+				<Border Width="40"
+                                Height="40"
+                                CornerRadius="20"
+                                ClipToBounds="True"
+                                HorizontalAlignment="Center">
+                            <asyncImageLoader:AdvancedImage
+                                Source="{Binding Message.Sender.ProfilePictureUrl}"
+                                Width="40"
+                                Height="40"
+                                Stretch="UniformToFill"/>
+                        </Border>
+                <StackPanel>
+				    <Label Classes="sender" Content="{Binding Message.Sender.Username}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Content="{Binding Message.Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
             </StackPanel>
+            
 			
             <Label Grid.Column="2" Content="{Binding ErrorMessage}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Label Grid.Column="3" Content="{Binding Message.SentAt}" HorizontalAlignment="Right" VerticalAlignment="Center"/>

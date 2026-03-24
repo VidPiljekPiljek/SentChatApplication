@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Zavrsni/1.0.0": {
         "dependencies": {
+          "AsyncImageLoader.Avalonia": "3.7.0",
           "Avalonia": "11.3.11",
           "Avalonia.Diagnostics": "11.3.11",
           "Avalonia.Fonts.Inter": "11.3.11",
@@ -25,6 +26,17 @@
         },
         "runtime": {
           "Zavrsni.dll": {}
+        }
+      },
+      "AsyncImageLoader.Avalonia/3.7.0": {
+        "dependencies": {
+          "Avalonia": "11.3.11"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncImageLoader.Avalonia.dll": {
+            "assemblyVersion": "3.7.0.0",
+            "fileVersion": "3.7.0.0"
+          }
         }
       },
       "Avalonia/11.3.11": {
@@ -1634,6 +1646,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AsyncImageLoader.Avalonia/3.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sWMrKrAUYQdIk4iE6hU3ieWgBT2N2lv0ElYgw3wBAWlkHyeSOZrOnXjhCcfHxGLU5HiZwz/t6ZcD3TDAJ9tuKg==",
+      "path": "asyncimageloader.avalonia/3.7.0",
+      "hashPath": "asyncimageloader.avalonia.3.7.0.nupkg.sha512"
     },
     "Avalonia/11.3.11": {
       "type": "package",

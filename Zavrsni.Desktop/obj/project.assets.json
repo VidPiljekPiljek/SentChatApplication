@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "AsyncImageLoader.Avalonia/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AsyncImageLoader.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncImageLoader.Avalonia.dll": {}
+        }
+      },
       "Avalonia/11.3.11": {
         "type": "package",
         "dependencies": {
@@ -2608,6 +2620,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "AsyncImageLoader.Avalonia": "3.7.0",
           "Avalonia": "11.3.11",
           "Avalonia.Diagnostics": "11.3.11",
           "Avalonia.Fonts.Inter": "11.3.11",
@@ -2632,6 +2645,20 @@
     }
   },
   "libraries": {
+    "AsyncImageLoader.Avalonia/3.7.0": {
+      "sha512": "sWMrKrAUYQdIk4iE6hU3ieWgBT2N2lv0ElYgw3wBAWlkHyeSOZrOnXjhCcfHxGLU5HiZwz/t6ZcD3TDAJ9tuKg==",
+      "type": "package",
+      "path": "asyncimageloader.avalonia/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "asyncimageloader.avalonia.3.7.0.nupkg.sha512",
+        "asyncimageloader.avalonia.nuspec",
+        "lib/netstandard2.0/AsyncImageLoader.Avalonia.dll",
+        "lib/netstandard2.1/AsyncImageLoader.Avalonia.dll"
+      ]
+    },
     "Avalonia/11.3.11": {
       "sha512": "N+LjdoGLOD2Rio1JK0VlSMEB2opGZpq8/Vs5LV16eAnbjFeXdqY5uwmURFKb1rJ9McyMZQT3Kf2/DecmKqrLEw==",
       "type": "package",
@@ -6821,6 +6848,7 @@
           }
         },
         "centralPackageVersions": {
+          "AsyncImageLoader.Avalonia": "3.7.0",
           "Avalonia": "11.3.11",
           "Avalonia.Android": "11.3.11",
           "Avalonia.Browser": "11.3.11",

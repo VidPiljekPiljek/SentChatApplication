@@ -135,5 +135,9 @@ namespace Zavrsni.Repositories
 
             return OperationResult.Success();
         } 
+
+        //public async Task<OperationResult<byte[]>> GetProfilePictureAsync(string userId)
+        //{
+        //}
     }
 }
