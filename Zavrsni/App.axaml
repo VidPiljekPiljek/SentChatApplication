@@ -17,6 +17,7 @@
 		<StyleInclude Source="Styles\HyperlinkButtonStyles.axaml"></StyleInclude>
 		<StyleInclude Source="Styles\LabelStyles.axaml"></StyleInclude>
 		<StyleInclude Source="Styles\TextBoxStyles.axaml"></StyleInclude>
+		<StyleInclude Source="Styles\TextBlockStyles.axaml"></StyleInclude>
     </Application.Styles>
 
 	<Application.Resources>

@@ -17,11 +17,18 @@
 			</Border>
 			<Grid Grid.Row="1" ColumnDefinitions="2*, *">
 				<Border Grid.Column="0" BorderThickness="0, 0, 1, 0" Padding="20" BorderBrush="{DynamicResource StandardLayoutBorderBrush}">
-					<StackPanel Orientation="Vertical" Grid.Column="0" Spacing="20" >
-						<Button Click="Button_Click" Content="Change Profile Picture"/>
-						<Button Content="Change Username"/>
-						<Button Content="Change Password"/>
-					</StackPanel>
+					<Grid RowDefinitions="*, auto">
+						<StackPanel Orientation="Vertical" Grid.Row="0" Spacing="20" >
+							<Button Click="Button_Click" Content="Change Profile Picture" ToolTip.Tip="Please provide a square profile picture for best results."/>
+							<Button Content="Change Username"/>
+							<Button Content="Change Password"/>
+						</StackPanel>
+
+						<StackPanel Orientation="Vertical" Grid.Row="1" Spacing="20" >
+							<Button Classes="delete" Content="Delete Profile"/>
+							<Button Content="Log Out"/>
+						</StackPanel>
+					</Grid>
 				</Border>
 				
 				<Border Grid.Column="1">

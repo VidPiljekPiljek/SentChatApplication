@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Zavrsni.Android.dll" comes first in this list. */
 		"Zavrsni.Android.dll",
+		"AsyncImageLoader.Avalonia.dll",
 		"Avalonia.Base.dll",
 		"Avalonia.Controls.dll",
 		"Avalonia.DesignerSupport.dll",
@@ -153,6 +154,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.VisualStudio.DesignTools.XamlTapContract.dll",
 		"Zavrsni.dll",
 		"_Microsoft.Android.Resource.Designer.dll",
+		"AsyncImageLoader.Avalonia.dll",
 		"Avalonia.Base.dll",
 		"Avalonia.Controls.dll",
 		"Avalonia.DesignerSupport.dll",

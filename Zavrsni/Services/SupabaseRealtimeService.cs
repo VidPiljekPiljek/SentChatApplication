@@ -59,6 +59,7 @@ namespace Zavrsni.Services
                 return;
             }
 
+            // To be used with the old method of sending messages.
             if (fullMessageResponse.Data.SenderId == _userStore.GetCurrentUserId())
             {
                 return;

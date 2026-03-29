@@ -67,6 +67,7 @@ namespace Zavrsni.Services
             return _messageStore.GetMessagesForConversation(conversationId).ToList();
         }
 
+        // Old way of sending messages, made to prevent multiple database calls but since we have SupabaseRealtime listening to all inserts it really isn't needed.
         public async Task<OperationResult> SendMessageAsync(Message message)
         {
             var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
@@ -79,11 +80,7 @@ namespace Zavrsni.Services
                     level: BreadcrumbLevel.Info
                 );
 
-                messageOperationResult.Data.Sender = new UserProfile()
-                {
-                    Id = messageOperationResult.Data.SenderId,
-                    Username = _userStore.GetCurrentUserUsername()
-                };
+                messageOperationResult.Data.Sender = _userStore.GetCurrentUserProfile();
 
                 _messageStore.AddMessage(messageOperationResult.Data.ConversationId, messageOperationResult.Data);
                 return OperationResult.Success();
@@ -99,6 +96,31 @@ namespace Zavrsni.Services
                 return messageOperationResult;
             }
         }
+
+        //public async Task<OperationResult> SendMessageAsync(Message message)
+        //{
+        //    var messageOperationResult = await _messageRepository.CreateMessageAsync(message);
+
+        //    if (messageOperationResult.IsSuccess)
+        //    {
+        //        SentrySdk.AddBreadcrumb(
+        //            message: "Message sent successfully.",
+        //            category: "Message sending success",
+        //            level: BreadcrumbLevel.Info
+        //        );
+        //        return OperationResult.Success();
+        //    }
+        //    else
+        //    {
+        //        SentrySdk.AddBreadcrumb(
+        //            message: $"Message sending failed due to: {messageOperationResult.Message}",
+        //            category: "Message sending failure",
+        //            level: BreadcrumbLevel.Info
+        //        );
+
+        //        return messageOperationResult;
+        //    }
+        //}
 
         public async Task<OperationResult> DeleteMessageAsync(string conversationId, string messageId)
         {

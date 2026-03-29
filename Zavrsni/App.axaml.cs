@@ -7,10 +7,12 @@ using Avalonia.Threading;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Sentry;
+using Supabase;
 using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.JavaScript;
+using System.Threading.Tasks;
 using Zavrsni.Authenticators;
 using Zavrsni.Data;
 using Zavrsni.DbContexts;
@@ -91,10 +93,13 @@ public partial class App : Application
         var url = "https://qcnytsojnhpmpqtsdscn.supabase.co";
         var key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjbnl0c29qbmhwbXBxdHNkc2NuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NDAyMjMsImV4cCI6MjA4NTAxNjIyM30.yDfAziSMA5SBLjI4KAnmqDEGw84araR7s0Nv_bHAzR4";
 
+        var persistence = new SupabaseSessionPersistenceService();
+
         var options = new Supabase.SupabaseOptions
         {
             AutoConnectRealtime = false,
-            AutoRefreshToken = true
+            AutoRefreshToken = true,
+            SessionHandler = persistence
         };
 
         collection.AddSingleton(provider =>
@@ -103,6 +108,7 @@ public partial class App : Application
         });
 
         collection.AddSingleton<SupabaseRealtimeService>();
+        collection.AddSingleton<SupabaseSessionPersistenceService>();
 
         var serviceProvider = collection.BuildServiceProvider();
 
@@ -128,7 +134,6 @@ public partial class App : Application
             options.AutoSessionTracking = true;
         });
 
-        // Used for tracking unhandled exceptions
         AppDomain.CurrentDomain.UnhandledException += (s, e) =>
         {
             var ex = (Exception)e.ExceptionObject;
@@ -140,14 +145,12 @@ public partial class App : Application
         Dispatcher.UIThread.UnhandledException += (s, e) =>
         {
             SentrySdk.CaptureException(e.Exception);
-            e.Handled = true;  // Prevents the application from crashing
+            e.Handled = true; 
             serviceProvider.GetRequiredService<MainWindowViewModel>().CreateErrorDialog("An unhandled exception has occurred, please try again.");
             serviceProvider.GetRequiredService<MainWindowViewModel>().OpenDialog();
         };
 
-        // Connection to Supabase
-        //var url = Environment.GetEnvironmentVariable("https://qcnytsojnhpmpqtsdscn.supabase.co");
-        //var key = Environment.GetEnvironmentVariable("sb_publishable_H9GqW0ETCMnkZFLksqsnUQ_SlJacNO2");
+        var session = serviceProvider.GetRequiredService<SupabaseSessionPersistenceService>().LoadSession();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
@@ -168,6 +171,46 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
+
+        // Restoring session here to prevent the UI thread from being blocked and the app window not displaying
+        _ = Task.Run(async () =>
+        {
+            try
+            {
+                var savedSession = persistence.LoadSession();
+                if (savedSession != null)
+                {
+                    await supabase.Auth.SetSession(savedSession.AccessToken, savedSession.RefreshToken);
+                }
+
+                if (supabase.Auth.CurrentSession != null)
+                {
+                    var mainWindowViewModel = serviceProvider.GetRequiredService<MainWindowViewModel>();
+                    var userService = serviceProvider.GetRequiredService<UserService>();
+                    var conversationService = serviceProvider.GetRequiredService<ConversationService>();
+                    var messageService = serviceProvider.GetRequiredService<MessageService>();
+
+                    var restoreResult = await userService.RestoreSessionAsync();
+
+                    if (!restoreResult.IsSuccess)
+                    {
+                        mainWindowViewModel.NavigateToLogin();
+                    }
+                    else
+                    {
+                        if (await conversationService.LoadUserConversations())
+                        {
+                            await messageService.LoadAllMessagesForUserAsync(conversationService.GetConversationIds());
+                            mainWindowViewModel.NavigateToMain();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+            }
+        });
     }
 
     private void DisableAvaloniaDataAnnotationValidation()

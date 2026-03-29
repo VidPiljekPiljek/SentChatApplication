@@ -34,14 +34,40 @@ namespace Zavrsni.Authenticators
 
         public async Task<OperationResult> AuthenticateUser(string email, string password)
         {
-            var dbUserOperation = await _userRepository.GetUserAsync(email, password);
+            var signInResult = await _userRepository.SignInAsync(email, password);
 
-            if (!dbUserOperation.IsSuccess)
+            if (!signInResult.IsSuccess)
             {
-                return OperationResult.Failure(dbUserOperation.Message);
+                return OperationResult.Failure(signInResult.Message);
             }
 
-            _userStore.SetCurrentUserProfile(dbUserOperation.Data);
+            return await CompleteAuthentication(signInResult.Data);
+        }
+
+        public async Task<OperationResult> RestoreSessionAsync()
+        {
+            var token = _supabaseClient.Auth.CurrentSession?.AccessToken;
+
+            if (token is null)
+            {
+                return OperationResult.Failure("No session to restore.");
+            }
+
+            _supabaseClient.Realtime.SetAuth(token);
+
+            return await CompleteAuthentication(_supabaseClient.Auth.CurrentUser.Id);
+        }
+
+        private async Task<OperationResult> CompleteAuthentication(string userId)
+        {
+            var userProfileResult = await _userRepository.GetUserProfileAsync(userId);
+
+            if (!userProfileResult.IsSuccess)
+            {
+                return OperationResult<UserProfile>.Failure(userProfileResult.Message);
+            }
+
+            _userStore.SetCurrentUserProfile(userProfileResult.Data);
 
             await _supabaseClient.Realtime.ConnectAsync();
 

@@ -26,7 +26,28 @@ namespace Zavrsni.Repositories
             _supabaseClient = supabaseClient;
         }
 
-        public async Task<OperationResult<UserProfile>> GetUserAsync(string email, string password)
+        public async Task<OperationResult<string>> SignInAsync(string email, string password)
+        {
+            try
+            {
+                var session = await _supabaseClient.Auth.SignIn(email, password);
+                if (session?.User is null)
+                    return OperationResult<string>.Failure("User not found. Please try again.");
+
+                _supabaseClient.Realtime.SetAuth(session.AccessToken);
+                return OperationResult<string>.Success(session.User.Id);
+            }
+            catch (GotrueException ex) when (ex.StatusCode < 500)
+            {
+                return ex.StatusCode switch
+                {
+                    400 => OperationResult<string>.Failure("You entered something wrong, please try again."),
+                    _ => OperationResult<string>.Failure("User login failed. Please try again.")
+                };
+            }
+        }
+
+        public async Task<OperationResult<UserProfile>> GetUserProfileAsync(string userId)
         {
             SentrySdk.AddBreadcrumb(
                 message: "Checking if user already exists.",
@@ -36,20 +57,6 @@ namespace Zavrsni.Repositories
 
             try
             {
-                var session = await _supabaseClient.Auth.SignIn(email, password);
-
-                if (session?.User is null)
-                {
-                    return OperationResult<UserProfile>.Failure("User not found. Please try again.");
-                }
-
-                Console.WriteLine($"Auth token: {session.AccessToken}");
-                Console.WriteLine($"User ID: {session.User.Id}");
-
-                _supabaseClient.Realtime.SetAuth(session.AccessToken);
-
-                var userId = session.User.Id!;
-
                 var response = await _supabaseClient
                     .From<UserProfile>()
                     .Where(p => p.Id == userId)

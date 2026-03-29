@@ -24,7 +24,7 @@
 			</Border.Styles>
 			<Grid RowDefinitions="*, auto">
 				<StackPanel Grid.Row="0" Spacing="20">
-					<Button Command="{Binding NavigateToMessagesCommand}">
+					<Button Command="{Binding NavigateToMessagesCommand}" ToolTip.Tip="Personal Messages">
 						<Image Width="20" Height="20">
 							<Image.Source>
 								<SvgImage Source="/Assets/Icons/messages.svg" />
@@ -34,14 +34,14 @@
 				</StackPanel>
 
 				<StackPanel Grid.Row="1" Spacing="20">
-					<Button Command="{Binding NavigateToAccountCommand}">
+					<Button Command="{Binding NavigateToAccountCommand}" ToolTip.Tip="Account Management">
 						<Image Width="20" Height="20">
 							<Image.Source>
 								<SvgImage Source="/Assets/Icons/account.svg" />
 							</Image.Source>
 						</Image>
 					</Button>
-					<Button Command="{Binding NavigateToSettingsCommand}">
+					<Button Command="{Binding NavigateToSettingsCommand}" ToolTip.Tip="Settings">
 						<Image Width="20" Height="20">
 							<Image.Source>
 								<SvgImage Source="/Assets/Icons/settings.svg" />

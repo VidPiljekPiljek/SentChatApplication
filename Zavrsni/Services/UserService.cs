@@ -33,6 +33,11 @@ namespace Zavrsni.Services
             return await _userAuthenticator.AuthenticateUser(email, password);
         }
 
+        public async Task<OperationResult> RestoreSessionAsync()
+        {
+            return await _userAuthenticator.RestoreSessionAsync();
+        }
+
         public async Task<OperationResult> RegisterAsync(string email, string password, string username)
         {
             var userCreationOperationResult = await _userRepository.CreateUserAsync(email, password, username);

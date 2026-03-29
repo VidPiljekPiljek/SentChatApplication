@@ -18,7 +18,7 @@
 						</Image.Source>
 					</Image>
 				</Button>
-				<TextBox Grid.Column="2" Text="{Binding Text}" Height="40"/>
+				<TextBox Grid.Column="2" Text="{Binding Text}" Height="40" MaxLength="250" ToolTip.Tip="Message can be up to 250 characters long."/>
 				<Button Grid.Column="4" Command="{Binding SendMessageParameterCommand}">
 					<Image Width="20" Height="20">
 						<Image.Source>
