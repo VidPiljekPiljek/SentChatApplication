@@ -102,5 +102,11 @@ namespace Zavrsni.Stores
                 }
             }
         }
+
+        public void Clear()
+        {
+            _messageCache.Clear();
+            MessagesLoadedForConversation = null;
+        }
     }
 }

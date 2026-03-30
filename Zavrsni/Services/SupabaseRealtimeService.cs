@@ -49,6 +49,15 @@ namespace Zavrsni.Services
             _activeChannels.Add(messagesChannel);
         }
 
+        public async Task UnsubscribeFromAllAsync()
+        {
+            foreach (var channel in _activeChannels)
+            {
+                channel.Unsubscribe();
+            }
+            _activeChannels.Clear();
+        }
+
         public async Task HandleMessageInsert(PostgresChangesResponse change)
         {
             var newMessageResponse = change.Model<Message>();

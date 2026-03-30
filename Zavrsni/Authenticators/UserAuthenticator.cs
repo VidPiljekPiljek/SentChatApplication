@@ -19,12 +19,13 @@ namespace Zavrsni.Authenticators
     public class UserAuthenticator
     {
         private readonly Supabase.Client _supabaseClient;
+        private readonly SupabaseSessionPersistenceService _persistence;
         private readonly UserRepository _userRepository;
         private readonly UserStore _userStore;
         private readonly PasswordHasher<UserProfile> _passwordHasher = new();
         private readonly SupabaseRealtimeService _supabaseRealtimeService;
 
-        public UserAuthenticator(Supabase.Client supabaseClient, UserRepository userRepository, UserStore userStore, SupabaseRealtimeService supabaseRealtimeService)
+        public UserAuthenticator(Supabase.Client supabaseClient, SupabaseSessionPersistenceService persistence, UserRepository userRepository, UserStore userStore, SupabaseRealtimeService supabaseRealtimeService)
         {
             _supabaseClient = supabaseClient;
             _userRepository = userRepository;
@@ -32,47 +33,27 @@ namespace Zavrsni.Authenticators
             _supabaseRealtimeService = supabaseRealtimeService;
         }
 
-        public async Task<OperationResult> AuthenticateUser(string email, string password)
+        public async Task<OperationResult<string>> LoginAsync(string email, string password)
         {
             var signInResult = await _userRepository.SignInAsync(email, password);
 
             if (!signInResult.IsSuccess)
             {
-                return OperationResult.Failure(signInResult.Message);
+                return OperationResult<string>.Failure(signInResult.Message);
             }
 
-            return await CompleteAuthentication(signInResult.Data);
+            return OperationResult<string>.Success(signInResult.Data);
         }
 
-        public async Task<OperationResult> RestoreSessionAsync()
+        public async Task<OperationResult<UserProfile>> GetUserProfileAsync(string userId)
         {
-            var token = _supabaseClient.Auth.CurrentSession?.AccessToken;
-
-            if (token is null)
-            {
-                return OperationResult.Failure("No session to restore.");
-            }
-
-            _supabaseClient.Realtime.SetAuth(token);
-
-            return await CompleteAuthentication(_supabaseClient.Auth.CurrentUser.Id);
+            return await _userRepository.GetUserProfileAsync(userId);
         }
 
-        private async Task<OperationResult> CompleteAuthentication(string userId)
+        public async Task<OperationResult> LogoutAsync()
         {
-            var userProfileResult = await _userRepository.GetUserProfileAsync(userId);
-
-            if (!userProfileResult.IsSuccess)
-            {
-                return OperationResult<UserProfile>.Failure(userProfileResult.Message);
-            }
-
-            _userStore.SetCurrentUserProfile(userProfileResult.Data);
-
-            await _supabaseClient.Realtime.ConnectAsync();
-
-            await _supabaseRealtimeService.SubscribeToUserConversationsAsync();
-
+            await _supabaseClient.Auth.SignOut();
+            
             return OperationResult.Success();
         }
     }

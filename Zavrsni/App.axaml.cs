@@ -17,6 +17,7 @@ using Zavrsni.Authenticators;
 using Zavrsni.Data;
 using Zavrsni.DbContexts;
 using Zavrsni.Factories;
+using Zavrsni.Handlers;
 using Zavrsni.Repositories;
 using Zavrsni.Services;
 using Zavrsni.Stores;
@@ -109,6 +110,7 @@ public partial class App : Application
 
         collection.AddSingleton<SupabaseRealtimeService>();
         collection.AddSingleton<SupabaseSessionPersistenceService>();
+        collection.AddSingleton<SessionHandler>();
 
         var serviceProvider = collection.BuildServiceProvider();
 

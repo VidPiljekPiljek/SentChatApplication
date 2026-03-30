@@ -42,6 +42,12 @@ namespace Zavrsni.Stores
             return true;
         }
 
+        public void Clear()
+        {
+            _userConversations.Clear();
+            SelectedConversation = null;
+        }
+
         public string GetSelectedConversationId()
         {
             return SelectedConversation.Id;

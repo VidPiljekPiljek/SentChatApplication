@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zavrsni.Authenticators;
 using Zavrsni.ErrorHandling;
+using Zavrsni.Handlers;
 using Zavrsni.Mappers;
 using Zavrsni.Models;
 using Zavrsni.Repositories;
@@ -17,12 +18,14 @@ namespace Zavrsni.Services
 {
     public class UserService
     {
+        private readonly SessionHandler _sessionHandler;
         private readonly UserAuthenticator _userAuthenticator;
         private readonly UserStore _userStore;
         private readonly UserRepository _userRepository;
 
-        public UserService(UserAuthenticator userAuthenticator, UserStore userStore, UserRepository userRepository)
+        public UserService(SessionHandler sessionHandler, UserAuthenticator userAuthenticator, UserStore userStore, UserRepository userRepository)
         {
+            _sessionHandler = sessionHandler;
             _userAuthenticator = userAuthenticator;
             _userStore = userStore;
             _userRepository = userRepository;
@@ -30,12 +33,12 @@ namespace Zavrsni.Services
 
         public async Task<OperationResult> LoginAsync(string email, string password)
         {
-            return await _userAuthenticator.AuthenticateUser(email, password);
+            return await _sessionHandler.LoginAsync(email, password);
         }
 
         public async Task<OperationResult> RestoreSessionAsync()
         {
-            return await _userAuthenticator.RestoreSessionAsync();
+            return await _sessionHandler.RestoreSessionAsync();
         }
 
         public async Task<OperationResult> RegisterAsync(string email, string password, string username)
@@ -62,6 +65,11 @@ namespace Zavrsni.Services
 
                 return OperationResult.Failure(userCreationOperationResult.Message);
             }
+        }
+
+        public async Task<OperationResult> LogoutAsync()
+        {
+            return await _sessionHandler.LogoutAsync();
         }
 
         public async Task<OperationResult> UploadProfilePicture(byte[] profilePictureBytes)

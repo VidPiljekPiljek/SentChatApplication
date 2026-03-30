@@ -29,6 +29,11 @@ namespace Zavrsni.Stores
 
         }
 
+        public void Clear()
+        {
+            CurrentUserProfile = null;
+        }
+
         public string GetCurrentUserId()
         {
             return CurrentUserProfile.Id;

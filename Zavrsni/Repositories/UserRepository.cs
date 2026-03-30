@@ -47,6 +47,12 @@ namespace Zavrsni.Repositories
             }
         }
 
+        public async Task<OperationResult> SignOutAsync()
+        {
+            await _supabaseClient.Auth.SignOut();
+            return OperationResult.Success();
+        }
+
         public async Task<OperationResult<UserProfile>> GetUserProfileAsync(string userId)
         {
             SentrySdk.AddBreadcrumb(
