@@ -8,6 +8,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Zavrsni.Commands;
 using Zavrsni.Data;
 using Zavrsni.Models;
 using Zavrsni.Services;
@@ -18,17 +20,20 @@ namespace Zavrsni.ViewModels
     {
         private readonly UserService _userService;
 
+        public AccountPageViewModel(MainWindowViewModel mainWindowViewModel, UserService userService) : base(ApplicationPageNames.Account)
+        {
+            _userService = userService;
+            _userProfile = _userService.GetCurrentUserProfile();
+            LogoutCommand = new LogoutCommand(this, mainWindowViewModel, userService);
+        }
+
+        public ICommand LogoutCommand { get; }
+
         [ObservableProperty]
         private UserProfile _userProfile;
 
         [ObservableProperty]
         private string _errorMessage;
-
-        public AccountPageViewModel(UserService userService) : base(ApplicationPageNames.Account)
-        {
-            _userService = userService;
-            _userProfile = _userService.GetCurrentUserProfile();
-        }
 
         public async Task SelectProfilePictureAsync(TopLevel topLevel)
         {

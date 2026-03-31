@@ -54,6 +54,7 @@ namespace Zavrsni.Services
             foreach (var channel in _activeChannels)
             {
                 channel.Unsubscribe();
+                _supabaseClient.Realtime.Remove(channel);
             }
             _activeChannels.Clear();
         }

@@ -26,7 +26,7 @@
 
 						<StackPanel Orientation="Vertical" Grid.Row="1" Spacing="20" >
 							<Button Classes="delete" Content="Delete Profile"/>
-							<Button Content="Log Out"/>
+							<Button Content="Logout" Command="{Binding LogoutCommand}"/>
 						</StackPanel>
 					</Grid>
 				</Border>
