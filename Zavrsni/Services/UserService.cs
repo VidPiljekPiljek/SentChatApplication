@@ -79,6 +79,11 @@ namespace Zavrsni.Services
             return await _userRepository.UploadProfilePictureAsync(userId, profilePictureBytes);
         }
 
+        public async Task<OperationResult> ChangeUsernameAsync(string newUsername)
+        {
+            return await _userRepository.UpdateUsernameAsync(_userStore.GetCurrentUserId(), newUsername);
+        }
+
         public async Task<OperationResult<UserProfile?>> GetUserByUsernameAsync(string username)
         {
             return await _userRepository.GetUserByUsernameAsync(username);

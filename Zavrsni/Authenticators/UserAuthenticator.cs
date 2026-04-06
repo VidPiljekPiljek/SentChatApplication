@@ -19,18 +19,12 @@ namespace Zavrsni.Authenticators
     public class UserAuthenticator
     {
         private readonly Supabase.Client _supabaseClient;
-        private readonly SupabaseSessionPersistenceService _persistence;
         private readonly UserRepository _userRepository;
-        private readonly UserStore _userStore;
-        private readonly PasswordHasher<UserProfile> _passwordHasher = new();
-        private readonly SupabaseRealtimeService _supabaseRealtimeService;
 
-        public UserAuthenticator(Supabase.Client supabaseClient, SupabaseSessionPersistenceService persistence, UserRepository userRepository, UserStore userStore, SupabaseRealtimeService supabaseRealtimeService)
+        public UserAuthenticator(Supabase.Client supabaseClient, UserRepository userRepository)
         {
             _supabaseClient = supabaseClient;
             _userRepository = userRepository;
-            _userStore = userStore;
-            _supabaseRealtimeService = supabaseRealtimeService;
         }
 
         public async Task<OperationResult<string>> LoginAsync(string email, string password)

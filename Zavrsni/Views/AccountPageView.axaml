@@ -12,7 +12,6 @@
 			<Border Grid.Row="0" VerticalAlignment="Top" Height="150" Background="{DynamicResource MessagesTopBackground}" BorderThickness="0, 0, 0, 1" BorderBrush="{DynamicResource StandardLayoutBorderBrush}" Padding="20">
 				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 					<Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Content="Account Management"/>
-					
 				</StackPanel>
 			</Border>
 			<Grid Grid.Row="1" ColumnDefinitions="2*, *">
@@ -20,8 +19,14 @@
 					<Grid RowDefinitions="*, auto">
 						<StackPanel Orientation="Vertical" Grid.Row="0" Spacing="20" >
 							<Button Click="Button_Click" Content="Change Profile Picture" ToolTip.Tip="Please provide a square profile picture for best results."/>
-							<Button Content="Change Username"/>
-							<Button Content="Change Password"/>
+							<Grid ColumnDefinitions="auto, 10, auto">
+								<Button Grid.Column="0" Content="Change Username"/>
+								<TextBox Grid.Column="2" Width="250"/>
+							</Grid>
+							<Grid ColumnDefinitions="auto, 10, auto">
+								<Button Grid.Column="0" Content="Change Password"/>
+								<TextBox Grid.Column="2" Width="250"/>
+							</Grid>
 						</StackPanel>
 
 						<StackPanel Orientation="Vertical" Grid.Row="1" Spacing="20" >

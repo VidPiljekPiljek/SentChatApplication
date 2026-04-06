@@ -147,10 +147,16 @@ namespace Zavrsni.Repositories
                 .Update();
 
             return OperationResult.Success();
-        } 
+        }
 
-        //public async Task<OperationResult<byte[]>> GetProfilePictureAsync(string userId)
-        //{
-        //}
+        public async Task<OperationResult> UpdateUsernameAsync(string userId, string username)
+        {
+            await _supabaseClient.From<UserProfile>()
+                .Where(p => p.Id == userId)
+                .Set(p => p.Username, username)
+                .Update();
+
+            return OperationResult.Success();
+        }
     }
 }
