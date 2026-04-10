@@ -99,6 +99,11 @@ namespace Zavrsni.Services
             return _userStore.GetCurrentUserId();
         }
 
+        public string GetCurrentUserProfilePictureUrl()
+        {
+            return _userStore.GetCurrentUserProfilePictureUrl();
+        }
+
         public UserProfile GetCurrentUserProfile()
         {
             return _userStore.GetCurrentUserProfile();

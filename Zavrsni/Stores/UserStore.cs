@@ -39,6 +39,11 @@ namespace Zavrsni.Stores
             return CurrentUserProfile.Id;
         }
 
+        public string GetCurrentUserProfilePictureUrl()
+        {
+            return CurrentUserProfile.ProfilePictureUrl;
+        }
+
         public UserProfile GetCurrentUserProfile()
         {
             return CurrentUserProfile;

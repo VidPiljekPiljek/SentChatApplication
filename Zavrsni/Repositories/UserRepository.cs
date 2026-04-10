@@ -135,11 +135,18 @@ namespace Zavrsni.Repositories
 
         public async Task<OperationResult> UploadProfilePictureAsync(string userId, byte[] profilePictureBytes)
         {
+            var fileOptions = new Supabase.Storage.FileOptions
+            {
+                Upsert = true
+            };
+
             await _supabaseClient.Storage
                 .From("profile_pictures")
-                .Upload(profilePictureBytes, $"{userId}.png");
+                .Upload(profilePictureBytes, $"{userId}.png", fileOptions);
 
             var url = _supabaseClient.Storage.From("profile_pictures").GetPublicUrl($"{userId}.png");
+
+            url = $"{url}?t={DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
 
             await _supabaseClient.From<UserProfile>()
                 .Where(p => p.Id == userId)
