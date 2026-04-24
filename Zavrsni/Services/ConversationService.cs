@@ -18,14 +18,16 @@ namespace Zavrsni.Services
         private readonly ConversationRepository _conversationRepository;
         private readonly ConversationStore _conversationStore;
         private readonly ConversationMemberRepository _conversationMemberRepository;
+        private readonly MessageStore _messageStore;
         private readonly UserRepository _userRepository;
         private readonly UserStore _userStore;
 
-        public ConversationService(ConversationRepository conversationRepository, ConversationStore conversationStore, ConversationMemberRepository conversationMemberRepository, UserRepository userRepository, UserStore userStore)
+        public ConversationService(ConversationRepository conversationRepository, ConversationStore conversationStore, ConversationMemberRepository conversationMemberRepository, MessageStore messageStore, UserRepository userRepository, UserStore userStore)
         {
             _conversationRepository = conversationRepository;
             _conversationStore = conversationStore;
             _conversationMemberRepository = conversationMemberRepository;
+            _messageStore = messageStore;
             _userRepository = userRepository;
             _userStore = userStore;
         }
@@ -78,6 +80,7 @@ namespace Zavrsni.Services
                 if (dbConversationResult.IsSuccess && dbConversationResult.Data != null)
                 {
                     _conversationStore.AddConversation(dbConversationResult.Data);
+                    _messageStore.AddConversation(dbConversationResult.Data.Id);
 
                     List<ConversationMember> conversationMembers = new List<ConversationMember>()
                     {

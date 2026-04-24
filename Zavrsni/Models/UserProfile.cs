@@ -13,7 +13,7 @@ namespace Zavrsni.Models
     [Supabase.Postgrest.Attributes.Table("profiles")]
     public class UserProfile : BaseModel
     {
-        [Supabase.Postgrest.Attributes.PrimaryKey("id")]
+        [Supabase.Postgrest.Attributes.PrimaryKey("id", true)]
         public string Id { get; set; }
         [Supabase.Postgrest.Attributes.Column("username")]
         public string Username { get; set; }

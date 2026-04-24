@@ -31,7 +31,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0-ios26.2": {
+          "net9.0-ios": {
+            "framework": "net9.0-ios26.2",
             "targetAlias": "net9.0-ios",
             "projectReferences": {
               "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj": {
@@ -53,7 +54,8 @@
         "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net9.0-ios26.2": {
+        "net9.0-ios": {
+          "framework": "net9.0-ios26.2",
           "targetAlias": "net9.0-ios",
           "dependencies": {
             "Avalonia.iOS": {
@@ -86,7 +88,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.14, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             },
             "Sentry": {
@@ -136,11 +138,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.iOS.Ref.net9.0_26.2",
-              "version": "[26.2.9000, 26.2.9000]"
+              "version": "[26.2.9008, 26.2.9008]"
             },
             {
               "name": "Microsoft.iOS.Runtime.iossimulator-x64.net9.0_26.2",
-              "version": "[26.2.9000, 26.2.9000]"
+              "version": "[26.2.9008, 26.2.9008]"
             }
           ],
           "frameworkReferences": {
@@ -151,7 +153,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -188,6 +190,7 @@
         },
         "frameworks": {
           "net9.0": {
+            "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {}
           }
@@ -206,6 +209,7 @@
       },
       "frameworks": {
         "net9.0": {
+          "framework": "net9.0",
           "targetAlias": "net9.0",
           "dependencies": {
             "AsyncImageLoader.Avalonia": {
@@ -324,7 +328,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

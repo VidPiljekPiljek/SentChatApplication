@@ -1594,7 +1594,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.14": {
+      "Microsoft.NET.ILLink.Tasks/9.0.15": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -4008,7 +4008,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.14": {
+      "Microsoft.NET.ILLink.Tasks/9.0.15": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -7354,10 +7354,10 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/9.0.14": {
-      "sha512": "+MeWjj5sGq6Oj/l0E9RPMgXDyCIPxczzCbGuvuVTZFEGiy2S/atsfoAoKUnkEin/GeGpN+HenCzRmiQKSc99eQ==",
+    "Microsoft.NET.ILLink.Tasks/9.0.15": {
+      "sha512": "EejcbfCMR77Dthy77qxRbEShmzLApHZUPqXMBVQK+A0pNrRThkaHoGGMGvbq/gTkC/waKcDEgjBkbaejB58Wtw==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/9.0.14",
+      "path": "microsoft.net.illink.tasks/9.0.15",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -7371,7 +7371,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.9.0.14.nupkg.sha512",
+        "microsoft.net.illink.tasks.9.0.15.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -8830,7 +8830,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.10",
       "Microsoft.Extensions.DependencyInjection >= 9.0.10",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.14",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.15",
       "Sentry >= 6.0.0",
       "Svg.Skia >= 3.4.1",
       "Zavrsni >= 1.0.0"
@@ -8868,6 +8868,7 @@
       },
       "frameworks": {
         "net9.0-ios26.2": {
+          "framework": "net9.0-ios26.2",
           "targetAlias": "net9.0-ios",
           "projectReferences": {
             "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni\\Zavrsni.csproj": {
@@ -8890,6 +8891,7 @@
     },
     "frameworks": {
       "net9.0-ios26.2": {
+        "framework": "net9.0-ios26.2",
         "targetAlias": "net9.0-ios",
         "dependencies": {
           "Avalonia.iOS": {
@@ -8922,7 +8924,7 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.14, )",
+            "version": "[9.0.15, )",
             "autoReferenced": true
           },
           "Sentry": {
@@ -8972,11 +8974,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.iOS.Ref.net9.0_26.2",
-            "version": "[26.2.9000, 26.2.9000]"
+            "version": "[26.2.9008, 26.2.9008]"
           },
           {
             "name": "Microsoft.iOS.Runtime.iossimulator-x64.net9.0_26.2",
-            "version": "[26.2.9000, 26.2.9000]"
+            "version": "[26.2.9008, 26.2.9008]"
           }
         ],
         "frameworkReferences": {
@@ -8987,7 +8989,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bM31y2Zbf3I=",
+  "dgSpecHash": "PYxkRvcX1nY=",
   "success": true,
   "projectFilePath": "C:\\Users\\pilje\\source\\repos\\SentChatApplication\\Zavrsni.Browser\\Zavrsni.Browser.csproj",
   "expectedPackageFiles": [
@@ -80,8 +80,8 @@
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.http.headers\\2.3.0\\microsoft.net.http.headers.2.3.0.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.14\\microsoft.net.illink.tasks.9.0.14.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.5\\microsoft.net.sdk.webassembly.pack.10.0.5.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.15\\microsoft.net.illink.tasks.9.0.15.nupkg.sha512",
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.7\\microsoft.net.sdk.webassembly.pack.10.0.7.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\mimemapping\\3.0.1\\mimemapping.3.0.1.nupkg.sha512",
@@ -133,7 +133,7 @@
     "C:\\Users\\pilje\\.nuget\\packages\\system.text.json\\9.0.10\\system.text.json.9.0.10.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
     "C:\\Users\\pilje\\.nuget\\packages\\websocket.client\\5.1.1\\websocket.client.5.1.1.nupkg.sha512",
-    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.14\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.14.nupkg.sha512"
+    "C:\\Users\\pilje\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.15\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.15.nupkg.sha512"
   ],
   "logs": []
 }

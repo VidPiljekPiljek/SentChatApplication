@@ -73,6 +73,11 @@ namespace Zavrsni.Stores
             MessageAdded?.Invoke(message);
         }
 
+        public void AddConversation(string conversationId)
+        {
+            _messageCache[conversationId] = new List<Message>();
+        }
+
         public void RemoveMessage(string conversationId, string messageId)
         {
             if (_messageCache.TryGetValue(conversationId, out var messages))

@@ -4,6 +4,7 @@ using Sentry;
 using Supabase.Gotrue.Exceptions;
 using Supabase.Interfaces;
 using Supabase.Postgrest;
+using Supabase.Postgrest.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,16 +113,46 @@ namespace Zavrsni.Repositories
             {
                 var userResponse = await _supabaseClient.Auth.SignUp(email, password);
 
+                await _supabaseClient.Auth.SetSession(
+                    userResponse.AccessToken,
+                    userResponse.RefreshToken
+                );
+
+                System.Diagnostics.Debug.WriteLine($"{_supabaseClient.Auth.CurrentSession?.AccessToken} : {userResponse.RefreshToken}");
+
                 if (userResponse?.User is null)
                 {
                     return OperationResult<UserProfile>.Failure("User creation failed.");
                 }
+
+                System.Diagnostics.Debug.WriteLine($"{userResponse.User.Id} : {username}");
 
                 await _supabaseClient.From<UserProfile>().Insert(new UserProfile
                 {
                     Id = userResponse.User.Id,
                     Username = username
                 });
+
+                //for (int i = 0; i < 3; i++)
+                //{
+                //    try
+                //    {
+                //        await _supabaseClient.From<UserProfile>().Insert(new UserProfile
+                //        {
+                //            Id = userResponse.User.Id,
+                //            Username = username
+                //        });
+                //        break;
+                //    }
+                //    catch (PostgrestException ex)
+                //    {
+                //        if (i == 2)
+                //        {
+                //            return OperationResult.Failure("User creation failed, please try again.");
+                //        }
+                //        await Task.Delay(1000 * (i + 1));
+                //    }
+                //}
 
                 return OperationResult.Success();
             }
