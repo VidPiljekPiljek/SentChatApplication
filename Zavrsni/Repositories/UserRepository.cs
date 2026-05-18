@@ -133,27 +133,6 @@ namespace Zavrsni.Repositories
                     Username = username
                 });
 
-                //for (int i = 0; i < 3; i++)
-                //{
-                //    try
-                //    {
-                //        await _supabaseClient.From<UserProfile>().Insert(new UserProfile
-                //        {
-                //            Id = userResponse.User.Id,
-                //            Username = username
-                //        });
-                //        break;
-                //    }
-                //    catch (PostgrestException ex)
-                //    {
-                //        if (i == 2)
-                //        {
-                //            return OperationResult.Failure("User creation failed, please try again.");
-                //        }
-                //        await Task.Delay(1000 * (i + 1));
-                //    }
-                //}
-
                 return OperationResult.Success();
             }
             catch (GotrueException ex) when (ex.StatusCode < 500) {

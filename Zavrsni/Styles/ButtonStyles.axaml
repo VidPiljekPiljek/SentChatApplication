@@ -22,7 +22,6 @@
 		<Setter Property="FontWeight" Value="DemiBold"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource StandardBorderBrush}"/>
 		<Setter Property="BorderThickness" Value="1"/>
-
 	</Style>
 
 	<Style Selector=":is(Button) /template/ ContentPresenter">

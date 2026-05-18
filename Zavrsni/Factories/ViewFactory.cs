@@ -10,16 +10,6 @@ namespace Zavrsni.Factories
 {
     public class ViewFactory(Func<ApplicationViewNames, ViewModelBase> factory)
     {
-        //public ViewModelBase GetViewModel<T>(Action<T>? afterCreation = null)
-        //    where T : ViewModelBase
-        //{
-        //    var viewModel = factory(typeof(T));
-
-        //    afterCreation?.Invoke((T)viewModel);
-
-        //    return viewModel;
-        //}
-
         // Using this way of creating viewmodels because of DI
         public ViewModelBase GetViewModel(ApplicationViewNames viewName) => factory(viewName);
     }
